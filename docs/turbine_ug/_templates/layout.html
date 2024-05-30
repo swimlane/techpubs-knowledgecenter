@@ -1,0 +1,76 @@
+{% extends "!layout.html" %}
+
+{% block content %}
+    {{ super() }}
+    <div class="feedback-container css-bj16pu">
+        <div class="feedback-text">
+            <p><b>Rate this page:</b></p>
+        </div>
+        <div class="feedback-buttons">
+            <!-- Use star icons as buttons -->
+            <label id="star1" class="feedback-star">&#9733;</label>
+            <label id="star2" class="feedback-star">&#9733;</label>
+            <label id="star3" class="feedback-star">&#9733;</label>
+            <label id="star4" class="feedback-star">&#9733;</label>
+            <label id="star5" class="feedback-star">&#9733;</label>
+        </div>
+    </div>
+    
+    <div id="feedback-modal-low" class="modal">
+        <div class="modal-content">
+            <span class="close" data-target="feedback-modal-low">&times;</span>
+            <!-- Feedback options for stars 1-3 -->
+            <h3>We're sorry this page didn't meet your needs.</h3>
+            <p>Please specify why you're giving feedback. The added insights you share contribute to the enhancement of our documentation:</p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option1-low" name="option1-low" value="Option 1">
+                <label for="option1-low" class="checkbox-label">Missing information or code</label><br>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option2-low" name="option2-low" value="Option 2">
+                <label for="option2-low" class="checkbox-label">Content is confusing or hard to follow</label><br>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option3-low" name="option3-low" value="Option 3">
+                <label for="option3-low" class="checkbox-label">Inaccurate or outdated information</label><br>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option4-low" name="option4-low" value="Option 4">
+                <label for="option4-low" class="checkbox-label">Broken link or typo</label><br>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option5-low" name="option5-low" value="Option 5">
+                <label for="option5-low" class="checkbox-label">Did not solve my problem</label><br>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option6-low" name="option6-low" value="Option 6">
+                <label for="option6-low" class="checkbox-label">Other</label><br>
+            </div>
+            <textarea id="feedback-comments-low" rows="4" cols="50" placeholder="Comments and suggestions"></textarea><br>
+            <button id="submit-feedback-low">Submit Feedback</button>
+        </div>
+    </div>
+
+    <div id="feedback-modal-high" class="modal">
+        <div class="modal-content">
+            <span class="close" data-target="feedback-modal-high">&times;</span>
+            <!-- Feedback options for stars 4-5 -->
+            <h3>Thank you for your feedback!</h3>
+            <p>Please specify why you're giving feedback. The added insights you share contribute to the enhancement of our documentation:</p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option1-high" name="option1-high" value="Option 1">
+                <label for="option1-high" class="checkbox-label">Content is easy to follow</label><br>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option2-high" name="option2-high" value="Option 2">
+                <label for="option2-high" class="checkbox-label">Solved my problem</label><br>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option3-high" name="option3-high" value="Option 3">
+                <label for="option3-high" class="checkbox-label">Other</label><br>
+            </div>
+            <textarea id="feedback-comments-high" rows="4" cols="50" placeholder="Comments and suggestions"></textarea><br>
+            <button id="submit-feedback-high">Submit Feedback</button>
+        </div>
+    </div>
+{% endblock %}

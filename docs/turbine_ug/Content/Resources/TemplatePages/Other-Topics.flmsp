@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <MadCap:searchBarProxy data-mc-skin="/Project/Skins/SearchTopics.flskn" />
+        <MadCap:breadcrumbsProxy data-mc-skin="/Project/Skins/TopicToolbar.flskn"/>
+        <div class="document-content" xmlns="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <MadCap:bodyProxy />
+        </div>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+/* Custom Dark Theme CSS */
+
+/* Body and Background */
+body {
+    color: #131724; /* Light text */
+    /*max-width: none; /* Remove any max-width restriction */
+    /*width: 100%; /* Allow content to fill the entire width of its container */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #131724; /* White headers */
+}
+
+/* Links */
+a {
+    color: #131724; /* Lighter link color */
+}
+
+/* Code blocks */
+pre, code {
+    background-color: #222; /* Darker code block background */
+    color: #ddd; /* Light code text */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner {
+    background-color: #000743; /* Change to your desired background color */
+}
+
+/* Sidebar */
+/*.sphinxsidebar {
+    background-color: #EEF4FA; /* Dark sidebar */
+/*}
+
+/* etc. Add more styles as needed */
+
+/* Override Sphinx RTD theme styles to make content full-width */
+
+/* Main content area */
+div.body {
+    max-width: 1000px; /* Remove any max-width restriction */
+    /*width: 100%; /* Allow content to fill the entire width of its container */
+}
+
+/* Remove padding to extend content to edges */
+div.document {
+    padding: 0 !important;
+}
+
+/* Custom override for sidebar */
+
+/* Make the sidebar fixed and cover the entire height of the viewport */
+.wy-nav-side {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px; /* Adjust width as needed */
+    overflow-x: hidden;
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+    min-height: 100%;
+    color: #131724; /* Text color */
+    background: #eef4fa; /* Background color */
+    z-index: 200;
+    padding-bottom: 2em; /* Add padding at the bottom if necessary */
+}
+
+.wy-side-nav-search {
+    display: block;
+    width: 300px;
+    padding: .809em;
+    margin-bottom: .809em;
+    z-index: 200;
+    background-color: #000743;
+    text-align: center;
+    color: #fcfcfc
+}
+
+.wy-menu-vertical a {
+    line-height: 25px;
+    padding: .4045em 1.618em;
+    display: block;
+    position: relative;
+    font-size: 90%;
+    color: #131724;
+}
+
+.wy-nav-content {
+    padding: 1.618em 3.236em;
+    height: 100%;
+    max-width: none;
+    /*margin: auto;*/
+}
+
+/* Ensure the custom CSS is applied to tables */
+.wy-table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wy-table-responsive table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.tight-table td{
+    white-space: normal !important;
+}
+
+:root {
+    --star-rating-size: 24px; /* Define the star size */
+}
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.feedback-buttons {
+    display: flex;
+    gap: 10px; /* Add space between stars */
+    justify-content: center; /* Center the stars */
+    margin-top: 10px;
+}
+
+.feedback-star {
+    font-size: var(--star-rating-size);
+    color: black; /* Make the color transparent */
+    background-color: white; /* Change background color if needed */
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.feedback-star:hover,
+.feedback-star.active {
+    opacity: 1; /* Fully opaque when hovered or active */
+    color: black; 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px; /* Adjust the max-width as necessary */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-label {
+    margin-left: 10px;
+}
