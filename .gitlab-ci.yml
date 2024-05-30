@@ -1,0 +1,31 @@
+image: python:3.9
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - pip install sphinx
+
+build_docs:
+  stage: build
+  script:
+    - pip install -r requirements.txt
+    - cd docs/turbine_ug
+    - sphinx-build -M html . _build
+  artifacts:
+    paths:
+      - docs/turbine_ug/_build/html
+  only:
+    - merge_requests
+    - main
+
+pages:
+  stage: deploy
+  script:
+    - mv docs/turbine_ug/_build/html
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
