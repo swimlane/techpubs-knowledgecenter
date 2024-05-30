@@ -11,11 +11,11 @@ build_docs:
   stage: build
   script:
     - pip install -r requirements.txt
-    - cd turbine_ug
-    - sphinx-build -M html . html
+    - cd docs/turbine_ug
+    - sphinx-build -M html . _build
   artifacts:
     paths:
-      - turbine_ug/html
+      - docs/turbine_ug/_build/html
   only:
     - merge_requests
     - main
@@ -23,7 +23,7 @@ build_docs:
 pages:
   stage: deploy
   script:
-    - mv turbine_ug/html
+    - mv docs/turbine_ug/_build/html
   artifacts:
     paths:
       - public
