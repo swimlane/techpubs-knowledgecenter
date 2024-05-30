@@ -33,7 +33,7 @@ jobs:
         make html
 
     - name: Upload HTML
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: Sphinx-HTML
         path: docs/turbine_ug/_build/html
