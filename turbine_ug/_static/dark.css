@@ -1,0 +1,9 @@
+:root {
+    --background-color: black;
+    --text-color: white;
+}
+
+[data-theme='dark'] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" /><title></title>
+    </head>
+    <body>
+        <div class="search-container">
+            <MadCap:searchBarProxy data-mc-skin="/Project/Skins/SearchTopics.flskn" />
+        </div>
+        <div class="row collapse">
+            <div class="top-bar">
+                <MadCap:topicToolbarProxy style="mc-topic-toolbar-items: ;" data-mc-skin="/Project/Skins/TopicToolbar.flskn" />
+                <MadCap:breadcrumbsProxy /> </div>
+            <div class="topic-layout">
+                <div class="document-content">
+                    <MadCap:bodyProxy />
+                </div>
+            </div>
+            <div class="bottom-tool-bar">
+                <MadCap:topicToolbarProxy style="mc-topic-toolbar-items: ;" data-mc-skin="/Project/Skins/Topic Toolbar Bottom.flskn" />
+            </div>
+        </div>
+    </body>
+</html>
