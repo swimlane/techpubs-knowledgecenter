@@ -4,8 +4,8 @@
 SPHINXBUILD = sphinx-build
 
 # Output directories
-HTMLBUILDDIR = html
-PDFBUILDDIR = pdf
+HTMLBUILDDIR = _build
+#PDFBUILDDIR = pdf
 
 # Default target: build HTML
 html:
