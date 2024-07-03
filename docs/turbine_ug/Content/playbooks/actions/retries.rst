@@ -13,7 +13,7 @@ Retries allow you to set up the following criteria for an action:
 
 After you set the criteria, you can manage the parameters of that retry
 by adding conditions. The retry condition settings are similar to how
-you `Create Action Flows and Conditions <flows-and-conditions.rst>`__.
+you `Create Action Flows and Conditions <flows-and-conditions.htm>`__.
 
 **Important!** Conditions are **not** required.
 
@@ -68,7 +68,7 @@ Use Case
 --------
 
 View the `Action Retries use
-case <../../use-cases/playbook-use-cases/action-retries.rst>`__ use case
+case <../../use-cases/playbook-use-cases/action-retries.htm>`__ use case
 for an example.
 
 .. |image1| image:: ../../Resources/Images/retry-add-action.png

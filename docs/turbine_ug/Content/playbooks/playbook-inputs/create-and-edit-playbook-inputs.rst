@@ -126,7 +126,7 @@ The input displays as a token in the appropriate field.
 You have successfully created a string concatenation!
 
 See `String Concatenation use
-case <../../use-cases/playbook-use-cases/string-concatenation.rst>`__
+case <../../use-cases/playbook-use-cases/string-concatenation.htm>`__
 for an example of executing string concatenation.
 
 Need to make changes to your playbook inputs? Go to the next section to

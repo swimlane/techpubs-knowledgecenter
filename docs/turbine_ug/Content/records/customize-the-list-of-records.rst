@@ -15,7 +15,7 @@ the far-right of the Default Report page, above the list of records.)
 
 **Note:** For more information on using keywords searches and filtering
 see, `Keyword Search and
-Filter <../reports/keyword-search-and-filter.rst>`__.
+Filter <../reports/keyword-search-and-filter.htm>`__.
 
 The columns available for you to select vary depending on how the
 application is built. Select the columns you want to view and click
@@ -52,7 +52,7 @@ Within the list of records, you can:
 |                                  | want to view or edit. For more   |
 |                                  | information see `Bulk Modify     |
 |                                  | Recor                            |
-|                                  | ds <bulk-modify-records.rst>`__. |
+|                                  | ds <bulk-modify-records.htm>`__. |
 +----------------------------------+----------------------------------+
 
 You can save your customized view of records for further use. To save a

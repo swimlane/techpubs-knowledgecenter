@@ -36,7 +36,7 @@ to complete the following basic steps:
 
 Global record search is also available from the upper right corner of
 the Turbine UI. For more information, see `Search Record
-Data <../records/search-record-data.rst>`__.
+Data <../records/search-record-data.htm>`__.
 
 .. _navigation-menu-options:
 

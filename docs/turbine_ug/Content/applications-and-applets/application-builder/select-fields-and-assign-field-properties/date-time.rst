@@ -86,7 +86,7 @@ needed:
 |                  | formula or function.   |                        |
 |                  | See `Calculation       |                        |
 |                  | Builder <../calcu      |                        |
-|                  | lation-builder.rst>`__ |                        |
+|                  | lation-builder.htm>`__ |                        |
 |                  | for more information.  |                        |
 +------------------+------------------------+------------------------+
 

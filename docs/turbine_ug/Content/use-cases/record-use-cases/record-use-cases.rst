@@ -15,7 +15,7 @@ Use Case 1: No record linking applied
    **Cause:** There is no record event/record action trigger
 
 `Scenario 1
-documentation <no-record-linking-applied-button-disabled-use-cases.rst>`__
+documentation <no-record-linking-applied-button-disabled-use-cases.htm>`__
 
 Use Case 2: No record linking applied
 -------------------------------------
@@ -28,7 +28,7 @@ Use Case 2: No record linking applied
    for the application to which the playbook outputs are being mapped
 
 `Scenario 2
-documentation <no-record-linking-applied-button-disabled-use-cases.rst>`__
+documentation <no-record-linking-applied-button-disabled-use-cases.htm>`__
 
 Use Case 3: Link records successfully when the button is enabled
 ----------------------------------------------------------------
@@ -39,11 +39,11 @@ enabled.
    **Scenario 3: You are in a playbook and want to map an output record
    to the input record that triggers the playbook.**
 
-`Scenario 3 documentation <linking-records.rst>`__
+`Scenario 3 documentation <linking-records.htm>`__
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/use-cases/record-use-cases/no-record-linking-applied-button-disabled-use-cases
    /Content/use-cases/record-use-cases/linking-records

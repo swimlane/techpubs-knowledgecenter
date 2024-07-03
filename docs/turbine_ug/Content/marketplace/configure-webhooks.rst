@@ -7,7 +7,7 @@ Configure Slack Webhook
 **Note**: This configuration does not require Slack Admin permissions.
 
 To generate the Slack webhook URL that you need for your Collaboration
-Solution asset configuration, first make changes in incoming webhook
+Extension asset configuration, first make changes in incoming webhook
 settings in Slack.
 
 #. Click `Legacy: Incoming
@@ -30,7 +30,7 @@ to when no input is specified.
 #. Click **Add Incoming WebHooks integration**.
 
 #. Copy the generated webhook URL and navigate back to the
-   **Collaboration Solution Configuration** asset.
+   **Collaboration Extension Configuration** asset.
 
 #. In the Slack_Webhook_URL field, paste the generated URL.
 

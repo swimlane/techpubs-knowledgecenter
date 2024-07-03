@@ -131,7 +131,7 @@ ensure that you have turned off any web browser pop-up blockers.
 
 You can identify a specific field to reference from record creation. For
 more information, see `Lookup and Create References within
-Records <../../../records/modify-a-record/lookup-and-create-references-in-records.rst>`__.
+Records <../../../records/modify-a-record/lookup-and-create-references-in-records.htm>`__.
 
 Create Reciprocal References
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

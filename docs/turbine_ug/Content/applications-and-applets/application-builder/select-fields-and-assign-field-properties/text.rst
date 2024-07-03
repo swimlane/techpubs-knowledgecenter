@@ -74,12 +74,13 @@ needed:
 |                | `Read-Only Field        |                         |
 |                | Behavior <../.          |                         |
 |                | ./../records/read-only- |                         |
-|                | field-behavior.rst>`__. |                         |
+|                | field-behavior.htm>`__. |                         |
 +----------------+-------------------------+-------------------------+
 | **Unique**     | Click to indicate that  | *checkmark*             |
 |                | the field's value must  |                         |
-|                | be unique for this      |                         |
-|                | record.                 |                         |
+|                | be unique for all the   |                         |
+|                | records in the          |                         |
+|                | application.            |                         |
 +----------------+-------------------------+-------------------------+
 | **Calculated** | Click to indicate that  | *                       |
 |                | the field contains a    | TOTALMINUTES([Date/Time |
@@ -96,7 +97,7 @@ needed:
 |                | formula or function.    |                         |
 |                | See `Calculation        |                         |
 |                | Builder <../calc        |                         |
-|                | ulation-builder.rst>`__ |                         |
+|                | ulation-builder.htm>`__ |                         |
 |                | for more information.   |                         |
 |                | This is not available   |                         |
 |                | for list fields.        |                         |

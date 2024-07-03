@@ -8,8 +8,8 @@ specify the length of active user sessions.
 
 **Note:** For detail on setting up the Authentication section of
 Sessions and Security see `Enable SAML for
-SSO <enable-saml-for-sso.rst>`__ and `Enable Two-Factor
-Authentication <enable-two-factor-authentication.rst>`__.
+SSO <enable-saml-for-sso.htm>`__ and `Enable Two-Factor
+Authentication <enable-two-factor-authentication.htm>`__.
 
 Setting Up Session Timeout Parameters
 -------------------------------------
@@ -117,15 +117,15 @@ To set up security parameters:
    This email receives notifications when user profiles are locked.
 
 For information about 2FA, see `Enable Two-Factor
-Authentication <enable-two-factor-authentication.rst>`__.
+Authentication <enable-two-factor-authentication.htm>`__.
 
 .. |image1| image:: ../../Resources/Images/big_screen.png
 .. |image2| image:: ../../Resources/Images/sessions-and-security3.png
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/settings/sessions-and-security/enable-two-factor-authentication
    /Content/settings/sessions-and-security/enable-saml-for-sso
-
+   /Content/settings/sessions-and-security/scim_provisioning

@@ -18,7 +18,7 @@ From the main page, you can:
 
 You can view and modify the applications and applets you have
 permissions to view and modify. See
-`Permissions <../permissions/permissions.rst>`__ for more information
+`Permissions <../permissions/permissions.htm>`__ for more information
 about setting user, group, application, and field permissions in
 Turbine.
 

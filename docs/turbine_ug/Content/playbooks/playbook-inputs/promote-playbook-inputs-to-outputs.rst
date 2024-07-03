@@ -3,14 +3,14 @@ Promote Playbook Inputs to Outputs
 
 Once you create your playbook inputs or configure action inputs, you can
 promote the inputs to outputs, then map the outputs to applications. See
-`Promote Action Outputs <../actions/outputs.rst>`__ for more information
+`Promote Action Outputs <../actions/outputs.htm>`__ for more information
 about promoting from the action-level.
 
 **Important!** To promote and map playbook inputs to outputs, ensure
 that you complete the steps to create playbook inputs and/or configure
 action inputs. See `Create and Edit Playbook
-Inputs <create-and-edit-playbook-inputs.rst>`__ and/or `Create Actions
-and Configure Inputs <../actions/inputs.rst>`__ for details.
+Inputs <create-and-edit-playbook-inputs.htm>`__ and/or `Create Actions
+and Configure Inputs <../actions/inputs.htm>`__ for details.
 
 Promote Playbook Inputs to Outputs Example
 ------------------------------------------
@@ -57,7 +57,7 @@ property to inputs:
    to map to an application. Let's see how that's done!
 
 What do you do with playbook inputs? Let's look at `Playbook
-Outputs <../playbook-outputs/playbook-outputs.rst>`__.
+Outputs <../playbook-outputs/playbook-outputs.htm>`__.
 
 .. |image1| image:: ../../Resources/Images/input-manager-add-a-property.png
 .. |image2| image:: ../../Resources/Images/playbook-outputs.png

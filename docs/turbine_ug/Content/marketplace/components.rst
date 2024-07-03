@@ -19,7 +19,7 @@ Turbine components focus on:
 
 Turbine ingestion components get data from third-party tools and
 transform that data into appropriate Open Cybersecurity Schema Framework
-(OSCF)/Swimlane Object Schema (SOS) objects.
+(OSCF)/Turbine Extendable DataSchema (TEDS) objects.
 
 Using ingestion components:
 
@@ -34,5 +34,5 @@ Using ingestion components:
 **Why Use Enrichment Components**
 
 Turbine enrichment components ingest data from third-party tools and
-transform data into appropriate OSCF/SOS objects to improve incident
+transform data into appropriate OSCF/TEDS objects to improve incident
 response investigations for threat hunting.

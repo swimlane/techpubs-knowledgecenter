@@ -20,13 +20,13 @@ What does Orchestration encompass?
 
 As an orchestrator, you have access to:
 
--  `Playbooks <../playbooks/playbooks.rst>`__
--  `Webhooks <../playbooks/playbook-triggers/webhook%20triggers.rst>`__
--  `Assets <../assets/assets.rst>`__
--  `Connectors <../marketplace/connectors.rst>`__
--  `Playbook Runs <playbook-runs.rst>`__
--  `Events <events.rst>`__
--  `Native Actions <../native-actions/native-actions.rst>`__
+-  `Playbooks <../playbooks/playbooks.htm>`__
+-  `Webhooks <../playbooks/playbook-triggers/webhook%20triggers.htm>`__
+-  `Assets <../assets/assets.htm>`__
+-  `Connectors <../marketplace/connectors.htm>`__
+-  `Playbook Runs <playbook-runs.htm>`__
+-  `Events <events.htm>`__
+-  `Native Actions <../native-actions/native-actions.htm>`__
 
 .. _what-can-i-do-in-orchestration:
 
@@ -38,6 +38,12 @@ As an orchestrator, you can:
 -  Install connectors from a third-party service or platforms
 -  Monitor data generated from executed playbooks
 
+List of Current Use Cases
+-------------------------
+
+See `Use Cases <../use-cases/use-cases.htm>`__ for playbook, record, and
+native action use cases.
+
 **Note**: The use case also includes topics within those mentioned
 above, including but not limited to: triggers, actions, inputs and
 outputs, nested playbooks, conditional expressions, basic and advanced
@@ -45,7 +51,7 @@ transformations.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/playbooks
    /Content/orchestration/webhooks_classic
@@ -54,4 +60,3 @@ transformations.
    /Content/orchestration/playbook-runs
    /Content/orchestration/events
    /Content/turbine-canvas/canvas
-

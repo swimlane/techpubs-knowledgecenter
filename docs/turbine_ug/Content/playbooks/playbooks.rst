@@ -126,7 +126,7 @@ Playbook Page Components\ |image2|
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/create-playbooks
    /Content/playbooks/enable-and-disable-playbooks
@@ -139,4 +139,3 @@ Playbook Page Components\ |image2|
    /Content/playbooks/actions/actions
    /Content/playbooks/playbook-triggers/playbook-triggers
    /Content/native-actions/native-actions
-

@@ -20,7 +20,7 @@ Now you can begin asking questions!
 
 The Swimlane Hero AI Help Chatbot is loaded with Turbine technical
 content - both the `Turbine User
-Guide <../welcome-to-the-turbine-user-guide.rst>`__ and the `Turbine
+Guide <../welcome-to-the-turbine-user-guide.htm>`__ and the `Turbine
 Platform Installer
 Guide <https://docs.swimlane.com/turbine_installer/>`__. The chatbot
 answers each of your questions individually. Also, be sure not to enter

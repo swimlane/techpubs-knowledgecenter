@@ -6,21 +6,21 @@ build an application. For that reason, you can refer to the following
 Application Builder topics for additional detail about building applets:
 
 -  `Define the
-   Foundation <../application-builder/define-the-foundation.rst>`__
--  `Create the Layout <../application-builder/create-the-layout.rst>`__
+   Foundation <../application-builder/define-the-foundation.htm>`__
+-  `Create the Layout <../application-builder/create-the-layout.htm>`__
 -  `Select Fields and Assign Field
-   Properties <../application-builder/select-fields-and-assign-field-properties/select-fields-and-assign-field-properties.rst>`__
+   Properties <../application-builder/select-fields-and-assign-field-properties/select-fields-and-assign-field-properties.htm>`__
 
-   -  `Text <../application-builder/select-fields-and-assign-field-properties/text.rst>`__
-   -  `Numeric <../application-builder/select-fields-and-assign-field-properties/numeric.rst>`__
+   -  `Text <../application-builder/select-fields-and-assign-field-properties/text.htm>`__
+   -  `Numeric <../application-builder/select-fields-and-assign-field-properties/numeric.htm>`__
    -  `Date /
-      Time <../application-builder/select-fields-and-assign-field-properties/date-time.rst>`__
-   -  `Selection <../application-builder/select-fields-and-assign-field-properties/selection.rst>`__
-   -  `Reference <../application-builder/select-fields-and-assign-field-properties/reference.rst>`__
+      Time <../application-builder/select-fields-and-assign-field-properties/date-time.htm>`__
+   -  `Selection <../application-builder/select-fields-and-assign-field-properties/selection.htm>`__
+   -  `Reference <../application-builder/select-fields-and-assign-field-properties/reference.htm>`__
    -  `Users /
-      Groups <../application-builder/select-fields-and-assign-field-properties/users-groups.rst>`__
-   -  `Attachments <../application-builder/select-fields-and-assign-field-properties/attachments.rst>`__
-   -  `Comments <../application-builder/select-fields-and-assign-field-properties/comments.rst>`__
+      Groups <../application-builder/select-fields-and-assign-field-properties/users-groups.htm>`__
+   -  `Attachments <../application-builder/select-fields-and-assign-field-properties/attachments.htm>`__
+   -  `Comments <../application-builder/select-fields-and-assign-field-properties/comments.htm>`__
 
 Create Applet from Section
 --------------------------

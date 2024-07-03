@@ -23,7 +23,7 @@ one of the four types of triggers, then drag-and-drop to the canvas.
 
  
 
-**Note**: The `Playbook Button <canvas-playbook-button-trigger.rst>`__
+**Note**: The `Playbook Button <canvas-playbook-button-trigger.htm>`__
 trigger is available via applications.
 
  
@@ -40,10 +40,9 @@ type of trigger.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/turbine-canvas/orchestration/canvas-webhook-triggers
    /Content/turbine-canvas/orchestration/canvas-schedule-triggers
    /Content/turbine-canvas/orchestration/canvas-record-event-triggers
    /Content/turbine-canvas/orchestration/canvas-playbook-button-trigger
-

@@ -98,7 +98,6 @@ Widget Field Type
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/records/modify-a-record/record-lock
-

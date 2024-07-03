@@ -87,7 +87,7 @@ Configure Assets in Canvas
 Want to apply an asset without mapping to your playbook inputs
 manually? Watch as we apply the existing Virus Total (VT) asset to
 connectors inside a component. Let's use the same VirusTotal connectors
-from the `Components <canvas-components.rst>`__ page example. The
+from the `Components <canvas-components.htm>`__ page example. The
 following image shows the expanded Virus Total - URL Analysis component.
 Inside are two VT connectors that need to have the VT asset applied.
 Open in the component builder.
@@ -148,7 +148,7 @@ all of your custom assets will have a |image7| icon.
 
 Continue to the next section for Connector homepage information.
 
-.. |image1| image:: ../../Resources/Images/cavnas-assets-hp.png
+.. |image1| image:: ../../Resources/Images/canvas-assets-hp.png
 .. |image2| image:: ../../Resources/Images/canvas-asset-edit-hp.png
 .. |image3| image:: ../../Resources/Images/canvas-asset-configure-hp.png
 .. |image4| image:: ../../Resources/Images/canvas-asset-vt-ex1.png

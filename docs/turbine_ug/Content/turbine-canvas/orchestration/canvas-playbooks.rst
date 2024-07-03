@@ -54,7 +54,7 @@ Flows
 |      |                              |    flows                     |
 +------+------------------------------+------------------------------+
 
-See `Flows <flows.rst>`__ for more information on how flows work within
+See `Flows <flows.htm>`__ for more information on how flows work within
 a playbook.
 
 Homepage
@@ -170,13 +170,13 @@ Add Panel
 The Add panel is where you can view, search, filter, sort, and/or
 drag-and-drop actions and components:
 
--  `Triggers <canvas-triggers.rst>`__
+-  `Triggers <canvas-triggers.htm>`__
 
--  `Actions <canvas-actions.rst>`__
+-  `Actions <canvas-actions.htm>`__
 
--  `Components <components.rst>`__
+-  `Components <components.htm>`__
 
--  `Native Actions <../canvas-native-actions.rst>`__
+-  `Native Actions <../canvas-native-actions.htm>`__
 
 On the right-hand side of the canvas, you can see playbook details,
 which include the name and description. To have more space to work
@@ -193,7 +193,7 @@ Publish Playbooks
 ~~~~~~~~~~~~~~~~~
 
 To publish a playbook to the `User
-Content <../library/user-content.rst>`__ library, there are two main
+Content <../library/user-content.htm>`__ library, there are two main
 options. First, let's start from the Playbooks homepage.
 
 #. Click the ellipsis icon and select **Publish**.
@@ -247,21 +247,21 @@ published.
 .. |image10| image:: ../../Resources/Images/canvas-playbook-enable-button.png
 .. |image11| image:: ../../Resources/Images/component-show-hide-component-details-icon.png
 .. |image12| image:: ../../Resources/Images/component-test-console-icon.png
-.. |image13| image:: ../../Resources/Images/component-ellipisis-icon.png
+.. |image13| image:: ../../Resources/Images/component-ellipsis-icon.png
 .. |image14| image:: ../../Resources/Images/component-hide-show-add-pane.png
 .. |image15| image:: ../../Resources/Images/component-create-component-icon.png
 .. |image16| image:: ../../Resources/Images/component-zoom-icon.png
 .. |image17| image:: ../../Resources/Images/canvas-playbook-enable-button.png
 .. |image18| image:: ../../Resources/Images/component-show-hide-component-details-icon.png
 .. |image19| image:: ../../Resources/Images/component-test-console-icon.png
-.. |image20| image:: ../../Resources/Images/component-ellipisis-icon.png
+.. |image20| image:: ../../Resources/Images/component-ellipsis-icon.png
 .. |image21| image:: ../../Resources/Images/component-hide-show-add-pane.png
 .. |image22| image:: ../../Resources/Images/component-create-component-icon.png
 .. |image23| image:: ../../Resources/Images/component-zoom-icon.png
 .. |image24| image:: ../../Resources/Images/canvas-playbook-enable-button.png
 .. |image25| image:: ../../Resources/Images/component-show-hide-component-details-icon.png
 .. |image26| image:: ../../Resources/Images/component-test-console-icon.png
-.. |image27| image:: ../../Resources/Images/component-ellipisis-icon.png
+.. |image27| image:: ../../Resources/Images/component-ellipsis-icon.png
 .. |image28| image:: ../../Resources/Images/canvas-pb-details.png
 .. |image29| image:: ../../Resources/Images/canvas-overview.gif
 .. |image30| image:: ../../Resources/Images/canvas-publish-playbook.png
@@ -270,11 +270,10 @@ published.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/turbine-canvas/orchestration/flows
    /Content/turbine-canvas/orchestration/canvas-triggers
    /Content/turbine-canvas/orchestration/canvas-actions
    /Content/turbine-canvas/canvas-native-actions
    /Content/use-cases/use-cases
-

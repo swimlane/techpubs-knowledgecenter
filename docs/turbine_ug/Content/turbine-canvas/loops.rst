@@ -72,7 +72,7 @@ Add and Configure Loops
 **Example:** 
 
 See `Automated
-Remediation <use-cases/automated-remediation-use-case.rst>`__ to view
+Remediation <use-cases/automated-remediation-use-case.htm>`__ to view
 how the following forEach Loop native action is used in a use case.
 These steps guide you on how to add and configure a loop. The Automated
 Remediation playbook already has a record event trigger and a Create
@@ -125,7 +125,7 @@ Example
 ~~~~~~~
 
 -  Click `Automated Remediation Use
-   Case <use-cases/automated-remediation-use-case.rst>`__ for an example
+   Case <use-cases/automated-remediation-use-case.htm>`__ for an example
    on updating an existing case with remediation actions.
 
 .. |image1| image:: ../Resources/Images/canvas-loop-parallel-total.png

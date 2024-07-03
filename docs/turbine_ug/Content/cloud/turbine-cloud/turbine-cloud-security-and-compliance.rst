@@ -52,7 +52,7 @@ Swimlane supports local user account provisioning, Open LDAP, Microsoft
 Active Directory, and SAML 2.0.
 
 For more information on how Swimlane utilizes SAML, see `Enable SAML for
-SSO <../../settings/sessions-and-security/enable-saml-for-sso.rst>`__.
+SSO <../../settings/sessions-and-security/enable-saml-for-sso.htm>`__.
 
 Two-Factor Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +64,7 @@ required to set up their individual 2FA before accessing Turbine cloud.
 enforce 2FA globally.
 
 For more information on 2FA and Swimlane, see `Enable Two-Factor
-Authentication <../../settings/sessions-and-security/enable-two-factor-authentication.rst>`__.
+Authentication <../../settings/sessions-and-security/enable-two-factor-authentication.htm>`__.
 
 Role-Based Access Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,7 +86,7 @@ With Turbine cloud, administrators also have the ability to separate the
 account administrator from the orchestrator and playbook designer.
 
 For more information about RBAC, see `Role
-Permissions <../../permissions/role-permissions.rst>`__ and the other
+Permissions <../../permissions/role-permissions.htm>`__ and the other
 permissions topics within the Turbine guide.
 
 Access to Turbine Cloud

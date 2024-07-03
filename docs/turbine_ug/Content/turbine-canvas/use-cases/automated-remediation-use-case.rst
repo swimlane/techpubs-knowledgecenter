@@ -53,7 +53,7 @@ the playbook property from the Script action is true, the TRUE flow
 executes and adds the domain to a block list. If the criteria used from
 the playbook property from the Script action is not true, then the FALSE
 flow executes and adds the domain to a decrypt list. Use the `Swimlane
-Python Chatbot <../../native-actions/swimlane-python-chatbot.rst>`__ to
+Python Chatbot <../../native-actions/swimlane-python-chatbot.htm>`__ to
 assist with writing Python.
 
 #. Add the Condition native action after the script.
@@ -79,7 +79,7 @@ component and save. In the Add panel, the component is now available.
  
 
 If you want to publish and access the component in the User Content
-library, see `Components. <../orchestration/canvas-components.rst>`__
+library, see `Components. <../orchestration/canvas-components.htm>`__
 
  
 

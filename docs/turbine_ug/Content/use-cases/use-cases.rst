@@ -9,15 +9,14 @@ scenario within Turbine.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/turbine-canvas/use-cases/automated-remediation-use-case
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/use-cases/native-action-use-cases/native-action-use-cases
    /Content/use-cases/playbook-use-cases/playbook-use-cases
    /Content/use-cases/record-use-cases/record-use-cases
-

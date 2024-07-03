@@ -112,11 +112,13 @@ edit and resolve the error(s).
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/applications-and-applets/application-builder/define-the-foundation
    /Content/applications-and-applets/application-builder/create-the-layout
    /Content/applications-and-applets/application-builder/select-fields-and-assign-field-properties/select-fields-and-assign-field-properties
+   /Content/permissions/application-permissions
+   /Content/permissions/field-level-permissions
    /Content/applications-and-applets/application-builder/add-applets
    /Content/applications-and-applets/application-builder/calculation-builder
    /Content/applications-and-applets/application-builder/view-revision-history

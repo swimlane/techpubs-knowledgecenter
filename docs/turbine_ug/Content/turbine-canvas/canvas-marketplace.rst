@@ -23,10 +23,10 @@ To access the Turbine Marketplace, follow these steps:
 |image1|
 
 See
-`solutions <https://docs.swimlane.com/turbine/marketplace/solutions-and-applications.rst>`__,
-`components <https://docs.swimlane.com/turbine/marketplace/components.rst>`__,
+`solutions <https://docs.swimlane.com/turbine/marketplace/solutions-and-applications.htm>`__,
+`components <https://docs.swimlane.com/turbine/marketplace/components.htm>`__,
 or
-`connectors <https://docs.swimlane.com/turbine/marketplace/connectors.rst>`__
+`connectors <https://docs.swimlane.com/turbine/marketplace/connectors.htm>`__
 for additional information for the internal marketplace.
 
 External Marketplace

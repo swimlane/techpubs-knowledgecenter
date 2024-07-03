@@ -3,7 +3,7 @@
 Account Settings
 ================
 
-From the Swimlane Turbine Admin panel, Account Settings, you set up
+From the Swimlane Turbine Admin panel, **Account Settings**, you set up
 configuration details, including the system-wide time zone
 specification. You also can use it to sync Active Directory users and to
 setup and support Directory Services.
@@ -14,10 +14,9 @@ setup and support Directory Services.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/settings/sessions-and-security/sessions-and-security
    /Content/settings/directory-services/directory-services
-   /Content/settings/branding
    /Content/settings/support
-
+   /Content/settings/branding

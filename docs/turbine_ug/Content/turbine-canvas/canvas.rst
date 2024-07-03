@@ -9,7 +9,7 @@ faster to execute.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/turbine-canvas/orchestration/canvas-playbooks
    /Content/turbine-canvas/orchestration/canvas-playbook-runs
@@ -18,4 +18,3 @@ faster to execute.
    /Content/turbine-canvas/orchestration/canvas-assets
    /Content/turbine-canvas/orchestration/connectors
    /Content/turbine-canvas/orchestration/events
-

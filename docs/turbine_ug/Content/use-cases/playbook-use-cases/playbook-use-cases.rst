@@ -9,7 +9,7 @@ scenario within Turbine.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/use-cases/playbook-use-cases/configure-inputs-in-condition-expressions
    /Content/use-cases/playbook-use-cases/configure-numeric-array-condition-expressions
@@ -18,4 +18,3 @@ scenario within Turbine.
    /Content/use-cases/playbook-use-cases/action-retries
    /Content/use-cases/playbook-use-cases/playbook-discovered-outputs-and-map-inputs
    /Content/use-cases/playbook-use-cases/webhook-discovered-outputs
-

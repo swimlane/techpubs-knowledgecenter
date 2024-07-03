@@ -7,7 +7,7 @@ grid, is accompanied by a New and Lookup button adjacent to the
 reference field.
 
 For more information about reference fields in general, see
-`Reference <../../applications-and-applets/application-builder/select-fields-and-assign-field-properties/reference.rst>`__.
+`Reference <../../applications-and-applets/application-builder/select-fields-and-assign-field-properties/reference.htm>`__.
 
 Creating a New Record to Reference
 ----------------------------------
@@ -46,7 +46,7 @@ To lookup and create references within records:
    |image5|
 
 .. |image1| image:: ../../Resources/Images/create-new-ref-rec.png
-.. |image2| image:: ../../Resources/Images/new-record-refrenced.png
+.. |image2| image:: ../../Resources/Images/new-record-referenced.png
 .. |image3| image:: ../../Resources/Images/lookup-results.png
 .. |image4| image:: ../../Resources/Images/add-ref-records.png
 .. |image5| image:: ../../Resources/Images/ref-grid-view.png

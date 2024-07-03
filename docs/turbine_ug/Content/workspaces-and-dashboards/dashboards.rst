@@ -36,7 +36,7 @@ This topic covers the following:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/workspaces-and-dashboards/create_dashboard
    /Content/workspaces-and-dashboards/editing_dashboards
@@ -46,4 +46,3 @@ This topic covers the following:
    /Content/workspaces-and-dashboards/set-dashboard-permissions
    /Content/workspaces-and-dashboards/share-dashboards
    /Content/workspaces-and-dashboards/timeline-filter
-

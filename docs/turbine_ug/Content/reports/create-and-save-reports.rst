@@ -19,7 +19,7 @@ permissions for reports. You will be able to create, edit, and save
 reports if you have create permissions for reports.
 
 **Note:** For more information on using keywords searches and filtering
-see, `Keyword Search and Filter <keyword-search-and-filter.rst>`__.
+see, `Keyword Search and Filter <keyword-search-and-filter.htm>`__.
 
 Creating a New Report
 ---------------------
@@ -89,7 +89,7 @@ format where the ID's are replaced with values. In addition to the
 report's data, the widget also has access to the query.
 
 For more detail on setting up report widgets, see
-`Widgets <../widgets/widgets.rst>`__.
+`Widgets <../widgets/widgets.htm>`__.
 
 .. |image1| image:: ../Resources/Images/report-ellipsis.png
 .. |image2| image:: ../Resources/Images/create-new-report.png

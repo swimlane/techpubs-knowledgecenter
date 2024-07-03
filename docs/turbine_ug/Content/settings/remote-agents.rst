@@ -49,7 +49,7 @@ agents:
 
 -  **Oracle Linux** (with podman) 8.8, 9.2 7.4, 7.5, 7.6, 7.7, 7.8, 7.9
    (`Common Issue
-   FAQs <https://docs.oracle.com/en/operating-systems/oracle-linux/podman/podman-KnownIssues.rstl#podman-issues>`__)
+   FAQs <https://docs.oracle.com/en/operating-systems/oracle-linux/podman/podman-KnownIssues.html#podman-issues>`__)
 
 -  **Amazon Linux** 2
 
@@ -144,7 +144,7 @@ and pools.
    the window closes and you will have to start from **Deploy Agent**
    again.
 
-#. Enter the required and/or customizable fields. The table below
+#. Enter the required and/or customizable fields. The following table
    provides the field names and supplemental information to complete the
    script install process.
 
@@ -385,7 +385,7 @@ multiple agents, and agents may belong to multiple pools.
    agents will be able to run in several availability zones.
 
 You can assign a pool to an action. To create an action, see
-`Actions <../playbooks/actions/actions.rst>`__. To assign a pool at the
+`Actions <../playbooks/actions/actions.htm>`__. To assign a pool at the
 action-level:
 
 #. From ACTION, click the **Show advanced settings** drop-down.

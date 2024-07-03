@@ -68,7 +68,7 @@ Configure Webhooks
 ------------------
 
 **Important!** Review `Create and Edit Playbook
-Inputs <../playbook-inputs/create-and-edit-playbook-inputs.rst>`__
+Inputs <../playbook-inputs/create-and-edit-playbook-inputs.htm>`__
 before configuring webhooks for best practices.
 
 You're ready to start the configuration process for your webhook. Click
@@ -80,7 +80,7 @@ tabs: Webhook Events, Outputs, and Map to Playbook Inputs.
 This tab shows the Event Type with a drop-down arrow, which shows you
 the webhook details, the result, and discovered outputs. Navigate to
 `Discovered Outputs and
-Testing <../actions/discovered-outputs-and-testing.rst>`__ for details
+Testing <../actions/discovered-outputs-and-testing.htm>`__ for details
 on how to view and/or add discovered outputs, the agent/host for that
 webhook, the time the webhook was last received, and the numbered of
 triggered playbooks related to that webhook.
@@ -95,7 +95,7 @@ hyperlink are part of the original returned inputs from the webhook.
 **Map to Playbook Inputs tab**
 
 Remember the important note on reviewing `Create and Edit Playbook
-Inputs <../playbook-inputs/create-and-edit-playbook-inputs.rst>`__ for
+Inputs <../playbook-inputs/create-and-edit-playbook-inputs.htm>`__ for
 best practices? That is because on this tab, if you do not see any
 inputs, it's because your playbook currently does not have any inputs.
 You can add them, and they will display on this tab. And just like the

@@ -1,4 +1,4 @@
-/*<meta />*/
+﻿/*<meta />*/
 
 /*===========================================================================================================================================================
 
@@ -102,12 +102,12 @@ EXAMPLE: Since the search-bar is at the top of the topic page, it will be listed
 	--h4-font-size: 34px;
 	--h5-font-size: 26px;
 	--h6-font-size: 22px;
-	--h1-mobile-font-size: 38px;
-	--h2-mobile-font-size: 30px;
-	--h3-mobile-font-size: 28px;
-	--h4-mobile-font-size: 25px;
-	--h5-mobile-font-size: 20px;
-	--h6-mobile-font-size: 18px;
+	--h1-mobile-font-size: 34px;
+	--h2-mobile-font-size: 26px;
+	--h3-mobile-font-size: 22px;
+	--h4-mobile-font-size: 20px;
+	--h5-mobile-font-size: 18px;
+	--h6-mobile-font-size: 16px;
 	--body-font-size: 1rem;
 	--fourteen-font-size: 14px;
 	--twelve-font-size: 12px;
@@ -1748,4 +1748,3 @@ MadCap|codeSnippetBody#codesnippet
 {
 	font-size: 10pt;
 }
-

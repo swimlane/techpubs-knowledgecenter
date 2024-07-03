@@ -104,7 +104,7 @@ sighting. With the Transform Data action, you can automate this task to
 get a date/time and subtract 90 days.
 
 First, ensure you complete `Basic
-Transformations <../../native-actions/basic-transformations/transform-data.rst>`__
+Transformations <../../native-actions/basic-transformations/transform-data.htm>`__
 instructions, as they are the same regardless of the option selected.
 
 #. On the THEN row, select **Adjust Date/Time**.
@@ -155,7 +155,7 @@ instructions, as they are the same regardless of the option selected.
    specific time zone.
 
    First, ensure you complete `Basic
-   Transformations <../../native-actions/basic-transformations/transform-data.rst>`__
+   Transformations <../../native-actions/basic-transformations/transform-data.htm>`__
    instructions, as they are the same regardless of the option selected.
 
    #. On the THEN row, select **Set Date/Time**.
@@ -211,7 +211,7 @@ sighting. With the Transform Data action, you can automate this task to
 get a date/time and enter a custom format.
 
 First, ensure you complete `Basic
-Transformations <../../native-actions/basic-transformations/transform-data.rst>`__
+Transformations <../../native-actions/basic-transformations/transform-data.htm>`__
 instructions, as they are the same regardless of the option selected.
 
 #. On the THEN row, select **Convert Date/Time**.

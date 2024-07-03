@@ -38,7 +38,7 @@ Record Event trigger.
 |image1|
 
 #. Click **Configure** to open the **Edit Condition** window which
-   allows you to create a condition for you flow.
+   allows you to create a condition for your flow.
 
 #. Click **CREATE YOUR FIRST CONDITION** select the property type from
    the **Record Event Trigger**.

@@ -69,7 +69,7 @@ platform, and you can perform the following:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/records/customize-the-list-of-records
    /Content/records/search-record-data
@@ -78,4 +78,3 @@ platform, and you can perform the following:
    /Content/records/correlate-records
    /Content/records/view-record-history
    /Content/records/read-only-field-behavior
-

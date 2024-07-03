@@ -21,7 +21,7 @@ and export playbooks as SSPs.
 
  
 
-Click `Turbine Classic <../../playbooks/playbooks.rst>`__ for more
+Click `Turbine Classic <../../playbooks/playbooks.htm>`__ for more
 details.
 
  
@@ -29,7 +29,7 @@ details.
 Playbook Runs Classic
 ---------------------
 
-Click `Playbook Runs <../../playbooks/playbook-runs.rst>`__ for more
+Click `Playbook Runs <../../playbooks/playbook-runs.htm>`__ for more
 information.
 
  

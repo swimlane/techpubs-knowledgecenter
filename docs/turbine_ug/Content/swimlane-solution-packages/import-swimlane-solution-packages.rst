@@ -23,7 +23,7 @@ import process.
 system administrators.
 
 If you are importing an unzipped SSP, see `Repackage an Unzipped SSP
-File <repackage-an-unzipped-ssp.rst>`__ to ensure your SSP imports
+File <repackage-an-unzipped-ssp.htm>`__ to ensure your SSP imports
 successfully.
 
 To import SSPs:

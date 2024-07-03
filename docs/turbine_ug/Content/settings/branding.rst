@@ -5,7 +5,10 @@ Branding grants your the ability to prominently feature your logo and
 co-brand your service name along with Swimlane Turbine logo. By default,
 the Swimlane Turbine logo and service name appears.
 
-To enable co-branding:
+**Note:** The **Branding** feature is behind a feature flag. To enable
+**Branding** feature flag to your account, contact Swimlane support.
+
+To enable **Branding**:
 
 -  Click **SETTINGS** in the Admin panel, and click **Branding**.
 

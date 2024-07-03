@@ -7,11 +7,11 @@ the code yourself?
 You can use advanced transformations to write complex JSONata
 expressions, which gives you significant flexibility to transform data
 according to your needs. See `JSONata
-Docs <https://docs.jsonata.org/overview.rstl>`__ to assist you in
+Docs <https://docs.jsonata.org/overview.html>`__ to assist you in
 writing expressions.
 
 -  To access advanced mode, complete steps 1-4 on `Basic
-   Transformations <../basic-transformations/transform-data.rst>`__ to
+   Transformations <../basic-transformations/transform-data.htm>`__ to
    open the transformation builder, then click **Switch to advanced** on
    a block.
 

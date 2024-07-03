@@ -27,7 +27,7 @@ are listed above the chart preview, and are grouped into categories.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/charts/chart-types
    /Content/charts/measures-and-dimensions
@@ -35,4 +35,3 @@ are listed above the chart preview, and are grouped into categories.
    /Content/charts/colors
    /Content/charts/sorting
    /Content/charts/drill-in
-

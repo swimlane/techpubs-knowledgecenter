@@ -28,7 +28,7 @@ administrator can:
 -  Create additional account administrators.
 
 Click `Tenant Management in Turbine
-Cloud <../cloud/turbine-cloud/tenant-management-in-turbine-cloud.rst>`__
+Cloud <../cloud/turbine-cloud/tenant-management-in-turbine-cloud.htm>`__
 for additional information.
 
 You are now a Turbine Administrator! Now what? You have access to
@@ -50,7 +50,7 @@ In SETTINGS, administrators can:
 -  Add connector keys
 -  View the number of agents and pools
 
-Click `Settings <../settings/settings.rst>`__ for additional
+Click `Settings <../settings/settings.htm>`__ for additional
 information.
 
 Permissions
@@ -85,7 +85,7 @@ roles, and groups such as:
 -  **Lock** (for records)
 -  **Restrict** (for records)
 
-Click `Permissions <../permissions/permissions.rst>`__ for additional
+Click `Permissions <../permissions/permissions.htm>`__ for additional
 information.
 
 Security Specifics
@@ -143,7 +143,7 @@ Turbine workflow consists of:
 
 For information on how applets handle workflow, and how workflow is
 updated when applets are added to applications, see `Applets and
-Workflow <../applications-and-applets/applet-builder/applets-and-workflow.rst>`__.
+Workflow <../applications-and-applets/applet-builder/applets-and-workflow.htm>`__.
 
 To view, create, or update workflow, click the Workflow icon on the
 Application or Applet Builder toolbar.
@@ -176,7 +176,7 @@ first evaluates all of the conditions in the workflow, and then
 determines a list of actions that are dependent upon how the conditions
 are met. The process then executes the defined actions.
 
-Click `Workflow <../workflow/workflow.rst>`__ for additional
+Click `Workflow <../workflow/workflow.htm>`__ for additional
 information.
 
 Widgets
@@ -190,7 +190,7 @@ own UI components that interact with Turbine or third-party endpoints.
 While not necessary for Turbine set-up, the growing set of widgets can
 help you customize records and reports.
 
-Click `Widgets <../widgets/widgets.rst>`__ for additional information.
+Click `Widgets <../widgets/widgets.htm>`__ for additional information.
 
 .. |image1| image:: ../Resources/Images/workflowicon.png
 .. |image2| image:: ../Resources/Images/zoomicons.png

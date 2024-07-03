@@ -62,7 +62,7 @@ options.
 
 On any of the CRUD actions, if you want to use any outputs outside of
 this playbook, navigate to the Outputs tab and promote the desired
-output. See `Outputs <../playbooks/actions/outputs.rst>`__ for more
+output. See `Outputs <../playbooks/actions/outputs.htm>`__ for more
 information.
 
 Create Record
@@ -171,7 +171,7 @@ Using the Search Records native action searches for actions based on the
 provided filter criteria you select. After selecting an application from
 the Inputs tab, a condition builder is available. The function of this
 condition/filter builder is the same as `building filters in
-records <../records/search-record-data.rst>`__. Use the radio buttons at
+records <../records/search-record-data.htm>`__. Use the radio buttons at
 the bottom of the window to return the entire record or just specific
 fields.
 

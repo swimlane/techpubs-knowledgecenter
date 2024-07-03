@@ -72,7 +72,7 @@ Basic Transformation Use Cases
 ------------------------------
 
 See `Transform Data Action - Date and Time Use
-Cases <../../use-cases/native-action-use-cases/transform-data-date-time-examples.rst>`__
+Cases <../../use-cases/native-action-use-cases/transform-data-date-time-examples.htm>`__
 for examples.
 
  
@@ -90,7 +90,6 @@ example.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/native-actions/advanced-transformations/advanced-transformation-options
-

@@ -15,7 +15,7 @@ Conditions
 
  
 
-While the default `flow <orchestration/flows.rst>`__ for all playbook
+While the default `flow <orchestration/flows.htm>`__ for all playbook
 actions is **On Complete**, the Condition action uses IF and ELSE flows,
 which apply conditional logic to a block of actions that is either
 TRUE (IF) or FALSE (ELSE). Based on outputs from previous actions, the
@@ -43,7 +43,7 @@ work? 
 **Example:** 
 
 See `Automated
-Remediation <use-cases/automated-remediation-use-case.rst>`__ to view
+Remediation <use-cases/automated-remediation-use-case.htm>`__ to view
 how the following Condition native action is used in a use case. These
 steps guide you on how to add and configure a condition.
 
@@ -81,11 +81,11 @@ Examples
 ~~~~~~~~
 
 -  Click `Automated Remediation Use
-   Case <use-cases/automated-remediation-use-case.rst>`__ for an example
+   Case <use-cases/automated-remediation-use-case.htm>`__ for an example
    on updating an existing case with remediation actions.
 
 -  Click `If/Else Condition Use
-   Case <../use-cases/native-action-use-cases/ifelse-use-case.rst>`__
+   Case <../use-cases/native-action-use-cases/ifelse-use-case.htm>`__
    for an example to execute if an HTTP request comes back with a
    specific status code.
 

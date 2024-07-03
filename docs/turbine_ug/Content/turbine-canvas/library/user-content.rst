@@ -43,9 +43,9 @@ available:
 
 Use the ellipsis icon to **Delete** or **Deploy** the content.
 
-See `Publish Playbook <../orchestration/canvas-playbooks.rst#Publish>`__
+See `Publish Playbook <../orchestration/canvas-playbooks.htm#Publish>`__
 and `Publish
-Components <../orchestration/canvas-components.rst#Publish>`__ for
+Components <../orchestration/canvas-components.htm#Publish>`__ for
 details on how to publish either from their respective canvas's and
 homepages.
 

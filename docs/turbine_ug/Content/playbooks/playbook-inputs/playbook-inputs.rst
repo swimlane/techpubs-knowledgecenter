@@ -14,9 +14,8 @@ This section covers features including:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/playbook-inputs/create-and-edit-playbook-inputs
    /Content/playbooks/playbook-inputs/remove-playbook-inputs
    /Content/playbooks/playbook-inputs/promote-playbook-inputs-to-outputs
-

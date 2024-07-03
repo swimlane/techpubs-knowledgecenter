@@ -22,14 +22,14 @@ Use the controlled Script native action and write with Python to:
 
 Turbine uses Python 3.11 and accesses all the standard libraries that
 come with Python, including the `Python Standard
-Library <https://docs.python.org/3.11/library/index.rstl>`__. You can
-also use `Numpy <https://numpy.org/doc/stable/index.rstl>`__ version
+Library <https://docs.python.org/3.11/library/index.html>`__. You can
+also use `Numpy <https://numpy.org/doc/stable/index.html>`__ version
 1.25.2, and `Pendulum <https://pendulum.eustace.io/>`__ version 2.1.2.
 
 When configuring inputs, consider using the Swimlane Python Chatbot,
 which uses ChatGPT's Open AI to help you formulate transformations and
 customized Python code. See `Swimlane Python
-Chatbot <swimlane-python-chatbot.rst>`__ for information.
+Chatbot <swimlane-python-chatbot.htm>`__ for information.
 
 Script Native Action Set Up
 ---------------------------
@@ -125,14 +125,14 @@ to the left and Script to the right.
 
 The Result pane at the bottom shows the tested results. Just like
 `discovered
-outputs <../playbooks/actions/discovered-outputs-and-testing.rst>`__ in
+outputs <../playbooks/actions/discovered-outputs-and-testing.htm>`__ in
 an HTTP action, results vary. So in addition to the base of property
 types, and depending on the inputs you select, the action outputs may
 return additional properties. These are the discovered outputs, which
 you can promote and/or delete from the Outputs tab.
 
 See a `Script Test use
-case <../use-cases/native-action-use-cases/script-test-use-case.rst>`__
+case <../use-cases/native-action-use-cases/script-test-use-case.htm>`__
 for an example on testing the Script native action.
 
 Script Attachment
@@ -180,7 +180,7 @@ Use Case
 --------
 
 See a `Script Test use
-case <../use-cases/native-action-use-cases/script-test-use-case.rst>`__
+case <../use-cases/native-action-use-cases/script-test-use-case.htm>`__
 for an example on testing the Script native action.
 
 .. |image1| image:: ../../Resources/Images/canvas-script.png
@@ -188,7 +188,6 @@ for an example on testing the Script native action.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/native-actions/swimlane-python-chatbot
-

@@ -21,7 +21,7 @@ Solution Terminology
 |                                  | workspaces that enable and       |
 |                                  | enhance automation.              |
 +----------------------------------+----------------------------------+
-| Swimlane Content                 | Turbine's integrated content     |
+| Integrated Marketplace           | Turbine's integrated content     |
 |                                  | distribution platform. Content   |
 |                                  | includes solutions, components,  |
 |                                  | and connectors.                  |
@@ -87,14 +87,14 @@ Why use solutions?
 Where can I find solutions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Solutions can be found under the Swimlane Content section of the Library
-along with components and connectors.
+Solutions are located in Turbine on the Integrated Marketplace, along
+with components and connectors.
 
 Applications in Solutions
 -------------------------
 
 See `Applications and
-Applets <../applications-and-applets/applications-and-applets.rst>`__
+Applets <../applications-and-applets/applications-and-applets.htm>`__
 for details about building and managing Turbine applications and
 applets. You can use applications separately or with Turbine solutions.
 Applications can assist with threat intelligence, case and incident
@@ -107,9 +107,8 @@ solutions and/or applications.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
-   /Content/marketplace/soc-solution
-   /Content/marketplace/case-and-incident-management-application
-   /Content/marketplace/collaboration-solution
-
+   /Content/marketplace/soc-solutions-bundle
+   /Content/marketplace/collaboration-extension
+   /Content/marketplace/crafted-ai-prompts/Crafted AI Prompts

@@ -160,7 +160,7 @@ Use Cases
 ---------
 
 See `HTTP Request use
-case <../use-cases/native-action-use-cases/http-requests.rst>`__ for
+case <../use-cases/native-action-use-cases/http-requests.htm>`__ for
 examples.
 
 .. |image1| image:: ../Resources/Images/http-request-methods.png

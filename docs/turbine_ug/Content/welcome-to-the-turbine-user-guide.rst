@@ -6,8 +6,6 @@ transcends traditional SOAR by capturing hard-to-reach telemetry and
 expanding action-ability beyond the typically closed extended detection
 and response (XDR) ecosystem.
 
-Testing the pipeline with static pages
-
 How to Use this Site
 --------------------
 
@@ -18,7 +16,7 @@ you want to scan through the documentation in order.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/introduction/key-terms-and-concepts
    /Content/introduction/log-in-to-turbine

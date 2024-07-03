@@ -29,7 +29,7 @@ To review or reconfigure the application, click **Builder**.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/applications-and-applets/manage-applications-and-applets
    /Content/applications-and-applets/application-builder/application-builder

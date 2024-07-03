@@ -8,7 +8,7 @@ Currently, Swimlane supports two types of widgets: Record widgets and
 Report widgets.
 
 This topic covers Record widgets. For more about using widgets for
-reports, see `Reports Widgets. <../../../widgets/report-widgets.rst>`__
+reports, see `Reports Widgets. <../../../widgets/report-widgets.htm>`__
 
 To create record widgets:
 

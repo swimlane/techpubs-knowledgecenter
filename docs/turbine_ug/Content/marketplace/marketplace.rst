@@ -1,8 +1,8 @@
 Marketplace
 ===========
 
-Turbine hosts `connectors <connectors.rst>`__ and
-`components <components.rst>`__ in the Swimlane Content, which houses
+Turbine hosts `connectors <connectors.htm>`__ and
+`components <components.htm>`__ in the Swimlane Content, which houses
 drop-in content to boost your workflow. It's located in the Turbine
 platform for easy, manageable access.
 

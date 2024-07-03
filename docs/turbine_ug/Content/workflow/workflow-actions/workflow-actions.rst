@@ -36,7 +36,7 @@ option:
 +---------------------------+-----------+---------------------------+
 
 For more detail on each of these workflow action types, see `Create and
-Update Workflow <../create-and-update-workflow.rst>`__.
+Update Workflow <../create-and-update-workflow.htm>`__.
 
 **Note:** Some fields are not available to be defined in workflow
 actions, including variable fields like comments, HTML fields, and other
@@ -63,7 +63,6 @@ non-configurable data types.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/workflow/workflow-actions/select-workflow-action-type
-

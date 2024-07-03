@@ -11,7 +11,7 @@ creating playbooks to execute and run.
 20MiB. You should always narrow data down as much as possible for
 playbook and action performance. For more information about
 file-handling limits, click `Playbook File
-Handling <playbook-file-handling.rst>`__.
+Handling <playbook-file-handling.htm>`__.
 
 Create Playbooks
 ----------------
@@ -38,20 +38,20 @@ The playbook opens.
 
 If you want to import Swimlane Solution Package files (.ssp files), see
 `Import Swimlane Solution
-Packages <../swimlane-solution-packages/import-swimlane-solution-packages.rst>`__.
+Packages <../swimlane-solution-packages/import-swimlane-solution-packages.htm>`__.
 
 Enabled Playbook Toggle
 -----------------------
 
 To view details about how to enable/disable a playbook, click `Enable
-and Disable Playbooks <enable-and-disable-playbooks.rst>`__.
+and Disable Playbooks <enable-and-disable-playbooks.htm>`__.
 
 Select Action/Nested Playbook
 -----------------------------
 
 To add an action/nested playbook, follow the instructions on the
-`Actions <actions/actions.rst>`__ and `Nested
-Playbooks <nested-playbooks.rst>`__ pages.
+`Actions <actions/actions.htm>`__ and `Nested
+Playbooks <nested-playbooks.htm>`__ pages.
 
 .. |image1| image:: ../Resources/Images/click-playbooks.png
 .. |image2| image:: ../Resources/Images/create-a-new-playbook-button.png

@@ -16,7 +16,7 @@ administrator can:
 -  Create additional account administrators.
 
 Click `Tenant Management in Turbine
-Cloud <../cloud/turbine-cloud/tenant-management-in-turbine-cloud.rst>`__
+Cloud <../cloud/turbine-cloud/tenant-management-in-turbine-cloud.htm>`__
 for additional information.
 
 You are now a Turbine Administrator! Now what? You have access to
@@ -38,5 +38,5 @@ In SETTINGS, administrators can:
 -  Add connector keys
 -  View the number of agents and pools
 
-Click `Settings <../settings/settings.rst>`__ for additional
+Click `Settings <../settings/settings.htm>`__ for additional
 information.

@@ -13,7 +13,7 @@ discovered outputs in addition to the original outputs.
 First, Rowan adds his webhook trigger, so the webhook property data is
 available downstream in the playbook. Let's see how he sets up Script
 native action to see if there are `discovered outputs and
-testing <../../playbooks/actions/discovered-outputs-and-testing.rst>`__.
+testing <../../playbooks/actions/discovered-outputs-and-testing.htm>`__.
 
 #. Click the Action drop-down menu, select **Script**, and enter a
    title.
@@ -54,7 +54,7 @@ testing <../../playbooks/actions/discovered-outputs-and-testing.rst>`__.
    The results display, but Rowan wants to know what outputs were
    discovered that were not part of the original event outputs. Since
    Rowan already reviewed and understands what `discovered outputs and
-   testing <../../playbooks/actions/discovered-outputs-and-testing.rst>`__
+   testing <../../playbooks/actions/discovered-outputs-and-testing.htm>`__
    are, he is ready to add the discovered outputs.
 
 #. Click the check mark next to any discovered outputs to add them to

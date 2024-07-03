@@ -49,7 +49,7 @@ Ellipsis icon    Click to edit the webhook in the canvas
 
  
 
-See `Webhook Trigger <canvas-webhook-triggers.rst>`__ for specific
+See `Webhook Trigger <canvas-webhook-triggers.htm>`__ for specific
 webhook information.
 
 .. |image1| image:: ../../Resources/Images/canvas-webhooks-hp.png

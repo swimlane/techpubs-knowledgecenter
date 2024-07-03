@@ -22,11 +22,9 @@ To access the Turbine Content Library:
 
 |image1|
 
-See
-`solutions <https://docs.swimlane.com/turbine/marketplace/solutions-and-applications.rst>`__,
-`components <https://docs.swimlane.com/turbine/marketplace/components.rst>`__,
-or
-`connectors <https://docs.swimlane.com/turbine/marketplace/connectors.rst>`__
-for additional information for the Swimlane Content.
+See `solutions <../../marketplace/solutions-and-applications.htm>`__,
+`components <../../marketplace/components.htm>`__, or
+`connectors <../../marketplace/connectors.htm>`__ for additional
+information for the Swimlane Content.
 
 .. |image1| image:: ../../Resources/Images/canvas-marketplace.png

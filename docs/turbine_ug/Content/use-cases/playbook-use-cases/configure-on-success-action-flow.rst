@@ -35,7 +35,7 @@ the condition expression.
 
 To add and configure a condition expression, Alex refers to `Configure
 Inputs in Condition Expressions use
-case <configure-inputs-in-condition-expressions.rst>`__.
+case <configure-inputs-in-condition-expressions.htm>`__.
 
 .. |image1| image:: ../../Resources/Images/add-on-success-action-flow.png
 .. |image2| image:: ../../Resources/Images/on-success-action-flow-condition.png

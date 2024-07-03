@@ -63,7 +63,7 @@ needed:
 |                | formula or function.    |                         |
 |                | See `Calculation        |                         |
 |                | Builder <../calc        |                         |
-|                | ulation-builder.rst>`__ |                         |
+|                | ulation-builder.htm>`__ |                         |
 |                | for more information.   |                         |
 |                | This field is not       |                         |
 |                | available for list      |                         |

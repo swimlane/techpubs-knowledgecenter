@@ -32,10 +32,9 @@ Custom elements documentation can be found
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/widgets/widgets-editor
    /Content/widgets/report-widgets
    /Content/widgets/record-widgets
    /Content/widgets/widget-code-structure
-

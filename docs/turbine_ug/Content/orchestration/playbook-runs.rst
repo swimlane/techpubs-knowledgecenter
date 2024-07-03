@@ -26,7 +26,6 @@ click the expand arrow to the left of the **Name** column.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/playbook_runs_filter
-

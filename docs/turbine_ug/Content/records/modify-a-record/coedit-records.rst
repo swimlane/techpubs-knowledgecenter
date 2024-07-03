@@ -11,7 +11,7 @@ Coedit Records
 | |image2|
 
 If you do not want other users to modify a record while you edit it, you
-can set a lock on the record. See `Record Lock <record-lock.rst>`__ for
+can set a lock on the record. See `Record Lock <record-lock.htm>`__ for
 more information.
 
 .. |image1| image:: ../../Resources/Images/coedit_notification.png

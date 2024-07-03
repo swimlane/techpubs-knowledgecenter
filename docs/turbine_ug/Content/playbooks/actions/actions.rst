@@ -31,7 +31,7 @@ This section covers features including:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/actions/inputs
    /Content/playbooks/actions/flows-and-conditions
@@ -40,4 +40,3 @@ This section covers features including:
    /Content/playbooks/actions/repeats
    /Content/playbooks/actions/retries
    /Content/playbooks/actions/promote-items-of-arrays
-

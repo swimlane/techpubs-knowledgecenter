@@ -107,7 +107,7 @@ menu, select **Validate**.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/applications-and-applets/applet-builder/build-an-applet
    /Content/applications-and-applets/applet-builder/applets-and-workflow

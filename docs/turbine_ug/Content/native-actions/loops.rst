@@ -84,7 +84,7 @@ array applying action(s) to each item individually.
       :name: use-case
 
    See `Loops use
-   case <../use-cases/native-action-use-cases/loop-use-case.rst>`__ for
+   case <../use-cases/native-action-use-cases/loop-use-case.htm>`__ for
    examples.
 
 .. |image1| image:: ../Resources/Images/loop.png
@@ -94,7 +94,6 @@ array applying action(s) to each item individually.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/native-actions/nesting-branching-and-conditions
-

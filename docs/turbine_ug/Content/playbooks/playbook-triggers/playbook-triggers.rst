@@ -23,17 +23,16 @@ trigger type to configure and/or map data to a playbook.
 **Note:** You do not need to select a trigger before adding and
 configuring actions and conditions.
 
-**Tip:** See `Context Variables <../context-variables.rst>`__ for
+**Tip:** See `Context Variables <../context-variables.htm>`__ for
 helpful expressions when creating playbook triggers to help define
 parameters and retrieve/store specific data.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/playbook-triggers/webhook triggers
    /Content/playbooks/playbook-triggers/record-event-trigger
    /Content/playbooks/playbook-triggers/schedule-triggers
    /Content/playbooks/playbook-triggers/playbook-button-trigger
    /Content/playbooks/playbook-triggers/nested-playbook-triggers
-

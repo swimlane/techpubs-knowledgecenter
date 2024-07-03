@@ -96,7 +96,7 @@ Conclusion
 
 Max successfully enabled the record linking button. Now, he needs to
 link the records. To do this, he navigates to `Linking Records use
-case <linking-records.rst>`__.
+case <linking-records.htm>`__.
 
 Use Case 2
 ~~~~~~~~~~
@@ -177,7 +177,7 @@ Conclusion
 
 Max successfully enabled the record linking button. Now, he needs to
 link the records. To do this, he navigates to `Linking Records use
-case <linking-records.rst>`__.
+case <linking-records.htm>`__.
 
 .. |image1| image:: ../../Resources/Images/linking-record-playbook.png
 .. |image2| image:: ../../Resources/Images/select-an-application-record-linking.png

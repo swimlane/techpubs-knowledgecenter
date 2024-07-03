@@ -44,14 +44,13 @@ and filtering and then saved to show the selected information. These
 saved reports can also be shared with other users. The topics in this
 section provide information on how to create, filter, and share reports
 within Turbine. For more information, see
-`Reports <../reports/reports.rst>`__.
+`Reports <../reports/reports.htm>`__.
 
 .. |image1| image:: ../Resources/Images/workspace_full_screen.png
 .. |image2| image:: ../Resources/Images/dashboards_workspace.png
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/workspaces-and-dashboards/navigate-workspaces-and-dashboards
-

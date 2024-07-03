@@ -2,7 +2,7 @@ Nested Playbooks
 ================
 
 You can nest playbooks into other playbooks as actions. Refer to
-`Actions <actions/actions.rst>`__ for instructions to add an action to a
+`Actions <actions/actions.htm>`__ for instructions to add an action to a
 playbook.
 
 Terms

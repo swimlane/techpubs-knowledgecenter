@@ -22,7 +22,7 @@ results to the final action and broadcast a message via Slack.
 Let’s take a look!
 
 First, Zareen refers to the `Get GMail Emails
-List <get-gmail-emails-list-use-case.rst>`__ use case on how to install
+List <get-gmail-emails-list-use-case.htm>`__ use case on how to install
 and configure the Google Workspace connector. Next, she needs to use the
 Swimlane Content to install a VIC for later use in the playbook. She
 searches and installs the **Get Enrichment from VirusTotal** VIC from

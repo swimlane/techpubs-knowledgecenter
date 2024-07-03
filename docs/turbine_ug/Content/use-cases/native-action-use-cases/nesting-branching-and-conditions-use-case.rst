@@ -63,7 +63,7 @@ If Mei wants to test this before continuing to build her playbook, she
 can click the Test tab, enter the same values and click the **Test**
 button. For more information on testing scripts, Mei reviews `Discovered
 Outputs and
-Testing <../../playbooks/actions/discovered-outputs-and-testing.rst>`__.
+Testing <../../playbooks/actions/discovered-outputs-and-testing.htm>`__.
 It's time to filter those IP scores using the **Condition** native
 action. Mei wants to filter any IP scores higher than 50 to be marked as
 malicious. Anything below 50 should be marked as benign.

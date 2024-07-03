@@ -101,7 +101,7 @@ To create a section:
    such as *Single-Line, Multi-Line, Email, Telephone, or URL,* for
    example. In addition, the field type you select can have various
    Field Properties assigned. See `Select Fields and Assign Field
-   Properties <select-fields-and-assign-field-properties/select-fields-and-assign-field-properties.rst>`__
+   Properties <select-fields-and-assign-field-properties/select-fields-and-assign-field-properties.htm>`__
    for detail about fields.
 
 6. Continue to add fields and layout objects until you have your

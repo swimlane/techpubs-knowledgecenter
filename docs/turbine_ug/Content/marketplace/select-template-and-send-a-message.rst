@@ -4,29 +4,29 @@ Select a Template and Send a Message
 Before you choose a template and send a message, make sure you have
 completed the following:
 
--  Read the Collaboration Solution Overview
+-  Read the Collaboration Extension Overview
 
--  Installed and configured the Collaboration Solution
+-  Installed and configured the Collaboration Extension
 
 -  Configured any Slack or Teams webhooks, if needed
 
 -  Configured the settings asset for your selected Email_Medium
 
--  Created and configured the Collaboration Solution template(s)
+-  Created and configured the Collaboration Extension template(s)
 
 -  Optional: Installed and configured the SOC Solution and Case and
-   Incident Management (CIM) application (see
-   `SOC Solution <soc-solution.rst>`__ for details)
+   Incident Management (CIM) application (see `SOC Solutions
+   Bundle <soc-solutions-bundle.htm>`__ for details)
 
-**Note**: Installing and configuring the SOC solution is *not* a
+**Note**: Installing and configuring the SOC Solutions Bundle is *not* a
 requirement.
 
-Examples in this section use the SOC Solution and CIM app for reference,
-so this solution and application are needed to follow along with the
-documentation. Great! Now you are ready to select the desired template
-and send a message.
+Examples in this section use the SOC Solutions Bundle and CIM app for
+reference, so this solution and application are needed to follow along
+with the documentation. Great! Now you are ready to select the desired
+template and send a message.
 
-#. Navigate to WORKSPACES and click **SOC Solution**.
+#. Navigate to WORKSPACES and click **SOC Solutions**.
 
 |image1|
 
@@ -67,7 +67,7 @@ steps have been completed.
 The Send Message playbook creates a new record in the Collaboration
 Message Sender application, which then sends the message to the
 specified communication channels. Additionally, the Collaboration
-Solution Status field is set to Message Sent.
+Extension Status field is set to Message Sent.
 
 Response Handling
 -----------------
@@ -76,9 +76,9 @@ If the message has any values defined in the Action List, then the
 recipient can respond to the message with one of the predefined actions.
 Upon response, the invoking record is updated to indicate that a
 response was received and what response was selected by the recipient.
-Specifically, the Collaboration Solution Status field is set to Response
-Received and the Response Action field is set to the action that was
-selected by the recipient.
+Specifically, the Collaboration Extension Status field is set to
+Response Received and the Response Action field is set to the action
+that was selected by the recipient.
 
 **Note**: Further responses to the same message will *not* be recorded.
 You receive an automated message indicating that a response has already

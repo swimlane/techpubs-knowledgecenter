@@ -14,8 +14,7 @@ This section covers features including:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/playbook-outputs/create-playbook-outputs
    /Content/playbooks/playbook-outputs/map-playbook-outputs-to-applications
-

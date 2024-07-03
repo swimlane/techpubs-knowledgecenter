@@ -70,7 +70,7 @@ Icon      Meaning
  
 
 For more details, click `Native
-Actions <https://docs.swimlane.com/turbine/native-actions/native-actions.rst>`__
+Actions <https://docs.swimlane.com/turbine/native-actions/native-actions.htm>`__
 to learn more about individual native actions. New Canvas-specific
 features for native actions are in draft and coming soon.
 
@@ -189,7 +189,7 @@ and/or repeats to a playbook property or expression.
 
 For details, see the Configure Concatenation for Strings Without Formats
 sub-section and/or `Action
-Repeats <https://docs.swimlane.com/turbine/playbooks/actions/repeats.rst>`__.
+Repeats <https://docs.swimlane.com/turbine/playbooks/actions/repeats.htm>`__.
 
  
 
@@ -282,7 +282,7 @@ Additional Action Functions
 ---------------------------
 
 See the following `Actions
-Inputs <https://docs.swimlane.com/turbine/playbooks/actions/inputs.rst>`__
+Inputs <https://docs.swimlane.com/turbine/playbooks/actions/inputs.htm>`__
 sections for more configuration functions such as:
 
 -  Configure Concatenation for Strings without Formats
@@ -315,21 +315,21 @@ sections for more configuration functions such as:
 .. |image18| image:: ../../Resources/Images/canvas-playbook-enable-button.png
 .. |image19| image:: ../../Resources/Images/component-show-hide-component-details-icon.png
 .. |image20| image:: ../../Resources/Images/component-test-console-icon.png
-.. |image21| image:: ../../Resources/Images/component-ellipisis-icon.png
+.. |image21| image:: ../../Resources/Images/component-ellipsis-icon.png
 .. |image22| image:: ../../Resources/Images/component-hide-show-add-pane.png
 .. |image23| image:: ../../Resources/Images/component-create-component-icon.png
 .. |image24| image:: ../../Resources/Images/component-zoom-icon.png
 .. |image25| image:: ../../Resources/Images/canvas-playbook-enable-button.png
 .. |image26| image:: ../../Resources/Images/component-show-hide-component-details-icon.png
 .. |image27| image:: ../../Resources/Images/component-test-console-icon.png
-.. |image28| image:: ../../Resources/Images/component-ellipisis-icon.png
+.. |image28| image:: ../../Resources/Images/component-ellipsis-icon.png
 .. |image29| image:: ../../Resources/Images/component-hide-show-add-pane.png
 .. |image30| image:: ../../Resources/Images/component-create-component-icon.png
 .. |image31| image:: ../../Resources/Images/component-zoom-icon.png
 .. |image32| image:: ../../Resources/Images/canvas-playbook-enable-button.png
 .. |image33| image:: ../../Resources/Images/component-show-hide-component-details-icon.png
 .. |image34| image:: ../../Resources/Images/component-test-console-icon.png
-.. |image35| image:: ../../Resources/Images/component-ellipisis-icon.png
+.. |image35| image:: ../../Resources/Images/component-ellipsis-icon.png
 .. |image36| image:: ../../Resources/Images/canvas-actionconfig1.png
 .. |image37| image:: ../../Resources/Images/canvas-actionconfig2.png
 .. |image38| image:: ../../Resources/Images/canvas-action-unfulfilled.png
@@ -347,7 +347,7 @@ sections for more configuration functions such as:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/playbooks/actions/inputs
    /Content/playbooks/actions/flows-and-conditions
@@ -355,4 +355,3 @@ sections for more configuration functions such as:
    /Content/playbooks/actions/discovered-outputs-and-testing
    /Content/playbooks/actions/retries
    /Content/playbooks/actions/promote-items-of-arrays
-

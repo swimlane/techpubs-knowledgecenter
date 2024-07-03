@@ -5,7 +5,7 @@ You can create parent playbooks as triggers in nested playbooks. When an
 action is configured to call a nested playbook, the nested playbook will
 show that parent playbook as a trigger.
 
-**Warning!** Review `Nested Playbooks <../nested-playbooks.rst>`__ to
+**Warning!** Review `Nested Playbooks <../nested-playbooks.htm>`__ to
 understand the relationship of a parent and nested playbook before
 continuing.
 

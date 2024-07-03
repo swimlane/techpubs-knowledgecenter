@@ -16,6 +16,6 @@ click **Add**.
 You can modify applets in the form layout after dropping them in.
 
 For more about applets, see `Applet
-Builder <../applet-builder/applet-builder.rst>`__.
+Builder <../applet-builder/applet-builder.htm>`__.
 
 .. |image1| image:: ../../Resources/Images/add-applet.png

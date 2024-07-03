@@ -7,7 +7,7 @@ applications or applets you export also contain their associated
 workspace, dashboard, workflow, reports, and assets.
 
 If you plan to edit your SSP file after exporting it, see `Repackage an
-Unzipped SSP File <repackage-an-unzipped-ssp.rst>`__ to ensure your SSP
+Unzipped SSP File <repackage-an-unzipped-ssp.htm>`__ to ensure your SSP
 imports successfully after you work on it.
 
 **Note:** Exporting and importing SSPs can only be done by system

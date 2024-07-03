@@ -31,7 +31,6 @@ again.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/introduction/customize-your-user-profile
-

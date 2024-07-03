@@ -39,7 +39,7 @@ Add Action Flows
 #. Add an action.
 
 #. Configure the action. See `Create Actions and Configure
-   Inputs <inputs.rst>`__ for more information.
+   Inputs <inputs.htm>`__ for more information.
 
 #. | Hover over the action to display the **Action Flow** icon, then
      click the **On Success**, **On Failure**, or **On Complete** action
@@ -79,7 +79,7 @@ What’s next? Time to configure your action flow.
    | |image11|
 
 See the `Configure On Success Action Flow use
-case <../../use-cases/playbook-use-cases/configure-on-success-action-flow.rst>`__
+case <../../use-cases/playbook-use-cases/configure-on-success-action-flow.htm>`__
 for details on how to configure the action flow.
 
 **Configure Conditional Expressions**

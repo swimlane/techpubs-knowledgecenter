@@ -33,10 +33,9 @@ To lock a record:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/records/modify-a-record/restrict-records
    /Content/records/modify-a-record/coedit-records
    /Content/records/modify-a-record/manage-server-conflicts-in-records
    /Content/records/modify-a-record/lookup-and-create-references-in-records
-

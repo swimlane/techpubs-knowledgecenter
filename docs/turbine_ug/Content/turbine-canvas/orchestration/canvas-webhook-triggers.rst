@@ -201,7 +201,7 @@ Now those selected properties show in the webhook Outputs tab.
 #. Click **Apply** to save the changes.
 
 Navigate to `Discovered Outputs and
-Testing <../../playbooks/actions/discovered-outputs-and-testing.rst>`__
+Testing <../../playbooks/actions/discovered-outputs-and-testing.htm>`__
 for additional details on how to view and/or add discovered outputs from
 the playbook action level.
 

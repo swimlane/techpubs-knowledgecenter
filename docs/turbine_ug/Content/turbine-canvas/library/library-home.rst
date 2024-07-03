@@ -6,9 +6,9 @@ out-of-the-box content that Swimlane has produced for use, as well as a
 private repository that you can use to store or maintain content across
 tenants:
 
--  `User Content <user-content.rst>`__
+-  `User Content <user-content.htm>`__
 
--  `Swimlane Content <swimlane_content.rst>`__
+-  `Swimlane Content <swimlane_content.htm>`__
 
 For Turbine users who work with restrictive network environments (i.e.,
 that block all outgoing traffic from Turbine by default), ensure that
@@ -28,9 +28,9 @@ you can reach the following external hosts to function properly:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/turbine-canvas/library/user-content
    /Content/turbine-canvas/library/swimlane_content
-   /Content/marketplace/solutions-and-applications
-
+   /Content/marketplace/connectors
+   /Content/marketplace/components

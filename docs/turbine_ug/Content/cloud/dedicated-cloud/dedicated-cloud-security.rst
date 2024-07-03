@@ -54,7 +54,7 @@ Swimlane supports local user account provisioning, Open LDAP, Microsoft
 Active Directory, and SAML 2.0.
 
 For more information on how Swimlane utilizes SAML, see `Enable SAML for
-SSO <../../settings/sessions-and-security/enable-saml-for-sso.rst>`__.
+SSO <../../settings/sessions-and-security/enable-saml-for-sso.htm>`__.
 
 Routine Cloud Maintenance
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +71,7 @@ required to set up their individual 2FA prior to being able to access
 Swimlane Cloud.
 
 For more information on 2FA and Swimlane, see `Enable Two-Factor
-Authentication <../../settings/sessions-and-security/enable-two-factor-authentication.rst>`__.
+Authentication <../../settings/sessions-and-security/enable-two-factor-authentication.htm>`__.
 
 Role-Based Access Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,7 +90,7 @@ that record. If the assignment of the record changes to Group B, then
 only Group B and administrators will have access to the records.
 
 For more information about RBAC, see `Role
-Permissions <../../permissions/role-permissions.rst>`__ and the other
+Permissions <../../permissions/role-permissions.htm>`__ and the other
 permissions topics within the Administrator Guide.
 
 Access to Swimlane Cloud

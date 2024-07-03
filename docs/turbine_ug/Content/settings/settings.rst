@@ -29,9 +29,8 @@ In Settings, administrators can:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/settings/account-settings/account-settings
    /Content/settings/tenant_settings
    /Content/settings/audit-logging
-

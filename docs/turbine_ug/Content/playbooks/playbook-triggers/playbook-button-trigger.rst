@@ -5,7 +5,7 @@ A playbook button trigger is in an application. It is added as a
 Playbook Button in calling the Application.
 
 **Note:** You can also include triggers from widgets. For more
-information, see `Record Widgets <../../widgets/record-widgets.rst>`__.
+information, see `Record Widgets <../../widgets/record-widgets.htm>`__.
 
 .. _playbook-button-triggers-1:
 

@@ -27,7 +27,7 @@ Turbine workflow consists of:
 
 For information on how applets handle workflow, and how workflow is
 updated when applets are added to applications, see `Applets and
-Workflow <../applications-and-applets/applet-builder/applets-and-workflow.rst>`__.
+Workflow <../applications-and-applets/applet-builder/applets-and-workflow.htm>`__.
 
 To view, create, or update workflow, click the workflow icon on the
 Application or Applet Builder toolbar.
@@ -66,9 +66,8 @@ are met. The process then executes the defined actions.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/workflow/conditions
    /Content/workflow/workflow-actions/workflow-actions
    /Content/workflow/create-and-update-workflow
-

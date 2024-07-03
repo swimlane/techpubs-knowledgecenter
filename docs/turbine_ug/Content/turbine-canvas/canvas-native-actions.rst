@@ -18,11 +18,11 @@ Native Actions are:
 ========= ==============================
 Icon      Meaning
 ========= ==============================
-|image1|  `Condition <conditions.rst>`__
+|image1|  `Condition <conditions.htm>`__
 |image2|  Create Record
 |image3|  Create Variable
 |image4|  HTTP Request
-|image5|  `Loop <loops.rst>`__
+|image5|  `Loop <loops.htm>`__
 |image6|  Parallel
 |image7|  Script
 |image8|  Transform Data
@@ -48,7 +48,7 @@ Icon      Meaning
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/turbine-canvas/conditions
    /Content/turbine-canvas/create_variables
@@ -56,4 +56,3 @@ Icon      Meaning
    /Content/turbine-canvas/orchestration/canvas-http
    /Content/turbine-canvas/parallels
    /Content/turbine-canvas/orchestration/canvas-scripts
-

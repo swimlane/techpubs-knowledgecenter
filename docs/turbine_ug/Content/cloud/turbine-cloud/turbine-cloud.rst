@@ -10,8 +10,7 @@ infrastructure.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/cloud/turbine-cloud/turbine-cloud-security-and-compliance
    /Content/cloud/turbine-cloud/tenant-management-in-turbine-cloud
-

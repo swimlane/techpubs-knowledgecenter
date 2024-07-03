@@ -371,7 +371,7 @@ Publish Components
 ~~~~~~~~~~~~~~~~~~
 
 To publish a component to the `User
-Content <../library/user-content.rst>`__ library, there are two main
+Content <../library/user-content.htm>`__ library, there are two main
 options. First, from the Components homepage.
 
 #. Click the ellipsis icon and select **Publish**.
@@ -448,7 +448,7 @@ aware of.
 .. |image5| image:: ../../Resources/Images/component-zoom-icon.png
 .. |image6| image:: ../../Resources/Images/component-show-hide-component-details-icon.png
 .. |image7| image:: ../../Resources/Images/component-test-console-icon.png
-.. |image8| image:: ../../Resources/Images/component-ellipisis-icon.png
+.. |image8| image:: ../../Resources/Images/component-ellipsis-icon.png
 .. |image9| image:: ../../Resources/Images/components-new-comp.png
 .. |image10| image:: ../../Resources/Images/components-delete.png
 .. |image11| image:: ../../Resources/Images/components-delete-confirm-dialog.png

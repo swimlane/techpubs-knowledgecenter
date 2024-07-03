@@ -75,7 +75,7 @@ under CONNECTOR ACTION.
 
 Also, the Additional Options section displays available assets, which
 are based on the connector. The section also includes repeat property
-options. See `Action Repeats <repeats.rst>`__ for details.
+options. See `Action Repeats <repeats.htm>`__ for details.
 
 Configure Connector Properties
 ------------------------------
@@ -97,7 +97,7 @@ A dynamic value for string property types allows you to add context
 and/or repeats to a playbook property or expression.
 
 For details, see the Configure Concatenation for Strings Without Formats
-sub-section and/or `Action Repeats <repeats.rst>`__.
+sub-section and/or `Action Repeats <repeats.htm>`__.
 
 **Configure Other Values for Property Types**
 
@@ -139,7 +139,7 @@ To select pre-defined assets:
 
 **Customize Assets**
 
-See `Create Custom Assets <../../assets/create-custom-assets.rst>`__ for
+See `Create Custom Assets <../../assets/create-custom-assets.htm>`__ for
 instructions on how to create and configure a custom asset and apply it
 to a playbook.
 

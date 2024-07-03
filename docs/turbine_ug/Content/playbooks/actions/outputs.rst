@@ -53,6 +53,6 @@ Error Outputs
 -------------
 
 What happens to your action outputs if your action fails? See
-`Discovered Outputs and Testing <discovered-outputs-and-testing.rst>`__
+`Discovered Outputs and Testing <discovered-outputs-and-testing.htm>`__
 for more information. That section provides details about Discovered
 Outputs, Action Testing, and Error Outputs.

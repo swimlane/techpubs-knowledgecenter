@@ -16,8 +16,8 @@ conditional statements.
 Let's take a look!
 
 As an orchestrator, Aaliyah already knows how to create and configure
-her `playbook <../../playbooks/playbooks.rst>`__ and add an
-`action <../../playbooks/actions/actions.rst>`__. So she's ready to jump
+her `playbook <../../playbooks/playbooks.htm>`__ and add an
+`action <../../playbooks/actions/actions.htm>`__. So she's ready to jump
 right in!
 
 #. First, select the **HTTP Request** native action and choose an **On

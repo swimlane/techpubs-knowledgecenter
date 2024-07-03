@@ -8,7 +8,7 @@ Eli is an orchestrator who wants to test and preview outputs from a
 webhook event before configuring and saving the rest of his playbook.
 Luckily, as an orchestrator, Eli knows that testing a webhook event is
 like testing `discovered outputs and
-testing <../../playbooks/actions/discovered-outputs-and-testing.rst>`__.
+testing <../../playbooks/actions/discovered-outputs-and-testing.htm>`__.
 Let's watch how he tests his webhook event!
 
 Eli has already created his playbook and added a Webhook trigger. After
@@ -28,7 +28,7 @@ configure.
 The results display, but Eli wants to know which outputs were discovered
 that were not part of the original event outputs. Since Eli already
 reviewed and understands what `discovered outputs and
-testing <../../playbooks/actions/discovered-outputs-and-testing.rst>`__
+testing <../../playbooks/actions/discovered-outputs-and-testing.htm>`__
 are, he is ready to add the discovered outputs.
 
 #. Click the check mark next to any discovered outputs to add them to

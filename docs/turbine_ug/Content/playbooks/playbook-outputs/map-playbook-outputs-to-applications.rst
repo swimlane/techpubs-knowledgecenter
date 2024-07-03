@@ -66,7 +66,7 @@ There are three possible scenarios that can occur with record linking
 when mapping playbook outputs to an application.
 
 See `Record Use
-Cases <../../use-cases/record-use-cases/record-use-cases.rst>`__ for
+Cases <../../use-cases/record-use-cases/record-use-cases.htm>`__ for
 details.
 
 .. |image1| image:: ../../Resources/Images/select-an-application-record-linking.png

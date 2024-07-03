@@ -39,7 +39,7 @@ Icon      Meaning
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/native-actions/basic-transformations/transform-data
    /Content/native-actions/advanced-transformations/advanced-transformations-old
@@ -48,4 +48,3 @@ Icon      Meaning
    /Content/native-actions/ifelse-conditions
    /Content/native-actions/scripts
    /Content/native-actions/variables
-

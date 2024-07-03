@@ -51,19 +51,30 @@ To access an installed connector:
 #. On ORCHESTRATION, click **Connectors**.
    |image3|
 
+#. The CONNECTORS page opens with available connectors. The CONNECTORS
+   tab shows the number of active connectors.
+
+   |image4|
+
 2. Click the plus icon to upload a connector.
 
 3. | Click **Browse** or click and drag a connector to the window.
-   | |image4|
+   | |image5|
 
    **Tip:** Click **Upload more connectors** to continue adding
    connectors, or click **I'm done adding connectors**.
 
    | The connector uploads.
-   | |image5|
+   | |image6|
+
+4. Now, new connectors are available.
+
+   |image7|
 
 .. |image1| image:: ../Resources/Images/find-a-connector.png
 .. |image2| image:: ../Resources/Images/connector-details.png
 .. |image3| image:: ../Resources/Images/connectors-nav-pane.png
-.. |image4| image:: ../Resources/Images/connector-upload.png
-.. |image5| image:: ../Resources/Images/connector-upload-complete.png
+.. |image4| image:: ../Resources/Images/connector-home-page.png
+.. |image5| image:: ../Resources/Images/connector-upload.png
+.. |image6| image:: ../Resources/Images/connector-upload-complete.png
+.. |image7| image:: ../Resources/Images/connector-add-extra-connector.png

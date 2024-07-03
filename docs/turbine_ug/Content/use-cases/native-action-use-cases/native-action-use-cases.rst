@@ -9,7 +9,7 @@ scenario within Turbine.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/use-cases/native-action-use-cases/transform-data-date-time-examples
    /Content/use-cases/native-action-use-cases/http-requests
@@ -20,4 +20,3 @@ scenario within Turbine.
    /Content/use-cases/native-action-use-cases/nesting-branching-and-conditions-use-case
    /Content/use-cases/native-action-use-cases/get-gmail-emails-list-use-case
    /Content/use-cases/native-action-use-cases/get-attachment-ids-as-a-file-use-case
-

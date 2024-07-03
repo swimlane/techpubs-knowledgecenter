@@ -100,6 +100,6 @@ To delete assets:
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/assets/create-custom-assets

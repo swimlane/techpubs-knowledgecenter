@@ -10,11 +10,10 @@ within Turbine.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/reports/keyword-search-and-filter
    /Content/reports/create-and-save-reports
    /Content/reports/edit-reports
    /Content/reports/share-reports
    /Content/charts/charts
-

@@ -14,7 +14,7 @@ First
 -----
 
 First, Alex repeats steps 1-4 from `Get GMail Emails
-List <get-gmail-emails-list-use-case.rst>`__\ . To accomplish getting
+List <get-gmail-emails-list-use-case.htm>`__\ . To accomplish getting
 email attachments in a file, Alex needs to use a series of Google
 connector actions. However, for best practices, Alex is going to use the
 Turbine Loop native action to ensure data iterates to receive an array
@@ -26,7 +26,7 @@ Let's Dive In
 -------------
 
 After completing steps 1-4 from `Get GMail Emails
-List <get-gmail-emails-list-use-case.rst>`__, Alex follows these steps:
+List <get-gmail-emails-list-use-case.htm>`__, Alex follows these steps:
 
 #. Select an **On Success** action flow, and then add the **Loop**
    native action.

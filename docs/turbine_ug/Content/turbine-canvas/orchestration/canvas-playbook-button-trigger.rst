@@ -7,7 +7,7 @@ a new flow with the playbook button trigger. You cannot add this type of
 trigger to an existing workflow.
 
 **Note:** You can also include triggers from widgets. For more
-information, see `Record Widgets <../../widgets/record-widgets.rst>`__.
+information, see `Record Widgets <../../widgets/record-widgets.htm>`__.
 
 To trigger a playbook with a playbook button, navigate to APPLICATIONS &
 APPLETS. Either select an existing application or click the plus icon.

@@ -8,7 +8,7 @@ users.
 
 You can create a new report from either APPLICATION RECORDS or REPORTS.
 For details on how to create a new report, go to `Create and Save
-Reports <create-and-save-reports.rst>`__.
+Reports <create-and-save-reports.htm>`__.
 
 Editing a Report
 ----------------

@@ -7,9 +7,8 @@ Swimlane Turbine system.
 
 .. toctree::
    :titlesonly:
-   
+   :caption: Children:
 
    /Content/swimlane-solution-packages/import-swimlane-solution-packages
    /Content/swimlane-solution-packages/export-swimlane-solution-packages
    /Content/swimlane-solution-packages/repackage-an-unzipped-ssp
-

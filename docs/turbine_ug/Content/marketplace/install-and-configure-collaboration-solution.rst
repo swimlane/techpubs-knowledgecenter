@@ -16,7 +16,7 @@ create context-aware messages from predefined templates to send to
 external messaging systems, such as email, Slack, and/or Microsoft Teams
 for processing by Swimlane, or non-Swimlane, users. For an additional
 information, navigate to `Collaboration
-Solution <collaboration-solution.rst>`__.
+Solution <collaboration-solution.htm>`__.
 
 Start by installing the solution.
 
@@ -182,7 +182,7 @@ steps:
 
 #. In the navigation pane, click **APPLICATIONS & APPLETS**.
 
-#. Click \ **Case and Incident Management**\ .
+#. Click **Case and Incident Management** .
 
 The CIM application opens.
 
