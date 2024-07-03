@@ -17,13 +17,13 @@ This is a dummy repository.
    /Content/best-way-to-start/best-way-to-start
    /Content/workspaces-and-dashboards/create-or-edit-workspaces
    /Content/workspaces-and-dashboards/dashboards
+   /Content/hero-ai/hero-ai
    /Content/records/records
    /Content/reports/reports
    /Content/applications-and-applets/applications-and-applets
    /Content/orchestration/orchestration
    /Content/turbine-canvas/library/library-home
+   /Content/marketplace/solutions-and-applications
    /Content/workspaces-and-dashboards/workspace-management_new
    /Content/use-cases/use-cases
    /Content/accessibility/accessibility-conformance-report
-
-
