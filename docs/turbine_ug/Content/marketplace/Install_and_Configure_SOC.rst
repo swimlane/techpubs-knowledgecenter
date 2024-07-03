@@ -413,43 +413,43 @@ Case and Incident Management Data Mappings - Walk through
    .. container::
       :name: root
 
-.. |image1| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC.png
+.. |image1| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC.png
    :class: img_1
-.. |image2| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_1.png
+.. |image2| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_1.png
    :class: img_2
-.. |image3| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_2.png
+.. |image3| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_2.png
    :class: img_3
-.. |image4| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_3.png
+.. |image4| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_3.png
    :class: img_4
-.. |image5| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_4.png
+.. |image5| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_4.png
    :class: img_5
-.. |image6| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_5.png
+.. |image6| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_5.png
    :class: img_6
-.. |image7| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_6.png
+.. |image7| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_6.png
    :class: img_7
-.. |image8| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_7.png
+.. |image8| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_7.png
    :class: img_8
-.. |image9| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_8.png
+.. |image9| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_8.png
    :class: img_9
-.. |image10| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_9.png
+.. |image10| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_9.png
    :class: img_10
-.. |image11| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_10.png
+.. |image11| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_10.png
    :class: img_11
-.. |image12| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_11.png
+.. |image12| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOCC_11.png
    :class: img_12
-.. |image13| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_12.png
+.. |image13| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_12.png
    :class: img_13
-.. |image14| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_13.png
+.. |image14| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_13.png
    :class: img_14
-.. |image15| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_14.png
+.. |image15| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_14.png
    :class: img_15
-.. |image16| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_15.png
+.. |image16| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_15.png
    :class: img_16
-.. |image17| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_16.png
+.. |image17| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_16.png
    :class: img_17
-.. |image18| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_17.png
+.. |image18| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_17.png
    :class: img_18
-.. |image19| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_18.png
+.. |image19| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_18.png
    :class: img_19
-.. |image20| image:: ../Resources/Images/Install%20and%20Configure%20SOC%20Solutions%20for%20Canvas/Install%20and%20Configure%20SOC_19.png
+.. |image20| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvass/Install_and_Configure_SOC.png
    :class: img_20

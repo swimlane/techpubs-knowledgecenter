@@ -178,5 +178,5 @@ The Case and Incident Management solution:
    :titlesonly:
    :caption: Children:
 
-   /Content/marketplace/Install and Configure SOC
+   /Content/marketplace/Install_and_Configure_SOC
    /Content/marketplace/case-and-incident-management-application
