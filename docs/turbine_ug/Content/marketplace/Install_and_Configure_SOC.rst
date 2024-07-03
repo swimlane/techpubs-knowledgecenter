@@ -204,6 +204,7 @@ following steps:
 #. Find the Placeholder action node and select it.
 
 #. | Select the Component dropdown menu and choose your Component.
+   
    |image7|
 
 #. Save the playbook.
@@ -261,8 +262,8 @@ permalinks, and so on for that observable type.
 
    b. Add new enrichment sources from the Components menu.
 
-      #. Click "Edit" and map in "inputs.observable" as a playbook
-           property for each new enrichment source.
+      #. Click "Edit" and map in "inputs.observable" as a playbook property for each new enrichment source.
+      
          |image12|
 
    c. After removing or adding new enrichment sources, edit the
@@ -271,8 +272,7 @@ permalinks, and so on for that observable type.
         an append action in the Aggregate Enrichments action.
       |image13|
 
-      Hint: Any append action whose target is $DELETED must be
-         removed.
+      Hint: Any append action whose target is $DELETED must be removed.
 
 #. Ensure that your enrichment assets are configured on the Assets page.
 
@@ -332,7 +332,8 @@ components directly:
       i.  mycompany.com, outlook.com, swimlane.com, o365.com.
 
       ii. 10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12.
-      |image15|
+   
+   |image15|
 
 #. Open the TI Primary Intelligence Providers asset.
 
@@ -399,8 +400,8 @@ Option 2 - Bulk Mappings (Advanced Transformations)
 #. Map this object as a playbook property to Write to CIM Record ->
    Update Fields.
 
-| |image19|
-| |image20|
+|image19|
+|image20|
 
 Case and Incident Management Data Mappings - Walk through
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
