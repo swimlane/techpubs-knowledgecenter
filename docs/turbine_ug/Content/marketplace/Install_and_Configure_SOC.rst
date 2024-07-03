@@ -118,8 +118,6 @@ Adding a New Alert Ingestion Component (Pull Alerts)
    If your tenant has both Classic and Canvas playbooks, this menu will
    be “Playbooks (NEW)”.
 
-   .
-
 #. Open the Bulk Ingest Alerts Playbook.
 
 #. Add a schedule/cron trigger .
@@ -206,7 +204,7 @@ following steps:
 #. Find the Placeholder action node and select it.
 
 #. | Select the Component dropdown menu and choose your Component.
-   | |image7|
+   |image7|
 
 #. Save the playbook.
 
@@ -263,17 +261,17 @@ permalinks, and so on for that observable type.
 
    b. Add new enrichment sources from the Components menu.
 
-      #. | Click "Edit" and map in "inputs.observable" as a playbook
+      #. Click "Edit" and map in "inputs.observable" as a playbook
            property for each new enrichment source.
-         | |image12|
+         |image12|
 
-   c. | After removing or adding new enrichment sources, edit the
+   c. After removing or adding new enrichment sources, edit the
         Aggregate Enrichments action to reflect the changes you have
         made. Each component's Enrichments property should be mapped to
         an append action in the Aggregate Enrichments action.
-      | |image13|
+      |image13|
 
-      #. Hint: Any append action whose target is $DELETED must be
+      Hint: Any append action whose target is $DELETED must be
          removed.
 
 #. Ensure that your enrichment assets are configured on the Assets page.
@@ -333,7 +331,8 @@ components directly:
 
       i.  mycompany.com, outlook.com, swimlane.com, o365.com.
 
-      ii. 10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12.\ |image15|
+      ii. 10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12.
+      |image15|
 
 #. Open the TI Primary Intelligence Providers asset.
 
@@ -406,12 +405,9 @@ Option 2 - Bulk Mappings (Advanced Transformations)
 Case and Incident Management Data Mappings - Walk through
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. container:: iframe
+.. raw:: html
 
-   You need to enable JavaScript to run this app.
-
-   .. container::
-      :name: root
+   <iframe src="https://app.teamwalnut.com/player/?demoId=82a6bead-c76f-441f-bc26-7beb6b321ffa&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
 
 .. |image1| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC.png
    :class: img_1
@@ -451,5 +447,5 @@ Case and Incident Management Data Mappings - Walk through
    :class: img_18
 .. |image19| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvas/Install_and_Configure_SOC_18.png
    :class: img_19
-.. |image20| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvass/Install_and_Configure_SOC.png
+.. |image20| image:: ../Resources/Images/Install_and_Configure_SOC_Solutions_for_Canvass/Install_and_Configure_SOC_19.png
    :class: img_20
