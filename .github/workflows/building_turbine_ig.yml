@@ -1,16 +1,16 @@
-name: Build Sphinx Docs for Another Folder
+name: Build Sphinx Docs for Turbine IG
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'docs/turbine_ig/**'
+      - 'docs/tpi_guide/**'
   pull_request:
     branches:
       - main
     paths:
-      - 'docs/turbine_ig/**'
+      - 'docs/tpi_guide/**'
 
 jobs:
   build:
@@ -29,15 +29,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install sphinx
-        pip install -r docs/another_folder/requirements.txt
+        pip install sphinx-rtd-theme
 
     - name: Build documentation
       run: |
-        cd docs/turbine_ig
+        cd docs/tpi_guide
         make html
 
     - name: Upload HTML
       uses: actions/upload-artifact@v4
       with:
         name: Sphinx-HTML
-        path: docs/turbine_ig/_build/html
+        path: docs/tpi_guide/_build/html

@@ -11,7 +11,7 @@ author = 'Swimlane'
 release = '24.2'
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration test
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -28,6 +28,7 @@ root_doc = 'index'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+#read the docs theme
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['../../_static']
 html_last_updated_fmt= ''
