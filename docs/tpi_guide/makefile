@@ -7,7 +7,7 @@ SPHINXBUILD = sphinx-build
 HTMLBUILDDIR = _build
 #PDFBUILDDIR = pdf
 
-# Default target: build HTML
+# Default target: build HTML and store
 html:
 	$(SPHINXBUILD) -M html . $(HTMLBUILDDIR)
 
