@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths:
-      - 'docs/turbine_ig/**'
+      - 'docs/tpi_guide/**'
   pull_request:
     branches:
       - main
     paths:
-      - 'docs/turbine_ig/**'
+      - 'docs/tpi_guide/**'
 
 jobs:
   build:
@@ -33,11 +33,11 @@ jobs:
 
     - name: Build documentation
       run: |
-        cd docs/turbine_ig
+        cd docs/tpi_guide
         make html
 
     - name: Upload HTML
       uses: actions/upload-artifact@v4
       with:
         name: Sphinx-HTML
-        path: docs/turbine_ig/_build/html
+        path: docs/tpi_guide/_build/html
