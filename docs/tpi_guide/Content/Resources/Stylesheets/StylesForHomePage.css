@@ -1,0 +1,573 @@
+﻿/*<meta />*/
+
+/*===========================================================================================================================================================
+
+Hello! If this is your first time looking at a stylesheet within the text editor view, what you are reading right now is a "comment". Comments are added throughout this stylesheet with the purpose of making the source code easier to understand, comments will not be interpreted during the compile process. Since comments are not interpreted during the compile process, feel free to add or remove any comments.
+
+For help with MadCap Flare go to Help Ribbon > Topics Section > Open Help. Alternatively visit the Flare Online Help at help.madcapsoftware.com
+
+If you have any questions regarding how to work with this stylesheet or template project, please contact MadCap Technical Support. 
+https://www.madcapsoftware.com/support/contact-options.aspx
+
+NOTE: Generally, this stylesheet has elements listed out in the order that they appear in the topic from top to bottom. The exception are General styles which are at the top and the stylesheet mediums which are at the bottom.
+
+EXAMPLE: Since the Topic/Banner image is at the top of the home page, it will be listed closer to the top of this stylesheet. While, the footer will be written towards the bottom. 
+
+===========================================================================================================================================================*/
+
+/*==Home Page General Styles==*/
+
+h1,
+h2
+{
+	color: var(--white);
+}
+
+p
+{
+	color: var(--grey-2);
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+.center
+{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	float: none !important;
+	text-align: center;
+}
+
+.off-canvas-content .main-section > .outer-row
+{
+	max-width: 100%;
+	padding: 0;
+}
+
+/*==Mad Cap proxy/editor assigned styles==*/
+
+MadCap|searchBarProxy
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	float: none;
+	width: 50%;
+}
+
+MadCap|topicToolbarProxy
+{
+	float: none;
+}
+
+MadCap|menuProxy.menu1
+{
+	mc-toc-depth: 1;
+	mc-context-sensitive: True;
+}
+
+MadCap|menuProxy.menu2
+{
+	mc-toc-depth: 1;
+	mc-context-sensitive: True;
+}
+
+html.home-page
+{
+	mc-community-features: disabled;
+}
+
+/* Home page side nav remove styles */
+
+.sidenav-wrapper {
+	display: none;
+}
+
+/* Global search container */
+div.search-container .search
+{
+	display: none; /* temporary hide */
+}
+
+.body-container {
+	padding: 0;
+}
+
+/* Home page header styles */
+
+nav.title-bar .outer-row
+{
+	max-width: 66%;
+}
+
+
+/*==Responsive Header Styles==*/
+
+#contentBody > .responsive-header
+{
+	background-color: transparent;
+}
+
+/*==Home Page Hero Section==*/
+
+div.topic-hero	/*This is the first Hero/Banner on the Home Page - To replace the banner image with your own, change background-image property*/
+{
+	height: 500px;
+	padding-bottom: 150px;
+	padding-top: 140px;
+	background-color: #d3d3d3;
+	background-image: url('../Images/Assets/Background/main-banner@2x.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center 0;
+}
+
+div.topic-hero h1 {
+	margin-top: 0;
+}
+
+/*==Search bar elements==*/
+
+.search-field	/*The box-shadow property is applied to style to provide shadow on the search bar*/
+{
+	box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+div.search-container
+{
+	margin-top: -36px;
+	margin-bottom: 100px;
+}
+
+.search-bar._Skins_SearchHome.mc-component .search-field
+{
+	padding-left: 25px;
+}
+
+.search-bar._Skins_SearchHome.mc-component .search-field:focus
+{
+	outline: none;
+}
+
+/*==Home Tiles section==*/
+
+div.home-tiles	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div.home-tiles::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.home-tiles::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.home-tiles > div
+{
+	overflow: hidden;
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 60px 10px;
+	-moz-border-radius: 20x;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	background: -o-radial-gradient(50% -28.09%, 141.63% 141.63%, var(--deep-blue) 39.33%, var(--dark-blue) 78.28%, var(--blue) 100%);
+	background: radial-gradient(141.63% 141.63% at 50% -28.09%, var(--deep-blue) 39.33%, var(--dark-blue) 78.28%, var(--blue) 100%);
+}
+
+div.home-tiles > div:hover	/*When hovering over a home-tile, these properties apply*/
+{
+    background: var(--white);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+div.home-tiles > div:hover .tile-title a,
+div.home-tiles > div:hover .tile-content {
+	color: var(--grey-1);
+}
+
+div.home-tiles > div:hover .tile-title a:hover {
+	color: var(--pink);
+}
+
+div.home-tiles > div:nth-child(1)
+{
+	width: 16.667%;
+	margin-left: 25%;
+}
+
+div.home-tiles > div:nth-child(2)
+{
+	width: 16.667%;
+	margin-left: 1%;
+}
+
+div.home-tiles > div:nth-child(3)
+{
+	width: 16.667%;
+	margin-left: 1%;
+}
+
+/*=Elements for text contained within each home-tile=*/
+
+p.tile-title
+{
+	text-align: center;
+	color: var(--grey-4);
+	font-size: 1.4em;
+}
+
+p.tile-content
+{
+	text-align: center;
+	color: var(--grey-4);
+	font-size: 0.8em;
+}
+
+p.tile-items
+{
+	color: var(--grey-4);
+	font-size: 0.7em;
+	text-align: center;
+}
+
+div.home-tiles a	/*Complex Selector: Any anchor (links) tags that are within div.home-tiles will have the following properties*/
+{
+	text-decoration: none;
+	color: var(--grey-4);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+div.home-tiles a:hover	/*Complex Selector: When hovering over links within the home tiles the following properties will apply.*/
+{
+	color: var(--pink);
+}
+
+/*=Info-container section=*/
+
+div.info-container	/*div.info-container contains the first Hero/Banner on the Home Page - To replace the banner image with your own, point the background-image property to your own image.*/
+{
+	margin-left: auto;
+	margin-top: 100px;
+	margin-right: auto;
+	padding-bottom: 75px;
+	padding-top: 100px;
+	box-shadow: inset -1px 1px 17px 0px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	color: #fff;
+	background-color: #292f42;
+	/*Create the parallax scrolling effect*/
+	background-attachment: fixed;
+	background-position: center 0;
+	background-image: url('../Images/Assets/Background/third-section-img@2x.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.info-section	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.info-section::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.info-section::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.info-section > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.info-section > div:nth-child(1)
+{
+	width: 25%;
+	margin-left: 8.3333%;
+}
+
+div.info-section > div:nth-child(2)
+{
+	width: 25%;
+	margin-left: 2.999%;
+}
+
+div.info-section > div:nth-child(3)	/*Div that contains "Tips"*/
+{
+	width: 33.333%;
+	margin-left: 2.999%;
+}
+
+div.info-container p	/*Complex Selector: Any <p> that is contained within div.info-container will have the following properties*/
+{
+	color: #fff;
+}
+
+/*=Elements for content contained within each info section=*/
+
+p.info-title
+{
+	font-size: 2em;
+	line-height: 1em;
+}
+
+p.info-content
+{
+	font-size: 0.8em;
+}
+
+p.tip	/*Paragraph style used for the Tips */
+{
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	background-image: url('../Images/Assets/Icons/MainIcons/Tips-white.png');
+	background-position: 15px center;
+	background-repeat: no-repeat;
+	border: solid 1px #fff;
+	border-radius: 6px;
+	line-height: 1em;
+	overflow: hidden;
+	padding: 15px 0px 15px 60px;
+	text-align: left;
+	margin: 5px 30px 5px 0;
+}
+
+/*This is used as a fix for an issue in Chrome regarding the parallax effect and foundation*/
+
+.off-canvas-content,
+.off-canvas-wrapper
+{
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+}
+
+div.home-tiles > div:nth-child(4)
+{
+	width: 8.3333%;
+	margin-left: 0%;
+}
+
+/*===========================================================================================================================================================
+Styles after this point are styles that are for specific mediums. If any additional styles are added to this template they will be listed after mediums.
+[@media tablet] declares styles that will apply when the screen is in tablet view
+[@media mobile] declares styles that will apply when the screen is in mobile view
+===========================================================================================================================================================*/
+
+@media tablet
+{
+	#content-section .right-section,
+	#content-section .left-section
+	{
+		padding: 0;
+	}
+	
+	.title-bar-section .menu-icon-container .menu-icon {
+		display: none; /* hide hamburger menu from home page */
+	}
+	
+	nav.title-bar .outer-row
+	{
+		max-width: 92%;
+	}
+
+	p.info-title
+	{
+		font-size: 2em;
+	}
+
+	p.info-content
+	{
+		font-size: 1em;
+	}
+
+	div.home-tiles > div
+	{
+		float: left;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		background-color: transparent;
+		transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+		/*Adds transition animation when switching between screen sizes*/
+		-moz-border-radius: 20x;
+		-webkit-border-radius: 20px;
+		border-radius: 20px;
+		border: 1px solid #d3d3d3;
+		padding: 60px 10px;
+	}
+
+	div.home-tiles > div:nth-child(1)
+	{
+		width: 32%;
+		margin-left: 1%;
+	}
+
+	div.home-tiles > div:nth-child(2)
+	{
+		width: 32%;
+		margin-left: 1%;
+	}
+
+	div.home-tiles > div:nth-child(3)
+	{
+		width: 32%;
+		margin-left: 1%;
+	}
+
+	div.info-section > div
+	{
+		text-align: center;
+	}
+
+	div.info-section > div:nth-child(1)
+	{
+		width: 100%;
+		margin-left: 0%;
+		margin-bottom: 10%;
+		margin-top: 5%;
+	}
+
+	div.info-section > div:nth-child(2)
+	{
+		width: 100%;
+		margin-left: 0%;
+		margin-bottom: 5%;
+	}
+
+	div.info-section > div:nth-child(3)
+	{
+		width: 100%;
+		margin-left: 0%;
+	}
+	
+	p.tip {
+		margin: 5px 30px;	
+	}
+
+	div.home-tiles > div:nth-child(4)
+	{
+		width: 8.3333%;
+		margin-left: 0%;
+	}
+}
+
+@media mobile
+{
+	#content-section
+	{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	
+	.title-bar-section .menu-icon-container .menu-icon {
+		display: none; /* hide hamburger menu from home page */
+	}
+	
+	nav.title-bar .outer-row
+	{
+		max-width: 82%;
+	}
+
+	div.search-container
+	{
+		margin-bottom: 50px;
+	}
+
+	p.tile-title
+	{
+		font-size: 1.2em;
+	}
+
+	p.info-title
+	{
+		font-size: 2em;
+	}
+
+	p.info-content
+	{
+		font-size: 1em;
+	}
+
+	div.home-tiles > div
+	{
+		margin-top: 2%;
+	}
+
+	div.home-tiles > div:nth-child(1)
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	div.home-tiles > div:nth-child(2)
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	div.home-tiles > div:nth-child(3)
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	div.info-section > div
+	{
+		text-align: center;
+		padding: 0 20px;
+	}
+
+	div.info-section > div:nth-child(1)
+	{
+		width: 100%;
+		margin-left: 0%;
+		margin-bottom: 10%;
+		margin-top: 5%;
+	}
+
+	div.info-section > div:nth-child(2)
+	{
+		width: 100%;
+		margin-left: 0%;
+		margin-bottom: 5%;
+	}
+
+	div.info-section > div:nth-child(3)
+	{
+		width: 100%;
+		margin-left: 0%;
+	}
+
+	div.home-tiles > div:nth-child(4)
+	{
+		width: 8.3333%;
+		margin-left: 0%;
+	}
+}

@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links */
 a {
-    color: #131724; /* Lighter link color */
+    color: #9b59b6; /* Lighter link color */
 }
 
 /* Code blocks */
@@ -194,3 +194,4 @@ div.document {
 .checkbox-label {
     margin-left: 10px;
 }
+
