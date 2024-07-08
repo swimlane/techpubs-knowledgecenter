@@ -30,6 +30,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install sphinx
         pip install sphinx-rtd-theme
+        pip install readthedocs-sphinx-search
 
     - name: Build documentation
       run: |
