@@ -28,7 +28,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+<<<<<<< HEAD
         pip install -r docs/requirements.txt
+=======
+        pip install -r ../requirements.txt
+>>>>>>> 39707029079b36b817430fb86b729a199df6c7ca
 
     - name: Build documentation
       run: |
