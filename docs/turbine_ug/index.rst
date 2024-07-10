@@ -3,8 +3,6 @@ Welcome to the Turbine User Guide
 
 Welcome to the Turbine user guide. This guide will help you navigate through the various features and functionalities of Turbine.
 
-This is a dummy repository.
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents
