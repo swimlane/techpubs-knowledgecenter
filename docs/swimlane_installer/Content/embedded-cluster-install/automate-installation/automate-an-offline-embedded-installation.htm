@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="automate-an-offline-embedded-installation">Automate an Offline Embedded Installation</h1>
+        <p>This topic provides automation steps for setting up an offline, single-node Swimlane installation on embedded clusters.</p>
+        <h2 id="installation-preparation-and-customization">Installation Preparation and Customization</h2>
+        <p>Before you begin, review the <a href="../system-requirements-for-an-embedded-cluster-install/system-requirements-for-an-embedded-cluster-install.htm">System Requirements for an Embedded Cluster Install</a> to confirm your system's compliance. The Swimlane Platform Installer (SPI) performs several checks in the initial phases of the installation to ensure the underlying host is compatible with the application. To bypass any applicable checks, an installer patch YAML file can be applied at installation time to account for several of these settings. Refer to <a href="../overriding-installer-settings/overriding-installer-settings.htm">Overriding Installer Settings</a> for more options.</p>
+        <h3 id="installer-patch-file-example">Installer Patch File Example</h3>
+        <p>Here is an example installer patch file:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>apiVersion: "cluster.kurl.sh/v1beta1"
+kind: "Installer"
+metadata:
+  name: "patch"
+spec:
+  kubernetes:
+    HACluster: true
+    loadBalancerAddress: "&lt;Load Balancer FQDN or IP&gt;:6443"
+  firewalldConfig:
+    disableFirewalld: true
+  selinuxConfig:
+    disableSelinux: true
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>You also need the following files:</p>
+        <ul>
+            <li>Swimlane Platform Installer license file (ends with <code>.yaml</code>)</li>
+            <li>Swimlane license file (ends with <code>.lic</code>)</li>
+            <li>Swimlane tar archive (ends with <code>.tar.gz</code>)</li>
+            <li>Swimlane airgap bundle (ends with <code>.airgap</code>)</li>
+        </ul>
+        <h2 id="embedded-cluster-installation">Embedded Cluster Installation</h2>
+        <p>Once you've accounted for any customizations and system checks, install an embedded cluster by running the following command:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>tar -zxvf &lt;Swimlane Airgap Bundle&gt;.tar.gz
+cat install.sh | bash -s installer-spec-file=&lt;Path to Patch File&gt;.yaml
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2 id="swimlane-installation-and-deployment">Swimlane Installation and Deployment</h2>
+        <p>After the embedded Kubernetes cluster has been installed, install Swimlane with the following command:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>kubectl kots install swimlane-platform \ 
+  --namespace default \ 
+  --shared-password &lt;SPI Admin Console Password&gt; \ 
+  --license-file &lt;SPI License File&gt;.yaml \ 
+  --port-forward=false \ 
+  --config-values &lt;SPI Config File&gt;.yaml \
+  --airgap-bundle &lt;Swimlane Airgap Bundle&gt;.airgap
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h3 id="creating-an-spi-config-file">Creating an SPI Config File</h3>
+        <p>The <code>&lt;SPI Config File&gt;.yaml</code> file is a YAML-formatted file that outlines the specifications of a Swimlane deployment. You can get the .yaml file from an previously configured installation of SPI or by creating a new file manually.</p>
+        <p>To obtain a file from an previously configured SPI install, run the following command from a system with access to the Kubernetes API and the SPI Kubectl Add-on installed:</p>
+        <p><code>kubectl kots download swimlane-platform -n &lt;namespace&gt;</code>
+        </p>
+        <p>This command downloads a copy of the entire SPI deployment specifications to a local folder named <code>swimlane-platform</code>.</p>
+        <p>The config file is located at <code>./swimlane-platform/upstream/userdata/config.yaml</code> in the downloaded folder.</p>
+        <p>To create the file manually, here are all configurable options available in the <a href="embedded-cluster-spi-config-file.htm">Embedded Cluster SPI</a>.</p>
+        <p>Here is a basic version of the config file that you can use for an initial single-node configuration:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>apiVersion: kots.io/v1beta1
+kind: ConfigValues
+metadata:
+  creationTimestamp: null
+  name: swimlane
+spec:
+  values:
+    is_ha:
+      value: "0"
+    mongo_admin_user_password:
+      value: &lt;Base64 encoded string&gt;
+    mongo_admin_user_password_confirm:
+      value: &lt;Base64 encoded string&gt;
+    mongo_swimlane_user_password:
+      value: &lt;Base64 encoded string&gt;
+    mongo_swimlane_user_password_confirm:
+      value: &lt;Base64 encoded string&gt;
+    swimlane_database_encrypt_key:
+      value: &lt;Base64 encoded string&gt;
+    swimlane_database_encrypt_key_confirm:
+      value: &lt;Base64 encoded string&gt;
+    swimlane_enable_ingress:
+      value: "1"
+    swimlane_hostname:
+      value: &lt;Swimlane Hostname&gt;
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2 id="swimlane-initial-login">Swimlane Initial Login</h2>
+        <p>It takes a few minutes for Swimlane to initialize all of the required components. However, automation can effectively 'wait' for a ready state by waiting for a ready status from different parts of the deployment. There are multiple ways to accomplish this wait period, the following code block is just one example:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>kubectl wait -l statefulset.kubernetes.io/pod-name=swimlane-sw-mongo-0 --for=condition=ready pod --namespace &lt;Swimlane Namespace&gt; --timeout=240s
+export SW_API=$(kubectl get po -n &lt;NameSpace&gt; --no-headers -o custom-columns=":metadata.name" | grep -i api)  
+kubectl wait --for=condition=ready pod $SW_API -n &lt;NameSpace&gt; --timeout=240s                             
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Next, continue with the Swimlane installation by creating the initial administrative user.</p>
+        <p>Using your Swimlane license .lic file, first generate the necessary license block for the API call with a curl command:</p>
+        <p><code>curl -kLv -X POST https://&lt;Swimlane URL&gt;/api/settings/license/upload  -H 'Content-Type: multipart/form-data' -F file=@&lt;Swimlane License File&gt;.lic</code>
+        </p>
+        <p>Then, to create the initial administrative user, insert the returned JSON into the following curl command:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>curl -kLv -X POST https://&lt;Swimlane URL&gt;/api/settings/install \
+  --header "Content-Type: application/json" \
+  -d '{"mailSettings":{},
+       "password":"&lt;Admin Password&gt;","confirmPassword":"&lt;Admin Password&gt;",
+       "databaseEncryptionKey":"",
+       "swimlaneUrl":"https://&lt;Swimlane URL&gt;",
+       "license" :&lt;Generated JSON Data From Previous Step&gt;,
+       "adminUserName":"&lt;Admin Username&gt;",
+       "adminEmail":"&lt;Admin Email&gt;"}'
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+    </body>
+</html>

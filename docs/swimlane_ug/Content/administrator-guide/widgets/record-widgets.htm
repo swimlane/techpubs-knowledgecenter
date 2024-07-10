@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="record-widgets">Record Widgets</h1>
+        <p>To create record Widgets, from the Layout section of the Application Builder or Applet Builder page, select <strong>Widget</strong> and then drag and drop it into the Form Layout.</p>
+        <p>
+            <img src="../../Resources/Images/builder-widget-item.png" alt="" />
+        </p>
+        <p>You can add multiple widgets per application or applet.</p>
+        <p>To edit the record widget, select the widget in the layout. Then, in the properties sidebar, click "Edit Widget."</p>
+        <p>
+            <img src="../../Resources/Images/builder-edit-widget.png" alt="" />
+        </p>
+        <p>Record widgets are rendered on the record page and have access to the record values through the record attribute. Every change to the record will automatically update the widget, by calling its <code>update</code> method.</p>
+        <p>The record attribute is a javascript object, where the keys are the field's key property, and the value is the field value for that record.</p>
+        <p>Example: If an application has a text field with the key <code>text</code> and a numeric field with the key <code>numeric</code>, the record object would look like this:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody style="mc-code-lang:JavaScript;">{
+  text: 'text field value',
+  numeric: 55
+}
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>This object can be used in the widget's <code>update</code> method to generate the updated HTML of the widget after a change.</p>
+        <p>Widgets do not store any data; they are only used to build a UI that interacts with other data on the record. If any data needs to be stored, do so in a field on the record (either visible or hidden).</p>
+        <p>Exporting an application or applet will also export the widget as part of it, so it can be easily imported to another instance of Swimlane. This allows the record widgets to be shared and reused very easily by embedding them into an applet and exporting it. Since the widget's code is also included in the exported application or applet JSON file, Swimlane recommends that you <strong>do not</strong> include any sensitive information in widgets.</p>
+    </body>
+</html>

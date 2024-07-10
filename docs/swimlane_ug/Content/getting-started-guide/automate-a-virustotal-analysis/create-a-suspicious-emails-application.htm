@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="create-a-suspicious-emails-application">Create a Suspicious Emails Application</h1>
+        <p>Now that you've created a new email asset, you are ready to create an application that will hold all the email records that the automated process will eventually be collecting. In this activity, you create an application to hold records of suspicious emails.</p>
+        <p class="note"><strong>Note:</strong> You could import an existing application that has all of these details already built-in, but since you're just getting started, let's make one from scratch.</p>
+        <p>To create a suspicious emails application:</p>
+        <ol>
+            <li>From the global navigation menu, select <strong>Applications and Applets. </strong></li>
+        </ol>
+        <ol start="2">
+            <li>
+                <p>From the Applications and Applets home page, click the plus menu icon , and then select <strong>Create a new application</strong>.</p>
+                <p>
+                    <img src="../../Resources/Images/plus-menu-apps.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>On the Create Application, <strong>General</strong> tab, give your application a name, and (optionally) a description, and then click <strong>Create.</strong></p>
+            </li>
+        </ol>
+        <p class="note"><strong>Note:</strong> By default, when you create a new application, a new workspace with the name of the application is created. If you have a specific workspace where you would like this application to reside, you can specify it now on the Workspace tab of the Application Settings.</p>
+        <p>
+            <img src="../../Resources/Images/create-app-general-tab.png" alt="" />
+        </p>
+        <p class="feedback">Application Builder opens.</p>
+        <ol start="4">
+            <li>Drag and drop two Section Layout items to your Application Builder Form Layout area. Name one "Email Import" and the other "VirusTotal."</li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/adding-sections.png" alt="" />
+        </p>
+        <ol start="5">
+            <li>
+                <p>Under Field Types, drag and drop the following fields to the Email Import section of the Application Builder Form Layout and then give them the following names:<br /></p>
+                <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+                    <thead>
+                        <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                            <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1"><strong>Field Type</strong>
+                            </th>
+                            <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Single-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Submitted By</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Single-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Subject</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Body</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Single-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">IP(s) from Body</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Attachments</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">n/a</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note"><strong>Note:</strong> If you do not see the fields above, click <strong>Text</strong> to expand the field type selections. Click the blue arrow to collapse the field type selections.</p>
+                <p>
+                    <img src="../../Resources/Images/email-import-fields-presize.png" alt="" />
+                </p>
+                <p class="tip"><strong>Tip:</strong> You can change the field sizes in the Field Properties. Change the Multi-Line, <em>Body</em> field to 100%.</p>
+                <p>
+                    <img src="../../Resources/Images/body-one-hundred.png" alt="" />
+                </p>
+            </li>
+        </ol>
+        <ol start="6">
+            <li>
+                <p>Click <strong>Save</strong> to save your progress so far.</p>
+                <p>Next, you will build out the Virus Total section.</p>
+            </li>
+        </ol>
+        <ol start="7">
+            <li>
+                <p>Add the following ten text fields to the VirusTotal section of the Application Builder Form Layout and rename them as indicated:</p>
+                <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+                    <thead>
+                        <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                            <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1"><strong>Field Type</strong>
+                            </th>
+                            <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Single-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Country</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Single-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Owner</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Resolved Hostnames</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Last Resolved Dates</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">List of Dates for Detected Communicating Samples</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">SHA256s for Detected Communicating Samples</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Detected URLs</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Scan Dates for Detected URLs</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                            <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">SHA256s for Undetected Samples</td>
+                        </tr>
+                        <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                            <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Multi-Line</td>
+                            <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Dates for Undetected Samples</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <p style="font-style: normal;">Add a Date and Time field to the VirusTotal section. Name the field <em>Creation Date</em> and, under Field Settings, set it to Read-only.<br />Additionally, on Field Settings, Advanced, change the default value to <em>Current date-time.<br /></em>This field will automatically track when the record was created.<em></em></p>
+            </li>
+        </ol>
+        <ol start="9">
+            <li>From the Application Builder taskbar, select <strong>Save</strong>.</li>
+        </ol>
+        <h2 id="related-links">Related Links</h2>
+        <p><a href="../../administrator-guide/applications-and-applets/applications-and-applets.htm">Applications and Applets</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/create-or-edit-an-asset.htm">Assets</a>
+        </p>
+    </body>
+</html>

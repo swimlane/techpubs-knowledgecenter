@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="stop-and-restart-a-single-node-deployment">Stop and Restart a Single-Node Deployment</h1>
+        <p>On occasion, single-node SPI deployments must be stopped and restarted. One example of this is when you need to perform scheduled maintenance.</p>
+        <p>To stop and restart a single-node SPI Deployment:</p>
+        <ol>
+            <li>
+                <p>Login to the node as a user with administrator privileges.</p>
+            </li>
+            <li>
+                <p>Find the name of the node. In the example within this topic, the node is named <code>master3a</code>.</p>
+            </li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody># kubectl get nodes
+NAME       STATUS   ROLES    AGE   VERSION
+master3a   Ready    master   30d   v1.17.3
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="3">
+            <li>Drain the node.</li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody># /bin/kubectl drain master3a --ignore-daemonsets --delete-local-data
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="4">
+            <li>Check that the node is in the “Ready,SchedulingDisabled” status.</li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody># kubectl get nodes
+NAME       STATUS                     ROLES    AGE   VERSION
+master3a   Ready,SchedulingDisabled   master   27d   v1.17.3
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="5">
+            <li>
+                <p>Stop or restart the server or VM.</p>
+            </li>
+            <li>
+                <p>Next, uncordon the node (i.e. make the node schedulable).</p>
+            </li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody># kubectl uncordon master3a
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="7">
+            <li>Finally, ensure that the node is in the “Ready” status.</li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody># kubectl get nodes
+NAME       STATUS   ROLES    AGE   VERSION
+master3a   Ready    master   30d   v1.17.3
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+    </body>
+</html>

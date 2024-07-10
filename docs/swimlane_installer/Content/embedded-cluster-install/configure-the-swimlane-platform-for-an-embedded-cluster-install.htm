@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="configure-the-swimlane-platform-for-an-embedded-cluster-install">Configure the Swimlane Platform for an Embedded Cluster Install</h1>
+        <p NODEIP="">When you need to access the SPI UI after the initial install you can access it by access port 8800 over HTTPS on any node IP (e.g. https://:8800).</p>
+        <p class="note"><strong>Note:</strong> All configuration of the Swimlane Platform Installer and Swimlane platform must be done through the SPI admin console config page. Editing or manipulating the underlying Kubernetes resources is not supported and will not be permanent since they are managed and controlled by the Swimlane Platform Installer.</p>
+        <p style="font-weight: bold;">To configure the Swimlane platform for an embedded cluster install:</p>
+        <ol>
+            <li>
+                <p>On Swimlane Settings, you'll begin setting up your configuration for Swimlane. Review and set the following fields as necessary:</p>
+            </li>
+        </ol>
+        <ul>
+            <li><strong>Expose the Swimlane Web Service Externally?</strong> - Enable this option when using a Layer 7 load balancer. The Swimlane web service will be directly exposed from each node in the cluster on TCP port 4443.</li>
+            <li><strong>Enable the Ingress Controller</strong> - Enable this option when using a Layer 4 load balancer or for single node lab/test environments. The included ingress controller will be used for routing web requests to Swimlane on TCP port 443.
+<ul><li><strong>Swimlane Hostname</strong> - The DNS record pointing to the Swimlane Platform Installer and Swimlane platform load balancer.</li><li><strong>Upload a certificate for Swimlane Web?</strong> - Enable this option to upload a certificate and key to be used for the included ingress controller. If no certificate is uploaded a self-signed one will be generated and used. The certificate must be ASCII encoded X.509 format. The private key cannot be password protected.</li></ul></li>
+            <li><strong>Upload a certificate for Swimlane Web backend?</strong> - Enable this option to upload a certificate and key to be used by the backend Swimlane web service. If no certificate is uploaded a self-signed one will be used.</li>
+            <li><strong>Swimlane Web CORS Headers</strong> - Enable this option to set HTTP Cross-Origin Resource Sharing Headers for Swimlane Web. A list of options relevant to CORS Headers will appear below and if left blank, they will be set with the default values specified next to each option. If this option is disabled, no CORS headers will be set for Swimlane Web.
+<ul><li><strong>Swimlane Web CORS Header Access-Control-Allow-Origin</strong> - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">HTTP Access-Control-Allow-Origin header</a>.</li><li><strong>Swimlane Web CORS Header Access-Control-Allow-Headers</strong> - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">HTTP Access-Control-Allow-Headers header</a>.</li><li><strong>Swimlane Web CORS Header Access-Control-Allow-Methods</strong> - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">HTTP Access-Control-Allow-Methods header</a>.</li></ul></li>
+            <li><strong>Swimlane Web CSP Header</strong> - Enable this option to set the HTTP Content Security Policy Header for Swimlane Web. A new option will appear below to override the CSP header, if left blank it will get set to the default value. If this option is disabled, no CSP header will be set for Swimlane Web.
+<ul><li><strong>Swimlane Web Content-Security-Policy Header</strong> - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">HTTP Content-Security-Policy header</a>.</li></ul></li>
+            <p>
+                <img src="../Resources/Images/configure_ingress.png" alt="" />
+            </p>
+        </ul>
+        <ol start="2">
+            <li>
+                <p>Next, set the logging settings.</p>
+                <ul>
+                    <li>
+                        <p><strong>ASP.NET Hosting Environment</strong> - Set this option to Development to have stack traces sent to the browser for 500 errors. Set this option to Production to not send them.</p>
+                    </li>
+                    <li>
+                        <p><strong>Enable Swimlane Audit Logging</strong> - Enable this option to log raw Swimlane API requests and responses into Swimlane pods.</p>
+                    </li>
+                    <li>
+                        <p><strong>Swimlane Logging Level</strong> - Set this option to specify the logging level for Swimlane pods.</p>
+                    </li>
+                </ul>
+            </li>
+            <p>
+                <img src="../Resources/Images/configure_logging.png" alt="" />
+            </p>
+        </ol>
+        <ol start="3">
+            <li>Determine whether to override the OpenSSL settings for CipherString and MinProtocol for outgoing secure connections that originate from API and tasks pods.</li>
+            <p class="important"><strong>Important</strong> Since outgoing secure connections include requests to the Swimlane API service, there are limitations to what can be set for these values in order to not break your deployment of Swimlane. MinProtocol should not be set to anything higher than TLSv1.2, and CipherString can be set to the highest security level like <code>HIGH@SECLEVEL=5</code> or <code>DEFAULT@SECLEVEL=5</code>.</p>
+            <p>
+                <img src="../Resources/Images/openssl_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="4">
+            <li>Next, determine whether to enable the Swimlane Syslog Receiver and the Selenium ChromeDriver.</li>
+            <p>
+                <img src="../Resources/Images/syslog_to_tools.png" alt="" />
+            </p>
+        </ol>
+        <ol start="5">
+            <li>Next, determine whether you want Mongo to be exposed for external access, and whether to upload pip config for API and tasks.</li>
+            <p>
+                <img src="../Resources/Images/mongo_pip.png" alt="" />
+            </p>
+        </ol>
+        <ol start="6">
+            <li>If you have third-party certificates for API and tasks, click <strong>Upload Additional Trusted Certificates for API and Tasks?</strong> and then browse for and upload your certificates.</li>
+            <p>
+                <img src="../Resources/Images/third_party.png" alt="" />
+            </p>
+        </ol>
+        <ol start="7">
+            <li>Next, choose whether to enable or disable a pod liveness probe for the API and Tasks pods. The default liveness probe setting for API pods is disabled and for Tasks pods is enabled.</li>
+            <p>
+                <img src="../Resources/Images/liveness_probe.png" alt="" />
+            </p>
+        </ol>
+        <ol start="8">
+            <li>On Initial MongoDB Settings, enter the appropriate encryption keys and passwords for your Swimlane database and MongoDB.</li>
+            <p>You can skip this step if you are using an External MongoDB cluster. For more information, see <a href="deploy-with-an-external-mongodb-cluster.htm">Deploy Swimlane with an External MongoDB Cluster</a>.</p>
+            <p class="important"><strong>Important!</strong> Do not change the MongoDB settings after installation. Doing so will break your deployment of Swimlane. Here are the acceptable special characters to use in keys and passwords: !@#$%^&amp;*()-_=+/[]|:;&lt;,&gt;.?`~</p>
+            <p>
+                <img src="../Resources/Images/initial_mongo_db_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="9">
+            <li>Next, if you have 3 or more nodes in your cluster, click <strong>HA Environment</strong> and set the number of pods for each type.</li>
+            <p class="important"><strong>Important!</strong> The number of MongoDB replicas must be at least 3 and an odd number. Once you have multiple MongoDB replicas, you cannot go down to one.</p>
+            <p>
+                <img src="../Resources/Images/ha_environment.png" alt="" />
+            </p>
+        </ol>
+        <ol start="10">
+            <li>If you have an HA cluster, confirm the recommended default settings for Web/API/Tasks/Reports AntiAffinity (Soft) and MongoDB Pod AntiAffinity (Hard). Then, click <strong>Save config</strong>.</li>
+            <p>
+                <img src="../Resources/Images/antiaffinity.png" alt="" />
+            </p>
+            <p class="important"><strong>Important!</strong> The MongoDB Pod AntiAffinity settings should not be changed after installation. Doing so could break your deployment of Swimlane.</p>
+        </ol>
+        <ol start="11">
+            <li>When you save the configuration, preflight checks for your installation begin.</li>
+            <p>
+                <img src="../Resources/Images/preflight_checks.png" alt="" />
+            </p>
+        </ol>
+        <ol start="12">
+            <li>Once the preflight checks process, the Swimlane Installer Admin Console opens.</li>
+            <p>
+                <img src="../Resources/Images/install_dashboard.png" alt="" />
+            </p>
+            <p>Once the status of your application says <em>Ready</em> you have a successful installation of Swimlane.</p>
+        </ol>
+    </body>
+</html>

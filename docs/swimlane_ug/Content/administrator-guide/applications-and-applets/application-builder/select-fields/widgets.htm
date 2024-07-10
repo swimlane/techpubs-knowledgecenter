@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="widgets">Widgets</h1>
+        <p>Widgets are javascript and html components that you can use to enrich the User Interface (UI) of records. They allow you to create your own UI components that interact with Swimlane or third-party endpoints. Currently, Swimlane supports two types of widgets: Record widgets and Report widgets.</p>
+        <p>This topic covers Record widgets. For more about using widgets for reports, see <a href="../../../widgets/report-widgets.htm">Report Widgets.</a></p>
+        <p>To create record widgets:</p>
+        <p>From the Layout section of the Application Builder or Applet Builder page, select <strong>Widgets</strong>,<strong></strong> and then drag and drop it into the Form Layout.</p>
+        <p>
+            <img src="../../../../Resources/Images/builder-widget-item.png" />
+        </p>
+        <p>You can add multiple widgets per application or applet.</p>
+        <p>To edit the record widget, select the widget in the Form Layout, and then, from the Field Properties click <b>Edit Widget</b>.</p>
+        <p>
+            <img src="../../../../Resources/Images/builder-edit-widget.png" />
+        </p>
+        <p>Record widgets are rendered on the record page and have access to the record values through the record attribute. Every change to the record will automatically update the widget, by calling its <code>update</code> method.</p>
+        <p>The record attribute is a JavaScript object, where the keys are the field's key property, and the value is the field value for that record.</p>
+        <p>Example: If you had an application that has a text field with the key <code>text</code> and a numeric field with the key <code>numeric</code>, the record object would look like this:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody style="mc-code-lang:JavaScript;">{
+ text: 'text field value',
+ numeric: 55
+}
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>This object can be used in the widget's <code>update</code> method to generate the updated HTML of the widget after a change to the record.</p>
+        <p>Widgets do not save or retain any data and are used only to build a UI component that interacts with other data on the record. Store record data in a visible or hidden field on the record.</p>
+        <p class="important"><strong>Important!</strong>  When you export an application or applet that contains a widget, the widget is exported too. This allows you to easily share and reuse widgets. The widget's code is included in the exported application. Since the widget's code is also included in the exported application or applet JSON file, Swimlane recommends that you <em>do not</em> include any sensitive information in widgets.</p>
+    </body>
+</html>

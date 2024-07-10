@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/Air_Gap_Installation_with_kURL.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 id="air-gap-installation-with-kurl">Air Gap Installation with kURL</h1>
+        <p>This topic walks through the process of installing Swimlane in an air gap environment using kURL. Air gap refers to a system that resides in a private network, air-gapped from external networks or the internet. kURL is the Kubernetes installer used to initialize the environment in Swimlane's embedded cluster installation option.</p>
+        <p>Swimlane provides the following:</p>
+        <ul>
+            <li>The offline installer package</li>
+            <li>The air gap bundle</li>
+            <li>A KOTS application license (.yaml)</li>
+            <li>A Swimlane license (.lic)</li>
+        </ul>
+        <p>The offline installer package contains the install script and all the software dependencies, such as Kubernetes, to initialize the environment. The airgap bundle contains the dependencies for the actual Swimlane application. When it comes time to update your Swimlane version, you will need a new installer package and airgap bundle. Reach out to your Swimlane support representative for access to the new installer package and airgap bundle.</p>
+        <p>On your end, you need:</p>
+        <ul>
+            <li>a jumpbox with access to both the internet and the private network</li>
+            <li>a set of VMs that will be the nodes of your Kubernetes cluster. They must meet Swimlane's <a href="system-requirements-for-an-embedded-cluster-install/system-requirements-for-an-embedded-cluster-install.htm">system requirements</a></li>
+            <li>the four dependencies listed above from Swimlane</li>
+        </ul>
+        <p>Before you begin, copy the offline installer package to the jumpbox, and then to each node in the cluster. Copy the airgap bundle to the jumpbox.</p>
+        <p>The goal is to initialize a Kubernetes cluster, usually with 3 control-plane nodes to create high availability (HA). Swimlane can then be installed on these control-plane nodes as a KOTS application. KOTS is a kubectl plugin and admin console tool that allows the end user to manage system settings without making direct changes to Kubernetes resources.</p>
+        <p>These steps walk you through this process:</p>
+        <ol>
+            <li>Untar the offline installer package on the first VM: <br /><br /></li>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">tar zxvf &lt;your file name&gt;.tar.gz</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="2">
+            <li>Move to the directory with the install script and run the install command:<br /><br /></li>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">cat install.sh | sudo bash -s airgap ha</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="3">
+            <li>
+                <p>Once the installation completes, save the URL and password that the installation generates. In addition, copy the add primary node command to use to add additional masters.</p>
+            </li>
+            <li>
+                <p>Untar the offline installer package in the second VM.</p>
+            </li>
+            <li>
+                <p>Run the primary node join command that was output in step 2.</p>
+            </li>
+            <li>
+                <p>Repeat steps 4 and 5 for the third and final VM.</p>
+            </li>
+            <li>
+                <p>Run this command to make sure each node has successfully joined the Kubernetes cluster:<br /><br /></p>
+            </li>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get nodes</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+            <li>
+                <p>In a web browser, enter the URL and password for the Swimlane Platform Installer User Interface (UI). This is the password you got from the original install command. Upload your .yaml license file and proceed until you are prompted to upload the airgap bundle.</p>
+            </li>
+            <li>
+                <p>Upload the airgap bundle from your jumpbox</p>
+            </li>
+            <li>
+                <p>See <a href="configure-the-swimlane-platform-for-an-embedded-cluster-install.htm">Configure the Swimlane Platform for an Embedded Cluster Install</a> to configure and deploy Swimlane.</p>
+            </li>
+        </ol>
+    </body>
+</html>

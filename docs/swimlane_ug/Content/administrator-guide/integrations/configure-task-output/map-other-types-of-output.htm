@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="map-other-types-of-output">Map Other Types of Output</h1>
+        <p>You can also map the output of a task to update a record in process, send an email, save data to file, or to execute another task.</p>
+        <h2 id="map-output-to-update-current-record">Map Output to Update Current Record</h2>
+        <p>Select Update Current Record when you want a task to update a record in process, while the task runs.</p>
+        <p>The process for mapping output to update a record in process is the same as mapping output for creating or updating records. See <a href="map-output-for-creating-or-updating-records.htm">Map Output for Creating or Updating Records</a> for details.</p>
+        <h2 id="map-output-to-send-in-an-email">Map Output to Send in an Email</h2>
+        <p>To map output for Send an Email:</p>
+        <ol>
+            <li>
+                <p>From the Outputs tab, click <strong>Send an Email</strong>.</p>
+                <p>
+                    <img src="../../../Resources/Images/send_an_email.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>Review the Email Target fields, and specify the parameters from these options. The available parameters depend upon the email asset you select.</p>
+            </li>
+            <li>
+                <p>If applicable, indicate what you will use to parse the output data.</p>
+            </li>
+            <li>
+                <p>Continue with all email target fields and parameters, then click <strong>Save</strong>.</p>
+            </li>
+        </ol>
+        <h2 id="map-output-to-save-to-file">Map Output to Save to File</h2>
+        <p>To map output for Save to File:</p>
+        <ol>
+            <li>
+                <p>From the Outputs tab, click <strong>Save to File</strong>.</p>
+                <p>
+                    <img src="../../../Resources/Images/save_to_file.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>Specify the location where you want Swimlane to save the data, then click <strong>Save</strong>.</p>
+                <p class="note"><strong>Note:</strong> Swimlane strips invalid characters from Save to File output. Invalid characters include / * ? &lt; &gt; " |.</p>
+            </li>
+        </ol>
+        <h2 id="map-output-to-execute-another-task">Map Output to Execute Another Task</h2>
+        <p>To map output for <strong>Execute Another Task</strong>:</p>
+        <ol>
+            <li>
+                <p>From the Outputs tab, click <strong>Execute Another Task</strong>.</p>
+                <p>
+                    <img src="../../../Resources/Images/execute_another_task.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>From the Select Task drop-down, select the task that will receive the current task's output as input, then click <strong>Save</strong>.</p>
+            </li>
+        </ol>
+        <p>Note:- The outputs from one task are not automatically passed as inputs to the triggered task. However, record field inputs or other inputs can be defined on the triggered task to ensure that the necessary data is available for the task to execute correctly.</p>
+    </body>
+</html>

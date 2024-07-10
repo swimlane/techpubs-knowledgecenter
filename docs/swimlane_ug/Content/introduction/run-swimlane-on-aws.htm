@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="run-swimlane-on-aws">Run Swimlane on AWS</h1>
+        <p>To run Swimlane on AWS:</p>
+        <ol>
+            <li>In your AWS EC2 console, find the Swimlane instance and locate the <code>IP Address</code></li>
+            <li>In your browser, navigate to <code>https://&lt;IP Address&gt;</code></li>
+            <li>Complete the post-install wizard.</li>
+        </ol>
+        <p>A <code>centos</code> user is available on the instance with sudo privileges that utilizes the public SSH key chosen when the instance was launched.</p>
+        <p>A <code>swimlane-host</code> user is available via the <code>su</code> command and should be used for all operations on the Swimlane Docker containers.</p>
+    </body>
+</html>

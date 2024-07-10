@@ -1,0 +1,1099 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="existing-cluster-spi-config-file">Existing Cluster SPI Config File</h1>
+        <p>Below is a reference of the available configurable options for an existing cluster Swimlane deployment. Refer to <a href="../configure-the-swimlane-platform-for-an-existing-cluster-install.htm">Configure the Swimlane Platform for an Existing Cluster Install</a> for an explanation of these options.</p>
+        <h3 id="required-configuration-options">Required Configuration Options</h3>
+        <p>An SPI config file requires certain MongoDB options to be set in order to be valid for deployment. These options will change depending on your MongoDB setup. Refer to the <a href="#MongoDB">MongoDB Settings</a> section to determine which settings you need to create a valid SPI config file.</p>
+        <p>All other options are optional, but some options are dependent on other options being enabled or set to valid values. Refer to the <code>Requirements</code> column in each of the sections below, where applicable:</p>
+        <h3 id="configuration-options">Configuration Options</h3>
+        <h4 id="ingress-settings">Ingress Settings</h4>
+        <p>To access the Swimlane UI, either <code>expose_web_service_externally</code> or <code>swimlane_enable_ingress</code> config options must be enabled.</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">expose_web_service_externally</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Expose the Swimlane web service directly from each node in the cluster on TCP.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">expose_web_service_externally_port</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Specify the port that the Swimlane web service will use when exposed with <code>expose_web_service_externally</code>. A random port will be selected if this is left unset.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_enable_ingress</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable ingress options for Swimlane web pods</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_ingress_annotations</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set any ingress annotations for the Swimlane web ingress.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>swimlane_enable_ingress</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_ingress_hosts</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set a hostname to be used with the Swimlane web ingress.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>swimlane_enable_ingress</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Similar to YAML format: '- ""'</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_ingress_tls</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set any tls settings for the Swimlane web ingress.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>swimlane_enable_ingress</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Styled as a YAML tls block</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_set_web_service_annotations</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable any ingress annotations set with <code>swimlane_web_service_annotations</code>.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_web_service_annotations</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set any web service annotations required by your ingress.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>swimlane_set_web_service_annotations</code> and <code>expose_web_service_externally</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_tls_cert_upload_backend</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable the upload of a cerfificate and key for Swimlane backend traffic.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_tls_cert_backend</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the certificate that you want Swimlane to use for backend traffic. Corresponds to <code>swimlane_tls_key_backed</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>swimlane_tls_cert_upload_backend</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Base64 Encoded RSA Formatted Certificate</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">swimlane_tls_key_backend</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Set the key that you want Swimlane to use for backend traffic. Corresponds to <code>swimlane_tls_cert_backend</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Requires <code>swimlane_tls_cert_upload_backend</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Base64 Encoded RSA Formatted Key</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1" />
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="swimlane-settings">Swimlane Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">aspnetcore_environment_type</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">The type of Swimlane environment, either Development or Production.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"aspnetcore_environment_development" or "aspnetcore_environment_production"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_audit_logging</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Turn Audit Logging on or off for Swimlane.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_audit_logging_level</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">The logging level for the Swimlane audit logs.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>swimlane_audit_logging</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"Debug", "Info", "Warn", or "Error"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_openssl_cipherstring</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the level of openssl cipher.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">DEFAULT@SECLEVEL=2</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_openssl_minprotocol</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the minimum level of OpenSSL protocol.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">TLSv1.2</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_service</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Expose MongoDB externally on each node</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Only applicable with embedded MongoDB</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pip_config</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">The pip config file that will be uploaded into the Swimlane pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>pip_config_upload</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base64 Encoded pip config file</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pip_config_upload</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Enable the upload of the pip config file specified in <code>pip_config</code>.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable the Swimlane chrome pod for deployment.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_syslog_receiver</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Enable the Swimlane syslog receiver pod for deployment.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_syslog_receiver_port</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the port the Swimlane syslog receiver will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>swimlane_syslog_receiver</code> to be enabled</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">third_party_certs</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set any third party certs that you want Swimlane to be able to use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>third_party_certs_upload</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Base64 Encoded RSA Formatted CA Certificate&gt;</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">third_party_certs_upload</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Enable the upload of any third party certs.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="mongodb-settings"><a name="MongoDB"></a>MongoDB Settings</h4>
+        <p>MongoDB can either be deployed as part of the embedded cluster or connected to externally. The config option <code>mongo_use_external_deployment</code> controls this setting. By default, this is set to <code>0</code>, meaning an embedded cluster will be deployed and used. If set to <code>1</code>, no embedded MongoDB cluster will be deployed.  Refer to <a href="../deploy-with-an-external-mongodb-cluster.htm">Deploy with an External MongoDB Cluster</a> for more explanation on external cluster options.</p>
+        <h5 id="required-embedded-mongodb-settings">Required Embedded MongoDB Settings</h5>
+        <p>These settings are required to be set for any SPI Install with an embedded MongoDB cluster.</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_database_encrypt_key</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the database encryption key for MongoDB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Has to be identical to <code>swimlane_database_encrypt_key_confirm</code></td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_database_encrypt_key_confirm</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Confirm the database encryption key for MongoDB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Has to be identical to <code>swimlane_database_encrypt_key</code></td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_admin_user_password</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">The MongoDB password for the Admin user.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_admin_user_password_confirm</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_admin_user_password_confirm</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Confirmation for the MongoDB password for the Admin user.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_admin_user_password</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_swimlane_user_password</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the MongoDB password for the Swimlane user.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_swimlane_user_password_confirm</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_swimlane_user_password_confirm</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Confirm the MongoDB password for the Swimlane user.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_swimlane_user_password</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_storage_class</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the name of the storage class that Swimlane will use for MongoDB PVCs</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">mongo_volume_size</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">The size of the PVC that MongoDB will attempt to claim</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2" />
+                </tr>
+            </tbody>
+        </table>
+        <h5 id="required-external-mongodb-settings">Required External MongoDB Settings</h5>
+        <p>These settings are required to be set for any SPI Install that connects to an external MongoDB cluster.</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">swimlane_database_encrypt_key</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the database encryption key for MongoDB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Has to be identical to <code>swimlane_database_encrypt_key_confirm</code></td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">swimlane_database_encrypt_key_confirm</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Confirm the database encryption key for MongoDB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Has to be identical to <code>swimlane_database_encrypt_key</code></td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Base64 Encoded String</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_use_external_deployment</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable the usage of an external MongoDB database</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_db</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the name of the Swimlane database in your external MongoDB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_external_history_db</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the name of the Swimlane History database in your external MongoDB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_history_host</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the host name that will be used in the MongoDB connection URI string for the Swimlane History database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_external_history_options</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set any options that will be used in the MongoDB connection URI string for the Swimlane History database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_history_user</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the name of the user that will be used in the MongoDB connection URI string for the Swimlane History database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_external_host</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the host name that will be used in the MongoDB connection URI string for the Swimlane database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_options</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set any options that will be used in the MongoDB connection URI string for the Swimlane database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_external_user</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the name of the user that will be used in the MongoDB connection URI string for the Swimlane database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_user_history_password</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the password that will be used in the MongoDB connection URI string for the Swimlane History database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled and <code>mongo_external_user_history_password_confirm</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_external_user_history_password_confirm</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Confirm the password that will be used in the MongoDB connection URI string for the Swimlane History database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled and <code>mongo_external_user_history_password</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_user_password</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the password that will be used in the MongoDB connection URI string for the Swimlane database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled and <code>mongo_external_user_password_confirm</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">mongo_external_user_password_confirm</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Confirm the password that will be used in the MongoDB connection URI string for the Swimlane database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled and <code>mongo_external_user_password</code> to be set and identical.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1" />
+                </tr>
+            </tbody>
+        </table>
+        <h5 id="optional-external-mongodb-settings">Optional External MongoDB Settings</h5>
+        <p>These settings are optional for an SPI Install that connects to an external MongoDB cluster:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_ca_cert</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the ca certificate if you need one to connect to the Swimlane database in your external MongoDB.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled and <code>mongo_external_upload_certs</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base64 Encoded RSA Formatted Certificate</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_upload_certs</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Enable uploading of the ca cert specified with <code>mongo_ca_cert</code>.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_external_history_options</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set any options that will be used in the MongoDB connection URI string for the Swimlane History database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_history_prefix</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the prefix that will be used in the MongoDB connection URI string for the Swimlane History database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_external_options</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set any options that will be used in the MongoDB connection URI string for the Swimlane database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_external_prefix</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the prefix that will be used in the MongoDB connection URI string for the Swimlane database.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_history_ca_cert</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the ca certificate if you need one to connect to the Swimlane History database in your external MongoDB.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>mongo_use_external_deployment</code> to be enabled and <code>mongo_external_history_upload_certs</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base64 Encoded RSA Formatted Certificate</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">mongo_external_history_upload_certs</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Enable uploading of the ca cert specified with <code>mongo_history_ca_cert</code>.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Requires <code>mongo_use_external_deployment</code> to be enabled</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">"0" is false, "1" is true</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="high-availability-settings">High Availability Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">is_ha</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable this option to deploy Swimlane with high availability after joining multiple nodes.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">api_replicas</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the number of Swimlane API pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>is_ha</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"1" if a single node deployment or "3"+ if Swimlane is deployed HA</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">mongo_replicas</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the number of MongoDB replica pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>is_ha</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"1" if a single node deployment or "3"+ if Swimlane is deployed HA</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">report_replicas</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">The number of Swimlane Reports pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>is_ha</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"1" if a single node deployment or "3"+ if Swimlane is deployed HA</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">task_replicas</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">The number of Swimlane task pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>is_ha</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"1" if a single node deployment or "3"+ if Swimlane is deployed HA</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">web_replicas</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">The number of Swimlane web pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Requires <code>is_ha</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">"1" if a single node deployment or "3"+ if Swimlane is deployed HA</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="affinity-settings">Affinity Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">simple_affinity</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set anti-affinity for API, Chrome, Reports, Syslog, Tasks, Tools, and Web pods to "soft" and MongoDB pods to "hard".</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">mongo_anti_affinity</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Anti-affinity setting for the MongoDB replicaset.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>simple_affinity</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_anti_affinity</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Anti-affinity setting for the MongoDB replicaset.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>simple_affinity</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_affinity_api</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set anti-affinity setting for the Swimlane API pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_affinity_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set anti-affinity setting for the Swimlane Chrome pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_affinity_mongodb</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set anti-affinity setting for the MongoDB pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_affinity_reports</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set anti-affinity setting for the Swimlane Reports pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_affinity_syslog</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set anti-affinity setting for the Swimlane Syslog pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_affinity_tasks</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set anti-affinity setting for the Swimlane Tasks pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_affinity_tools</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set anti-affinity setting for the Swimlane Tools pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"hard", "soft", or "none"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">pod_affinity_web</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Set anti-affinity setting for the Swimlane Web pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Requires <code>simple_affinity</code> to be disabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">"hard", "soft", or "none"</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="service-account-settings">Service Account Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">create_tools_service_account</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Ensure the creation of a service account for Swimlane Tools.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"create_tools_service_account_true" or "create_tools_service_account_false"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">set_service_accounts</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Enable any pod service account names that were set with the <code>service_account_name__&lt;pod_name&gt;</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">service_account_name_api</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the name of the service account that the Swimlane API pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">service_account_name_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the name of the service account that the Swimlane Chrome pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">service_account_name_mongodb</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the name of the service account that the MongoDB pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">service_account_name_reports</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the name of the service account that the Swimlane Reports pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">service_account_name_syslog</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the name of the service account that the Swimlane Syslog pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">service_account_name_tasks</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set the name of the service account that the Swimlane Tasks pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">service_account_name_tools</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set the name of the service account that the Swimlane Tools pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">service_account_name_web</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Set the name of the service account that the Swimlane Web pods will use.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Requires <code>set_service_accounts</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2" />
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="annotation-settings">Annotation Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">set_pod_annotations</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable any pod annotations that were set with the <code>pod_annotations_&lt;pod_name&gt;</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_annotations_api</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod annotations for the Swimlane API pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_annotations_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional pod annotations for the Swimlane Chrome pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_annotations_mongodb</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod annotations for the MongoDB pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_annotations_reports</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional pod annotations for the Swimlane Reports pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_annotations_syslog</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod annotations for the Swimlane Syslog pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_annotations_tasks</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional pod annotations for the Swimlane Tasks pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_annotations_tools</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod annotations for the Swimlane Tools pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">pod_annotations_web</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Set additional pod annotations for the Swimlane Web pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Requires <code>set_pod_annotations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1" />
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="label-settings">Label Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">set_pod_labels</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable any pod labels that were set with the <code>pod_labels_&lt;pod_name&gt;</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_labels_api</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod labels for the Swimlane API pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_labels_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional pod labels for the Swimlane Chrome pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_labels_mongodb</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod labels for the MongoDB pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_labels_reports</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional pod labels for the Swimlane Reports pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_labels_syslog</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod labels for the Swimlane Syslog pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_labels_tasks</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional pod labels for the Swimlane Tasks pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_labels_tools</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional pod labels for the Swimlane Tools pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">pod_labels_web</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Set additional pod labels for the Swimlane Web pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Requires <code>set_pod_labels</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1" />
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="resource-settings">Resource Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">set_pod_resources</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable any pod resource limits that were set with the <code>pod_resources_&lt;pod_name&gt;</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_resources_api</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod resource limits for the Swimlane API pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_resources_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set pod resource limits for the Swimlane Chrome pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_resources_mongodb</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod resource limits for the Main MongoDB pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_resources_mongodb_init</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set pod resource limits for the Initial MongoDB pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_resources_reports</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod resource limits for the Swimlane Reports pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_resources_syslog</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set pod resource limits for the Swimlane Syslog pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_resources_tasks</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod resource limits for the Swimlane Tasks pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_resources_tools</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set pod resource limits for the Swimlane Tools pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">pod_resources_web</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Set pod resource limits for the Swimlane Web pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Requires <code>set_pod_resources</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2" />
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="node-selector-settings">Node Selector Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">set_pod_node_selectors</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable any node selecters that were set with the <code>node_selectors_&lt;pod_name&gt;</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">node_selectors_api</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional node selectors for the Swimlane API pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">node_selectors_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional node selectors for the Swimlane Chrome pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">node_selectors_mongodb</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional node selectors for the MongoDB pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">node_selectors_reports</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional node selectors for the Swimlane Reports pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">node_selectors_syslog</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional node selectors for the Swimlane Syslog pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">node_selectors_tasks</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set additional node selectors for the Swimlane Tasks pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">node_selectors_tools</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set additional node selectors for the Swimlane Tools pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">node_selectors_web</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Set additional node selectors for the Swimlane Web pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Requires <code>set_pod_node_selectors</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1" />
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="tolerations-settings">Tolerations Settings</h4>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Key</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Requirements</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Accepted value (where applicable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">set_pod_tolerations</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enable any pod tolerations that were set with the <code>pod_tolerations_&lt;pod_name&gt;</code> config option.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1" />
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">boolean integer</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"0" is false, "1" is true</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_tolerations_api</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod tolerations for the Swimlane API pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_tolerations_chrome</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set pod tolerations for the Swimlane Chrome pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_tolerations_mongodb</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod tolerations for the MongoDB pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_tolerations_reports</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set pod tolerations for the Swimlane Reports pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_tolerations_syslog</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod tolerations for the Swimlane Syslog pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pod_tolerations_tasks</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Set pod tolerations for the Swimlane Tasks pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">pod_tolerations_tools</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set pod tolerations for the Swimlane Tools pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">pod_tolerations_web</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Set pod tolerations for the Swimlane Web pods.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Requires <code>set_pod_tolerations</code> to be enabled.</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">string</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1" />
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

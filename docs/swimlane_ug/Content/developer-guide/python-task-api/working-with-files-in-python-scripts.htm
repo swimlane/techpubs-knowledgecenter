@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="working-with-files-in-python-scripts">Working with Files in Python Scripts</h1>
+        <h2 id="attachments-as-input">Attachments as Input</h2>
+        <p>Python integrations can accept attachment fields as input. Attachment fields are stored as a list of dictionary objects. Since an attachment field may have many attachments each element of the list will be a dictionary that contains the keys 'base64' and 'filename'. The 'base64' key contains the base64 encoding of the file contents. The 'filename' key contains the file name in plain text.</p>
+        <p>Example attachment object passed from Swimlane to a python task:</p>
+        <p><code>attachments = [{"base64": "aGV5IGhvdydzIGl0IGdvaW5nPw==", "filename": "file1.txt"},{"base64": "aHR0cDovL3d3dy5zd2ltbGFuZS5jb20=", "filename": "file2.jpg"}]</code>
+        </p>
+        <p>For example, to get the file name of the first file in an attachment field:</p>
+        <p><code>sw_context.inputs['attachments'][0]['filename']</code>
+        </p>
+        <p>To get the file contents of the first file in an attachment field:</p>
+        <p><code>import base64</code>
+        </p>
+        <p><code>base64.b64decode(sw_context.inputs['attachments'][0]['base64'])</code>
+        </p>
+        <h2 id="attaching-files-from-python">Attaching Files from Python</h2>
+        <p>Python integrations can add attachments to attachment fields in Python by returning the attachment as a base 64 encoded string using <code>sw_outputs</code>. The value from <code>sw_outputs</code> is then mapped into an attachment field using the integrations output tab, just like any other integration field value.</p>
+        <p>For example: <code>sw_outputs.append({"attachment": base64.b64encode(fileContent)})</code></p>
+        <h3 id="specifying-a-file-name">Specifying a File Name</h3>
+        <p>By default the attachment file name is the MD5 hash of the file contents. The file name can be specified by using an inner dictionary to specify both the file name and base 64 file contents.</p>
+        <p>For example: <code>sw_outputs.append({"attachment": { "filename": "myFile.txt", "base64": base64.b64encode(fileContent)}})</code></p>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="add-parsing-detail-to-the-suspicious-emails-task">Add Parsing Detail to the Suspicious Emails Task</h1>
+        <p>You have now set up a VirusTotal task to map output from VirusTotal into your Import Suspicious Emails application. Next, you set up the parsing detail in the Swimlane Import Suspicious Email task that will grab the IP address from the emails that come in and input them into the IP(s) from Body field.</p>
+        <p>To add parsing detail:</p>
+        <ol>
+            <li>
+                <p>From the global navigation menu, select <strong>Integrations</strong> and then open the Import Suspicious Emails task.</p>
+            </li>
+            <li>On Integration/Import Suspicious Emails, click the Outputs tab and then expand the Create/Update Records mappings.<br /><img src="../../Resources/Images/qs-email-mappings.png" alt="" /></li>
+        </ol>
+        <ol start="3">
+            <li>
+                <p>Update the Body parameter to map to the <em>IP(s) from Body</em> field.</p>
+            </li>
+            <li>Access the ellipsis pulldown menu for the Body parameter and select <em>Add Configuration.<br /><img src="../../Resources/Images/add-configuration-map.png" alt="" /></em></li>
+            <p>This adds an additional, configurable mapping to the task.</p>
+        </ol>
+        <ol start="4">
+            <li>
+                <p>Select <em>Regex</em> from the Parse With field dropdown, and then click the pencil icon to access the Regex Editor.</p>
+            </li>
+            <li>
+                <p>Within the Regex Editor, enter the following code in the Regular Expression and then click <strong>OK</strong>:</p>
+            </li>
+            <p><code>(\d+\.\d+\.\d+\.\d+)</code>
+            </p>
+            <p>
+                <img src="../../Resources/Images/regex-editor.png" alt="" />
+            </p>
+        </ol>
+        <ol start="5">
+            <li>Review the mappings and then click <strong>Save.</strong></li>
+        </ol>
+        <h2 id="related-links">Related Links</h2>
+        <p><a href="../../administrator-guide/integrations/configure-task-input.htm#Review">Configure Task Input</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/integrations.htm">Integrations</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/configure-task-output/configure-task-output.htm">Output Mapping</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/create-or-edit-a-task.htm">Create or Edit a Task</a>
+        </p>
+    </body>
+</html>

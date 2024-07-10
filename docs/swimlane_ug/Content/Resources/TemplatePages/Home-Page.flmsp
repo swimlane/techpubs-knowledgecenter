@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <MadCap:bodyProxy />
+        <div class="home-footer">
+            <table style="width: 100%;mc-table-style: url('../TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+                <col class="TableStyle-Alternate-Row-Color-Column-Column1" />
+                <col class="TableStyle-Alternate-Row-Color-Column-Column1" />
+                <tbody>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">
+                            <p class="footer"><MadCap:variable name="General.Email" />
+                            </p>
+                            <p class="footer"><MadCap:variable name="General.PhoneNumber" />
+                            </p>
+                            <p class="footer"><MadCap:variable name="General.StreetAddress" />
+                            </p>
+                            <p class="footer"><MadCap:variable name="General.CityStateZip" />
+                            </p>
+                            <p class="footer-sub">Created Using MadCap&#160;Flare</p>
+                        </td>
+                        <td style="text-align: right;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">
+                            <img src="../Images/Logo.png" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

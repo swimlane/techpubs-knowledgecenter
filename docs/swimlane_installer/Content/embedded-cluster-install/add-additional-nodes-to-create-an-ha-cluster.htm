@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="add-additional-nodes-to-create-an-ha-cluster">Add Additional Nodes to Create an HA Cluster</h1>
+        <p class="important"><strong>Important!</strong> This topic provides instructions on how to create a High Availability (HA) cluster and assumes you have already run the Swimlane Platform Installer on the first node. Please see <a href="install-swimlane-on-an-embedded-kubernetes-cluster.htm">Install Into an Embedded Kubernetes Cluster</a> if you have not yet installed on the first node.</p>
+        <h3 id="ha-considerations">HA considerations</h3>
+        <ul>
+            <li>HA clusters require at least 3 nodes and the total number of nodes must be an odd number.</li>
+            <li>Only one MongoDB pod can run on a node. For example, you need 3 nodes in a cluster if you want to go to 3 MongoDB pods to enable a replica set.</li>
+            <li>The first node that the initial install is running on should be in the target group to start. The additional nodes should only be added to the target groups after they’ve been joined to the cluster.</li>
+        </ul>
+        <p>To add additional nodes to a cluster:</p>
+        <ol>
+            <li>From the Swimlane Platform Installer UI, click the Cluster Management tab.</li>
+            <p>
+                <img src="../Resources/Images/cluster_management.png" alt="" />
+            </p>
+            <p>The Cluster Management page displays your installed nodes.</p>
+        </ol>
+        <ol start="2">
+            <li>
+                <p>Click <strong>Add a node</strong>.</p>
+            </li>
+            <li>
+                <p>Under Add a Node, ensure that you have selected <strong>Primary node</strong> and then click <strong>Copy command</strong>.</p>
+            </li>
+            <p>
+                <img src="../Resources/Images/copy_command.png" alt="" />
+            </p>
+            <p class="important"><strong>Important!</strong> The code generated here expires after time. Swimlane recommends that you always copy the code as you work to add additional nodes. Do not save the code for use later.</p>
+        </ol>
+        <ol start="4">
+            <li>Go to your Command-Line Interface (CLI) and paste the copied command for your additional nodes.</li>
+            <p class="tip"><strong>Note:</strong> You can add multiple nodes simultaneously.</p>
+            <p>If your environment requires a proxy then the <code>additionalNoProxyAddresses</code> override option must include an IP range in CIDR notation that encompasses the new node's private IP. If it does not then you will need to update the installer override file to add the new node's private IP to the <code>additionalNoProxyAddresses</code> list and specify the override file when running the join node command on the new node, and then re-run the install command on <em>every other node</em> with the installer override file specified. Failure to ensure that all nodes have the updated <code>additionalNoProxyAddresses</code> list will result in cluster networking issues and issues with the Swimlane platform. See the <a href="overriding-installer-settings/define-proxy-settings.htm">Define Proxy Settings</a> topic for more information on specifying proxy settings.</p>
+            <p>Repeat the steps above for each node you want to add to the cluster. Once you have 3 or more nodes you can continue to the next step.</p>
+        </ol>
+        <ol start="5">
+            <li>
+                <p>Back in the Swimlane Platform Installer UI, click the Application tab, and then click <strong>Config</strong>.</p>
+            </li>
+            <li>
+                <p>Scroll down to the heading <strong>HA Settings</strong>. Select <strong>HA Environment</strong> and click <strong>Save config</strong>.</p>
+            </li>
+            <p>
+                <img src="../Resources/Images/save_config.png" alt="" />
+            </p>
+        </ol>
+        <ol start="7">
+            <li>Once you save the new configuration, you are prompted to view the new version. Click <strong>Go to new version</strong>.</li>
+            <p>
+                <img src="../Resources/Images/new_version.png" alt="" />
+            </p>
+        </ol>
+        <ol start="8">
+            <li>On Version History, click <strong>Deploy</strong>.</li>
+            <p>
+                <img src="../Resources/Images/deploy_button.png" alt="" />
+            </p>
+        </ol>
+        <ol start="9">
+            <li>
+                <p>Return to the Application tab. Once the Application Status is <em>Ready</em> you have added the additional nodes to your HA Swimlane environment.</p>
+            </li>
+            <li>
+                <p>Add the new nodes to the load balancer target groups.</p>
+            </li>
+        </ol>
+    </body>
+</html>

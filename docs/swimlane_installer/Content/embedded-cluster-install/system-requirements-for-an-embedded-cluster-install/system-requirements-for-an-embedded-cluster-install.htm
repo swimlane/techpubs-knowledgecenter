@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="system-requirements-for-an-embedded-cluster-install">System Requirements for an Embedded Cluster Install</h1>
+        <p>While the Swimlane platform can be installed on a single node for testing, a 3+ node cluster is recommended for production environments to provide redundancy and high availability (HA). Any multiple node cluster must have an odd number of total nodes.</p>
+        <p>This table details the recommended sizing and data per node:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Components</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Single Node</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">3 Node Cluster - Small</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">3 Node Cluster - Medium</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">3 Node Cluster - Large</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>CPU</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">8 CPU cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">8 CPU cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">16 CPU cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">32 CPU cores</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>MEMORY</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">32 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">32 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">64 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">128 GB RAM</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>STORAGE</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">600 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">600 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">1 TB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">1 TB SSD / 3000 IOPS per node</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Record Creation Boundaries + Active Users</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">
+                        <p>Records created in a day: 250,000</p>
+                        <p>Total records: 5 million</p>
+                        <p>Active users: 10</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">
+                        <p>Records created in a day: 500,000</p>
+                        <p>Total records: 20 million</p>
+                        <p>Active users: 30</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">
+                        <p>Records created in a day: 1 million</p>
+                        <p>Total records: 20 million</p>
+                        <p>Active users: 50</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">
+                        <p>Records created in a day: 1 million</p>
+                        <p>Total records: 20 million</p>
+                        <p>Active users: 200</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Integration Calculations</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">
+                        <p>Integrations in use &lt; 20 average</p>
+                        <p>Integration actions/day &lt; 250,000</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">
+                        <p>Integrations in use &lt; 20 average</p>
+                        <p>Integration actions/day &lt; 500,000</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">
+                        <p>Integrations in use &lt; 20 average</p>
+                        <p>Integration actions/day &lt; 1 million</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">
+                        <p>Integrations in use &gt; 20 average</p>
+                        <p>Integration actions/day &lt; 1 million</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2"><strong>Pods</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">
+                        <p>API: 1</p>
+                        <p>Tasks: 1</p>
+                        <p>Web: 1</p>
+                        <p>MongoDB: 1</p>
+                        <p>Reports:&#160;1</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">
+                        <p>API: 3</p>
+                        <p>Tasks: 3</p>
+                        <p>Web: 3</p>
+                        <p>MongoDB: 3</p>
+                        <p>Reports:&#160;3</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">
+                        <p>API: 3</p>
+                        <p>Tasks: 3</p>
+                        <p>Web: 3</p>
+                        <p>MongoDB: 3</p>
+                        <p>Reports:&#160;3</p>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">
+                        <p>API: 6</p>
+                        <p>Tasks: 9</p>
+                        <p>Web: 3</p>
+                        <p>MongoDB: 3</p>
+                        <p>Reports:&#160;3</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="important"><strong>Important!</strong> Swimlane does not support spinning disks.</p>
+        <h3 id="external-mongodb-resource-recommendations">External MongoDB Resource Recommendations</h3>
+        <p>This table illustrates the resource recommendations (per node) for a standalone mongo deployment. All of these values can be subtracted from the system requirements above when allocating resources for the remainder of the Swimlane pods. For more information about deploying on an External MongoDB cluster, see <a href="../deploy-with-an-external-mongodb-cluster.htm">Deploy Swimlane with an External MongoDB Cluster</a>.</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Components</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Single Node</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">3 Node Cluster - Sm</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">3 Node Cluster - Med</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">3 Node Cluster - Lg</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>CPU</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">4 CPU Cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">4 CPU Cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">8 CPU Cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">8 CPU Cores</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Ram</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">16 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">16 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">16 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">32 GB RAM</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1"><strong>Storage</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">300 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">300 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">700 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">700 GB SSD / 3000 IOPS per node</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="remaining-swimlane-cluster-resources">Remaining Swimlane Cluster Resources</h4>
+        <p>This table illustrates the resources necessary for the remainder of Swimlane if you are using external MongoDB resources:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Components</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Single Node</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">3 Node Cluster - Sm</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">3 Node Cluster - Med</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">3 Node Cluster - Lg</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>CPU</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">4 CPU Cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">4 CPU Cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">8 CPU Cores</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">24 CPU Cores</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Ram</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">16 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">16 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">48 GB RAM</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">96 GB RAM</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1"><strong>Storage</strong>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">300 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">300 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">300 GB SSD / 3000 IOPS per node</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">300 GB SSD / 3000 IOPS per node</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="resource-utilization-thresholds">Resource Utilization Thresholds</h2>
+        <p>All nodes need to stay below certain resource utilization thresholds to ensure that pods always have available resources to operate in. If any of the following thresholds are exceeded on a node, all pods on that node will be removed until the resource utilization is addressed:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Resource</th>
+                    <th style="text-align: right;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Threshold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Memory</td>
+                    <td style="text-align: right;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Less than 100 <a href="https://simple.wikipedia.org/wiki/Mebibyte" target="_blank">Mebibytes</a> (MiB) Available</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Disk Space (/var/lib/containerd partition)</td>
+                    <td style="text-align: right;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Less than 15% Available</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Disk Space (/var/lib/kubelet partition)</td>
+                    <td style="text-align: right;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Less than 10% Available</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Disk Inodes (/var/lib/kubelet partition)</td>
+                    <td style="text-align: right;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Less than 5% Available</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="backup-requirements">Backup Requirements</h2>
+        <p>Taking a snapshot requires enough free disk space for a compressed archive of the Swimlane database to be saved in ephemeral storage before it is uploaded to the snapshot destination. Free disk space on the cluster at <code>/var/lib/kubelet</code> should be greater than or equal to the size of the uncompressed database to ensure there is no disk pressure during the snapshot process.</p>
+        <h2 id="cloud-service-sizing-tools">Cloud Service Sizing Tools</h2>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: center;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Sizing Calculators</th>
+                    <th style="text-align: center;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Sizing Guides</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Instance Sizing Calculators AWS</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1"><a href="https://aws.amazon.com/ec2/instance-types/" target="_blank">Instance Sizing AWS</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Instance Sizing Calculators Azure</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2"><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-general#dsv2-series" target="_blank">Instance Sizing Azure</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Instance Sizing Calculators GCP</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1"><a href="https://cloud.google.com/compute/docs/machine-types" target="_blank">Instance Sizing GCP</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="important"><strong>Important!</strong> Most cloud providers limit IOPS for disks and for instances/virtual machines. Consult your provider's documentation to ensure the effective IOPS for the cluster nodes meet the requirements in the sizing table above.</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: center;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Provider</th>
+                    <th style="text-align: center;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Documentation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">AWS</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1"><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html" target="_blank">Disk Performance Limits</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">AWS</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2"><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html" target="_blank">Instance Performance Limits</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Azure</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1"><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disks-scalability-targets" target="_blank">Disk Performance Limits</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Azure</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2"><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-general" target="_blank">VM Performance Limits</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">GCP</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1"><a href="https://cloud.google.com/compute/docs/disks/performance" target="_blank">Disk Performance Limits</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">GCP</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2"><a href="https://cloud.google.com/compute/docs/disks/performance#machine-type-disk-limits" target="_blank">VM Performance Limits</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="critical-prerequisites">Critical Prerequisites</h2>
+        <p>The following operating systems have been tested by Swimlane for your node setup:&#160;</p>
+        <ul>
+            <li>
+                <p><b>CentOS 7:</b> 7.7, 7.8, 7.9</p>
+            </li>
+            <li>
+                <p><b>CentOS 8:</b> Stream Release 8</p>
+            </li>
+            <li>
+                <p><b>RHEL 7:</b> 7.9</p>
+            </li>
+            <li>
+                <p><b>RHEL 8</b>: 8.6, 8.9</p>
+            </li>
+            <li>
+                <p><strong>RHEL 9</strong>:&#160;9.2, 9.3</p>
+            </li>
+            <li>
+                <p><strong>ROCKY 9</strong>: 9.2</p>
+            </li>
+            <li>
+                <p><b>Ubuntu:</b> Ubuntu 20.04.6 LTS, 22.04.2 LTS</p>
+            </li>
+            <li>
+                <p><b>Amazon Linux:</b> Amazon Linux 2</p>
+            </li>
+        </ul>
+        <h3>Prerequisites for Airgap Installation on Rocky Linux or RHEL 9.x</h3>
+        <p>Before installation Arigap, make sure to install the following:</p>
+        <ul>
+            <li>
+                <p>nfs-utils</p>
+            </li>
+            <li>
+                <p>conntrack-tools</p>
+            </li>
+            <li>
+                <p>socat</p>
+            </li>
+            <li>
+                <p>git</p>
+            </li>
+            <li>
+                <p>fio</p>
+            </li>
+        </ul>
+        <p>Use the following command to install:</p>
+        <p><span style="font-family: 'Courier New';">sudo dnf -y install nfs-utils conntrack-tools socat git fio container-selinux tar zip unzip</span>
+        </p>
+        <p>For Rocky Linux 9.2, run the following command to change the file permissions:</p>
+        <p><span style="font-family: 'Courier New';">sudo chmod 755 /etc/rc.d/rc.local</span>
+        </p>
+        <p>For each node, whether you are setting up a single-node or HA installation, ensure you have:</p>
+        <ul>
+            <li>
+                <p>Sudo/Root access.</p>
+            </li>
+            <li>
+                <p>NUMA (non-uniform memory access) disabled.</p>
+            </li>
+            <li>
+                <p>Accurate system time.</p>
+            </li>
+        </ul>
+        <p class="important"><strong>Important!</strong> To maintain accurate system time you must have Network Time Protocol (NTP) or a similar time-sync service.</p>
+        <ul>
+            <li>
+                <p>Static IPs (dynamic IPs are <strong>not</strong> supported).</p>
+            </li>
+            <li>
+                <p>Static node hostnames (node hostnames cannot change).</p>
+            </li>
+            <li>
+                <p>No previous installs of Kubernetes, Docker, or Containerd.</p>
+                <ul>
+                    <li>Disable any automatic updates for Kubernetes and Docker-related packages. Updating these will be handled through the Swimlane Platform Installer.</li>
+                </ul>
+            </li>
+            <li>
+                <p>IPv6 and dual stack networks are not supported.</p>
+            </li>
+            <li>
+                <p>IP forwarding enabled.</p>
+                <ul>
+                    <li>The installer can handle enabling IPv4 forwarding but you must ensure it remains enabled on all cluster nodes going forward even after reboot.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Critical CPU Architecture Prerequisites</h3>
+        <ul>
+            <li>
+                <p>CPU architecture must be compatible with MongoDB, unless an external Mongo solution is used. See the <a href="https://www.mongodb.com/docs/v5.0/administration/production-notes/#platform-support-matrix">MongoDB Platform Support Matrix</a>  for more information.</p>
+            </li>
+        </ul>
+        <h3 id="critical-network-prerequisites">Critical Network Prerequisites</h3>
+        <ul>
+            <li>
+                <p>The IP ranges <code>10.32.0.0/20</code>and <code>10.96.0.0/22</code> are the default IP ranges used internally in the cluster for Kubernetes service and pod networking. If these are in use in your network and routable by the cluster nodes, the internal cluster IP ranges will need to be overridden. See  <a href="../overriding-installer-settings/define-custom-pod-and-service-subnets.htm">Define Custom Pod and Service Subnets</a> for instructions on overriding the internal cluster IP ranges.</p>
+            </li>
+            <li>
+                <p>Ensure all nodes are in the same cloud provider region or physical data center network. Nodes behind different WAN links in the same cluster are not supported.</p>
+            </li>
+        </ul>
+        <h3 id="critical-load-balancer-prerequisites">Critical Load Balancer Prerequisites</h3>
+        <p>A load balancer that supports hairpinning is <strong>REQUIRED</strong> for HA installations.</p>
+        <p>Here are some suggested load balancers and configurations that you can use:</p>
+        <ul>
+            <li>
+                <p>Layer 7 Load Balancers:</p>
+                <ul>
+                    <li><a href="../infrastructure-examples/aws-application-load-balancer.htm" target="_blank_">AWS Application Load Balancer</a>
+                    </li>
+                    <li><a href="../infrastructure-examples/azure-standard-application-gateway.htm" target="_blank_">Azure Standard Application Gateway</a>
+                    </li>
+                    <li><a href="../infrastructure-examples/azure-standard-v2-application-gateway.htm" target="_blank_">Azure Standard_v2 Application Gateway</a>
+                    </li>
+                    <li><a href="../infrastructure-examples/gcp-https-load-balancer.htm" target="_blank_">GCP HTTPS Load Balancer</a>
+                    </li>
+                    <li><a href="../infrastructure-examples/haproxy-load-balancer.htm#http-mode-layer-7-haproxy" target="_blank_">HA Proxy</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>TCP Forwarding Layer 4 Load Balancers:</p>
+                <ul>
+                    <li><a href="../infrastructure-examples/aws-network-load-balancer.htm" target="_blank_">AWS Network Load Balancer</a>
+                    </li>
+                    <li><a href="../infrastructure-examples/azure-load-balancer.htm" target="_blank_">Azure Load Balancer</a>
+                    </li>
+                    <li><a href="../infrastructure-examples/gcp-tcp-load-balancer.htm" target="_blank_">GCP TCP Load Balancer</a>
+                    </li>
+                    <li><a href="../infrastructure-examples/haproxy-load-balancer.htm#tcp-mode-layer-4-haproxy" target="_blank_">HA Proxy</a>
+                    </li>
+                </ul>
+                <p>More detailed information about specific load balancer configurations can be found in the <a href="../infrastructure-examples/infrastructure-examples.htm" target="_blank_">Infrastructure Examples</a> topic.</p>
+            </li>
+        </ul>
+        <h4 id="extra-considerations-for-load-balancer-set-up-on-nodes">Extra Considerations for Load Balancer Set Up on Nodes</h4>
+        <p>Each node in the cluster needs to be reachable by the load balancer on these ports:</p>
+        <ul>
+            <li>TCP 443 (Swimlane Platform UI)</li>
+            <li>TCP 8800 (Swimlane Platform Installer UI)</li>
+            <li>TCP 6443 (Kubernetes API)</li>
+            <li>TCP 80 (Optional - HTTP to HTTPS redirect for the Swimlane Platform UI)</li>
+        </ul>
+        <p>A load balancer is required for the Kubernetes API and the Swimlane Platform Installer.</p>
+        <p class="note"><strong>Note:</strong> If you are using a Layer 4 load balancer for the Swimlane Platform Installer and the Swimlane platform, it can be combined with the Kubernetes API load balancer so that only one is required.</p>
+        <p>The <strong>Kubernetes API load balancer</strong> must be a Layer 4 load balancer.</p>
+        <ul>
+            <li>The front-end port on the load balancer should be 6443 (Kubernetes Control Plane).</li>
+            <li>The back-end port on the load balancer to the nodes should be 6443.</li>
+        </ul>
+        <p>The <strong>Swimlane Platform Installer</strong> and the <strong>Swimlane platform</strong> load balancer can be either a Layer 4 or Layer 7 load balancer.</p>
+        <ul>
+            <li>Front-end ports on the load balancer should be 443 (Swimlane platform) and 8800 (Swimlane Platform Installer).</li>
+            <li>Backend ports on the load balancer map different based on load balancer type</li>
+            <li>For Layer 7 load balancers:
+<ul><li>443 should map to 4443</li><li>8800 should map to 8800</li></ul></li>
+            <li>For Layer 4 load balancers:
+<ul><li>443 should map to 443</li><li>8800 should map to 8800</li></ul></li>
+        </ul>
+        <h3 id="other-critical-prerequisites">Other Critical Prerequisites</h3>
+        <ul>
+            <li>
+                <p>For production environments use an Amazon S3 bucket or S3-compatible storage solution to store snapshots externally so that a total cluster outage does not result in a loss of snapshots.</p>
+                <ul>
+                    <li>If Amazon S3 is unavailable for use then an S3-compatible solution like <a href="https://min.io/" target="_blank_">min.io</a> can be used but should be installed external to the cluster.</li>
+                </ul>
+            </li>
+            <li>
+                <p>In order to maximize disk space, Swimlane recommends that you set up partitions. Here are the minimum recommended partition sizes:</p>
+            </li>
+        </ul>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <col class="TableStyle-Alternate-Row-Color-Column-Column1" />
+            <col style="width: 104px;" class="TableStyle-Alternate-Row-Color-Column-Column1" />
+            <col class="TableStyle-Alternate-Row-Color-Column-Column1" />
+            <col class="TableStyle-Alternate-Row-Color-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Partition</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Size</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Description of highest storage consumers by function:</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Storage concerns and what to look out for:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">/</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">50 GB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Base OS, installation files, logs, and other smaller cluster dependencies</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Local logs storage and log rotation policies</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">
+                        <p>/var/lib/kurl </p>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">
+                        <p style="text-align: left;" class="table-text">100 GB</p>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">
+                        <p>Dependencies for the kURL kubernetes distribution</p>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">
+                        <p>Written and read from during kURL installs and upgrades</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">/var/lib/containerd</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">100 GB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Container images, logs, and runtime volumes</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Docker image growth (unused images get pruned when the default imagefs threshold of 15% is reached) and container log growth</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">/var/lib/kubelet</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">100 GB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Kubernetes runtime, ephemeral storage, and in flight snapshot temporary storage</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Snapshot size and pod temporary storage increasing</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">/var/openebs</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">300 GB</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">
+                        <p>Swimlane Platform Installer database, and completed local snapshots</p>
+                        <p>Persistent storage subsystem - used for database volumes <br /></p>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">Amount of Swimlane data and integrations<br />Local storage of snapshots (see note, below)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note"><strong>Note:</strong> Production environments should be using external storage locations for snapshots. If you plan to store snapshots locally in a test/lab environment, you will need to make the /var/openebs partition larger to accommodate them.</p>
+        <p class="note"><strong>Note:</strong> If you plan to use a separate disk or volume for /var/openebs ensure it meets the minimum IOPS defined in the table with recommended data and sizing at the beginning of this topic.</p>
+        <h3 id="domain-name-system-dns">Domain Name System (DNS)</h3>
+        <p>Use the IP or DNS record for the Kubernetes API load balancer to specify the load balancer address during the initial installation.</p>
+        <p>A DNS record should be created that points to the Swimlane Platform Installer and Swimlane platform load balancer. This will be the DNS address specified when you configure Swimlane after the installation. Append that address with <code>:8800</code> in order to access the Swimlane Platform Installer UI.</p>
+        <p>If only one Layer 4 load balancer is used then a single DNS record can be created and used for both purposes.</p>
+        <p class="important"><strong>Important!</strong> You must use DNS-compliant records. A DNS record can be up to 63-characters long and can only contain letters, numbers, and hyphens. The record cannot start or end with a hyphen, nor have consecutive hyphens.</p>
+        <h2 id="exceptions-to-network-access-control-lists-acl">Exceptions to Network Access Control Lists (ACL)</h2>
+        <p>Swimlane installations on servers with tight Network Access Control (NAC) will need several exceptions made to properly install, license, and stage a Swimlane deployment with the Swimlane Platform Installer. See the tables below for the Outbound and Inbound exceptions.</p>
+        <h3 id="required-outbound-url-acl-exceptions">Required Outbound URL ACL Exceptions</h3>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Exception</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">get.swimlane.io</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane platform installation script</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">k8s.kurl.sh</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Swimlane platform installation script</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">kurl.sh</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane platform installation script</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">kurl-sh.s3.amazonaws.com</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Swimlane platform installation script dependencies</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">registry.replicated.com</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane platform container images</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">proxy.replicated.com</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Swimlane platform container images</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">k8s.gcr.io</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane platform container dependency images</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">ghcr.io</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Swimlane platform container dependency images</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">registry.k8s.io</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane platform container dependency images</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">storage.googleapis.com</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Swimlane platform container dependency images</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">quay.io</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane platform container dependency images</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">replicated.app</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Swimlane Platform Installer license verification</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">auth.docker.io</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Docker authentication</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">registry-1.docker.io</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Docker registry</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">production.cloudflare.docker.com</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Docker infrastructure</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">files.pythonhosted.org</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Python packages for Swimlane integrations</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">pypi.org</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Python packages for Swimlane integrations</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">&lt;LoadBalancerIP&gt;:6443</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Kubernetes API</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 id="port-requirements">Port Requirements</h3>
+        <h4 id="external-access"><a name="External"></a>External Access</h4>
+        <p>The following ports are required externally to allow access to the Swimlane platform components:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Ports</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Protocol</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Purpose</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Access From</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">443</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Swimlane platform UI</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Clients that need to access the Swimlane platform UI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">80</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Swimlane platform UI</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Optional - HTTP to HTTPS redirect for the Swimlane platform UI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">8800</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Swimlane Platform Installer UI</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Clients that need to access the Swimlane Platform Installer UI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">22</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Shell access</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Management workstations to manage the cluster nodes and install Swimlane</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="between-cluster-nodes">Between Cluster Nodes</h4>
+        <p>The following ports are required between the clusters nodes to allow cluster operation:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Ports</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Protocol</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">2379-2380</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Kubernetes etcd</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">6443</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Kubernetes API</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">8472</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">UDP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Kubernetes CNI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">10250-10252</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Kubernetes components (kubelet, kube-scheduler, kube-controller)</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="from-load-balancers">From Load Balancers</h4>
+        <p>The following ports are required between the cluster nodes and the load balancer(s):</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Ports</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Protocol</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">443</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane platform UI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">80</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Optional - HTTP to HTTPS redirect for the Swimlane platform UI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">8800</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Swimlane Platform Installer UI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">6443</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">TCP</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Kubernetes API</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="available-ports">Available Ports</h4>
+        <p>In addition to all ports listed above in the <code>Between Cluster Nodes</code> table, the following ports are required to be available and unused by other processes on each cluster node in order to install:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Ports</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">2381</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Kubernetes etcd</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">8472</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Kubernetes CNI</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">10248</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Kubernetes kubelet health server</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">10249</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Kubernetes kube-proxy metrics server</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">10257</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Kubernetes kube-controller-manager health server</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">10259</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Kubernetes kube-scheduler health server</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="external-monitoring-considerations">External Monitoring Considerations</h2>
+        <p>Swimlane recommends that any SPI installation has some amount of external monitoring set up and set to alert when any user-defined thresholds are met as to possible instances of your production instances going down. Different installation scenarios may call for different metrics to monitor for, so your implementation may vary. As a baseline, the following metrics are recommended:</p>
+        <ul>
+            <li>Are all nodes healthy?</li>
+            <li>Does each node have sufficient free space in all partitions?</li>
+            <li>Are CPU and memory usage levels within acceptable levels?</li>
+            <li>Is disk latency within acceptable ranges?</li>
+            <li>Are any pods in a not-ready state?</li>
+            <li>Are any deployments or StatefulSets not reporting the correct number of ready replicas?</li>
+            <li>Do any load balancers have health checks in place? Are they healthy?</li>
+        </ul>
+        <h3 id="third-party-monitoring-solutions">Third Party Monitoring Solutions</h3>
+        <p>There are several third-party monitoring solutions that you can use to monitor resource usage for a node. Any tool that you put into use should be installed externally to the cluster so as to not interfere with cluster operations and to be able to alert if a metric enters into a failing scenario. These products may require that their own agents or exporters be installed on the nodes in order to facilitate monitoring. Any agent or exporter should be tested against your cluster to validate that they do not interfere with Swimlane operations or port requirements.</p>
+    </body>
+</html>

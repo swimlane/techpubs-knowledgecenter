@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="conditions">Conditions</h1>
+        <p>Workflow consists of conditions and actions. Each branch of the workflow can contain multiple conditions and actions. Conditions are branches of the workflow tree. When you set up conditions, set them up according to decision points in your business processing.</p>
+        <h2 id="conditional-branch-example">Conditional Branch: Example</h2>
+        <p>Create conditional branches according to the flow of your business processes. For example, if you are setting up a process for handling phishing email scans, you can anticipate that some email accounts will be compromised, while others will not, and still others might not even need scanning. In this example, you can set up the branch with these conditions and actions:</p>
+        <p>The Phishing Workflow is set to look for the Incident Type = "Phishing Alert." It processes that condition and then branches to these additional actions:</p>
+        <ul>
+            <li>5 or More Hits</li>
+            <li>Scanned, No Hits</li>
+            <li>Never Scanned</li>
+        </ul>
+        <p>Each branch in the above example can then have multiple actions branched off, as necessary.</p>
+        <p>To add an additional condition, select the root node or another conditional node and click <strong>New Condition</strong> on the Workflow toolbar.</p>
+        <p>Each workflow has a Default Action condition which, by default, does not have any conditions. Any action defined within Default Action will run once each time the workflow runs.</p>
+        <p class="tip"><strong>TIP:</strong> You can define multiple conditions in one step if you use <strong>Evaluation Type</strong> as a secondary conditional field. Set the field to <em>AND</em> to indicate that all the conditions defined within should be met in order to execute the branch. Set it to <em>OR</em> to specify that a branch should be executed upon one of the conditions being met.</p>
+        <h2 id="conditional-operators">Conditional Operators</h2>
+        <p>You can set up different conditional operators for the field you choose to conditionalize. The operators differ by field type.</p>
+        <p>The operators are mostly self-explanatory.</p>
+        <p>Here is a list of the conditional operators with which you can set up conditions:</p>
+        <ul>
+            <li>Equals</li>
+            <li>Does Not Equal</li>
+            <li>Contains</li>
+            <li>Excludes</li>
+            <li>Less Than</li>
+            <li>Less Than or Equal</li>
+            <li>Greater Than</li>
+            <li>Greater Than or Equal</li>
+            <li>Has Value</li>
+            <li>Does Not Have Value</li>
+            <li>Has Been Modified</li>
+            <li>Matches Regex</li>
+        </ul>
+        <p class="note"><strong>Note:</strong> When you use a Reference field as a conditional operator, it is dependent upon the field type of the referenced field.</p>
+        <h3 id="more-on-the-has-been-modified-conditional-operator">More on the Has Been Modified Conditional Operator</h3>
+        <p>When you use a Has Been Modified condition, you're setting a condition that says, when the content of the selected field changes, then the assigned action occurs.</p>
+        <p class="note"><strong>Note:</strong> The field upon which you set the Has Been Modified condition must change from existing content to new, existing content. The action isn't triggered when the change on a field goes from an empty field, to existing content in the field.</p>
+    </body>
+</html>

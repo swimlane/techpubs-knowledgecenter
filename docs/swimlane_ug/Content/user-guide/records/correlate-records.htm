@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="correlate-records">Correlate Records</h1>
+        <p>Record correlation correlates records within a single application within the Swimlane platform. Upon ingestion of new Application records, the platform compares the new record to previous records that have correlation keys.</p>
+        <p>Record Correlation executes two tasks:</p>
+        <ul>
+            <li>Compares Correlation Key fields across records in a single application, looking for configurable similarities.</li>
+            <li>Creates References in a Reference field among associated records.</li>
+        </ul>
+        <p>The correlation field types in the following table are aligned with their default configurations and will be compared with the matching preferences on the Settings tab:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1"><strong>Correlation Field Type</strong>
+                    </th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1"><strong>Value and Default Information</strong>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">IPv4 public addresses</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Plus or minus 255 values. Example: 10.10.11.0 – 10.10.10.254 = 2</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">IPv4 private addresses</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Exact match between addresses</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">IPv6 public addresses</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Within 65535 values</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Domains, URLs, file names, and email addresses</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Has a threshold of 90% similarity, calculated via “lengthwise Levenshtein” of less than 1 character substitution per 10 characters of string length</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">File attachments</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Fuzzy hash similarity greater than or equal to 90%</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Text list fields</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Matches process as entry fields, so 2 items will match with 2.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="configure-record-correlations">Configure Record Correlations</h2>
+        <p>To configure record correlations:</p>
+        <ol>
+            <li>
+                <p>From the Navigation menu, select <strong>Applications and Applets</strong>.</p>
+            </li>
+            <li>
+                <p>Click the <strong>plus</strong> icon, and then click <strong>Create a new application</strong>.</p>
+            </li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/create-a-new-application-button.png" alt="" />
+        </p>
+        <ol start="3">
+            <li>
+                <p>On Create Application, complete the <strong>Name</strong> field. You can click the GENERAL, ADMINISTRATION, RECORDS, or WORKSPACE tabs to add information or use the <strong>Next</strong> and <strong>Prev</strong> buttons to move through the tabs.</p>
+            </li>
+            <li>
+                <p>Click <strong>+Create</strong>.</p>
+            </li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/create-application-window-alerts.png" alt="" />
+        </p>
+        <p>Once you click the +Create button, the new application opens in the application builder.</p>
+        <p>The FORM LAYOUT section will be blank.</p>
+        <p>
+            <img src="../../Resources/Images/blank-form-layout.png" alt="" />
+        </p>
+        <ol start="6">
+            <li>Click and drag the following field types into the FORM LAYOUT section to start building your application: <strong>Text</strong>, <strong>IP</strong>, <strong>URL</strong>, and <strong>Correlation</strong>.</li>
+        </ol>
+        <p>The FORM LAYOUT section will reflect all of the required field types for record correlation.</p>
+        <p>
+            <img src="../../Resources/Images/alert-form-layout-fields.png" alt="" />
+        </p>
+        <p>Now, record correlation has been enabled for this application. The field named <strong>Correlation Results</strong> will display the correlation results.</p>
+        <ol start="6">
+            <li>To setup correlation settings, click <strong>Manage correlation settings</strong> hyperlink.</li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/manage-correlation-settings-hyperlink.png" alt="" />
+        </p>
+        <p>From the Record Correlation window, you will be able to manage data.</p>
+        <ol start="7">
+            <li>For details about how record correlation executes and default values for specific Correlation field types, click the <strong>Documentation</strong> tab.</li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/record-correlation-documentation-tab.png" alt="" />
+        </p>
+        <p>Once you have read details about the correlation process and data, navigate back to the <strong>Settings</strong> tab.</p>
+        <p>
+            <img src="../../Resources/Images/record-correlation-settings.png" alt="" />
+        </p>
+        <p>From Settings, there will be three Matching Preferences fields: <strong>Matching Timeframe</strong>, <strong>Matching Threshold</strong>, and <strong>Minimum number of matching fields</strong>. Each field has a default value. Click within the field to modify the default value.</p>
+        <ol start="8">
+            <li>
+                <p>After you set the Matching Preferences, click the <strong>Correlation Field</strong> drop-down arrow and select a field type.</p>
+                <p>
+                    <img src="../../Resources/Images/correlation-field-dropdown.png" alt="" />
+                </p>
+                <p>i&gt; <strong>Tip:</strong> Click <strong>Add a Correlation Field</strong> to create another drop-down list.</p>
+                <p>Complete this for each required Correlation Field drop-down.</p>
+                <p>
+                    <img src="../../Resources/Images/completed-record-correlation-settings.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>To save record correlation settings, click <strong>Apply</strong>.</p>
+            </li>
+        </ol>
+    </body>
+</html>

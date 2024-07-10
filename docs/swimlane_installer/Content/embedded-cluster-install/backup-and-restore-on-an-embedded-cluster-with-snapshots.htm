@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="backup-and-restore-on-an-embedded-cluster-with-snapshots">Backup and Restore on an Embedded Cluster with Snapshots</h1>
+        <p>The Swimlane Platform Installer (SPI) uses snapshots to backup and restore your Swimlane platform and data.</p>
+        <p class="important"><strong>Important!</strong>
+Note the following items that list limitations with snapshots:<br /><br />By default, snapshots are stored locally on the cluster. For production environments, snapshots should be changed to be stored externally so that a total cluster outage does not result in the loss of snapshots.
+<br /><br />Taking a snapshot requires enough free disk space for a compressed archive of the Swimlane database to be saved in ephemeral storage before it is uploaded to the snapshot destination. Free disk space on the cluster at <code>/var/lib/kubelet</code> should be greater than or equal to the size of the uncompressed database to ensure there is no disk pressure during the snapshot process.
+<br /><br />Instance snapshots are considered complete and are usable in disaster recovery scenarios. Application snapshots are the legacy snapshot method and are not usable for disaster recovery. Instance snapshots can be used in place of the legacy application snapshots.
+<br /><br />Snapshots cannot be restored to a different Operating System than when the snapshot was taken. For example, cluster snapshots based on CentOS cannot be restored to clusters based on Ubuntu.
+<br /><br />Snapshots cannot be restored to different installation methods. For example, online cluster snapshots cannot be restored to offline clusters.<br /><br />AWS S3 buckets with a bucket policy that requires the server-side encryption header are not supported. If you need to require server-side encryption for objects, Swimlane recommends that you enable default encryption on the bucket itself instead.
+<br /><br />Cleanup and removal of snapshots can only be done through the SPI admin console snapshots tab. Removing data from the snapshot storage itself will result in data corruption and loss of snapshots.</p>
+        <h2 id="configure-snapshot-storage">Configure Snapshot Storage</h2>
+        <p>From the top-level SPI UI, click the <strong>Snapshots</strong> section and then click <strong>Settings</strong> (on the lower right side of the screen).</p>
+        <p>
+            <img src="../Resources/Images/snapshot_settings_default.png" alt="" />
+        </p>
+        <h2 id="storing-snapshots-on-amazon-s3">Storing Snapshots on Amazon S3</h2>
+        <p>
+            <img src="../Resources/Images/snapshot_settings_s3.png" width="50%" alt="" />
+        </p>
+        <h3 id="requirements">Requirements</h3>
+        <p>Storing snapshots on Amazon S3 requires:</p>
+        <ul>
+            <li>
+                <p>An IAM user or IAM role to authenticate.</p>
+            </li>
+            <li>
+                <p>The bucket cannot have a bucket policy that requires the server-side encryption header. The recommended method to require server side encryption for objects is to enable default encryption on the bucket itself instead.</p>
+            </li>
+            <li>
+                <p>The following sample policy can be used after replacing <code>${BUCKET}</code> with the AWS ARN of your bucket:</p>
+                <details>
+                    <summary>Sample IAM Policy</summary>
+                    <MadCap:codeSnippet>
+                        <codeSnippetCopyButton />
+                        <codeSnippetBody>{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:PutObject",
+                "s3:AbortMultipartUpload",
+                "s3:ListMultipartUploadParts"
+            ],
+            "Resource": [
+                "arn:aws:s3:::${BUCKET}/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::${BUCKET}"
+            ]
+        }
+    ]
+}
+</codeSnippetBody>
+                    </MadCap:codeSnippet>
+                </details>
+            </li>
+        </ul>
+        <h3 id="instructions">Instructions</h3>
+        <ol>
+            <li>
+                <p>Change the <strong>Destination</strong> drop down to <strong>Amazon S3</strong>.</p>
+            </li>
+            <li>
+                <p>Set <strong>Bucket</strong> to the name of the Amazon S3 bucket to store snapshots in.</p>
+            </li>
+            <li>
+                <p>Set <strong>Region</strong> to the name of the AWS region that the S3 bucket is in.</p>
+            </li>
+            <li>
+                <p>Set <strong>Path</strong> to the path in the S3 bucket that the snapshots should be stored under.</p>
+            </li>
+            <li>
+                <p>If your cluster nodes are AWS EC2 instances and you want the AWS permissions to access the S3 bucket managed by an IAM instance role, check the <strong>Use IAM Instance Role</strong> checkbox and leave the <strong>Access Key ID</strong> and <strong>Access Key Secret</strong> fields blank.</p>
+            </li>
+            <li>
+                <p>If you need to use IAM credentials to access the S3 bucket then set <strong>Access Key ID</strong> and <strong>Access Key Secret</strong> to the IAM user's API credentials.</p>
+            </li>
+        </ol>
+        <h2 id="storing-snapshots-on-azure-blob-storage">Storing Snapshots on Azure Blob Storage</h2>
+        <p>
+            <img src="../Resources/Images/snapshot_settings_azure.png" width="50%" alt="" />
+        </p>
+        <h3 id="requirements-1">Requirements</h3>
+        <p>Storing snapshots on Azure Blog Storage requires:</p>
+        <ul>
+            <li>An Azure service principal and client secret to authenticate.</li>
+            <li>The storage account and service principal must be in the same subscription, tenant, and resource group.</li>
+            <li>Required service principal permissions:
+<ul><li>The service principal must have the <code>Storage Account Key Operator Service Role</code> role on the storage account.</li><li>The service principal must have the <code>Storage Blob Data Contributor</code> role on the storage container.</li></ul></li>
+        </ul>
+        <h3 id="instructions-1">Instructions</h3>
+        <ol>
+            <li>
+                <p>Change the <strong>Destination</strong> drop down to <strong>Azure Blob Storage</strong>.</p>
+            </li>
+            <li>
+                <p>Configure your Azure settings:</p>
+            </li>
+            <table style="mc-table-style: url('../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+                <thead>
+                    <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                        <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Field</th>
+                        <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Bucket</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Set to the name of the Azure storage container where you will store snapshots.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Path</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Set to the path in the Azure storage container where the snapshots should be stored.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Subscription ID</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Set to the Azure subscription ID where your resources are.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Tenant ID</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Set to the Azure tenant ID where your resources are.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Client ID</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Set to the client ID of the Azure application that the service principal is a part of.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Client Secret</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Set to the value of the client secret generated under the Azure service principal.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Cloud Name</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Set to the Azure cloud where your resources are.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Resource Group Name</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Set to the Azure resource group name where your resources are.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Storage Account ID</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">Set to the name of the Azure storage account where the storage container is.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <h2 id="storing-snapshots-on-google-cloud-storage">Storing Snapshots on Google Cloud Storage</h2>
+        <p>
+            <img src="../Resources/Images/snapshot_settings_google.png" width="50%" alt="" />
+        </p>
+        <h3 id="requirements-2">Requirements</h3>
+        <p>Storing snapshots on Google Cloud Storage requires:</p>
+        <ul>
+            <li>Requires a Google Cloud service account to authenticate.</li>
+            <li>The service account should have the <code>storage.objectAdmin</code> role on the bucket.</li>
+        </ul>
+        <h3 id="instructions-2">Instructions</h3>
+        <ol>
+            <li>
+                <p>Change the <strong>Destination</strong> drop down to <strong>Google Cloud Storage</strong>.</p>
+            </li>
+            <li>
+                <p>Set <strong>Bucket</strong> to the name of the Google storage bucket to store snapshots in.</p>
+            </li>
+            <li>
+                <p>Set <strong>Path</strong> to the path in the bucket that the snapshots should be stored under.</p>
+            </li>
+            <li>
+                <p>If your cluster nodes are Google Cloud VMs and you want the AWS permissions to access the Google Cloud Storage bucket managed by an IAM instance role, check the <strong>Use IAM Instance Role</strong> checkbox and leave the <strong>JSON File</strong> field blank.</p>
+            </li>
+            <li>
+                <p>If you need to use IAM credentials to access the Google Cloud Storage bucket then set <strong>JSON File</strong> to the JSON key for the service account.</p>
+            </li>
+        </ol>
+        <h2 id="storing-snapshots-on-a-host-path">Storing Snapshots on a Host Path</h2>
+        <p>
+            <img src="../Resources/Images/snapshot_settings_hostpath.png" width="50%" alt="" />
+        </p>
+        <h3 id="requirements-3">Requirements</h3>
+        <p>Storing snapshots on a Host Path requires:</p>
+        <ul>
+            <li>The host path storage destination should not be used for production environments. They provide a security risk and the snapshots are not stored externally. Restoration will not be possible in the event of a total cluster loss.</li>
+            <li>The host path must be a dedicated directory. Do not use a partition used by a service like Docker or Kubernetes for ephemeral storage.</li>
+            <li>The host path directory specified must exist on every node that the SPI pods can be scheduled on to ensure snapshots work even if pod scheduling changes.</li>
+            <li>The host path directory must be read-writable by the user:group 1001:1001</li>
+            <li>Host path cannot be used if your cluster requires pods to have resources, service account, affinity, node selectors, or tolerations defined.
+<ul><li>This option creates a Minio deployment in the namespace that Swimlane is installed under to handle passing the snapshot data to the host path. Swimlane does not support changing any of those settings for this deployment.</li></ul></li>
+        </ul>
+        <h3 id="instructions-3">Instructions</h3>
+        <ol>
+            <li>Change the <strong>Destination</strong> drop down to <strong>Host Path</strong>.</li>
+            <li>Set <strong>Host Path</strong> to the directory on the cluster nodes that the snapshots should be stored under.</li>
+        </ol>
+        <h2 id="storing-snapshots-on-nfs">Storing Snapshots on NFS</h2>
+        <p>
+            <img src="../Resources/Images/snapshot_settings_nfs.png" width="50%" alt="" />
+        </p>
+        <h3 id="requirements-4">Requirements</h3>
+        <p>Storing snapshots on NFS requires:</p>
+        <ul>
+            <li>Supports NFSv3 and NFSv4.</li>
+            <li>Host/IP authentication must be used as username and password authentication is not supported.</li>
+            <li>The NFS server must be configured to allow access from all the nodes in the cluster.</li>
+            <li>The NFS directory must be owned by the user:group 1001:1001.</li>
+            <li>The target directory needs to be read-writable by the user:group 1001:1001</li>
+            <li>All the nodes in the cluster must have the necessary NFS client packages installed to be able to communicate with the NFS server. For example, the nfs-common package is a common package used on Ubuntu.</li>
+            <li>Any firewalls must allow traffic between the NFS server and clients</li>
+            <li>NFS cannot be used if your cluster requires pods to have resources, service account, affinity, node selectors, or tolerations defined.
+<ul><li>This option creates a Minio deployment in the namespace that Swimlane is installed under to handle passing the snapshot data to the host path and it is not currently supported to change any of those settings for this deployment.</li></ul></li>
+        </ul>
+        <h3 id="instructions-4">Instructions</h3>
+        <ol>
+            <li>Change the <strong>Destination</strong> drop down to <strong>Network File System (NFS)</strong>.</li>
+            <li>Set <strong>Server</strong> to the hostname or IP of the NFS server.</li>
+            <li>Set <strong>Path</strong> to the path on the NFS server that the snapshots should be stored under.</li>
+        </ol>
+        <h2 id="storing-snapshots-on-other-s3-compatible-provider">Storing Snapshots on Other S3-compatible Provider</h2>
+        <p>
+            <img src="../Resources/Images/snapshot_settings_s3-compatible.png" width="50%" alt="" />
+        </p>
+        <h3 id="requirements-5">Requirements</h3>
+        <p>Storing snapshots on an S3-Compatible Provider requires:</p>
+        <ul>
+            <li>An S3-compatible provider like <a href="https://min.io/" target="_blank_">min.io</a>.</li>
+            <li>The S3-compatible provider should be installed separately from the cluster nodes that Swimlane is installed on to ensure that snapshots are stored externally from the cluster so they can be retrieved in the event of a total cluster loss.</li>
+        </ul>
+        <h3 id="instructions-5">Instructions</h3>
+        <ol>
+            <li>
+                <p>Change the <strong>Destination</strong> drop down to <strong>Other S3-Compatible Storage</strong>.</p>
+            </li>
+            <li>
+                <p>Set <strong>Bucket</strong> to the name of the S3-compatible bucket to store snapshots in.</p>
+            </li>
+            <li>
+                <p>Set <strong>Path</strong> to the path in the S3-compatible that the snapshots should be stored under.</p>
+            </li>
+            <li>
+                <p>Set <strong>Access Key ID</strong> and <strong>Access Key Secret</strong> to the credentials required to access the storage provider.</p>
+            </li>
+            <li>
+                <p>Set <strong>Endpoint</strong> to the required value for your storage provider.</p>
+            </li>
+            <p class="important"><strong>Important!</strong> If the snapshot endpoint is using HTTPS, it must present a certificate signed by a commonly-trusted public certificate authority. Self-signed and privately signed certificates are not supported at this time.</p>
+        </ol>
+        <ol start="6">
+            <li>Set <strong>Region</strong> to the required value for your storage provider.</li>
+        </ol>
+        <h2 id="configure-snapshots-schedule-and-retention">Configure Snapshots Schedule and Retention</h2>
+        <ol>
+            <li>From the Platform Installer UI, click the Snapshots tab.</li>
+        </ol>
+        <p>
+            <img src="../Resources/Images/no_snapshots.png" alt="" />
+        </p>
+        <p class="feedback">The first time you access the Snapshots tab you are prompted to either schedule a snapshot or to begin creating one. After you have taken your first snapshot the schedule settings are available from the <strong>Schedule</strong> link on the snapshots tab.</p>
+        <ol start="2">
+            <li>
+                <p>Click <strong>Schedule Snapshots</strong>. If you want to schedule automatic snapshots, click <strong>Enable automatic scheduled snapshots</strong>.</p>
+                <p>
+                    <img src="../Resources/Images/enable_automatic_snapshots.png" alt="" />
+                </p>
+                <p>You can schedule automatic snapshots hourly, daily, weekly, monthly, or you can setup a custom snapshot schedule using a cron expression.</p>
+                <p class="note"><strong>Important!</strong> The SPI uses server time to schedule automatic snapshots.</p>
+            </li>
+            <li>
+                <p>Under <strong>Retention policy</strong> you can specify to have the SPI to automatically delete older snapshots. Specify by a number of days, weeks, months, or years, and then click <strong>Update schedule</strong>.</p>
+                <p>
+                    <img src="../Resources/Images/schedule_snapshots.png" alt="" />
+                </p>
+            </li>
+        </ol>
+        <h2 id="restore-from-a-partial-application-snapshot">Restore from a Partial (Application) Snapshot</h2>
+        <ol>
+            <li>
+                <p>On the Snapshots page, you can review a list of all of your Application Snapshots under the "Partial Snapshots (Application)" menu. Click the circular icon to restore a certain snapshot to your Swimlane instance.</p>
+                <p>
+                    <img src="../Resources/Images/restore_from_application_snapshot.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>If you want to restore to the version of the Snapshot, click <strong>Restore from snapshot</strong>. You are then prompted to enter the slug of the snapshot (confirming the slug name). Enter <code>swimlane-platform</code>.</p>
+                <p class="important"><strong>Important!</strong> Restoring to the version you've selected will remove any data since the snapshot was made. In addition, during restoration, your Swimlane instance will not be available and you will not be able to use the Swimlane Installer UI until the restore completes.</p>
+            </li>
+            <li>
+                <p>Return to the main UI. Once your Application Status displays <em>Ready</em>, then you know that both the UI and your Swimlane instance are back up and available again.</p>
+                <p>
+                    <img src="../Resources/Images/swimlane_ready.png" alt="" />
+                </p>
+            </li>
+        </ol>
+        <h2 id="restore-from-a-full-instance-snapshot-in-a-non-dr-scenario">Restore from a Full (Instance) Snapshot in a non-DR scenario</h2>
+        <p>Instance snapshots can act as both instance-level snapshots and as application-level snapshots. This section covers restoring the Swimlane application with an instance snapshot.</p>
+        <ol>
+            <li>
+                <p>On the Snapshots page, you can review a list of all of your instance snapshots under the "Full Snapshots (Instance)" menu. Click the circular icon and select "Partial Restore" to restore a certain snapshot to your Swimlane instance.</p>
+                <p>
+                    <img src="../Resources/Images/restore_from_instance_snapshot.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>You are then prompted to enter the slug of the snapshot (confirming the slug name). Enter <code>swimlane-platform</code>.</p>
+                <p class="important"><strong>Important!</strong> Restoring to the version you've selected removes any data since the snapshot was made. In addition, during restoration, your Swimlane instance is not available and you will not be able to use the SPI until the restore completes.</p>
+            </li>
+            <li>
+                <p>Return to the main UI. Once your Application Status displays <em>Ready</em>, then you know that both the SPI UI and your Swimlane instance are back up and available again.</p>
+                <p>
+                    <img src="../Resources/Images/swimlane_ready.png" alt="" />
+                </p>
+            </li>
+        </ol>
+        <h2 id="restore-from-a-full-instance-snapshot-in-a-dr-scenario">Restore from a Full (Instance) Snapshot in a DR scenario</h2>
+        <ol>
+            <li>After your new destination cluster nodes are installed, run the following command to configure your storage location:</li>
+            <p>AWS S3:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">$ kubectl kots velero configure-aws-s3 access-key \
+  --namespace default \
+  --access-key-id &lt;s3-secret-access-key-id&gt; \
+  --secret-access-key &lt;s3-secret-access-key&gt; \
+  --region &lt;s3-bucket-region&gt; \
+  --bucket &lt;s3-bucket&gt;\
+  --path &lt;s3-bucket directory pathname&gt;</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>Other S3:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody>$ kubectl kots velero configure-other-s3 \
+  --namespace default \
+  --access-key-id &lt;s3-secret-access-key-id&gt; \
+  --secret-access-key &lt;s3-secret-access-key&gt; \
+  --endpoint &lt;s3-bucket-endpoint&gt; \
+  --region &lt;s3-bucket-region&gt; \
+  --bucket &lt;s3-bucket&gt;
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>NFS:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody>$ kubectl kots velero configure-nfs \
+  --namespace default \
+  --nfs-server &lt;nfs-server-fqdn&gt; \
+  --nfs-path &lt;export-nfs-path&gt;
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p class="note"><strong>Note:</strong> If you are in an airgapped installation you also must provide the following arguments: <code>--kotsadm-namespace</code>, <code>--kotsadm-registry</code>, <code>--registry-password</code>, <code>--registry-username</code></p>
+            <p>Hostpath:</p>
+            <p>Ensure that your snapshot volume mount is mounted and accessible on each individual node, then:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody>$ kubectl kots velero configure-hostpath \
+  --namespace default \
+  --hostpath &lt;/path/to/hostpath&gt;
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p class="note"><strong>Note:</strong> If you are in an airgapped installation you also must provide the following arguments: <code>--kotsadm-namespace</code>, <code>--kotsadm-registry</code>, <code>--registry-password</code>, <code>--registry-username</code></p>
+        </ol>
+        <ol start="2">
+            <li>A process takes place after configuring the snapshot storage location that discovers which snapshots are available for restore. After a few minutes, you can run the following to show the backups that are available:</li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody>$ kubectl kots backup ls --namespace default
+NAME              STATUS       ERRORS    WARNINGS    STARTED                          COMPLETED                        EXPIRES
+instance-nc8rj    Completed    0         0           2021-04-13 15:48:17 +0000 UTC    2021-04-13 15:49:00 +0000 UTC    29d
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="3">
+            <li>Select the backup you want to restore from the list and restore it via this command:</li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody>$ kubectl kots restore --from-backup instance-nc8rj
+• Deleting Admin Console ✓
+• Restoring Admin Console ✓
+• Restoring Applications ✓
+• Restore completed successfully.
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+    </body>
+</html>

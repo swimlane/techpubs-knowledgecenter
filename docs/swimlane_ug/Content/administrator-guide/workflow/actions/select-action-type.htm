@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="select-action-type">Select Action Type</h1>
+        <p>Review this topic to learn more about the different workflow action types.</p>
+        <h2 id="set-field-value">Set Field Value</h2>
+        <p>This action updates a field value.</p>
+        <p>
+            <img src="../../../Resources/Images/fieldvaluesettings.png" alt="" />
+        </p>
+        <p>The value for the field you select changes according to the inputs available for the field. For example, if you select a date or time field, then your values will be relative to dates and times. If you decide to use a selection field, you will see the defined incident types as multiple values as in the example above.</p>
+        <p>You also have the ability to set up Usage Metrics for this action. Usage Metrics track the time and cost you are saving by automating this task. To set Usage Metrics, under Integration ROI Calculation Metrics fill out the <strong>Manual Time Expenditure</strong> and <strong>Personnel Costs</strong> fields so that the value of the automation is calculated in Usage Metrics.</p>
+        <h2 id="set-field-read-or-write">Set Field Read or Write</h2>
+        <p>Use this action to set a field as read-only or as an editable field.</p>
+        <p>
+            <img src="../../../Resources/Images/fieldreadwritesettings.png" alt="" />
+        </p>
+        <p>Click <strong>Select Fields</strong> to open a window with a view of the fields in the application. Click a field to set it to Hide, or read-only status. Click it again to set it to an editable status. You can see the existing status of the field by hovering over the field. A lock icon indicates read-only status; a pencil icon indicates an editable status.</p>
+        <h2 id="set-field-required-or-optional">Set Field Required or Optional</h2>
+        <p>Use this action to specify whether a field is required or optional.</p>
+        <p>
+            <img src="../../../Resources/Images/requiredoptionalfieldsettings.png" alt="" />
+        </p>
+        <p>Click <strong>Select Fields</strong> to open a window with a view of the fields in the application. Click a field to set it to required status. Click it again to set it to an optional status. You can see the existing status of the field by hovering over the field, or by the checkmark or question mark icon on the field upon update.</p>
+        <h2 id="filter-selection-options">Filter Selection Options</h2>
+        <p>Use this action to specify the values to update on a field that has multiple values available.</p>
+        <p>
+            <img src="../../../Resources/Images/filtervaluelist.png" alt="" />
+        </p>
+        <h2 id="modify-layout">Modify Layout</h2>
+        <p>Use this action to specify whether a field displays in the record.</p>
+        <p>
+            <img src="../../../Resources/Images/modifylayoutsettings.png" alt="" />
+        </p>
+        <p>Click <strong>Select Layout Items</strong> to open a window that displays the fields available in the application. Click a field to have a field exposed to view, or hidden from view. You can use this action on sections, tabs, and html elements. For sections and tabs you can view, hide, expand, and collapse.</p>
+        <h2 id="trigger-notification">Trigger Notification</h2>
+        <p>Use this action to send an email message to a list of recipients.</p>
+        <p>
+            <img src="../../../Resources/Images/triggernotificationssettings.png" alt="" />
+        </p>
+        <p>Click <strong>Compose Message</strong> to open a window where you can specify who the email should be sent to. You can also edit the subject and body of the email message here.</p>
+        <p>You also have the ability to set up Usage Metrics for this action. Usage Metrics track the time and cost you are saving by automating this task. To set Usage Metrics, under Integration ROI Calculation Metrics fill out the <strong>Manual Time Expenditure</strong> and <strong>Personnel Costs</strong> fields so that the value of the automation is calculated in Usage Metrics.</p>
+        <h2 id="trigger-integration">Trigger Integration</h2>
+        <p>Use this action to trigger an integration task.</p>
+        <p>
+            <img src="../../../Resources/Images/wf-integration-notification.png" alt="" />
+        </p>
+        <p>Click <strong>Edit Task</strong> to open the task identified in the <strong>Integration</strong> field. You can also create a new task from the pull-down menu of the <strong>Integration</strong> field.</p>
+        <p>If you'd like to be notified when the integration runs, select <strong>Send Success Notification</strong> or <strong>Send Failure Notification</strong>, and then compose the notification message.</p>
+        <p>For more information on sending notifications, see <a href="send-notification-messages.htm">Send Notification Messages.</a></p>
+        <p>Enable <strong>Immediately Execute</strong> to specify that the integration task runs as soon as the conditions are met, or only when the record is saved. Turn off this option if you want to only run the integration task upon saving a record.</p>
+        <p>When you enable the Immediately Execute option, workflow runs:</p>
+        <ul>
+            <li>As soon as the condition is met when editing a record.</li>
+            <li>As soon as the condition is met viewing a record.</li>
+            <li>When the record is saved.</li>
+        </ul>
+        <p class="note"><strong>Note:</strong> Enabling the Immediately Execute option will increase the frequency of the "Keep Local Changes?" dialog, which attempts to reconcile changes made by the user and the server running the triggered integration. Therefore, Swimlane recommends that you avoid enabling this option whenever possible.</p>
+        <p>You also have the ability to set up Usage Metrics for this action. Usage Metrics track the time and cost you are saving by automating this task. To set Usage Metrics, under Integration ROI Calculation Metrics fill out the <strong>Manual Time Expenditure</strong> and <strong>Personnel Costs</strong> fields so that the value of the automation is calculated in Usage Metrics.</p>
+        <h2 id="export-and-email-record">Export and Email Record</h2>
+        <p>Use this action to export the record in a format defined by an export template, and then send the exported record in a file to a list of recipients.</p>
+        <p>
+            <img src="../../../Resources/Images/exportemailrecordsettings.png" alt="" />
+        </p>
+        <p>Click <strong>Configure Export</strong> to open a window where you can specify the recipients of the email and the email subject. Click <strong>Template</strong> to select the export template, and then click <strong>Save.</strong></p>
+        <p class="note"><strong>Note:</strong> You create templates in Application Builder. Click the three-dot icon in the Application Builder toolbar (in the upper-right corner) and select Export Templates. See <a href="../../export-templates/create-or-edit-export-templates.htm">Create or Edit Export Templates</a> for more information.</p>
+        <p>You also have the ability to set up Usage Metrics for this action. Usage Metrics track the time and cost you are saving by automating this task. To set Usage Metrics, under Integration ROI Calculation Metrics fill out the <strong>Manual Time Expenditure</strong> and <strong>Personnel Costs</strong> fields so that the value of the automation is calculated in Usage Metrics.</p>
+    </body>
+</html>

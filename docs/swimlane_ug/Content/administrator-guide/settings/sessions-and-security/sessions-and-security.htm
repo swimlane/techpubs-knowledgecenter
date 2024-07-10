@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="sessions-and-security">Sessions and Security</h1>
+        <p>Go to Sessions and Security to configure your user sessions, passwords, and encryption details. This is also where you specify the length of active user sessions.</p>
+        <p class="note"><strong>Note:</strong> For detail on setting up the Authentication section of Sessions and Security see <a href="enable-saml-for-sso.htm">Enable SAML for SSO</a> and <a href="enable-two-factor-authentication.htm">Enable Two-Factor Authentication</a>.</p>
+        <h2 id="setting-up-login-settings">Setting Up Login Settings</h2>
+        <p>As an administrator, you can include banner text on the login page for legal notices or announcements for your Swimlane users.</p>
+        <p>To set up login settings:</p>
+        <ol>
+            <li>
+                <p>From the Sessions and Security dashboard, click <strong>&gt;</strong> to expand <strong>Login Settings.</strong></p>
+                <p>
+                    <img src="../../../Resources/Images/bannertextloginsettings.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>Enter text as needed in the editor and click <strong>Save.</strong></p>
+                <p>The text you enter here is displayed as a banner on the Swimlane login page.</p>
+                <p>
+                    <img src="../../../Resources/Images/swimlanebanner.png" alt="" />
+                </p>
+            </li>
+        </ol>
+        <h2 id="setting-up-proxy-settings-for-integrations">Setting Up Proxy Settings for Integrations</h2>
+        <p>Swimlane supports global proxy settings for all of your integrations. Using the proxy settings makes managing your integrations easier and more manageable.</p>
+        <p class="note"><strong>Note:</strong> Swimlane supports the <code>HTTP_PROXY</code> and/or <code>HTTPS_PROXY</code> environment variables.</p>
+        <p>To set up proxy settings for integrations:</p>
+        <ol>
+            <li>
+                <p>From the Sessions and Security dashboard, click <strong>&gt;</strong> to expand <strong>Proxy Settings for Integrations.<br /><img src="../../../Resources/Images/proxy-settings-for-integrations.png" alt="" /></strong></p>
+            </li>
+        </ol>
+        <ol start="2">
+            <li>Enter the <strong>HTTP Proxy</strong> address and the <strong>HTTPS Proxy</strong> address. Swimlane will assign the proxy for all integrations under your settings as administrator.</li>
+        </ol>
+        <h2 id="setting-up-session-timeout-parameters">Setting Up Session Timeout Parameters</h2>
+        <p>As an administrator, you control the amount of time a Swimlane session can be active before the user is forced to re-authenticate, or log out and log back in.</p>
+        <p>To set up session timeout parameters:</p>
+        <ol>
+            <li>
+                <p>From the Sessions and Security dashboard, click <strong>&gt;</strong> to expand the <strong>Session</strong> controls.</p>
+            </li>
+            <li>
+                <p>Specify the length and the unit of time to be used to measure the user session and click <strong>Save.</strong></p>
+                <p>Use the drop-down to specify the <strong>Session Unit,</strong> Hour(s) or Minute(s).</p>
+                <p>
+                    <img src="../../../Resources/Images/session_timeout.png" alt="" />
+                </p>
+                <p class="note"><strong>Note:</strong> When you adjust the timeout session parameters here, be aware that users will need to log out and back in in order to for the updated time frame to apply. All user sessions will have the previously-set timeout value until their current sessions expire or they log out and log back in.</p>
+            </li>
+        </ol>
+        <h3 id="overriding-a-users-session-timeout">Overriding a User's Session Timeout</h3>
+        <p>Administrators can override a specific user's session timeout. This is helpful, for example, when you use one Swimlane session as a dashboard for a work area. The dashboard is useful and visible to many people on the team, and you don't want that dashboard to session to timeout frequently. It can also be helpful when you need to immediately disable a user's session. In cases similar to these, you can override the user's session timeout.</p>
+        <p>To override a user's session timeout:</p>
+        <ol>
+            <li>From the global navigation menu, select Users, Groups &amp; Roles, and then select Users.</li>
+            <li>On Users, select the user whose session timeout you want to override.</li>
+            <li>
+                <p>On the user's profile settings, click the <strong>Session</strong> tab.<br /><img src="../../../Resources/Images/big_screen.png" alt="" /></p>
+            </li>
+        </ol>
+        <ol start="4">
+            <li>Toggle the <strong>Override this user's session timeout</strong> switch, and then specify the time-frame for the override (minutes, or hours).</li>
+        </ol>
+        <p>The minimum you can specify for this override is 1 minute. The maximum is 5 years (43800 hours or 2628000 minutes).</p>
+        <ol start="5">
+            <li>Click <strong>Save</strong>.</li>
+        </ol>
+        <p>The override goes into immediate effect once you click save.</p>
+        <h2 id="setting-up-security-parameters">Setting Up Security Parameters</h2>
+        <p>As an administrator, you have control over password reset intervals and the allowable level of complexity required for user passwords, including enabling Two-Factor Authorization for accessing Swimlane. You also need to specify an administrator email that will be used to notify the Swimlane administrator for your organization.</p>
+        <p>To set up security parameters:</p>
+        <ol>
+            <li>
+                <p>From the Sessions and Security dashboard, click <strong>&gt;</strong> to expand the <strong>Password</strong> controls.</p>
+            </li>
+            <li>
+                <p>Specify a password expiration length.</p>
+                <p>Users will need to create a new password when they meet this expiration date.</p>
+                <p class="note"><strong>Note:</strong> This setting does not apply to users synced from Active Directory.</p>
+            </li>
+            <li>
+                <p>Use the drop-down to select the appropriate value for <strong>Minimum Password Complexity.</strong> Available values are:</p>
+                <ul>
+                    <li>0 - Too guessable: risky password</li>
+                    <li>1 - Very guessable: protection from throttled online attacks</li>
+                    <li>2 - Somewhat guessable: protection from unthrottled online attacks</li>
+                    <li>3 - Safely unguessable: moderate protection from offline slow-hash scenario</li>
+                    <li>4 - Very unguessable: strong protection from offline slow-hash scenario</li>
+                </ul>
+                <p>
+                    <img src="../../../Resources/Images/passwordcontrols.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>Specify the <strong>Security Notification Email</strong> for your organization. This email receives notifications when user profiles are locked.</p>
+            </li>
+            <p>For information about 2FA, see <a href="enable-two-factor-authentication.htm">Enable Two-Factor Authentication</a>.</p>
+        </ol>
+        <h2 id="setting-up-encryption-keys">Setting Up Encryption Keys</h2>
+        <p>To set up encryption keys:</p>
+        <ol>
+            <li>
+                <p>From the Sessions and Security dashboard, click <strong>&gt;</strong> to expand the Encryption controls.</p>
+            </li>
+            <li>
+                <p>Click <strong>Change Encryption Key</strong> to modify the original encryption key.</p>
+                <p>
+                    <img src="../../../Resources/Images/change_encryption_keys.png" alt="" />
+                </p>
+                <p>In a distributed server environment, add an encryption key to a tasks-only server by entering the following at the command line:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody style="mc-code-lang:Bash;">dotnet tasks.dll key KEY_VALUE
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+                <p class="important"><strong>Important!</strong>  When you change the encryption key, you invalidate all of the saved keys in the Key Store.</p>
+            </li>
+        </ol>
+    </body>
+</html>

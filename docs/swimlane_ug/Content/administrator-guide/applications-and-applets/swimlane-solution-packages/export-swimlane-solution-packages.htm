@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1 id="export-swimlane-solution-packages">Export Swimlane Solution Packages</h1>
+        <p>Export Swimlane Solution Packages (SSPs, file extention .ssp) to import them into another instance of Swimlane. Any applications or applets you export also contain their associated workspace, dashboard, workflow, reports, tasks, assets, and plugins. If the application has integrations with other applications, they will be imported as well. Applications and applets are exported in a Swimlane solution package (.ssp) file format.</p>
+        <p>If you plan to edit your SSP file after exporting it, see <a href="../../../../../source-turbine/Content/swimlane-solution-packages/repackage-an-unzipped-ssp.htm">Repackage an Unzipped SSP File</a> to ensure your SSP imports successfully after you work on it.</p>
+        <p class="note"><strong>Note:</strong> Exporting and importing SSPs can only be done by system administrators.</p>
+        <p>Swimlane solution package exports include:</p>
+        <ul>
+            <li>The initially-selected, or root application or applet</li>
+            <li>Any additional applications associated with the root application</li>
+            <li>Workflow for the root application or applet or associated applications</li>
+            <li>Reports, workspaces, dashboards or export templates for the root application or associated applications</li>
+            <li>Integrations for the root application or applet or associated applications (including output mappings)</li>
+            <li>Assets and plugins associated with any associated integration</li>
+            <li>Mapped inputs to key store values (the keys are removed, but you can add them back after import)</li>
+        </ul>
+        <p>Components of applications that are NOT included as part of the export are:</p>
+        <ul>
+            <li>Application history</li>
+            <li>Records or record history</li>
+            <li>Secure credentials and keys (key store) which can be added later after import</li>
+            <li>Secure values in asset configurations which can be configured again upon import</li>
+        </ul>
+        <p class="note"><strong>Note:</strong> Exporting and importing Swimlane solution packages can only be done by Swimlane System Administrators.</p>
+        <p class="note">Additional Import/Export SSP features:</p>
+        <ul>
+            <li>
+                <p>Select specific components when exporting content and import them into other Swimlane instances. Any context or references to other applications are now maintained.</p>
+            </li>
+            <li>
+                <p>Export multiple applications at once with the flexibility to choose what you want to export.</p>
+            </li>
+            <li>
+                <p>Existing permissions in the destination now remain intact upon import.</p>
+            </li>
+            <li>
+                <p>Provides a background job that cleans any orphaned objects that were created as an artifact from using other content migration tools.</p>
+            </li>
+        </ul>
+        <h2 id="export-application-ssps">Export Application SSPs</h2>
+        <p>In Turbine, there are a few ways to export an SSP. First let's look at how to export from the Applications &amp; Applets main page.</p>
+        <ol>
+            <li>
+                <p>Load the Applications &amp; Applets main page, click the plus icon, and then select <b>Import or Export a package</b>.</p>
+            </li>
+        </ol>
+        <p class="feedback">On Import or Export a package window, step 1 has Import and Export radio button options. </p>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Click the <b>Export</b> radio button.</p>
+            </li>
+        </ol>
+        <p class="feedback">Turbine loads the available packages and components within those packages to export. Step 2 allows you to select the components you would like to export.</p>
+        <p class="feedback">
+            <img src="../../../Resources/Images/export-ssp-step2.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Select the check mark next to components (i.e., reports, applications, etc.) that you want to export, then click <b>Export</b>.</p>
+            </li>
+        </ol>
+        <p class="feedback-img">
+            <img src="../../../Resources/Images/export-ssp-step3.png" />
+        </p>
+        <p class="feedback">If a component has an error, you may receive the Error Detected notification with an explanation. This means that component cannot be exported successfully. Click Close and review the component with the error to resolve.</p>
+        <p class="feedback-img">
+            <img src="../../../Resources/Images/export-global-export-error-detected.png" style="width: 1072px;height: 664px;" />
+        </p>
+        <p class="feedback">If you select a component and the export is successful but contains potential issues, then you receive the a notification that provides information about the issue. The export is still successful, and you can click Close.</p>
+        <p class="feedback-img">
+            <img src="../../../Resources/Images/export-package-success.png" />
+        </p>
+        <p class="feedback">If you select a component and there are no issues, then your package exports successfully.</p>
+        <p class="feedback-img">
+            <img src="../../../Resources/Images/export-package-success.png" style="width: 1078px;height: 669px;" />
+        </p>
+        <h2>Export from an Application</h2>
+        <ol>
+            <li>
+                <p>Find the application or applet that you want to export and then, from the drop-down menu on the application or applet, select <strong>Export</strong>.<br /><br /><img src="../../../../../source-turbine/Content/Resources/Images/export-main.png" alt="" /><br /></p>
+            </li>
+            <p class="important">While you select one application or applet here, be aware that the export process packages all of the content associated with that initial application as a solution. This means that your .ssp may contain multiple applications and all that each application is associated with.</p>
+            <li>Swimlane notifies you if there are potential issues that you need to be aware of related to your export.</li>
+            <p>In the example here, Swimlane is letting you know that your current system has a task with an undefined (required) asset. You should fix this now in the source system (since it is broken in the first place). You can continue the export and you will absolutely need to define this setting after import in order to have a complete solution.</p>
+            <p>
+                <img src="../../../Resources/Images/export-potential-issue.png" alt="" />
+            </p>
+            <p>In this example, the export has no issues, although a secure credential has been found:</p>
+            <p>
+                <img src="../../../Resources/Images/successful-export.png" alt="" />
+            </p>
+            <p>Secure credentials are not exported as part of solution packages.</p>
+            <li>When ready, click <strong>Continue Export</strong>.</li>
+            <p>The .ssp is exported to your browser's default location for downloads.</p>
+        </ol>
+    </body>
+</html>

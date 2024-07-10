@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="expand-mongodb-disk-space">Expand MongoDB Disk Space</h1>
+        <p>The MongoDB pods store data in the <code>/var/openebs/</code> directory of the node that the pod is running on. In order to increase the disk space available to the MongoDB pods, you must expand the volume/partition this directory is mounted on and expand the file system. The steps to do this vary based on your storage provider and file system type.</p>
+        <p class="important"><strong>Important!</strong> You must resize the volume on each node in the cluster since each MongoDB pod contains the full dataset.If your storage provider or file system doesn't support online resizing then you must ensure only one node is offline at a time to ensure proper cluster operation.</p>
+        <h2 id="cloud-service-storage-resizing">Cloud Service Storage Resizing</h2>
+        <table style="mc-table-style: url('../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: center;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Provider</th>
+                    <th style="text-align: center;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Documentation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">AWS</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1"><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/requesting-ebs-volume-modifications.html" target="_blank">EBS Volumes</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Azure</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2"><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/expand-disks" target="_blank">Azure Disks</a>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">GCP</td>
+                    <td style="text-align: center;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1"><a href="https://cloud.google.com/compute/docs/disks/add-persistent-disk#resize_pd" target="_blank">GCP Zonal Persistent Disks</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="file-system-resizing">File System Resizing</h2>
+        <p>Every file system type (EXT3, EXT4, XFS, etc.) will have different instructions for resizing. See the documentation for your file system type for expanding your file system after increasing the size of the volume/partition.</p>
+    </body>
+</html>

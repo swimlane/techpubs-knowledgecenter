@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="read-only-field-behavior">Read-Only Field Behavior</h1>
+        <p>Enabling and disabling read-only fields is a flexible feature within Swimlane. You set up read-only fields from within Application Builder or within workflow. Within Application Builder, you set up a read-only field by clicking a checkbox in the field properties. In workflow, you can either enable a read-only field, or disable an existing read-only field.</p>
+        <p>When you add integrations, Python Driver, and API, the read-only fields can continue to be manipulated. Here are some scenarios that show you how read-only fields behave:</p>
+        <h2 id="scenario-1">Scenario 1</h2>
+        <p>In this scenario, the read-only field is built into the application in Application Builder. The application has a field that is set to Read-Only, for example, a Date &amp; Time field. The table below describes how that field behaves when encountered by a user or through workflow, and also when updated via APIs, integration tasks, or Python Driver.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">User (within a record)</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Workflow</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Python Driver</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">RESTful API</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Task API</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Unable to edit the field</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Field is editable</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Not editable (You receive a read-only error message.)</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Editable</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">Editable</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="scenario-2">Scenario 2</h2>
+        <p>In the second scenario, the read-only field is created by workflow. In this example, a condition is set up that if a record's Severity field is set to <em>Critical,</em> then the Reported by field is set to <em>Read-Only</em> (the field is not originally). Once the workflow executes, the field is editable or not editable as seen in this table:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">User (within a record)</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Workflow</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Python Driver</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">RESTful API</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Task API</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Unable to edit the field</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Editable (if workflow is also set up to set the field value)</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Editable</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Editable</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">Editable</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="import-swimlane-solution-packages">Import Swimlane Solution Packages</h1>
+        <p>You import Swimlane solution packages (.ssp) into a Swimlane system. The packages contain at least one application or applet, along with all of the associated applications, tasks, assets, plugins, workflows, reports, dashboards, and workspaces that form a complete solution.</p>
+        <p>The import process handles some issues for you, either stepping you through the process or letting you know that there will be actions that will need to be taken once the import is finished. The process also alerts you of critical errors that you need to be aware of.</p>
+        <p class="important"><strong>Important!</strong> You cannot import the same content twice in a Swimlane solution package. Swimlane does not currently support content conflict resolution, although it is planned for a future release.</p>
+        <p>You can upgrade plugins as part of the import process. The process will notify you if there is a newer version of a plugin you are importing.</p>
+        <p>In order for your imported solution to be fully functional, you may need to address all of the issues Swimlane points out during the import process.</p>
+        <p class="note"><strong>Note:</strong> Exporting and importing Swimlane solution packages can only be done by Swimlane System Administrators.</p>
+        <p>To import Swimlane solution packages:</p>
+        <ol>
+            <li>
+                <p>From the Applications and Applets main page taskbar, click the plus menu icon and then select <strong>Import applications and applets</strong>.</p>
+                <p>
+                    <img src="../../../Resources/Images/plus-menu-apps.png" alt="" />
+                </p>
+                <p>You are prompted to drag and drop the file to the Swimlane window, or you can browse locally for the file and select it for upload.</p>
+            </li>
+            <li>
+                <p>At this point, Swimlane checks for errors and issues in the imported data.</p>
+            </li>
+            <p>Three things can happen during this check:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody>* Swimlane detects an error and the import is rejected. You are notified of the error.
+
+* Swimlane detects issues, the import completes, and you are notified of the issues.
+
+* Swimlane detects no issues and the import completes.
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>If there are issues with the import, Swimlane notifies you with a <strong>Review Potential Issues</strong> page. Issues that you can immediately fix are listed under a <strong>Take Action</strong> subheading. Issues that you can resolve after the import are listed under a <strong>Take Note</strong> subheading. These subheadings only appear if there are two types of issues. Otherwise, you will simply be asked to review the potential issues.</p>
+            <p>
+                <img src="../../../Resources/Images/take-action-take-note.png" alt="" />
+            </p>
+            <p>In order to have a full solution post-import, you should ensure that all of the issues are addressed!</p>
+            <p>Errors abort the import. Some examples of what can cause errors are duplicate content (applications and anything associated with them), name or acronym duplications, and plugins that require downgrades.</p>
+            <p class="important"><strong>Important!</strong> You cannot import the same content twice in a Swimlane solution package. Swimlane does not currently support content conflict resolution, although it is planned for a future release.</p>
+        </ol>
+    </body>
+</html>

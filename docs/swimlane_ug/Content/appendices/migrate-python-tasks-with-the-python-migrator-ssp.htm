@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="migrate-python-tasks-with-the-python-migrator-ssp">Migrate Python Tasks with the Python Migrator SSP</h1>
+        <p>Swimlane has engineered a Swimlane Solution Package (SSP) that identifies applications and tasks that have Python 2.7 and steps you through the process to migrate them to Python 3.6. A full migration tool is planned to be delivered with the Swimlane 10.5.0 release. In the meantime, this SSP can help you ensure that critical tasks that currently run in Python 2.7 will be migrated to Python 3.6 and will continue to work after upgrading to the 10.5.0 release.</p>
+        <h2 id="import-the-python-migrator-ssp">Import the Python Migrator SSP</h2>
+        <p>To import the Python Migrator SSP:</p>
+        <ol>
+            <li>Click to download this SSP file</li>
+        </ol>
+        <ol start="2">
+            <li>Log in to Swimlane as an administrator, and then from the Applications and Applets main page taskbar, click the plus menu icon and then select&#160;<strong>Import applications and applets</strong>.</li>
+        </ol>
+        <p>For more information, see Import Swimlane Solution Packages in the Swimlane Documentation.</p>
+        <p>The SSP includes two applications: Swimlane Python Migrator and Swimlane Python Converter</p>
+        <h2 id="migrate-python-scripts">Migrate Python Scripts</h2>
+        <p>Before you begin, ensure you have updated the following script inputs:</p>
+        <p><strong>Swimlane API PAT:</strong>
+        </p>
+        <ul>
+            <li>
+                <p>SPM - Test Tasks</p>
+            </li>
+            <li>
+                <p>SPM - Integrations Readiness Check</p>
+            </li>
+            <li>
+                <p>SPC - Migrate Task to 3.6</p>
+            </li>
+            <li>
+                <p>SPC - Revert Task to 2.7</p>
+            </li>
+        </ul>
+        <p><strong>Swimlane API PAT; Mongo Server, Port, User, Password:</strong>
+        </p>
+        <ul>
+            <li>SPC - Integrator Tester</li>
+        </ul>
+        <p>In addition, ensure that PyMongo Python3 is installed and Integration Modifications are complete.</p>
+        <p>To migrate Python scripts:</p>
+        <ol>
+            <li>
+                <p>From the Swimlane navigation menu, select Application Records, and then create a new record from the Swimlane Python Migrator application.</p>
+                <p>
+                    <img src="../Resources/Images/apprecord.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>The record opens with a widget that explains the features of the SSP. To begin, click the Integrations Readiness Check button.</p>
+                <p>
+                    <img src="../Resources/Images/readinesscheck.png" alt="" />
+                </p>
+                <p>The check runs. You can tell when it's done when a new menu opens in the record, below.</p>
+                <p>
+                    <img src="../Resources/Images/convertMenu.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>Click the Convert Tasks tab. Under Conversion Options, select whether you want to convert all the tasks, a specific application, or a specific task, and then click Test Tasks.</p>
+                <p class="note"><strong>Note:</strong> If the system prompts you, save the record in order to continue testing.</p>
+                <p>The output from the test shows you the diff between the Python 2.7 script and the Python 3.6 script.</p>
+                <p>
+                    <img src="../Resources/Images/ConvertTasks.png" alt="" />
+                </p>
+                <p>You’ll know when the Test Task is finished when you receive a confirmation message.</p>
+                <p>
+                    <img src="../Resources/Images/testTaskFinished.png" alt="" />
+                </p>
+                <p>Close the Swimlane Python Migrator record. Next, you’ll review the task conversion.</p>
+            </li>
+            <li>
+                <p>From the navigation menu, expand Application Records and then open the records report for the Swimlane Python Converter.</p>
+                <p>
+                    <img src="../Resources/Images/SPC.png" alt="" />
+                </p>
+                <p>The Test Task process created a record (or records) for the Swimlane Python Converter.</p>
+            </li>
+            <li>
+                <p>Select the record that corresponds with the task or application you want to review.</p>
+                <p>
+                    <img src="../Resources/Images/recordDetail.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>On the Python Code tab, review the 2.7 and 3.6 code.</p>
+            </li>
+            <table style="mc-table-style: url('../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+                <thead>
+                    <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                        <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1"><strong>Field</strong>
+                        </th>
+                        <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1"><strong>Description</strong>
+                        </th>
+                        <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1"><strong>Additional Information</strong>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Diffing Mode</strong>
+                        </td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Allows you to select the mode you’d like to review the diffs in the python code.</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">You can select side-by-side, or line-by-line, whichever is your preference.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Auto Delete Test Task</strong>
+                        </td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Set this to True to automatically delete the test task when you convert the code.</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">If you set this to false, you can manually delete the test task later.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>PMT-Test Script</strong>
+                        </td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Click this button to convert the test script for the application or task.</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">You can also click this on the Conversion tab.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Original Code → Converted Code</strong>
+                        </td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Where you can view the Python code diff.</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">N/A</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Raw Code</strong>
+                        </td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Click this to view the complete raw code.</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Click again to toggle the view.</td>
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Testing Results</strong>
+                        </td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Click to view the status, error messages and stack trace for the migration.</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2" />
+                    </tr>
+                    <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                        <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1"><strong>Previous Testing Results</strong>
+                        </td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Click to view the status, error message and stack trace history of previous tests.</td>
+                        <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1" />
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <ol start="7">
+            <li>
+                <p>On the Conversion tab, review conversion statistics or convert the test script.</p>
+            </li>
+            <li>
+                <p>The full .json file content is saved on the Full Task JSON tab.</p>
+            </li>
+            <li>
+                <p>The Migration tab is where you can progress the migration of your script to 3.6. You can also revert the script back to 2.7, if needed.</p>
+            </li>
+            <p>
+                <img src="../Resources/Images/migrationTab.png" alt="" />
+            </p>
+        </ol>
+        <ol start="10">
+            <li>The References tab specifies the relevant records related to the Migration effort. Each migration will have two records: one from the Swimlane Platform Migrator application, and one from the Swimlane Platform Converter application.</li>
+        </ol>
+    </body>
+</html>

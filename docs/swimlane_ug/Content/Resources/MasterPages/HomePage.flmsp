@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" /><title></title>
+        <link href="../Stylesheets/StylesForHomePage.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="contentBody" class="off-canvas-main">
+            <MadCap:bodyProxy />
+            <div class="footer">
+                <div class="home-master-page-footer">
+                    <div class="footer-description">
+                        <p>
+                            <img src="../Images/sw-inline-logo-color-white.svg" style="width: auto;height: auto;" />
+                        </p>
+                        <p>The world's largest and fastest-growing pure-play security automation company.</p>
+                        <table style="width: 100%;">
+                            <col />
+                            <col />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td><a href="[%=General.Twitter%]" target="_blank"><img src="../Images/Assets/Icons/SocialMedia/twitter.png" /></a>
+                                    </td>
+                                    <td>
+                                        <p><a href="[%=General.LinkedIn%]" target="_blank"><img src="../Images/Assets/Icons/SocialMedia/linkedin.png" /></a>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p><a href="[%=General.Youtube%]" target="_blank"><img src="../Images/Assets/Icons/SocialMedia/youtube.png" /></a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="footer-menu">
+                        <MadCap:menuProxy data-mc-skin="/Project/Skins/FooterMenu.flskn" mc-linked-toc="/Project/TOCs/Footer 1.fltoc" style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                        <MadCap:menuProxy data-mc-skin="/Project/Skins/FooterMenu.flskn" mc-linked-toc="/Project/TOCs/Footer 1.fltoc" style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                    </div>
+                    <div class="footer-menu">
+                        <MadCap:menuProxy data-mc-skin="/Project/Skins/FooterMenu.flskn" mc-linked-toc="/Project/TOCs/Footer 1.fltoc" style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                        <MadCap:menuProxy data-mc-skin="/Project/Skins/FooterMenu.flskn" mc-linked-toc="/Project/TOCs/Footer 1.fltoc" style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                    </div>
+                    <div class="footer-menu">
+                        <MadCap:menuProxy data-mc-skin="/Project/Skins/FooterMenu.flskn" mc-linked-toc="/Project/TOCs/Footer 1.fltoc" style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                        <MadCap:menuProxy data-mc-skin="/Project/Skins/FooterMenu.flskn" mc-linked-toc="/Project/TOCs/Footer 1.fltoc" style="mc-toc-depth: -1;mc-context-sensitive: False;mc-include-parent: True;mc-include-siblings: True;mc-include-children: True;" />
+                    </div>
+                </div>
+                <div class="footer-rights">
+                    <div>
+                        <p>© 2023 Swimlane Inc. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="configure-task-input">Configure Task Input</h1>
+        <p>Task input types and parameters contain the information that you want your task to ingest. You configure task input parameters differently depending upon the types of input. For example, script and API input mapping differs from mapping input parameters for plugin or email fields.</p>
+        <h2 id="map-plugin-or-email-input-field-parameters">Map Plugin or Email Input Field Parameters</h2>
+        <p>When you are configuring plugin or email fields, you are prompted to configure with specified values. To specify the type of value, select from the following input types:</p>
+        <ul>
+            <li>
+                <p><strong>Trigger</strong> - The task runs based on specified triggering events.</p>
+                <p>When you select this option, the data from the trigger, for example, the Date Time Executed or Trigger Type, can be used as a parameter for the task.</p>
+            </li>
+            <li>
+                <p><strong>Record</strong> - The task runs with fields from a specified record used to pass parameters to the task.</p>
+            </li>
+            <li>
+                <p><strong>Key Store</strong> - The task runs with values from your key store. The values are used to pass parameters to the task. You specify the keys that will pass the values.</p>
+            </li>
+            <li>
+                <p><strong>Asset Library</strong> - The task runs with values from an identified asset's library. The values are used to pass parameters to the task. You specify keys that will pass the values.</p>
+            </li>
+            <li>
+                <p><strong>Literal Value</strong> - The task runs with a literal value you select that is passed to the task. For more information on literal values, see <a href="#Map">Map Script or API Input Field Parameters</a></p>
+            </li>
+            <li>
+                <p><strong>Link</strong> - The task runs with Swimlane links as parameters.</p>
+            </li>
+        </ul>
+        <p>For email fields, you can also indicate the state you want the emails to be in after the task runs. You can select between read, unread, or delete.</p>
+        <p>
+            <img src="../../Resources/Images/emailafterimport.png" alt="" />
+        </p>
+        <p>You can set conditions for when email will import for the task. The conditions check for text, specified in regex, in the email subject, body, or the email sender.</p>
+        <p class="note"><strong>Note:</strong> When you add more than one condition, Swimlane processes them using AND logic.</p>
+        <h2 id="map-script-or-api-input-field-parameters"><a name="Map"></a>Map Script or API Input Field Parameters</h2>
+        <p>Specify script and third-party or API inputs on the Configuration tab. The configuration of the tab varies depending up on the type of input you are working with.</p>
+        <p>Python scripting allows you to include multiple input variables.</p>
+        <p>You can also script based on the assets available through a third party such as Splunk, ThreatConnect, etc.</p>
+        <h3 id="script-with-string-interpolation-functionality">Script with String Interpolation Functionality</h3>
+        <p>Literal values use string interpolation functionality which allows you to build custom strings dynamically by inserting values from record fields and key stores. This can be very powerful for any task that accepts a query string to search for data, or for any product endpoint that supports a query language.</p>
+        <p>For example:</p>
+        <p><code>index=swimlane AND adminkey ={{ key_store | get("passkey") }}</code>
+        </p>
+        <p><code>mongodbkey ={{ key_store | get("mongo_passkey") }}</code>
+        </p>
+        <p><code>index=swimlane AND domain={{ record | get("domain") }} AND severity&gt;60</code>
+        </p>
+        <p>Each record that triggers this task will insert the value from the domain field into this string and pass this query string to the task. Now each record will search the data in the swimlane index, with the dynamic domain which has a severity greater than 60.</p>
+        <p>Swimlane supports parameter names inside quotes, with or without characters, for example:</p>
+        <p><code>{{ key_store | get("Admin's Passkey") }}</code>
+        </p>
+        <p><code>{{ record | get("admin_endpoint") }}</code>
+        </p>
+        <p><code>{{ key_store | get("Admin Passkey") }}</code>
+        </p>
+        <p><code>{{ record | get("admin endpoint") }}</code>
+        </p>
+        <p>You can also add parameters for single-word text without quotes, for example:</p>
+        <p><code>{{ key_store | get(adminsPasskey) }}</code>
+        </p>
+        <p><code>{{ record | get(adminEndpoint) }}</code>
+        </p>
+        <p>Swimlane also supports formatting, converting and adding/subtracting from datetimes, as well as adding utcNow to the string interpolation for example:</p>
+        <p><strong>Formatting datetime:</strong><code>{{ now | format("yyyy-MM-dd hh:mm") }}</code>
+        </p>
+        <p><strong>Converting datetime to seconds since the epoch and epoch_ms:</strong><code>{{ now | date_add(-1, d) | epoch }}</code>
+        </p>
+        <p><strong>Adding/Subtracting datetime:</strong><code>{{ now | date_add(-3, d) }}</code> will render to a datetime string representing 3 days in the past. Available data time directives are: y, M, d, h, m, s.</p>
+        <p><strong>utcNow is included as</strong><code>{{ now }}</code>
+        </p>
+        <p>For more information about Swimlane-specific coding, see <a href="../../developer-guide/python-task-api/python-task-api.htm">Python Task API</a>.</p>
+        <h2 id="task-debugger">Task Debugger</h2>
+        <p>You can test the code in your script by running it through the Task Debugger. In your task, click the Configuration tab. Under the script editor, click the Debugger subtab and then click <strong>Run Task</strong> to check your script.</p>
+        <p class="note"><strong>Note:</strong> The Task Debugger can run against both script tasks and built-in Swimlane tasks.</p>
+        <p>
+            <img src="../../Resources/Images/taskdebuggerruntask.png" alt="" />
+        </p>
+        <p>Run the Task Debugger against existing records for application tasks in order to pull actual values from the record's integrations. You can also create a new record from the Task Debugger to run it against.</p>
+        <p class="note"><strong>Note:</strong> The Task Debugger cannot run an applet task against a record.</p>
+        <p>
+            <img src="../../Resources/Images/taskdebugger_records.png" alt="" />
+        </p>
+        <p>When the Task debugger is running, the <strong>Run Task</strong> button will change into a <strong>Stop Task</strong> button. Clicking the <strong>Stop Task</strong> button completely stops the debugger from running the task.</p>
+        <p>You can also bypass the system task runtime timeout by clicking the <strong>Settings</strong> subtab and clicking the slider. This slider temporarily disables the 60 second system timeout and instead has the debugger wait for a response until the task service stop at up to four hours.</p>
+        <p>
+            <img src="../../Resources/Images/taskdebugger_slider_timeout.png" alt="" />
+        </p>
+        <p>Once the Task Debugger has completed the run, the results are shown in the Results window of debugger. These results can be copied by clicking <strong>Copy Output</strong>.</p>
+        <p>
+            <img src="../../Resources/Images/taskdebugger_results.png" alt="" />
+        </p>
+        <p>The Task Debugger also detects available parameters. Once the Task Debugger completes its run, click the <strong>Discovered Parameters</strong> subtab. This shows the results of the parameters found during the run.</p>
+        <p>
+            <img src="../../Resources/Images/taskdebugger_results.png" alt="" />
+        </p>
+        <p class="note"><strong>Note:</strong> This utility will run your actual code so be aware of what you've scripted when running through the debugger.</p>
+        <h2 id="review-task-configuration-examples">Review Task Configuration Examples</h2>
+        <p>The following screen shows an example of the <strong>Configuration</strong> tab for a third-party plugin (or bundle):</p>
+        <p>
+            <img src="../../Resources/Images/configtabbundles.png" alt="" />
+        </p>
+        <p>You configure the fields according to how the plugin is set up. Some plugins will have many fields and options for configuration.</p>
+        <p>This screen shows an example of the <strong>Configuration</strong> tab for a Data Creation task type:</p>
+        <p>
+            <img src="../../Resources/Images/emailconfig.png" alt="" />
+        </p>
+        <p>This example deals with email, which means that you will need to specify how to handle the records after you've imported an email as part of the task. You specify whether the email will appear read, unread, or whether you want the task to delete the email. \You will need to setup the task further to have the task delete the email. You can also assign conditions, which allow you to run import processes.</p>
+        <p>The following screen shows an example of the <strong>Configuration</strong> tab for a script task type:</p>
+        <p>
+            <img src="../../Resources/Images/taskconfigurationtab.png" alt="" />
+        </p>
+        <p>The tab opens with a script editor. See <a href="../../developer-guide/python-task-api/python-task-api.htm">Python Task API</a> and <a href="../../developer-guide/rest-api/Rest API.htm">Rest API</a> in the Swimlane Developer Guide for more information.</p>
+        <p>You can expand the script editor to a full screen view. Click this icon to expand the editor:<br /><img src="../../Resources/Images/switch_full_screen.png" alt="" /></p>
+        <p>To return to the Configuration tab view, with the cursor in the editor, press <strong>Esc.</strong></p>
+        <p class="note"><strong>Note:</strong> The Swimlane script editor uses a variation of Python editors like PyCharm. Swimlane's editor uses 2 spaces for a tab.</p>
+    </body>
+</html>

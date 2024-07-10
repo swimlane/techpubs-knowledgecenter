@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="extend-third-party-certificates-for-python-package-installation">Extend Third-Party Certificates for Python Package Installation</h1>
+        <p>This topic outlines how to utilize third-party certificates for the Python package installation utility in the UI.</p>
+        <p class="note"><strong>Important!</strong> Before you begin you must set up your certificates as indicated in the <a href="third-party-certificates-volume.htm">Third-Party Certificates Volume</a> topic of this guide.</p>
+        <p>To extend third-party certificates for Python package installation:</p>
+        <ol>
+            <li>Modify the files at /opt/swimlane/.secrets/.api-env &amp; /opt/swimlane/.secrets/.tasks-env to include:</li>
+            <p><code>PIP_CERT=/etc/ssl/certs/ca-certificates.crt</code>
+            </p>
+        </ol>
+        <ol start="2">
+            <li>
+                <p>Restart containers.</p>
+            </li>
+            <li>
+                <p>In a CLI, enter:</p>
+            </li>
+            <p><code>cd /opt/swimlane</code>
+            </p>
+            <p><code>docker-compose down</code>
+            </p>
+            <p><code>docker-compose up -d</code>
+            </p>
+        </ol>
+    </body>
+</html>

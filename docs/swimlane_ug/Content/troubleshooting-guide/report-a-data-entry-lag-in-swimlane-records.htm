@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="report-a-data-entry-lag-in-swimlane-records">Report a Data Entry Lag in Swimlane Records</h1>
+        <p>Occasionally a Swimlane user will contact the Swimlane support team to report data entry lags in Swimlane record fields (typically single-line text, multi-line text, and comments fields).</p>
+        <p>Most of the time characters appear in the field’s display area as fast as you can strike the corresponding keys on the keyboard. However, with a lag you can see that there are obvious delays between the time at which the keystrokes are made and the time at which the attendant characters appear in the display area. These delays may be intermittent or ongoing.</p>
+        <p>This symptom has multiple root causes including:</p>
+        <ul>
+            <li>
+                <p>Too many fields, sections, tab controls in each record</p>
+                <ul>
+                    <li>The easiest remedy for this root cause is to hide as many fields/sections as possible. The more page elements are visible, the greater the memory required as each page element has its own JavaScript listener. If possible, expose only the fields/sections that are needed at each phase of your work in the record.</li>
+                </ul>
+            </li>
+            <li>
+                <p>Memory leaks in Swimlane’s UI code</p>
+                <ul>
+                    <li>Previously identified memory leaks have been fixed, but new ones may arise.</li>
+                </ul>
+            </li>
+            <li>
+                <p>Other, yet-to-be identified causes</p>
+            </li>
+        </ul>
+        <p>In order to identify the root cause, possibly find a temporary workaround, and bring about a permanent solution, Swimlane support needs to understand clearly how and when the symptom arises, and how its severity may vary.</p>
+        <p>To provide support with this insight, make a screen capture video recording to document the steps that you take before and during the lag symptom.</p>
+        <p>To report a data entry lag in Swimlane records:</p>
+        <ol>
+            <li>
+                <p>Open record X1 from application X.</p>
+            </li>
+            <li>
+                <p>Change a value in Selection field S1 so that Section Z appears. (Z happens to house a tab control with 4 tabs.)</p>
+            </li>
+            <li>
+                <p>Select each tab in Z in turn, and then return to the first tab.</p>
+            </li>
+            <li>
+                <p>Begin typing in the multi-line Text field M1 in the first tab of Z at the highest possible speed, even if this creates nonsense text.</p>
+            </li>
+        </ol>
+        <p>Alternatively, and perhaps even better, press down one character key, such as the letter 'a', and hold it for 5+ seconds. If a string of 'a's appear at a steady rate for the entire 5 seconds, then there is no lag. If there are lapses when no new instances of 'a' appear on the current line, then this is the lag.</p>
+    </body>
+</html>

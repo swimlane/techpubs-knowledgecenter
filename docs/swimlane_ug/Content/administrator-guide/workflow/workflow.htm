@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="workflow">Workflow</h1>
+        <p>Every application in Swimlane has a workflow. Workflow is where you define how your organization processes tasks. You build the workflow like a tree, with one or more branches. Each branch is conditional, and can consist of multiple conditions and actions. In addition, you can also conditionalize repeat actions in workflow.</p>
+        <p>Activity on individual records catalyze workflow, for example:</p>
+        <ul>
+            <li>You open a new record form.</li>
+            <li>A new record is saved for the first time.</li>
+            <li>An existing record is opened.</li>
+            <li>You modify an existing record.</li>
+        </ul>
+        <p>In addition, workflow is also carried out when:</p>
+        <ul>
+            <li>A new record is created by an integration task.</li>
+            <li>A new record is created by a remote client tool or script.</li>
+            <li>An existing record is modified by either of the previous two actions.</li>
+        </ul>
+        <p>Swimlane workflow consists of:</p>
+        <ul>
+            <li>Conditions - decision points in the workflow.</li>
+            <li>Repeats - iterative task items within the workflow.</li>
+            <li>Actions - singular tasks to be accomplished by workflow.</li>
+        </ul>
+        <p class="note"><strong>Note:</strong> Repeats iterate an integration action with a specific condition for each item and work exclusively with Text, Numeric, Grid, and Multi-select Reference fields.</p>
+        <p>For information on how applets handle workflow, and how workflow is updated when applets are added to applications, see <a href="../applications-and-applets/applet-builder/applets-and-workflow.htm">Applets and Workflow</a>.</p>
+        <p>To view, create, or update workflow, click the workflow icon on the Application or Applet Builder toolbar.</p>
+        <p>
+            <img src="../../Resources/Images/workflowicon.png" alt="" />
+        </p>
+        <p>Workflow processes conditionally and can become quite complex. To zoom in to a flow, use the scroll wheel of your mouse, or use the zoom buttons in the upper left corner of the page. From this menu you can also collapse or expand all of the workflow..</p>
+        <p>
+            <img src="../../Resources/Images/zoomicons.png" alt="" />
+        </p>
+        <p>Left-click, hold, and drag your mouse to navigate the branches of the workflow. You can also expand or collapse conditions within your workflow so that you can focus on a specific section. To collapse or expand a branch, click the <strong>+</strong> or <strong>-</strong> icon to the right of the condition or action.</p>
+        <p>To search for a condition or action, place your cursor in the search field and then enter a term from the name of the condition or action. Swimlane locates each instance of the term, highlights it, and brings up the editable window where you can review or make changes to the details. If there is more than one instance of what you're searching for, click the arrows to see the additional instances.</p>
+        <p>
+            <img src="../../Resources/Images/wf-search.png" alt="" />
+        </p>
+        <h2 id="workflow-execution">Workflow Execution</h2>
+        <p>There is no set order of how a workflow is executed. The processing first evaluates all of the conditions in the workflow, and then determines a list of actions that are dependent upon how the conditions are met. The process then executes the defined actions.</p>
+    </body>
+</html>

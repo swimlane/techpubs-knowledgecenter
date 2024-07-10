@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="python-task-api">Python Task API</h1>
+        <p>Swimlane has a rich API for interacting with Python scripts inside the integration platform. On each script's initialization, Swimlane automatically passes information about the task to each script through a sw_context object.</p>
+        <p>Context objects contain the following:</p>
+        <ul>
+            <li>
+                <p><strong>Inputs:</strong> The input parameters defined in the task configuration. These parameters can be literal values, record values, or values from assets. Here's is an example: <code>sw_context.inputs["ipAddress"]</code></p>
+                <p class="note"><strong>Note:</strong> The TASK API passes data between the Swimlane platform and integration tasks as serialized JSON, which means all the data passed then is converted into character strings.</p>
+            </li>
+            <li>
+                <p><strong>Config:</strong> System-level attributes and internal IDs, including:</p>
+                <ul>
+                    <li>
+                        <p>SwimlaneUrl - The base URL of the Swimlane install (i.e. <a href="http://swimlane.mycorp.com">http://swimlane.mycorp.com</a>)</p>
+                    </li>
+                    <li>
+                        <p>RecordId - The ID of the record that executed the script, if applicable.</p>
+                    </li>
+                    <li>
+                        <p>ApplicationId - The application ID of the record that triggered the script, if applicable. For example: <code>sw_context.config["SwimlaneUrl"]</code></p>
+                    </li>
+                    <li>
+                        <p><strong>Asset information:</strong> The parameters used to configure the asset, such as an access token or password, associated to the task when a script is executed as a packaged action.</p>
+                        <p class="note"><strong>Note:</strong> The asset sw_context property is not available for standard ad-hoc Python integrations that are not associated directly with an asset.</p>
+                        <p>Retrieve properties defined on the asset that are associated with the integration task with: <code>sw_context.asset["accessToken"]</code></p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>When the script has completed, developers can attach to a global array of dictionaries as output variables. Messages that are printed to the standard output can also be captured.</p>
+        <h2 id="considerations">Considerations</h2>
+        <p>There are a few scenarios to be aware of when developing Task scripts:</p>
+        <ul>
+            <li>Attachments: Attachments from emails or record attachment fields that are mapped through the input parameters will be a byte array.</li>
+            <li>Dates: Dates that are passed will automatically be converted to UTC Python Date objects rather than a string representation.</li>
+        </ul>
+        <p class="note"><strong>Note:</strong> When entering dates for API GET calls, format the date as follows: 2017-01-01T05:00:00Z</p>
+        <p class="important"><strong>Important!</strong> Do not use <code>sys.exit()</code> in your Python script tasks. It will terminate the integration process and will not return any results to Swimlane.</p>
+        <p>More on setting up Inputs and Outputs, and setting up the asset sw_context information</p>
+        <p>Debugger and the output mapping section.</p>
+    </body>
+</html>

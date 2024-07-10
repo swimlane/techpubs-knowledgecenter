@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="define-proxy-settings">Define Proxy Settings</h1>
+        <p>If your environment requires a proxy server, you can add proxy settings (under the kurl spec) to the installer-override.yaml patch file <code>spec:</code> section.</p>
+        <p>For example:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>apiVersion: cluster.kurl.sh/v1beta1
+kind: Installer
+metadata:
+  name: "patch"
+spec:
+  kurl:
+    proxyAddress: http://&lt;Proxy Address&gt;:&lt;Proxy Port&gt;
+    additionalNoProxyAddresses:
+    - .corporate.internal
+    - .other.domains
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <ul>
+            <li>Set <code>proxyAddress:</code> to the address and port of the proxy server.</li>
+            <li>Set <code>additionalNoProxyAddresses:</code> to a yaml list of IP CIDR ranges or domains that should not be proxied.
+<ul><li>You must add the private IPs of every cluster node
+<ul><li>Swimlane recommends specifying an IP range in CIDR notation to encompass future node IPs in order to prevent re-running the install command when addition nodes are added to the cluster.</li></ul></li><li>All addresses specified here will be added to the default set of no-proxy addresses. The default set includes:
+<ul><li>The CIDR used for assigning IPs to Kubernetes services</li><li>The CIDR used for assigning IPs to pods</li><li>The private IP of the host where the script runs</li><li>The load balancer address for the Kubernetes API servers (on HA installs)</li><li>The .svc and .local search domains for cluster services</li><li>Add-on namespaces</li><li>Other service hostnames referenced by add-ons without fully qualified domain names</li></ul></li></ul></li>
+        </ul>
+        <p class="important"><strong>Important!</strong> Prior to installing or joining additional nodes, include the address of all nodes in the cluster in the <code>additionalNoProxyAddresses</code> parameter. If you do not include the addresses of all the nodes, then you will have to re-run the install command on <em>every other node</em> along with the new node IP address added to the additionalNoProxyAddresses parameter. Because of this, Swimlane recommends that you use a range of addresses, in CIDR notation, during the initial install and join commands instead of individual node IPs.</p>
+        <p>See <a href="overriding-installer-settings.htm">Overriding Installer Settings</a> for instructions on how to specify the installer override file during the install and join node commands.</p>
+    </body>
+</html>

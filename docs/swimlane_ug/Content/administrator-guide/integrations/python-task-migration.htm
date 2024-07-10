@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="python-task-migration">Python Task Migration</h1>
+        <p>As of the 10.5.0 release of Swimlane, Python 2 is no longer supported. Therefore, all Python 2 tasks must be migrated to Python 3 to be enabled. Swimlane 10.5.0 includes the Python Migrator that converts all Python 2 tasks to Python 3 scripts using the provided Python library. These migrated tasks are disabled and require review before being enabled once again.</p>
+        <p>To review and enable migrated tasks, from the Integrations page click <strong>Filter Migrated Tasks</strong> to see the migrated tasks that require action.</p>
+        <p>
+            <img src="../../Resources/Images/filter-migrated-tasks.png" alt="" />
+        </p>
+        <p>There are four situations that can occur for these migrated tasks: no changes in script, error in migration, review of migrated script, or Python 2.7 plugin.</p>
+        <h2 id="no-changes-in-script">No Changes in Script</h2>
+        <p>On the task <strong>Configuration</strong> tab, a dialog informs you that no changes were made to the script during the migration process. Click <strong>Ok</strong>.</p>
+        <p>
+            <img src="../../Resources/Images/no-changes-to-script.png" alt="" />
+        </p>
+        <p>Make sure to run the task in the <strong>Debugger</strong> and enable the task in the <strong>General</strong> page before clicking <strong>Save</strong>.</p>
+        <h2 id="error-in-migration">Error in Migration</h2>
+        <p>In the task <strong>Configuration</strong> tab, a dialog informs you that there was an error migrating the script. This requires you to migrate the script manually. Click <strong>Ok</strong> and update the script.</p>
+        <p>
+            <img src="../../Resources/Images/error-in-migration.png" alt="" />
+        </p>
+        <p>After updating the script, make sure to run the task in the <strong>Debugger</strong> and enable the task in the <strong>General</strong> page before clicking <strong>Save</strong>.</p>
+        <h2 id="review-of-migrated-script">Review of Migrated Script</h2>
+        <p>In the task <strong>Configuration</strong> tab, a dialog informs you to select to <strong>Use Migrated 3.7 Script</strong> or to <strong>Revert to Python 2.7 Script</strong>. If you approve the changes, select <strong>Use Migrated 3.7 Script</strong>. If you do not approve the changes, select <strong>Revert to Python 2.7 Script</strong>. Once the choice is selected, click <strong>Apply</strong>.</p>
+        <p>
+            <img src="../../Resources/Images/your-script-has-been-migrated.png" alt="" />
+        </p>
+        <p class="note"><strong>Note:</strong> If you select <strong>Revert to Python 2.7 Script</strong> you will have to manually update the syntax of your script.</p>
+        <p>After you apply the changes, make sure to run the task in the <strong>Debugger</strong> and enable the task in the <strong>General</strong> page before clicking <strong>Save</strong>.</p>
+        <h2 id="python-2.7-tasks">Python 2.7 Tasks</h2>
+        <p>In the task <strong>Configuration</strong> tab, a dialog informs you that the task's plugin needs to be upgraded. Click <strong>Manage plugins</strong> to be taken to the <strong>Plugins</strong> page.</p>
+        <p>
+            <img src="../../Resources/Images/upgrade-plugin.png" alt="" />
+        </p>
+        <p>Upgrade the plugin and return to the task to continue the migration review.</p>
+    </body>
+</html>

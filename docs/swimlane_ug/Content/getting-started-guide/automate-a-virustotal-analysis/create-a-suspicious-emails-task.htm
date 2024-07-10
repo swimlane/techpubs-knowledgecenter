@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="create-a-suspicious-emails-task">Create a Suspicious Emails Task</h1>
+        <p>Now that you've created an application that will hold suspicious email records, you are ready to create the task that prompts Swimlane to check for suspicious emails.</p>
+        <p>To create a suspicious emails task:</p>
+        <ol>
+            <li>
+                <p>Access the Integrations page, then click the plus menu icon, and then click <strong>Create a task</strong>.<br /><img src="../../Resources/Images/create-new-task.png" /></p>
+            </li>
+        </ol>
+        <ol start="3">
+            <li>
+                <p>On Create a task, notice how Swimlane has grouped common task types by asset. Filter for Email plugin action name and then click <strong>Create</strong> on the Email Import plugin action.<br /><img src="../../Resources/Images/email-import-task-create.png" alt="" /></p>
+            </li>
+        </ol>
+        <ol start="4">
+            <li>
+                <p>On page 2 of Create a Task, name your task. (We suggest naming it <em>Import Suspicious Emails.</em>) Next, from the Application drop-down field, select the application you just created in the previous topic, "Suspicious Emails," and click <strong>Save.<br /><img src="../../Resources/Images/import-suspicious-emails.png" alt="" /><br /></strong></p>
+            </li>
+        </ol>
+        <p class="feedback">Clicking <strong>Save</strong> opens your task. From here you can begin to configure the task and map the task outputs.</p>
+        <ol start="5">
+            <li>
+                <p>On Integration/Import Suspicious Emails, click the Configuration tab.</p>
+            </li>
+            <li>Under Email Import Configuration, select the IMAP Email Asset you created in the <a href="create-an-imap-email-asset.htm">Create an IMAP Email Asset</a> topic, and ensure that you have selected the <strong>Read</strong> checkbox to indicate the state of the email after the task has run.<br /><img src="../../Resources/Images/email-import-configuration.png" alt="" /></li>
+        </ol>
+        <ol start="7">
+            <li>
+                <p>Next, click the Outputs tab. To begin the mapping process, click <strong>Create/Update Records.<br /><img src="../../Resources/Images/createupdate-records.png" alt="" /></strong></p>
+            </li>
+        </ol>
+        <p class="feedback">By selecting <strong>Create/Update Records</strong> you are indicating that you want to update the records of the Suspicious Emails application with the data returned by running this task.</p>
+        <ol start="8">
+            <li>
+                <p>Swimlane prompts you to answer the question, "Which app would you like to use?" Select the Suspicious Emails application you previously created; then click the arrow to move forward with the mapping process.<br /><img src="../../Resources/Images/which-app-suspicious.png" alt="" /></p>
+            </li>
+        </ol>
+        <p class="feedback">Now you are ready to map the fields in the application to outputs for the task to record.</p>
+        <ol start="9">
+            <li>On Create/Update Records for Suspicious Emails, map the fields as follows:</li>
+        </ol>
+        <p>&#160;</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1"><strong>Parameter</strong>
+                    </th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">App Field/Field Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Attachment</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Attachment</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Body</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Body</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Sender</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Submitted By</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Subject</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Subject</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="../../Resources/Images/suspicious-emails-output-mapping.png" alt="" />
+        </p>
+        <p>When finished, click <strong>Add Mappings to App.</strong></p>
+        <ol start="10">
+            <li>On Approve Field Creation &amp; Mappings, review the field mappings you've created and click <strong>Approve.</strong></li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/approve-field-mappings.png" alt="" />
+        </p>
+        <ol start="11">
+            <li>On Integration/Import Suspicious Emails, click <strong>Save.</strong></li>
+        </ol>
+        <p>
+            <img src="../../Resources/Images/suspicious-emails-task-saved.png" alt="" />
+        </p>
+        <p>Swimlane will now begin checking every 60 seconds for new emails based on your task.</p>
+        <h2 id="related-links">Related Links</h2>
+        <p><a href="../../administrator-guide/integrations/configure-task-input.htm#review-task-configuration-examples">Configurations and Input Mapping</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/integrations.htm">Integrations</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/configure-task-output/configure-task-output.htm">Output Mapping</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/upload-and-manage-plugins.htm">Plugins</a>
+        </p>
+        <p style="font-style: normal;"><a href="../../user-guide/records/records.htm">Records</a>
+        </p>
+        <p><a href="../../administrator-guide/integrations/create-or-edit-a-task.htm">Tasks</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="configure-task-output">Configure Task Output</h1>
+        <p>Click the Integration, <strong>Outputs</strong> tab to configure how Swimlane will handle the task's output.</p>
+        <p>
+            <img src="../../../Resources/Images/output_types.png" alt="" />
+        </p>
+        <p>To add new output, first specify the output type:</p>
+        <ul>
+            <li><strong>Update Current Record:</strong> Sets field values for a current record. This method, which modifies an existing record with the task's output data, must be initiated with triggers, workflow, or by manual integration. You can have one mapped per task.</li>
+            <li><strong>Send an Email</strong> - Sends parameters in an email.</li>
+            <li><strong>Create / Update Records</strong> - Creates or updates records from the data returned by running the task. If the task returns a sequence of data, you can create or update multiple data records.</li>
+            <li><strong>Save to File</strong> - Saves to specified file.</li>
+            <li><strong>Execute Another Task</strong> - Associates the task output to another task, passing the output to the next task as an input.</li>
+        </ul>
+        <p class="note"><strong>Note:</strong> Make sure that the Swimlane field and the source field type are both set up to handle the parameters for the output!</p>
+        <p>The next steps will help you map task output data and parameters to Swimlane fields. You can also specify specific parameters for the task's output, for example, attachments.</p>
+        <p>
+            <img src="../../../Resources/Images/the_basics.png" alt="" />
+        </p>
+        <h2 id="parameter-values">Parameter Values</h2>
+        <p>You have to map, or review, parameters for output types, although mapping can be different for each configuration.</p>
+        <p>Either you, or Swimlane's automapping process can assign parameter values during the mapping. Some parameters such as Output Parameters and Run Status Parameters are available for automapping. However, Standard Output, Input Parameter, and System Output Parameters are never part of auto-mapping and will need to be mapped manually.</p>
+        <p>For additional information on automapping, see <a href="review-discover-and-add-output-parameters.htm#map-actions">Map Actions</a>.</p>
+        <p>Here are the parameter values that can be assigned:</p>
+        <p><strong>Standard Output</strong> - Uses the standardized stream of data produced from your command line program or script.</p>
+        <p><strong>Input Parameter</strong> - Uses your input parameters (from script or integration data) and converts them directly to output without any modifications.</p>
+        <p><strong>Output Parameter</strong> - Uses data emitted by the task in its formal output variables. For tasks, you can review parameters on the Output Parameters tab. For Python script tasks, the parameters are those added to sw_outputs as seen in the code example below. You can discover and add scripted parameters to your tasks from the Output Parameters tab prior to mapping them in your task. For example, here is some python code:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody style="mc-code-lang:Python;">ip_addr = "10.10.1.1"
+mac_addr = mac.getAddr()
+sw_outputs.append({"IP_Address": ip_addr, "MAC_Address": mac_addr})
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>You can use JSONpath or JSONpath in output mapping to query objects.</p>
+        <p>For a tutorial on using JSONpath, please see the REST API Tutorial, <a href="https://restfulapi.net/json-jsonpath/">JSON with JSONPath</a>. You can also utilize this <a href="https://jsonpath.com/">JSONpath Online Evaluator</a>. For JSONpath examples, please see <a href="jsonpath-in-python-tasks.htm">JSONpath Examples</a>.</p>
+        <p>For more on JSONata, see the <a href="https://docs.jsonata.org/overview.html">JSONata Documentation</a> and use this <a href="https://try.jsonata.org/">JSONata Exerciser</a> as a playground within which you can test your JSONata.</p>
+        <p><strong>Run Status Parameters</strong> - output parameters that contain information about the status of the execution of the task, and any potential errors. The following 4 parameters are available:</p>
+        <ul>
+            <li>
+                <p><strong>sw_task_status</strong> - The status of the execution. Can be either <code>success</code> or <code>failure</code>.</p>
+            </li>
+            <li>
+                <p><strong>sw_task_error_type</strong> - In case of failure, contains the type of Python exception that has been raised (i.e. <code>AttributeError</code>). Otherwise, it contains an empty string.</p>
+            </li>
+            <li>
+                <p><strong>sw_task_error_message</strong> - In case of failure, contains the Python error message. Otherwise, it contains an empty string.</p>
+            </li>
+            <li>
+                <p><strong>sw_task_stack_trace</strong> - In case of failure, contains the Python stack trace. Otherwise, it contains an empty string.</p>
+            </li>
+        </ul>
+        <p><strong>Example:</strong> If you try to import a Python package that is not installed or does not exist, the status output parameters will have the following values:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>{
+  "sw_task_status": "failure",
+  "sw_task_error_type": "ModuleNotFoundError",
+  "sw_task_error_message": "No module named 'Swimlane'",
+  "sw_task_stack_trace": "Traceback (most recent call last):\n  File \"/app/Tasks/PythonQueue/abPE_b4d3yjYn_gSo/script.4593168CDBEB6EEB61277749AB4B6F647148CE0868314D4D675E07FF9394430D.py\", line 58, in &lt;module&gt;\n    import Swimlane\nModuleNotFoundError: No module named 'Swimlane'\n",
+}
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p class="note"><strong>Note:</strong> Status parameters ensure that every task execution has outputs. In some cases, this can cause empty records to be created, even if the task did not return any other outputs. For example, if there is a scheduled task that pulls unread emails from a monitored mailbox, it will create a blank record even if there are no new emails to pull if any of the status parameters are mapped.</p>
+    </body>
+</html>

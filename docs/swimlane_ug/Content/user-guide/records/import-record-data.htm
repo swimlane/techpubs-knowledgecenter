@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="import-record-data">Import Record Data</h1>
+        <p>You can import data, as CSV files, into your Swimlane application.</p>
+        <p>To open the data import panel, click the button labeled <strong>Import</strong> from the Default Report toolbar.</p>
+        <p>The Import Data window opens, where you can upload a CSV file by either dragging it into the marked area, or clicking <strong>Select File</strong> and selecting the file.</p>
+        <p>
+            <img src="../../Resources/Images/importdata.png" alt="" />
+        </p>
+        <h2 id="mapping-fields">Mapping Fields</h2>
+        <p>After the file is selected, the system parses it by the column delimiters.</p>
+        <p>On the Data Mapping tab, select a column and select the field from your application that you want to map the data to.</p>
+        <p>Some field types can have additional options that can be specified, for example:</p>
+        <ul>
+            <li>Value List fields have an option to add missing values into the field's options.</li>
+            <li>User / Groups fields have an option to choose the name format of the data in the column. Test user field mapping by clicking the test mapping icon.</li>
+            <li>Date fields have an option to specify the date format of the data in the column.</li>
+        </ul>
+        <h2 id="advanced-options">Advanced Options</h2>
+        <p>To configure advanced options, click <strong>Advanced.</strong> Then set the following:</p>
+        <h3 id="creation-type">Creation Type</h3>
+        <ul>
+            <li><strong>Insert only:</strong> only insert new record during import</li>
+            <li><strong>Insert and/or Update:</strong> insert new and update existing records. Existing records are identified by the field selected in the Key Field dropdown. If a record with the same value for the key field as the CSV row that is currently processed exists, that record will be updated instead of creating a new one.</li>
+        </ul>
+        <h3 id="error-handling">Error Handling</h3>
+        <p>If an error occurs while importing data from a column:</p>
+        <ul>
+            <li><strong>Set as Empty:</strong> the field mapped to that column will have empty value</li>
+            <li><strong>Skip Row:</strong> the whole row will be skipped and no record will be created</li>
+            <li><strong>Stop Import:</strong> importing the file will stop immediately and no further rows will be created</li>
+        </ul>
+        <h3 id="header-row">Header Row</h3>
+        <p>If the uploaded file doesn't have a row with column headings, toggle this option and the columns in the Data Mapping tab will be marked as "Column 1", "Column 2", etc.</p>
+        <p>To import the uploaded data, click <strong>Run.</strong> Import begins immediately in a background process. To view the imported records, refresh the Default Report page.</p>
+    </body>
+</html>

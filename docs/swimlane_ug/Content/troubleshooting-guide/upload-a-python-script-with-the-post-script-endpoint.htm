@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="upload-a-python-script-with-the-post-script-endpoint">Upload a Python Script with the POST Script Endpoint</h1>
+        <p>Many of the Swimlane RESTful API endpoints require JSON payloads. However, the POST /task/upload-script endpoint requires multipart/form-data.</p>
+        <p>You upload JSON files from accessing <strong>Upload a task</strong> on the Integrations/Tasks tab.</p>
+        <p>
+            <img src="../Resources/Images/upload-a-task.png" alt="" />
+        </p>
+        <p>Here is an example of a successful POST:</p>
+        <p>
+            <img src="../Resources/Images/200_response.png" alt="" />
+        </p>
+        <p>Here is the POST body payload that needs to be replicated in client Python code:</p>
+        <p>
+            <img src="../Resources/Images/form-data_detail.png" alt="" />
+        </p>
+        <p>This Python 2.7 code sample, which relies on the Swimlane Driver for authentication and for ease of retrieving the pertinent application’s ID value, illustrates how to make this POST:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>from swimlane import Swimlane
+host = 'https://SWIMLANE-HOST'
+swimlane = Swimlane(host, 'USER', 'PASSWORD', verify_ssl=False)
+app = swimlane.apps.get(name='APPLICATION-NAME')
+
+resp = swimlane.request(
+    'post',
+    '/task/upload-script',
+	data=[
+		("taskName", "do_some_cool_secops.py"),
+		("scriptType", "Python"),
+		("appId", app.id)
+	],
+	files={
+		"file": open(r'C:\Swimlane\shared\do_some_cool_secops', 'rb'),
+		"contentType": "text/plain"
+	}
+)
+
+print str(resp.status_code)
+print resp.text
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Swimlane supports Python scripts and Powershell scripts.</p>
+    </body>
+</html>

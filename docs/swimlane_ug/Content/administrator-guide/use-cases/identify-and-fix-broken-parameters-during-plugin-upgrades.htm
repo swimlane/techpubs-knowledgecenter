@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="identify-and-fix-broken-parameters-during-plugin-upgrades">Identify and Fix Broken Parameters During Plugin Upgrades</h1>
+        <blockquote>
+            <h2 id="scenario">Scenario</h2>
+            <p>Alex has a working plugin, but she is ready to upgrade it. Previously, plugins had a narrow scope of data for inputs and outputs. This meant Alex had to rely on Swimlane customer support to identify and provide enhancements, so that the plugin would not break. The narrow scope meant Alex lost time contacting customer support and waiting for assistance.</p>
+            <p>Now Alex wants to resolve input and output parameter breaks in plugin upgrades by having the application alert her to inputs and outputs that will break post-upgrade. Alex has taken the step to upgrade the plugin and she is ready to resolve tasks that will break as a result of the upgrade.</p>
+        </blockquote>
+        <h2 id="solution">Solution</h2>
+        <p>Alex can resolve the scenario above with the following solution:</p>
+        <ol>
+            <li>Add a new plugin and click the hyperlink to upgrade the plugin.</li>
+            <p>Under <strong>Assets &amp; Tasks With Changes</strong>, Alex now sees exactly which tasks will break during the upgrade, allowing her to resolve before completing the upgrade.</p>
+            <p>
+                <img src="../../Resources/Images/upgrade-plugins-assets-tasks-with-changes.png" alt="" />
+            </p>
+        </ol>
+        <ol start="2">
+            <li>Click <strong>Continue Upgrade</strong>.</li>
+            <p>Alex clicks <strong>Resolve # Issue</strong>.</p>
+            <p class="note"><strong>Note:</strong> There can be more than one task/asset to resolve.</p>
+            <p>
+                <img src="../../Resources/Images/resolve-issue.png" alt="" />
+            </p>
+            <p>Now, Alex can resolve the issues that she found. The application alerted Alex that there was a broken output parameter, so she navigated to <strong>OUTPUT PARAMETERS</strong>.</p>
+        </ol>
+        <ol start="3">
+            <li>Click <strong>Discover Parameters</strong>.</li>
+            <p>
+                <img src="../../Resources/Images/click-discover-parameters.png" alt="" />
+            </p>
+            <p>Alex clicks <strong>Run Task</strong>, and then scrolls through the results to discover the parameter.</p>
+            <p>
+                <img src="../../Resources/Images/run-task.png" alt="" />
+            </p>
+            <p>She selects <strong>Majestic Rank</strong> based on the application's alert.</p>
+            <p>
+                <img src="../../Resources/Images/discovered-parameter.png" alt="" />
+            </p>
+        </ol>
+        <ol start="4">
+            <li>Click <strong>Add Selected Parameters</strong>.</li>
+            <p>
+                <img src="../../Resources/Images/add-selected-parameters.png" alt="" />
+            </p>
+            <p>Alex now sees majestic rank under the OUTPUT PARAMETERS. Next, she clicks <strong>OUTPUTS</strong> to resolve the unmapped parameters.</p>
+            <p class="tip"><strong>Tip:</strong> A red alert icon  indicates unmapped parameters.</p>
+        </ol>
+        <ol start="5">
+            <li>Click <strong>Unmapped Parameters</strong>.</li>
+            <p>
+                <img src="../../Resources/Images/unmapped-parameter.png" alt="" />
+            </p>
+            <p>Alex has verified the unmapped parameter, and clicks <strong>Add Mappings to App</strong>.</p>
+            <p>
+                <img src="../../Resources/Images/add-mappings-to-app.png" alt="" />
+            </p>
+        </ol>
+        <ol start="6">
+            <li>Click <strong>Approve</strong> to add the new fields to the application.</li>
+            <p>
+                <img src="../../Resources/Images/add-mapping-click-approve.png" alt="" />
+            </p>
+            <p>Alex has updated the parameter, which shows as mapped.</p>
+            <p>
+                <img src="../../Resources/Images/updated-parameter.png" alt="" />
+            </p>
+        </ol>
+        <ol start="7">
+            <li>Click <strong>Save</strong>.</li>
+            <p>After Alex closes the remaining screens, she navigates to <strong>APPLICATION RECORDS</strong>, and selects the desired application and adds a new record. The new field is available.</p>
+            <p class="note"><strong>Note:</strong> In this use case, Alex added the <strong>rank</strong> field.</p>
+        </ol>
+        <ol start="8">
+            <li>Click <strong>Run Search</strong>.</li>
+            <p>
+                <img src="../../Resources/Images/run-search.png" alt="" />
+            </p>
+            <p>Alex verifies the search runs successfully!</p>
+        </ol>
+    </body>
+</html>

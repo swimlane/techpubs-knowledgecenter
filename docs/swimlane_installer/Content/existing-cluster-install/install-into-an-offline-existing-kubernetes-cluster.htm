@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="install-into-an-offline-existing-kubernetes-cluster">Install Into an Offline Existing Kubernetes Cluster</h1>
+        <h2 id="prepare-the-spi-kubectl-add-on">Prepare the SPI Kubectl Add-on</h2>
+        <ol>
+            <li>Download the SPI kubectl add-on for the OS version of your jumpbox:</li>
+            <p>Linux: https://get.swimlane.io/existing-cluster/install/linux</p>
+            <p>OSX: https://get.swimlane.io/existing-cluster/install/osx</p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Untar the file:</li>
+            <p>tar zxf kots_&lt;OS version&gt;.tar.gz</p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Rename the kots binary to kubectl-kots:</li>
+            <p>mv kots kubectl-kots</p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Move the kubectl-kots binary into your PATH so that it can be recognized by kubectl (e.g. /usr/local/bin/)</li>
+            <p>mv kubectl-kots /usr/local/bin/</p>
+        </ol>
+        <h2 id="install-the-spi-using-the-kubectl-add-on">Install the SPI Using the Kubectl Add-on</h2>
+        <ol>
+            <li>
+                <p>Choose the namespace that you will install the Swimlane Platform Installer and Swimlane Platform into. This guide will refer to this namespace as your-namespace.</p>
+            </li>
+            <li>
+                <p>Download the offline installer package to your jumpbox:<br /></p>
+                <MadCap:codeSnippet>
+                    <MadCap:codeSnippetCopyButton />
+                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">https://get.swimlane.io/existing-cluster/install/offline-package</MadCap:codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Copy the offline installer package to the jumpbox.</p>
+            </li>
+            <li>
+                <p>Upload the SPI container images to your private registry to prepare for installation into the Kubernetes cluster:</p>
+            </li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">  kubectl kots admin-console push-images &lt;path-to-offline-installer-package&gt; &lt;your-registry-endpoint&gt;/&lt;your-registry-name&gt; \
+    --registry-username &lt;your-registry-username&gt; \
+    --registry-password &lt;your-registry-password&gt;</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>The upload can take several minutes.</p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Install the SPI pods:</li>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">  kubectl kots install swimlane-platform \
+    --kotsadm-registry &lt;your-registry-endpoint&gt;/&lt;your-registry-name&gt; \
+    --registry-username &lt;your-registry-username&gt; \
+    --registry-password &lt;your-registry-password&gt; \
+    --namespace &lt;your-namespace&gt;</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>It will automatically create the namespace specified if it does not exist.</p>
+            <p>If the KUBECONFIG environment variable is not set you will need to add --kubeconfig /path/to/kube/config to the install command above so that it can authenticate to your cluster.</p>
+            <p>After a few moments of initialization it will prompt for what you want the SPI Admin Console password to be.</p>
+            <p>
+                <img src="../Resources/Images/admin_console_password.png" alt="" />
+            </p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>When the install is complete it will automatically proxy the SPI UI to http://localhost:8800.</li>
+            <p>
+                <img src="../Resources/Images/admin_console_forward.png" alt="" />
+            </p>
+            <p>In a Chrome browser window, access the SPI UI at http://localhost:8800 to begin configuring the Swimlane Platform.</p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Enter the password you specified during the install process.</li>
+            <p>
+                <img src="../Resources/Images/admin_console_login.png" width="50%" alt="" />
+            </p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Next, you are prompted to upload your .yaml license file. Select or drag the file, and then click Upload license.</li>
+            <p>
+                <img src="../Resources/Images/upload_license.png" width="50%" alt="" />
+            </p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>After the license is uploaded it will prompt you to confirm the private docker image registry settings.</li>
+            <p>
+                <img src="../Resources/Images/offline_confirm_registry_settings.png" width="50%" alt="" />
+            </p>
+            <p>Verify the information here is correct.</p>
+            <p>Upload the airgap bundle.</p>
+            <p>
+                <img src="../Resources/Images/offline_upload_airgap_bundle.png" width="50%" alt="" />
+            </p>
+            <p>The upload can take several minutes. After the upload is complete it extracts the bundle and pushes the Swimlane platform images to your private docker image registry.</p>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>After the Swimlane platform images are pushed to the private docker image registry it will take you to the config page to configure the Swimlane platform. See the <a href="configure-the-swimlane-platform-for-an-existing-cluster-install.htm">Configure the Swimlane Platform for an Existing Cluster Install</a> topic to configure and deploy Swimlane.</li>
+        </ol>
+    </body>
+</html>

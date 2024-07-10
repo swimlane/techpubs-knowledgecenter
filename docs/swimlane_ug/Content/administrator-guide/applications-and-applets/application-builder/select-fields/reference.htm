@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="reference">Reference</h1>
+        <p>Use a reference field to add a reference to another record, either from the current application or from another application.</p>
+        <p>For example, consider that you have an application called Address with these fields: Address, Zip Code, City, Country; and another application called Employee with these fields: First Name, Last Name. A reference field in the Employee application called "Home Address" could link to the Address application and contain the fields Address and Zip Code. When creating a record in the Employee application, a pre-existing Address record can be referenced, or a new one can be created and referenced on the spot.</p>
+        <p>
+            <img src="../../../../Resources/Images/reference-field-types.png" alt="" />
+        </p>
+        <p>When creating a reference field, you can choose from these reference types:</p>
+        <table style="mc-table-style: url('../../../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Field Type</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Single-select</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Use to reference a single record.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Multi-select</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Use to reference multiple records.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1"><strong>Grid</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">Use to reference multiple records with additional, user-specified, field details.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="create-reference-fields">Create Reference Fields</h2>
+        <p>To create reference fields:</p>
+        <p>From Application Builder's Field Types, click <strong>Reference</strong> and then select which Reference Type you want to create. Drag the reference field to the Form Layout and  drop it in the layout area, or within a Tab or Section layout object.</p>
+        <p>Access the field's Field Properties and complete the following fields as needed:</p>
+        <table style="mc-table-style: url('../../../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Field</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Step</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Display Name</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Enter the name of the field.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1"><em>User Reference</em>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2"><strong>Help Text</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Enter contextual help text. You will first need to specify whether the help text will appear above or below the field in the record form, and then you can enter the text.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2"><em>Review referenced fields.</em>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Next, consider the following advanced options in the Field Properties tab:</p>
+        <table style="mc-table-style: url('../../../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Field</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Step</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Create New Application to Reference</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Select to open Application Builder, from which you can create a new application.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">"New Application"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Reference Application</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Select the existing application you are referencing.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2"><em>Employee</em>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Edit Application</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Opens the target application for editing in a new browser window.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">This field is available for Grid field types only.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Select Fields to Display</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Use to indicate the columns to display from the referenced application.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">This field is available for Grid field types only.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Ability to add new on target</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Use to display a link next to the control in the record, allowing users to create referenced fields directly in the record form.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1"><em>checkbox</em>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2"><strong>Create and maintain reciprocal reference</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2">Use to select a reference field in the target application that points to this application.</td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2"><em>checkbox</em>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Add specific field-level permissions by role, if needed, and then click <strong>Apply.</strong></p>
+        <h2 id="create-or-select-an-application-to-reference">Create or Select an Application to Reference</h2>
+        <p>You can select an existing application to reference, or you can create a new application to reference from within reference fields.</p>
+        <p>To select an existing application click <strong>Reference Application.</strong> The pull-down menu displays all applications that you have access to that contain reference fields. Select the application.</p>
+        <p>
+            <img src="../../../../Resources/Images/select-reference.png" alt="" />
+        </p>
+        <p>To create a new application to reference from within a reference field, create a reference field, then in the Field Properties click <strong>Create New Application to Reference.</strong></p>
+        <p>A dialog window prompts you to create the new application. Once you create the new application, the click <strong>Create.</strong> The dialog closes, and the new application opens in a new tab in your browser. The new application is also updated in the <strong>Reference Application</strong> field.</p>
+        <p class="note"><strong>Note:</strong> To see the new application in a new tab in your browser, ensure that you have turned off any web browser pop-up blockers.</p>
+        <p>You can identify a specific field to reference from record creation. For more information, see <a href="../../../../user-guide/records/modify-a-record/lookup-and-create-references-within-records.htm">Lookup and Create References within Records</a>.</p>
+        <h3 id="create-reciprocal-references">Create Reciprocal References</h3>
+        <p>You can also create references that use or rely on data from other reference fields, or reciprocal references.</p>
+        <p>To create a reciprocal reference, you must first ensure that you have two applications with references set up. Then, select the target reference field's application as the Reference Application.</p>
+        <p>Once the target reference application is selected, click the <strong>Create and maintain reciprocal reference</strong> option.</p>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="update-the-load-balancer-address">Update the Load Balancer Address</h1>
+        <p>Use these instructions to change your existing load balancer address following a prior installation.</p>
+        <p>Execute the main installer script again on one of your existing nodes with the new load balancer address specified. The main installer script will generate a new task script that can be executed on the remaining cluster nodes.</p>
+        <p>To update the SPI load balancer address:</p>
+        <ol>
+            <li>Connect to all the nodes that are part of your Swimlane cluster.</li>
+            <p class="note"><strong>Note:</strong> The update process involves running commands on all cluster nodes. Swimlane recommends having a terminal window/tab open for each SSH session.</p>
+            <p>Open a terminal for each SSH session.</p>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">  ```
+  # Terminal 1
+    ssh &lt;node1&gt;
+
+  # Terminal 2
+    ssh &lt;node2&gt;
+
+  # Terminal 3
+    ssh &lt;node3&gt;
+  ```</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="2">
+            <li>On node 1, run the main installer script with the new load balancer address.</li>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">`curl https://get.swimlane.io/install | sudo bash -s ha load-balancer-address=&lt;New LB Address&gt;:6443`</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p class="note"><strong>Note:</strong>  If you are on an airgapped deployment, replace the kurl.sh URL with </p>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">`cat install.sh`</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p> and add the word </p>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">`airgap`</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p> before </p>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">`ha`</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p> as in this example: </p>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">`cat install.sh | sudo bash -s airgap ha load-balancer-address=&lt;New LB Address&gt;:6443`</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="3">
+            <li>The installer script you run on node 1 executes a curl command. Use this new command on the other remote nodes (node 2, node 3).</li>
+            <p>Here is the output from the node 1 installer script:</p>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">  ```
+  The load balancer address has changed. Run the following on all remote nodes to use the new address:
+
+  curl -sSL https://kurl.sh/swimlane-platform/tasks.sh | sudo bash -s set-kubeconfig-server &lt;New LB Address&gt;:6443
+
+    Continue? (Y/n)
+    ```</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p class="important"><strong>Important!</strong> Copy the curl command for the next step, but <strong>do not</strong> enter Y yet.</p>
+        </ol>
+        <ol start="4">
+            <li>Run the tasks.sh script on node 2 and node 3.</li>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">  ```
+  # node 2
+ [&lt;user&gt;@&lt;node2&gt; ~]$ curl -sSL https://kurl.sh/swimlane-platform/tasks.sh | sudo bash -s set-kubeconfig-server &lt;New LB Address&gt;:6443
+ Cluster "default-cluster" set.
+ Cluster "kubernetes" set.
+
+ # node 3
+ [&lt;user&gt;@&lt;node3&gt; ~]$ curl -sSL https://kurl.sh/swimlane-platform/tasks.sh | sudo bash -s set-kubeconfig-server &lt;New LB Address&gt;:6443
+ Cluster "default-cluster" set.
+ Cluster "kubernetes" set.
+  ```</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="5">
+            <li>Enter Y to resume the installer load balancer change process on node 1.</li>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">  ```
+  # node 1
+The load balancer address has changed. Run the following on all remote nodes to use the new address:
+    curl -sSL https://kurl.sh/swimlane-platform/tasks.sh | sudo bash -s set-kubeconfig-server &lt;New LB Address&gt;:6443
+Continue? (Y/n) Y
+Removing old load balancer address &lt;Old LB Address&gt; from API server certificate on node &lt;node1&gt;
+pod/regen-cert-&lt;node1&gt; created
+		  Installation
+  	    Complete ✔
+The UIs of Prometheus, Grafana and Alertmanager have been exposed on NodePorts 30900, 30902 and 30903 respectively.
+Kotsadm: &lt;New LB Address&gt;:8800
+You can log in with your existing password. If you need to reset it, run kubectl kots reset-password default
+To access the cluster with kubectl, reload your shell:
+    bash -l
+  ```</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="6">
+            <li>Once the installer has finished running, the load balancer address will be updated. Next you update the Swimlane application to use the new load balancer address.</li>
+            <MadCap:codeSnippet>
+                <MadCap:codeSnippetCopyButton />
+                <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">  `https://&lt;New LB Address&gt;:8800 &gt;&gt; Login to KOTS UI &gt;&gt; Config &gt;&gt; Update "Swimlane Hostname" with the new LB address &gt;&gt; Save Config &gt;&gt; Deploy`</MadCap:codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p class="note"><strong>Note:</strong> If you restore a snapshot from a backup that was generated when the cluster was configured with the old address you will need to update the config again with the new address and deploy (repeat step 6).</p>
+        </ol>
+    </body>
+</html>

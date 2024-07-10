@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="email-and-pdf-settings">Email and PDF Settings</h1>
+        <p>Use Swimlane's Email and PDF Settings to specify an outgoing email server and to customize the emails sent from Swimlane.</p>
+        <p>On Email and PDF Settings, click <strong>&gt;</strong> to expand OUTGOING EMAIL SERVER. From here you can select your preferred email authentication method, either OAuth 2.0, Basic, or None.</p>
+        <h2 id="setting-up-oauth-2.0-authentication">Setting Up OAuth 2.0 Authentication</h2>
+        <p>To set up OAuth 2.0 authentication:</p>
+        <ol>
+            <li>
+                <p>From the <strong>Authentication Method</strong> drop-down, select <em>OAuth2 For Exchange/M365</em>.</p>
+            </li>
+            <li>
+                <p>On <strong>Username</strong>, specify the outgoing mail user.</p>
+            </li>
+            <li>
+                <p>On <strong>Client ID</strong>, include the ID value associated to your application.</p>
+            </li>
+            <p>You can find this ID in your OAuth 2.0 settings.</p>
+        </ol>
+        <ol start="4">
+            <li>
+                <p>Next, enter the <strong>Client Secret</strong> and the <strong>Tenant ID</strong>.</p>
+            </li>
+            <li>
+                <p>Enter the proxy to use for Microsoft Graft requests in the <strong>HTTP Proxy</strong> field.</p>
+            </li>
+            <li>
+                <p>Once you have entered the required authentication fields, click <strong>Test Connection</strong> to ensure a connection exists.</p>
+            </li>
+            <p>
+                <img src="../../Resources/Images/OAuth2.png" alt="" />
+            </p>
+            <p>Swimlane email is sent by the Swimlane Tasks service.</p>
+        </ol>
+        <h2 id="setting-up-basic-authentication">Setting Up Basic Authentication</h2>
+        <p>To set up basic authentication:</p>
+        <ol>
+            <li>
+                <p>From the <strong>Authentication Method</strong> drop-down, select <em>Basic</em>.</p>
+            </li>
+            <li>
+                <p>Next, specify the outgoing mail host and port.</p>
+            </li>
+            <li>
+                <p>On <strong>Username</strong> and <strong>Password,</strong> specify the administrative outgoing mail user and their associated password.</p>
+            </li>
+            <li>
+                <p>To specify the outgoing email address, enter it in the <strong>From Email</strong> field.</p>
+            </li>
+            <li>
+                <p>Click <strong>Disable Certificate Validation For Outgoing</strong> to disable SSL certificate validation for email server testing or untrusted self-signed certificates.</p>
+            </li>
+            <p class="note"><strong>Note:</strong> Swimlane does not recommend disabling the certificate validation in production.</p>
+            <p>
+                <img src="../../Resources/Images/basicauth.png" alt="" />
+            </p>
+        </ol>
+        <h2 id="setting-up-without-an-authentication-method">Setting Up Without an Authentication Method</h2>
+        <p>To set up without an authentication method:</p>
+        <ol>
+            <li>
+                <p>From the <strong>Authentication Method</strong> drop-down, select <em>None</em>.</p>
+            </li>
+            <li>
+                <p>Next, specify the outgoing mail host and port.</p>
+            </li>
+            <li>
+                <p>Click <strong>Test Connection</strong> to ensure a connection exists.</p>
+            </li>
+            <li>
+                <p>To specify the outgoing email address, enter it in the <strong>From Email</strong> field.</p>
+            </li>
+            <li>
+                <p>Click <strong>Disable Certificate Validation For Outgoing</strong> to disable SSL certificate validation for email server testing or untrusted self-signed certificates.</p>
+            </li>
+            <p class="note"><strong>Note:</strong> Swimlane does not recommend disabling the certificate validation in production.</p>
+            <p>
+                <img src="../../Resources/Images/noauth.png" alt="" />
+            </p>
+        </ol>
+        <h2 id="formatting-outgoing-mail">Formatting Outgoing Mail</h2>
+        <p>To format outgoing mail:</p>
+        <p>Click <strong>&gt;</strong> to expand Mail Formatting, where you can customize the emails sent from Swimlane.</p>
+        <p>
+            <img src="../../Resources/Images/mailformatting.png" alt="" />
+        </p>
+        <p>The text editor windows on the Mail Formatting page include tools that you can use for rich text formatting of the email header and footer content. You can delete the sample html text from Swimlane in the Mail Footer window.</p>
+        <p class="important"><strong>Important!</strong> Remember to host all source images you include in the headers or footers on a web server that the recipients of the email can access.</p>
+    </body>
+</html>

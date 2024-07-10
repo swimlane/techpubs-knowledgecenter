@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="troubleshooting-checklist">Troubleshooting Checklist</h1>
+        <p>Use this topic as a checklist for troubleshooting issues with the Swimlane Platform Installer (SPI).</p>
+        <h2 id="check-the-configuration">Check the Configuration</h2>
+        <ul>
+            <li>
+                <p>Ensure that Docker and Kubelet are running.</p>
+                <ul>
+                    <li>
+                        <p>Containerd</p>
+                        <ul>
+                            <li>
+                                <p>Run <br /></p>
+                                <MadCap:codeSnippet>
+                                    <MadCap:codeSnippetCopyButton />
+                                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">systemctl status containerd</MadCap:codeSnippetBody>
+                                </MadCap:codeSnippet>
+                            </li>
+                            <li>If the service is in a failed state, search the service log for errors with this command:
+                                <MadCap:codeSnippet><MadCap:codeSnippetCopyButton /><MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">journalctl -fu containerd</MadCap:codeSnippetBody></MadCap:codeSnippet></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Kubelet</p>
+                        <ul>
+                            <li>
+                                <p>Run <br /></p>
+                                <MadCap:codeSnippet>
+                                    <MadCap:codeSnippetCopyButton />
+                                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">systemctl status kubelet</MadCap:codeSnippetBody>
+                                </MadCap:codeSnippet>
+                                <p>If the service is in a failed state, search the service log for errors with this command:<br /></p>
+                                <MadCap:codeSnippet>
+                                    <MadCap:codeSnippetCopyButton />
+                                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">journalctl -fu kubelet</MadCap:codeSnippetBody>
+                                </MadCap:codeSnippet>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Check cluster node health:</p>
+                <ul>
+                    <li>
+                        <p>Run <br /></p>
+                        <MadCap:codeSnippet>
+                            <MadCap:codeSnippetCopyButton />
+                            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get nodes</MadCap:codeSnippetBody>
+                        </MadCap:codeSnippet>
+                    </li>
+                    <li>
+                        <p>All nodes should show <code>Ready</code> in the <code>STATUS</code> column.</p>
+                        <p>If any nodes are not showing as <code>Ready</code>, run the following and look for relevant issues/errors:<br /></p>
+                        <MadCap:codeSnippet>
+                            <MadCap:codeSnippetCopyButton />
+                            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl describe node NODENAME</MadCap:codeSnippetBody>
+                        </MadCap:codeSnippet>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Check for any pods that are not running:</p>
+                <ul>
+                    <li>Run <br /><MadCap:codeSnippet><MadCap:codeSnippetCopyButton /><MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get pods -A | grep -v Running | grep -v Completed</MadCap:codeSnippetBody></MadCap:codeSnippet></li>
+                    <li>
+                        <p>If any pods are listed:</p>
+                        <ul>
+                            <li>
+                                <p>Check the pod logs for issues with this command: <br /></p>
+                                <MadCap:codeSnippet>
+                                    <MadCap:codeSnippetCopyButton />
+                                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl logs --all-containers PODNAME -n NAMESPACE</MadCap:codeSnippetBody>
+                                </MadCap:codeSnippet>
+                            </li>
+                            <li>Check the pod describe output for issues with this command: <br /><MadCap:codeSnippet><MadCap:codeSnippetCopyButton /><MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl describe pod PODNAME -n NAMESPACE</MadCap:codeSnippetBody></MadCap:codeSnippet></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Check for errors in the events.</p>
+                <ul>
+                    <li>
+                        <p>Run <br /></p>
+                        <MadCap:codeSnippet>
+                            <MadCap:codeSnippetCopyButton />
+                            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get events --sort-by=.metadata.creationTimestamp</MadCap:codeSnippetBody>
+                        </MadCap:codeSnippet>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Ensure the infrastructure is configured according to the <a href="../embedded-cluster-install/system-requirements-for-an-embedded-cluster-install/system-requirements-for-an-embedded-cluster-install.htm">System Requirements for an Embedded Cluster Install</a> or <a href="../existing-cluster-install/system-requirements-for-an-existing-cluster-install/system-requirements-for-an-existing-cluster-install.htm">System Requirements for an Existing Cluster Install</a>.</p>
+            </li>
+        </ul>
+        <h2 id="resources-to-check-logsinfo-to-retrieve">Resources to Check; Logs/Info to Retrieve</h2>
+        <p>Ensure that there is a support bundle available. See <a href="generate-a-support-bundle.htm">Generate a Support Bundle</a> for details.</p>
+        <p>In addition to the support bundle, get the status and logs of the Containerd and Kubelet services. Use this code:</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">        for SERVICES in containerd kubelet;
+           do echo --- $SERVICES --- ;
+           systemctl is-active $SERVICES ;
+           systemctl is-enabled $SERVICES ;
+           echo "";  
+        done
+        ```
+
+      ```
+        for SERVICES in containerd kubelet;
+           do echo --- $SERVICES --- ;
+           systemctl status $SERVICES ;
+           systemctl status $SERVICES ;
+           echo "";  
+        done
+        ```
+
+      ```
+        journalctl -u kubelet --since "3 hour ago" &gt; /tmp/kubelet-&lt;node-name&gt;-log.txt
+        journalctl -u containerd --since "3 hour ago" &gt; /tmp/containerd-&lt;node-name&gt;-log.txt
+        ```
+</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>If you can't generate a support bundle, for example, if the issue is occurring before the SPI is successfully installed and running, or the support bundle generation fails, then run the following commands and provide the output:</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get pods -A | grep -v Running | grep -v Completed</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>If any pods are listed, include the pod logs with:&#160;</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl logs --all-containers PODNAME -n NAMESPACE</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Include the pod describe output with:&#160;</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl describe pod PODNAME -n NAMESPACE</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Then continue providing output with:&#160;</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get pods -A</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get deploy -A</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get sts -A</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get pvc -A</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get pv -A</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get svc -A</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get nodes</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>If any nodes have a status other than <i>Ready</i>, then also include the describe output of the node with:&#160;</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl describe node NODENAME</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl get events --sort-by=.metadata.creationTimestamp</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Next, get the status and logs of the Containerd and Kubelet services:</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">        for SERVICES in containerd kubelet;
+           do echo --- $SERVICES --- ;
+           systemctl is-active $SERVICES ;
+           systemctl is-enabled $SERVICES ;
+           echo "";  
+        done
+</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">        for SERVICES in containerd kubelet;
+           do echo --- $SERVICES --- ;
+           systemctl status $SERVICES ;
+           systemctl status $SERVICES ;
+           echo "";  
+        done
+</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">        journalctl -u kubelet --since "3 hour ago" &gt; /tmp/kubelet-&lt;node-name&gt;-log.txt
+        journalctl -u containerd --since "3 hour ago" &gt; /tmp/docker-&lt;node-name&gt;-log.txt</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Finally, provide the following:&#160;</p>
+        <ul>
+            <li>
+                <p>OS and Version</p>
+            </li>
+            <li>
+                <p>Infrastructure setup:</p>
+                <ul>
+                    <li>
+                        <p>Instance provider, for example, Bare-metal, VM, AWS instance, Azure instance, GCP instance, etc.</p>
+                    </li>
+                    <li>
+                        <p>Instance sizes, including memory, cpu, disk/partitions</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Load balancer type and setup</p>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../../../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="enable-saml-for-sso">Enable SAML for SSO</h1>
+        <p>SAML is an open standard for web browser single sign-on. Using SAML, a service provider (Swimlane) asks an identity provider (a third party) to authenticate and provide information about a user.</p>
+        <p>This is initiated in two different ways. In one, Swimlane initiates login. In the other, the identity provider initiates the login. Set up SAML in Swimlane Settings, Sessions &amp; Security.</p>
+        <h2 id="swimlane-service-provider-saml-metadata">Swimlane Service Provider SAML Metadata</h2>
+        <p>The following table contains the metadata you need to know when configuring Swimlane with an identity provider.</p>
+        <table style="mc-table-style: url('../../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Metadata</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">Entity ID:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Configurable in Swimlane SAML settings</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Assertion Consumer Service (ACS) url:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">https://{swimlane-hostname-here}/api/saml/consume</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">ACS binding:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">☑ HTTP-POST    ☐ HTTP-REDIRECT</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Single Logout Service (SLS) url:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Single Logout is not currently supported by Swimlane</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">SLS binding:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">N/A</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">NameID format:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">"emailAddress" if email address is selected as NameID format in Swimlane settings, otherwise "unspecified"</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">AuthN request binding:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">☐ HTTP-POST    ☑ HTTP-REDIRECT</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">AuthN requests signed:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Configurable in Swimlane SAML settings</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1">AuthN requests encrypted:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">No</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2">Signing certificate:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Configurable in Swimlane SAML Settings</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body1">Assertions encrypted:</td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body1">Encrypted assertions are not currently supported by Swimlane</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="important"><strong>Important!</strong> A successful log in with SAML requires a user that matches the NameID username or email address that already exists in Swimlane. Swimlane does not support Just-in-Time (JIT) provisioning. SAML is available to users added by Directory Services sync as well as those added manually.</p>
+        <p>To enable SAML for SSO:</p>
+        <ol>
+            <li>
+                <p>From the Sessions and Security dashboard, click <strong>&gt;</strong> to expand <strong>Authentication.</strong></p>
+            </li>
+            <li>Under SAML Authentication, toggle the switch to enable SAML Authentication.<br /><img src="../../../Resources/Images/saml-enable-settings.png" alt="" /></li>
+        </ol>
+        <ol start="3">
+            <li>Next, click <strong>SAML Settings.</strong></li>
+            <p>
+                <img src="../../../Resources/Images/saml-auth-form.png" alt="" />
+            </p>
+        </ol>
+        <ol start="4">
+            <li>On SAML Authentication, identify the <strong>Name ID Format.</strong> Select from the dropdown. You have two options for users logging in to Swimlane, the Swimlane username, or email address.</li>
+            <p>This setting determines how Swimlane interprets the Name ID sent in the SAML response and matches it to a Swimlane user.</p>
+            <p class="important"><strong>Important!</strong> Swimlane's SAML processes match case for email addresses. Ensure the email address for the Swimlane user matches the email address in the SAML Response! It's important to note however, that username matching is case insensitive.</p>
+        </ol>
+        <ol start="5">
+            <li>
+                <p>Next, complete the following required fields:</p>
+                <ul>
+                    <li><strong>SSO URL</strong>
+                    </li>
+                    <li><strong>Identity Provider Entity ID</strong>
+                    </li>
+                    <li><strong>Service Provider Entity ID</strong>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Specify whether to verify the identity provider signature or whether to allow invalid signatures with the <strong>Verify Identity Provider Signature</strong> toggle and then upload the certificate.</p>
+            </li>
+            <p class="important"><strong>Important!</strong> Swimlane strongly recommends that you enable this SAML option and upload your identity provider's certificate in order to ensure that Swimlane is communicating with the expected identity provider.</p>
+            <p class="important"><strong>Also Important!</strong> The certificate you upload at this step must be a PEM (Privacy Enhanced Mail) certificate.</p>
+        </ol>
+        <ol start="7">
+            <li>Select whether the SAML request should be signed by Swimlane with the <strong>Sign AuthnRequest?</strong> toggle and then upload the private key (format PKCS #12) and public certificate.</li>
+            <p class="note"><strong>Note:</strong> You can convert a PEM-formatted public certificate and key to PKCS #12 using openssl. Here is an example of how to convert: <code>openssl pkcs12 -export -out cert.pfx -in pem-public-certificate.crt -inkey pem-private-key.key</code></p>
+            <p>Do not enter a password when prompted. Swimlane does not support password-protected PKCS #12 certificates.</p>
+        </ol>
+        <ol start="8">
+            <li>If your SSO provider calculates the SAML response signature with non-significant whitespace, select the <strong>Preserve whitespace in SAML response?</strong> toggle.</li>
+        </ol>
+    </body>
+</html>

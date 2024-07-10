@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../../../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="create-the-layout">Create the Layout</h1>
+        <p>Now that you have defined your application's foundation, you build out the format of the application. You organize your application in sections, tabs, by integration, or with HTML.</p>
+        <p>The layout of your application consists of fields and layout objects. Drag and drop the fields and layout objects to the Form Layout area of Application Builder.</p>
+        <p>Any of the layout objects can be resized to a percentage of the page.</p>
+        <p><strong>Available Layout Objects</strong>
+        </p>
+        <table style="mc-table-style: url('../../../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Layout Object</th>
+                    <th style="text-align: left;" class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>Tab</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Groups multiple sections in the same area. Each tab can have it's own layout, which can contain additional sections and tab elements.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body2"><strong>Section</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body2">Groups multiple fields and layout elements into a single area. Sections can contain additional sections and tab elements and can be collapsed or expanded in the record.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><strong>HTML</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Displays HTML in the record.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2"><strong>Integration</strong>
+                    </td>
+                    <td style="text-align: left;" class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Adds a button to the record form that allows you to run an integration from the records page. You must have already defined the task that will run in order to set up an integration from a record.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="creating-tab-layouts">Creating Tab Layouts</h2>
+        <p>To create tab layouts:</p>
+        <ol>
+            <li>
+                <p>From the Layout section of the Application Builder page, select <strong>Tabs,</strong> and then drag and drop it into the Form Layout.</p>
+                <p>
+                    <img src="../../../Resources/Images/tab-in-form-layout.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>Select the pencil icon to edit the tab settings, or double click the default tab title text.</p>
+                <p>
+                    <img src="../../../Resources/Images/edit-tab-set.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>To create additional tabs on your tab layout, click the plus icon.</p>
+                <p>
+                    <img src="../../../Resources/Images/add-tab.png" alt="" />
+                </p>
+                <p>Another tab is added. Name the tab and add additional tabs as needed.</p>
+            </li>
+            <li>
+                <p>Add sections and fields, as needed, to the tab layouts, and click <strong>Save.</strong></p>
+                <p>
+                    <img src="../../../Resources/Images/three-tabs.png" alt="" />
+                </p>
+            </li>
+        </ol>
+        <h2 id="creating-section-layouts">Creating Section Layouts</h2>
+        <p>To create a section:</p>
+        <ol>
+            <li>
+                <p>Select <strong>Section,</strong> then drag and drop it to the Application Builder Form Layout area.</p>
+                <p>
+                    <img src="../../../Resources/Images/section-layout.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>On the Field Properties tab, enter a name and description (optional) for the section.</p>
+                <p>You can also resize the section on the Field Properties tab.</p>
+            </li>
+            <li>
+                <p>On <strong>Help Text,</strong> specify whether you want optional help text to appear for the record. Select either <em>Above</em> or <em>Below</em> to indicate where you want the help text to display on the section.</p>
+                <p>
+                    <img src="../../../Resources/Images/field-property-help_text.png" alt="" />
+                </p>
+                <p>Once you select the location for the help text, enter the text for the record UI on <strong>Help Text Context.</strong></p>
+                <p>When creating a record, the help text displays as seen in the following screenshot:</p>
+                <p>
+                    <img src="../../../Resources/Images/new-record-with-help.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>You can also specify two additional section-specific behaviors. You can specify whether a section will display collapsed as a default when a record is created or whether the border of the section should be hidden when viewed in a record. To specify these things, select from either <strong>Collapse by default</strong> or <strong>Hide section border</strong>.</p>
+            </li>
+            <p>In the screen below, the first section has the border hidden, and the second section is collapsed by default:</p>
+            <p>
+                <img src="../../../Resources/Images/hide-collapse.png" alt="" />
+            </p>
+        </ol>
+        <ol start="5">
+            <li>
+                <p>Next, to start filling in the fields, drag and drop a field type, such as <strong>Selection, Text,</strong> or <strong>Comments</strong> into the section.</p>
+                <p>Fields in Application Builder have multiple sub-types. For example, you can select a Text field type, and further identify it by sub-type such as <em>Single-Line, Multi-Line, Email, Telephone, or URL,</em> for example. In addition, the field type you select can have various Field Properties assigned. See <a href="select-fields/select-fields.htm">Select Fields and Assign Field Properties</a> for detail about fields.</p>
+            </li>
+            <li>
+                <p>Continue to add fields and layout objects until you have your application configured the way that you need it, then click <strong>Save.</strong></p>
+            </li>
+        </ol>
+        <h2 id="creating-html-layouts">Creating HTML Layouts</h2>
+        <p>You can use HTML to further customize the layout of your application. For example, you can include code for a button that, when clicked, opens internal documentation for reference.</p>
+        <p class="note">Any JavaScript code in the HTML Content field will be executed by the browser when the record is viewed.</p>
+        <p>To create HTML layouts:</p>
+        <ol>
+            <li>
+                <p>Select <strong>HTML,</strong> then drag and drop it to the Application Builder Form Layout area.</p>
+            </li>
+            <li>
+                <p>Double-click the title of the HTML layout object to rename it.</p>
+                <p>
+                    <img src="../../../Resources/Images/html-rename.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>On Field Properties, enter your code in <strong>HTML Content</strong> and then click <strong>Save.</strong></p>
+                <p>
+                    <img src="../../../Resources/Images/html-content.png" alt="" />
+                </p>
+            </li>
+        </ol>
+        <h2 id="creating-integration-layouts">Creating Integration Layouts</h2>
+        <p>Including an Integration layout object in your applet or application allows you to press a button and run an integration from within a record.</p>
+        <p class="important"><strong>Important!</strong>  You can include an integration that consists of a common task in applets. Other integrations can be included, but must be further configured once the applet has been added to an application. The integration configuration can span both the application and it's workflow.</p>
+        <p>To create integration layouts:</p>
+        <ol>
+            <li>
+                <p>Select <strong>Integration,</strong> then drag and drop it to the Application Builder Form Layout area.</p>
+            </li>
+            <li>
+                <p>Double-click the title of the Integration layout object to rename it, or rename it on the Field Properties tab.</p>
+                <p>
+                    <img src="../../../Resources/Images/integration-object.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>To assign a task to run, on the Field Properties tab click <strong>Task</strong> and select a task. To create a new task, select <strong>Create a Task</strong>.</p>
+                <p>
+                    <img src="../../../Resources/Images/integration-tasks-properties.png" alt="" />
+                </p>
+            </li>
+            <li>Under Integration ROI Calculation Metrics fill out the <strong>Manual Time Expenditure</strong> and <strong>Personnel Costs</strong> fields so that the value of the automation is calculated in Usage Metrics.<br /><img src="../../../Resources/Images/roi-metrics.png" alt="" /></li>
+        </ol>
+        <ol start="5">
+            <li>Click <strong>Apply Metrics</strong>, and then click <strong>Save</strong>.</li>
+        </ol>
+    </body>
+</html>

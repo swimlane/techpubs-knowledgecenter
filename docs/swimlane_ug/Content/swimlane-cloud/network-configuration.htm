@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="network-configuration">Network Configuration</h1>
+        <p>This topic contains specific information about network configuration for Swimlane Cloud.</p>
+        <h2 id="network-address-translation-nat">Network Address Translation (NAT)</h2>
+        <p>Network address translation (NAT) is a method of mapping an IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.</p>
+        <p>For Swimlane Cloud, you configure NAT in a way that the Swimlane infrastructure can communicate to your private integrations using NAT'ed IPs in a reduced subnet range that you set up. This prevents the entirety of the Swimlane cloud's respective IP ranges from needing to be routable to one another and helps prevent future IP range conflicts if additional IP ranges are added as routable by your infrastructure that may conflict with Swimlane's IP range.</p>
+        <h2 id="public-dns-with-vpn-connection">Public DNS with VPN Connection</h2>
+        <p>Swimlane Cloud is unable to use private DNS servers for DNS resolution. Any DNS records that need to be resolved must be available in public DNS zones.</p>
+    </body>
+</html>

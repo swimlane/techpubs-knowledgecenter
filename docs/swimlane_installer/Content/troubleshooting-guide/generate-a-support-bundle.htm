@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="generate-a-support-bundle">Generate a Support Bundle</h1>
+        <p>If you're having issues with the Swimlane Platform Installer (SPI), your Swimlane support representative will likely ask you to generate a support bundle to identify the diagnostics for your issue.</p>
+        <p>Support bundles contain logs from all relevant pods, as well as other useful information from your deployment.</p>
+        <h2 id="airgapped-deployments">Airgapped Deployments</h2>
+        <p>Use these instructions for an airgapped deployment.</p>
+        <p>Before you begin generating a support bundle you must first ensure that you have the support-bundle command installed.</p>
+        <h3 id="install-the-support-bundle-command"><a name="Install"></a>Install the Support-Bundle Command</h3>
+        <p>If you have already installed the support-bundle command, you can skip these steps.</p>
+        <p>To install the support-bundle command:</p>
+        <ol>
+            <li>
+                <p>From a computer that is connected to the internet run:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>curl -o support-bundle https://krew.sh/support-bundle
+curl -o spec.yaml https://kots.io -H 'User-agent:Replicated_Troubleshoot/v1beta1'
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+            <li>
+                <p>Move the files to the server:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>scp support-bundle &lt;server&gt;:/path/
+scp spec.yaml &lt;server&gt;:/path/
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+            <li>
+                <p>Next, connect to the airgapped server and make the support-bundle file executable:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>chmod 777 support-bundle
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+            <li>
+                <p>Execute the installer for support-bundle:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>./support-bundle
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+            <li>
+                <p>Finally, generate the support bundle:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>kubectl support-bundle /path/to/spec.yaml
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+                <p>A support bundle is created in the directory from which you ran the command:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>support-bundle-2021-01-19T17_20_56.tar.gz
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+            <li>
+                <p>Give this support bundle to Swimlane support.</p>
+            </li>
+        </ol>
+        <h3 id="generating-a-support-bundle-with-cli-airgap">Generating a Support Bundle with CLI (Airgap)</h3>
+        <p>To generate a support bundle with CLI (Airgap):</p>
+        <ol>
+            <li>
+                <p>Log in to SPI, and connect to the server.</p>
+            </li>
+            <li>
+                <p>Run this support-bundle command:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>kubectl support-bundle secret/default/kotsadm-swimlane-platform-supportbundle --redactors=configmap/default/kotsadm-redact-spec/redact-spec,configmap/default/kotsadm-swimlane-platform-redact-spec/redact-spec
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+                <p>If this command throws the following error, it means that a support-bundle file has been saved in the directory from which the commands were run:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>$ kubectl support-bundle secret/default/kotsadm-swimlane-platform-supportbundle
+ * failed to run collector "run/ping-google": timeout
+ * Failed to upload support bundle: execute request: Put "https://&lt;swimlane-url&gt;:8800/api/v1/troubleshoot/1n7plYfeeXJCdYH31LhYACWdVun/xjt595pdcr6m6fvts8wnbpbltbms6hhb": dial tcp [::1]:8800: connect: connection refused
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+                <p>If you do not have the support-bundle command, see <a href="#Install">Install the Support-Bundle Command</a>.</p>
+            </li>
+        </ol>
+        <ol start="3">
+            <li>
+                <p>The support bundle uploads to your Swimlane Platform Installer UI.</p>
+            </li>
+            <li>
+                <p>From the Swimlane Platform Installer UI, click Dashboard and then open the Troubleshoot tab.</p>
+            </li>
+            <li>
+                <p>On Troubleshoot, click <strong>Download bundle</strong>.</p>
+            </li>
+            <p>
+                <img src="../Resources/Images/troubleshoot-download-bundle.png" alt="" />
+            </p>
+        </ol>
+        <ol start="6">
+            <li>Deliver the downloaded file to Swimlane support.</li>
+        </ol>
+        <h2 id="online-deployments">Online Deployments</h2>
+        <p>Use these instructions for an online deployment that is connected to the internet.</p>
+        <p>Before you begin generating a support bundle you must first ensure that you have the support-bundle command installed. See <a href="#Install">Install the Support-Bundle Command</a> for details.</p>
+        <h3 id="generating-a-support-bundle-with-cli-online">Generating a Support Bundle with CLI (Online)</h3>
+        <p>To generate a support bundle with CLI (Online):</p>
+        <ol>
+            <li>
+                <p>Log in to SPI, and connect to the server.</p>
+            </li>
+            <li>
+                <p>Run this support-bundle command:<br /></p>
+            </li>
+            <li>
+                <MadCap:codeSnippet>
+                    <MadCap:codeSnippetCopyButton />
+                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">curl https://krew.sh/support-bundle | bash</MadCap:codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+        </ol>
+        <ol start="3">
+            <li>Generate the support bundle by running this command:
+                <MadCap:codeSnippet><MadCap:codeSnippetCopyButton /><MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">kubectl support-bundle secret/default/kotsadm-swimlane-platform-supportbundle</MadCap:codeSnippetBody></MadCap:codeSnippet></li>
+            <p>If this command throws the following error, it means that a support-bundle file has been saved in the directory from which the commands were run:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody>$ kubectl support-bundle secret/default/kotsadm-swimlane-platform-supportbundle
+ * failed to run collector "run/ping-google": timeout
+ * Failed to upload support bundle: execute request: Put "https://&lt;swimlane-url&gt;:8800/api/v1/troubleshoot/1n7plYfeeXJCdYH31LhYACWdVun/xjt595pdcr6m6fvts8wnbpbltbms6hhb": dial tcp [::1]:8800: connect: connection refused
+</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+            </MadCap:codeSnippet>
+        </ol>
+        <ol start="4">
+            <li>
+                <p>The support bundle uploads to your Swimlane Platform Installer UI.</p>
+            </li>
+            <li>
+                <p>From the Swimlane Platform Installer UI, click Dashboard and then open the Troubleshoot tab.</p>
+            </li>
+            <li>
+                <p>On Troubleshoot, click <strong>Download bundle</strong>.</p>
+            </li>
+            <p>
+                <img src="../Resources/Images/troubleshoot-download-bundle.png" alt="" />
+            </p>
+        </ol>
+        <ol start="7">
+            <li>Deliver the downloaded file to Swimlane support.</li>
+        </ol>
+        <h2 id="generating-a-support-bundle-through-the-spi-ui">Generating a Support Bundle Through the SPI UI</h2>
+        <p>Use these instructions to get a support bundle from the SPI UI.</p>
+        <ol>
+            <li>
+                <p>Log in to the Swimlane Platform Installer UI.</p>
+            </li>
+            <li>From the Swimlane Platform Installer UI, click Dashboard and then open the Troubleshoot tab.<br />If you do not have the support-bundle command, see <a href="#Install">Install the Support-Bundle Command</a>.</li>
+            <li>
+                <p>On the Troubleshoot tab, click <strong>Analyze Swimlane</strong>.</p>
+            </li>
+            <p>The SPI checks the deployment for issues. This may take some time. You will know when the process is finished once you receive an analysis overview.</p>
+        </ol>
+        <ol start="4">
+            <li>
+                <p>To view the content of the support bundle, click the File Inspector tab.</p>
+            </li>
+            <li>
+                <p>To download the support bundle, click <strong>Download bundle</strong>.</p>
+            </li>
+            <li>
+                <p>Deliver the downloaded file to Swimlane support.</p>
+            </li>
+        </ol>
+    </body>
+</html>

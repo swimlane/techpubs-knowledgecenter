@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="aws-application-load-balancer">AWS Application Load Balancer</h1>
+        <p>This topic explains how to use an AWS Application Load Balancer (Layer 7) for your Swimlane deployment. Two load balancers are required for this deployment. The AWS Application Load Balancer (Layer 7) is used for external access to the Swimlane platform and the Swimlane Platform Installer. An additional AWS Network Load Balancer (Layer 4) is still required for the internal cluster communication.</p>
+        <h2 id="architecture-diagram">Architecture Diagram</h2>
+        <p>
+            <img src="../../Resources/Images/aws-application-load-balancer-diagram.png" alt="" />
+        </p>
+        <h2 id="load-balancer-for-the-swimlane-platform-and-the-swimlane-platform-installer">Load Balancer for the Swimlane Platform and the Swimlane Platform Installer</h2>
+        <h2 id="target-groups">Target Groups</h2>
+        <ul>
+            <li>Create the following <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html" target="_blank_">Target Group:</a><ul><li>Port 4443
+<ul><li><code>Type</code> set to <code>Instance</code></li><li><code>Protocol</code> set to <code>HTTPS</code></li><li><code>Port</code> set to <code>4443</code></li><li><code>VPC</code> should match that of the EC2 instances that Swimlane will be installed on</li><li><code>Health Check protocol</code> set to <code>HTTPS</code></li><li><code>Health Check Port</code> set to <code>Traffic port</code></li><li>The <code>Health Check</code> settings <code>Healthy Threshold</code>, <code>Unhealthy Threshold</code>, <code>Timeout</code>, and <code>Interval</code> may vary based on your preferences for how quickly an instance should become unhealthy in order to stop receiving traffic.</li><li><code>Health Check Success codes</code> set to <code>200</code></li><li>Register the first instance that you'll be running the Swimlane Platform Installer on to the target group with <code>Port</code> set to <code>4443</code>.
+<ul><li>After Swimlane has been installed on the additional nodes they need to be added to this target group.</li></ul></li></ul></li><li>Port 8800
+<ul><li><code>Type</code> set to <code>Instance</code></li><li><code>Protocol</code> set to <code>HTTPS</code></li><li><code>Port</code> set to <code>8800</code></li><li><code>VPC</code> should match that of the EC2 instances that Swimlane will be installed on</li><li><code>Health Check protocol</code> set to <code>HTTPS</code></li><li><code>Health Check Port</code> set to <code>Traffic port</code></li><li>The <code>Health Check</code> settings <code>Healthy Threshold</code>, <code>Unhealthy Threshold</code>, <code>Timeout</code>, and <code>Interval</code> may vary based on your preferences for how quickly an instance should become unhealthy in order to stop receiving traffic.</li><li><code>Health Check Success codes</code> set to <code>200</code></li><li>Register the first instance that you'll be running the Swimlane Platform Installer on to the target group with <code>Port</code> set to <code>8800</code>.
+<ul><li>After Swimlane has been installed on the additional nodes they need to be added to this target group.</li></ul></li></ul></li></ul></li>
+        </ul>
+        <h2 id="load-balancer">Load Balancer</h2>
+        <ul>
+            <li>Create an <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html" target="_blank_">AWS Application Load Balancer</a><ul><li><code>IP address type</code><ul><li>Choose <code>ipv4</code></li></ul></li><li>Add a <code>Listener </code>for each of the following ports:
+<ul><li>Port 443
+<ul><li><code>Protocol</code> set to <code>HTTPS</code></li><li><code>Port</code> set to <code>443</code></li><li>Configure it to forward traffic to the <code>Port 4443</code> Target Group created above</li><li><code>Security Policy</code> set according to your security policies
+<ul><li>More information about <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html" target="_blank_">HTTPS Listeners</a></li><li><code>ELBSecurityPolicy-TLS-1-2-2017-01</code> or stronger is recommended</li></ul></li><li><code>Default SSL certificate</code> set to the ACM, IAM, or imported certificate that you choose
+<ul><li>This certificate needs to be valid for the Swimlane Hostname you specify when configuring our application</li></ul></li></ul></li><li>Port 8800
+<ul><li><code>Protocol</code> set to <code>HTTPS</code></li><li><code>Port</code> set to <code>8800</code></li><li>Configure it to forward traffic to the <code>Port 8800</code> Target Group created above</li><li><code>Security Policy</code> set according to your security policies
+<ul><li>More information about <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html" target="_blank_">HTTPS Listeners</a></li><li><code>ELBSecurityPolicy-TLS-1-2-2017-01</code> or stronger is recommended</li></ul></li><li><code>Default SSL certificate</code> set to the ACM, IAM, or imported certificate that you choose
+<ul><li>This certificate needs to be valid for the Swimlane Hostname you specify when configuring our application</li></ul></li></ul></li><li>Optional - Port 80
+<ul><li>Used for the HTTP to HTTPS redirect and can be excluded if you only want HTTPS/443 to be available</li><li><code>Protocol</code> set to <code>HTTP</code></li><li><code>Port</code> set to <code>80</code></li><li>Configure it to <code>Redirect to</code> with the following settings
+<ul><li><code>Protocol</code> set to <code>HTTPS</code></li><li><code>Port</code> set to <code>443</code></li><li>Path settings set to <code>Original host, path, query</code></li><li><code>Status Code</code> set to <code>301 - Permanently moved</code></li></ul></li></ul></li></ul></li><li><code>Availability Zones</code><ul><li>The Application Load Balancer's <code>VPC</code> should match that of the EC2 instances that Swimlane will be installed on</li><li>The Application Load Balancer's <code>Availability Zones</code> should include each Availability Zone used by the EC2 instances that Swimlane will be installed on</li></ul></li></ul></li>
+        </ul>
+        <h2 id="security-groups">Security Groups</h2>
+        <p>For AWS Application Load Balancers, ingress port access is defined in the Security Group assigned to the load balancer itself. For more information about the port requirements see  the External Access section of the <a href="../system-requirements-for-an-embedded-cluster-install/system-requirements-for-an-embedded-cluster-install.htm">System Requirements for an Embedded Cluster Installation</a>.</p>
+        <h2 id="load-balancer-for-internal-cluster-communication">Load Balancer for internal cluster communication</h2>
+        <h3 id="target-groups-1">Target Groups</h3>
+        <ul>
+            <li>Create the following <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html" target="_blank_">Target Groups:</a><ul><li>Port 6443
+<ul><li><code>Type</code> set to <code>IP</code></li><li><code>Protocol</code> set to <code>TCP</code></li><li><code>Port</code> set to <code>6443</code></li><li><code>VPC</code> should match that of the EC2 instances that Swimlane will be installed on</li><li><code>Health Check protocol</code> set to <code>TCP</code></li><li><code>Health Check Port</code> set to <code>Traffic port</code></li><li><code>Healthy Threshold</code>, <code>Unhealthy Threshold</code>, <code>Timeout</code>, and <code>Interval</code> may vary based on your preferences for how quickly an instance should become unhealthy in order to stop receiving traffic.</li><li>Register the first instance that you'll be running the Swimlane Platform Installer on to the target group with <code>Port</code> set to <code>6443</code>.
+<ul><li>After Swimlane has been installed on the additional nodes they need to be added to this target group.</li></ul></li><li>Register the first instance that you'll be running the Swimlane Platform Installer on to the target group with <code>Port</code> set to <code>80</code>.
+<ul><li>After Swimlane has been installed on the additional nodes they need to be added to this target group.</li></ul></li></ul></li></ul></li>
+        </ul>
+        <h3 id="load-balancer-1">Load Balancer</h3>
+        <ul>
+            <li>Create an <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html" target="_blank_">AWS Network Load Balancer</a><ul><li><code>IP address type</code><ul><li>Choose <code>ipv4</code></li></ul></li><li>Add a <code>Listener</code> for each of the following ports:
+<ul><li>Port 6443
+<ul><li><code>Protocol</code> set to <code>TCP</code></li><li><code>Port</code> set to <code>6443</code></li><li>Configure it to forward traffic to the <code>Port 6443</code> Target Group created above</li></ul></li></ul></li><li><code>Availability Zones</code><ul><li>The Network Load Balancer's <code>VPC</code> should match that of the EC2 instances that Swimlane will be installed on</li><li>The Network Load Balancer's <code>Availability Zones</code> should include each Availability Zone used by the EC2 instances that Swimlane will be installed on</li></ul></li></ul></li>
+        </ul>
+        <h3 id="security-groups-1">Security Groups</h3>
+        <p>For AWS Network Load Balancers, ingress port access is defined in the Security Group used by the EC2 instances. The port requirements are available in the External Access section of the <a href="../system-requirements-for-an-embedded-cluster-install/system-requirements-for-an-embedded-cluster-install.htm">System Requirements for an Embedded Cluster Installation</a>.</p>
+        <h2 id="swimlane-configuration">Swimlane Configuration</h2>
+        <p>Be sure to enable the <code>Expose the Swimlane Web service externally</code> option on the Swimlane Platform Installer UI config tab.</p>
+    </body>
+</html>

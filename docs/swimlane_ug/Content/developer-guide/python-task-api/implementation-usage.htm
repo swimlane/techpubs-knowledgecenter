@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="implementation-usage">Implementation Usage</h1>
+        <p>For ease of use, Swimlane has two different APIs for interacting with Python scripts: a global and class level.</p>
+        <h2 id="global">Global</h2>
+        <p>The global usage was designed for scripters to be able to drop scripts into Swimlane, configure a few variables, and be operational with little effort. In this scenario, users will find anywhere they had arguments passed to the script via CLI/etc and replace them with the Swimlane context object sw_context. Additionally, Swimlane inserts a list of dictionaries (called sw_outputs) into each script that can be used to return data to Swimlane.</p>
+        <p>Take the following demo script:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody style="mc-code-lang:Python;">import urllib
+import sys
+
+ipToLookup = sys.argv[1] # example: '90.156.201.27'
+yourAPIKey = 'asdfasd3452dsfasdfasdasdf'
+
+url = 'https://www.virustotal.com/vtapi/v2/ip-address/report'
+parameters = {'ip': ipToLookup, 'apikey': yourAPIKey}
+
+response = urllib.urlopen('%s?%s' % (url, urllib.urlencode(parameters))).read()
+
+print response
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>This script would be migrated by replacing the apiKey and the ipToLookup variables with variables from the context object. Additionally, the standard output printing can be removed to use the sw_outputs object.</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody style="mc-code-lang:Python;">import json
+import urllib
+
+ipToLookup = sw_context.inputs["IP"]
+yourAPIKey = sw_context.inputs["API_KEY"]
+
+url = 'https://www.virustotal.com/vtapi/v2/ip-address/report'
+parameters = {'ip': ipToLookup, 'apikey': yourAPIKey}
+
+response = urllib.urlopen('%s?%s' % (url, urllib.urlencode(parameters))).read()
+
+sw_outputs.append({'output': response})
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Since we can capture messages from the standard output, moving the output to the outputs object is not necessary.</p>
+        <h2 id="class">Class</h2>
+        <p>Developers who are familiar with object-oriented programming concepts can leverage the class architecture pattern.</p>
+        <p class="note"><strong>Note:</strong> Class applies to plugin tasks only, and not to custom scripts. Custom scripts do not contain plugin-specific behaviors like being able to use SwMain class.</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody style="mc-code-lang:Python;">       class SwMain:
+        def __init__(self, context):
+            # setup
+            pass
+        def __del__():
+            # on done
+            pass
+        def execute(self):
+            # do job and return output
+            pass
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>When a developer defines a class with the name of SwMain, it will be automatically invoked with the sw_context object context argument. After the class is initialized, the execute method is invoked on that instance of the class. The execute method is where the 'work' of the task will be done. When finished, the execute method returns an array of dictionaries as the output.</p>
+        <p>With this pattern, the context is encapsulated into the SwMain singleton rather than accessing the global sw_context or sw_outputs objects and enforce a single exit point return object. This rigid API helps to create more predictable, more maintainable, and easier readability plugin pattern. Swimlane’s internal plugins are authored in this format.</p>
+    </body>
+</html>

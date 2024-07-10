@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="fix-calculated-formulas">Fix Calculated Formulas</h1>
+        <p>If your Swimlane instance throws 500 errors when you click on records or when you try to open an application, you might pull errors similar to this:</p>
+        <MadCap:codeSnippet>
+            <codeSnippetCopyButton />
+            <codeSnippetBody>{
+	"_id" : ObjectId(“&lt;object-id&gt;"),
+	"Date" : ISODate(“&lt;data&gt;“),
+	"HostName" : “&lt;host-name&gt;",
+	"LayoutName" : "FullDebug",
+	"Level" : "Error",
+	"UserName" : “&lt;user-name&gt;”,
+	"MethodName" : "Core.Engines.Calculation.Calculator.PerformCalculationsForRecord",
+	"LineNumber" : “&lt;line-number&gt;",
+	"Message" : "Error calculating formula for field \”&lt;field-name&gt;\” on record &lt;“record-id&gt;,
+	"ApplicatonId" : “&lt;application-id&gt;“,
+	"ExceptionMessage" : "Object reference not set to an instance of an object.",
+	"ExceptionMethod" : "System.Object Calculate(Core.Models.Record.Record, Core.Models.Application.Application, System.String)",
+	"ExceptionType" : "System.NullReferenceException",
+	"ExceptionStackTrace" : "at Core.Engines.Calculation.Calculator.Calculate(Record record, Application app, String formula) in /app/Core/Engines/Calculation/Calculator.cs:line &lt;line-number&gt;\n   at Core.Engines.Calculation.Calculator.PerformCalculationsForRecord(Record record, Application app) in /app/Core/Engines/Calculation/Calculator.cs:line &lt;line-number&gt;“,
+	"ExceptionWithInner" : "System.NullReferenceException: Object reference not set to an instance of an object.\n   at Core.Engines.Calculation.Calculator.Calculate(Record record, Application app, String formula) in /app/Core/Engines/Calculation/Calculator.cs:line &lt;line-number&gt;\n   at Core.Engines.Calculation.Calculator.PerformCalculationsForRecord(Record record, Application app) in /app/Core/Engines/Calculation/Calculator.cs:line &lt;line-number&gt;“
+}
+</codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>More than likely, this error means you have calculated fields that are not failing because they aren't accounting for empty fields.</p>
+        <p>For example, you have a calculated field, <strong>Case TT Resolved Min</strong> whose calculations depend on <strong>Case Created On</strong> and <strong>Case Closed On</strong> fields. You will get an error if those two files are not populated correctly.</p>
+        <p>Chances are these fields are using a formula similar to the following:</p>
+        <p><code>IF ([Case Created On] = [Case Resolved On], 0, TOTALMINUTES([Case Created On],[Case Resolved On]))</code>
+        </p>
+        <p>Notice that this formula is only checking if two fields are equal in order to skip the calculation and return <em>0</em>. However, it is not checking whether <strong>Case Created On</strong> or <strong>Case Resolved On</strong> fields are empty. The fact that these fields are indeed empty is likely causing the issue.</p>
+        <p>To confirm if this is the issue, open the problematic record(s) and check if all the fields are populated. If they are not, you have found the problem!</p>
+        <p>To fix this issue:</p>
+        <ol>
+            <li>
+                <p>From the Swimlane global navigation menu, select Applications &amp; Applets.</p>
+            </li>
+            <li>
+                <p>Select the application or applet that is causing the error.</p>
+            </li>
+            <li>
+                <p>Select the fields in the Form Layout and select Edit to open the Calculation Builder:</p>
+            </li>
+            <li>
+                <p>Change the formula by adding “OR” and “IsBlank" to allow for the empty fields, for example:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody>IF (OR([Case Created On] = [Case Closed On], IsBlank([Case Created On]), IsBlank([Case Closed On])), 0, TOTALMINUTES([Case Created On],[Case Closed On]))
+</codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../../../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../../../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="calculation-builder">Calculation Builder</h1>
+        <p>Fields specified as calculations are read-only. The value of a calculated field is the result of a calculation defined with a custom formula. Calculated fields can be either text or numeric, but cannot be lists.</p>
+        <p appId="" id="" fieldId="">Calculated Fields are processed on all Record GET (including the default Record for App endpoint), Record POST and Record PUT in addition to the explicit Calculate Field endpoint ("app//record//calc/"). Swimlane uses Synfusion Calc to process calculations, and also uses the same syntax. The success and/or failure of calculations is recorded in logged activity in Swimlane.</p>
+        <p class="note"><strong>Note:</strong> Be aware of the output type of your calculation when creating the calculation result field.</p>
+        <p>The Calculation Builder consists of the following:</p>
+        <ul>
+            <li>Formula editor window</li>
+            <li>Formula operator buttons</li>
+            <li>Validate formula button</li>
+            <li>Expression Helper</li>
+            <li>Formula functions</li>
+            <li>Help Text</li>
+        </ul>
+        <p>
+            <img src="../../../Resources/Images/calculation-builder-described.png" alt="" />
+        </p>
+        <p>To create a calculated field:</p>
+        <ol>
+            <li>
+                <p>Select the Calculated option on the Field Properties panel.<br /><img src="../../../Resources/Images/calc_field_type.png" alt="" /></p>
+            </li>
+        </ol>
+        <p>Calculation Builder opens.</p>
+        <ol start="2">
+            <li>On Calculation Builder, enter a formula, or use Swimlane's expression helper to find a formula. The Expression Helper contains all of the field values from your Swimlane application, and the following formulas:</li>
+        </ol>
+        <ul>
+            <li>Math</li>
+            <li>Lookup expressions (which specify a value obtained from records or data tables)</li>
+            <li>Logic (also known as Boolean)</li>
+            <li>Statistics</li>
+            <li>Text</li>
+            <li>Date and Time</li>
+            <li>Financial</li>
+        </ul>
+        <ol start="3">
+            <li>
+                <p>Once you select a formula type, the available formula options are provided for you.<br /><img src="../../../Resources/Images/formula-helper.png" alt="" /></p>
+            </li>
+            <p class="note"><strong>Note:</strong> When you select a formula option, the adjacent Help Text displays a brief description of the function of the formula. For more information, click <em>More Help</em>.</p>
+        </ol>
+        <ol start="4">
+            <li>Click the <strong>+</strong> symbol by the formula option to load it into the formula window.</li>
+            <p>
+                <img src="../../../Resources/Images/formula-building.gif" alt="" />
+            </p>
+            <p>The formula loads with built-in parameters of the formula. Select the parameters and then select fields from within your application, or enter the formula values to complete the formula.</p>
+            <p>Select <strong>Validate Formula</strong>. When the formula is validated, click <strong>Apply</strong>.</p>
+        </ol>
+    </body>
+</html>

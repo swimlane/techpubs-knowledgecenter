@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="configure-the-swimlane-platform-for-an-existing-cluster-install">Configure the Swimlane Platform for an Existing Cluster Install</h1>
+        <p>When you need to access the SPI UI after the initial install you can proxy it again by running this command and accessing http://localhost:8800 in a Chrome browser:</p>
+        <p>kubectl kots admin-console --namespace your-namespace</p>
+        <p class="note"><b>Note:</b> All configuration of the Swimlane Platform Installer and Swimlane platform must be done through the SPI admin console config page. Editing or manipulating the underlying Kubernetes resources is not supported and will not be permanent since they are managed and controlled by the Swimlane Platform Installer.</p>
+        <ol>
+            <li>
+                <p>First, configure ingress options.</p>
+                <ul>
+                    <li>
+                        <p>Enable Ingress Resource - Enable this option if you have an existing ingress controller installed in your cluster that you want to utilize to expose Swimlane externally.</p>
+                        <ul>
+                            <li>
+                                <p>Ingress Resource Annotations - Enter the annotations to apply to the ingress resource. See the documentation for your ingress controller for the required annotations to work properly.</p>
+                                <ul>
+                                    <li>If your ingress controller requires a NodePort service then you must enabled the Expose the Swimlane Web Service Externally option below.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Ingress Resource TLS - Enter the TLS section for the ingress resource. See your ingress controller’s documentation for the required TLS settings. See the Kubernetes documentation for valid ingress <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/#tls" target="_blank">TLS YAML</a>.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Ingress Resource Hostnames - Enter the hostnames to match to this ingress resource. Enter one per line with each line starting with a dash and a space (e.g. "- hostname.example"). You must use DNS-compliant records. A DNS record can be up to 63-characters long and can only contain letters, numbers, and hyphens. The record cannot start or end with a hyphen, or have consecutive hyphens. If left blank, it will match all hostnames.</p>
+                        <ul>
+                            <li>
+                                <p>Expose the Swimlane Web Service Externally - Enable this option to expose the Swimlane web service as a NodePort from each node in the cluster on the TCP port below. You must configure your external layer 7 load balancer to forward to each node over the chosen port.</p>
+                                <ul>
+                                    <li>Swimlane Web Service Port - Enter the port to use for the externally exposed Swimlane Web Service. This port must be within your cluster's NodePort range. If left blank, it will use a random port in your cluster's NodePort range.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Set Swimlane Web Service Annotations - Enter the annotations to apply to the Swimlane Web service. See the documentation for your ingress controller for the required annotations to work properly.</p>
+                            </li>
+                            <li>
+                                <p>Upload a certificate for Swimlane Web backend - Enable this option to upload a certificate and key to be used by the backend Swimlane web service. If no certificate is uploaded a self-signed one will be used.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Swimlane Web CORS Headers - Enable this option to set HTTP Cross-Origin Resource Sharing Headers for Swimlane Web. A list of options relevant to CORS Headers will appear below and if left blank, they will be set with the default values specified next to each option. If this option is disabled, no CORS headers will be set for Swimlane Web.</p>
+                        <ul>
+                            <li>
+                                <p>Swimlane Web CORS Header Access-Control-Allow-Origin - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">HTTP Access-Control-Allow-Origin header</a>.</p>
+                            </li>
+                            <li>
+                                <p>Swimlane Web CORS Header Access-Control-Allow-Headers - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">HTTP Access-Control-Allow-Headers header</a>.</p>
+                            </li>
+                            <li>
+                                <p>Swimlane Web CORS Header Access-Control-Allow-Methods - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">HTTP Access-Control-Allow-Methods header</a>.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Swimlane Web CSP Header - Enable this option to set the HTTP Content Security Policy Header for Swimlane Web. A new option will appear below to override the CSP header, if left blank it will get set to the default value. If this option is disabled, no CSP header will be set for Swimlane Web.</p>
+                        <ul>
+                            <li>Swimlane Web Content-Security-Policy Header - Determine whether to override the value for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">HTTP Content-Security-Policy header</a>.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <p>Swimlane recommends that you have your ingress controller or load balancer set to have no request timeout, no idle timeout, and no request body size limit so that these are limited only by the Swimlane web pods.</p>
+            <p>
+                <img src="../Resources/Images/ingress_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="2">
+            <li>
+                <p>Next, set the logging settings.</p>
+                <ul>
+                    <li>
+                        <p>ASP.NET Hosting Environment - Set this option to Development to have stack traces sent to the browser for 500 errors. Set this option to Production to not send them.</p>
+                    </li>
+                    <li>
+                        <p>Enable Swimlane Audit Logging - Enable this option to log raw Swimlane API requests and responses into Swimlane pods.</p>
+                    </li>
+                    <li>
+                        <p>Swimlane Logging Level - Set this option to specify the logging level for Swimlane pods.</p>
+                    </li>
+                </ul>
+            </li>
+            <p>
+                <img src="../Resources/Images/logging_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="3">
+            <li>Next, determine whether to override the OpenSSL settings for CipherString and MinProtocol for outgoing secure connections that originate from API and Tasks pods.</li>
+            <p class="important"><b><img src="../Resources/Images/optional_pods_settings.png" /></b>
+            </p>
+            <p class="important"><b>Important!</b> Since outgoing secure connections include requests to the Swimlane API service, there are limitations to what can be set for these values in order to not break your deployment of Swimlane. MinProtocol should not be set to anything higher than TLSv1.2, and CipherString can be set to the highest security level like HIGH@SECLEVEL=5 or DEFAULT@SECLEVEL=5.</p>
+            <p>
+                <img src="../Resources/Images/openssl_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="4">
+            <li>
+                <p>Next, determine whether to enable the Swimlane Syslog Receiver and the Selenium ChromeDriver.</p>
+                <ul>
+                    <li>
+                        <p>Enable the Swimlane Syslog Receiver</p>
+                        <ul>
+                            <li>
+                                <p>Swimlane Syslog Receiver Port - Enter the port to use for the externally exposed Swimlane Syslog Receiver service. This port must be within your cluster's NodePort range. If left blank, it will use a random port in your cluster's NodePort range.</p>
+                            </li>
+                            <li>
+                                <p>Enable the Selenium ChromeDriver</p>
+                            </li>
+                        </ul>
+                        <p>
+                            <img src="../Resources/Images/optional_pods_settings.png" alt="" />
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Determine whether you want MongoDB to be exposed for external access, and whether to pload Pip Config for API and Tasks.</p>
+                <ul>
+                    <li>
+                        <p>Expose MongoDB Externally - Enable this option to expose each MongoDB pod as a NodePort from each node in the cluster. Each one will use a random port in your cluster's NodePort range.</p>
+                    </li>
+                    <li>
+                        <p>Upload Pip Config for API and Tasks</p>
+                    </li>
+                </ul>
+                <p>
+                    <img src="../Resources/Images/mongo_and_pip_settings.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>If you have third-party certificates for API and tasks, click Upload Additional Trusted Certificates for API and Tasks and then browse for and upload your certificates.</p>
+                <ul>
+                    <li>Upload Additional Trusted Certificates for API and Tasks</li>
+                </ul>
+                <p>
+                    <img src="../Resources/Images/third_party_certs_settings.png" alt="" />
+                </p>
+            </li>
+            <li>
+                <p>Next, choose whether to enable or disable a pod liveness probe for the API and Tasks pods. The default liveness probe setting for API pods is disabled and for Tasks pods is enabled.</p>
+            </li>
+            <p>
+                <img src="../Resources/Images/liveness_probe.png" alt="" />
+            </p>
+        </ol>
+        <ol start="8">
+            <li>On Initial MongoDB Settings, enter the appropriate encryption keys and passwords for your Swimlane database and MongoDB.</li>
+            <p>You can skip steps 7 and 8 if you are using an External MongoDB cluster. For more information, see <a href="deploy-with-an-external-mongodb-cluster.htm">Deploy Swimlane with an External MongoDB Cluster</a>.</p>
+            <p class="important"><b>Important!</b> Do not change the MongoDB settings after installation. Doing so will break your deployment of Swimlane. Here are the acceptable special characters to use in keys and passwords: !@#$%^&amp;*()-_=+/[]|:;&lt;,&gt;.?`~</p>
+            <p>
+                <img src="../Resources/Images/initial_mongo_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="9">
+            <li>
+                <p>Next, set the MongoDB volume size and StorageClass.</p>
+                <ul>
+                    <li>
+                        <p>MongoDB Volume Size (GB) - The size in GB for the MongoDB persistent volume.</p>
+                    </li>
+                    <li>
+                        <p>StorageClass for MongoDB Data - The StorageClass to use for the MongoDB persistent volume.</p>
+                    </li>
+                </ul>
+            </li>
+            <p>
+                <img src="../Resources/Images/mongo_size_and_storageclass.png" alt="" />
+            </p>
+        </ol>
+        <ol start="10">
+            <li>Next, set the HA Environment settings for this cluster.</li>
+            <p>Enable this to set the number of pods of each type to run. These settings should only be enabled if your cluster has 3 or more nodes. If you are installing on a single node deployment this option should not be enabled.</p>
+            <p class="important"><b>Important!</b> The Number of MongoDB Replicas value must be at least 3 and be an odd number to ensure the replica set primary failover can happen properly when needed.</p>
+            <p>
+                <img src="../Resources/Images/ha_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="11">
+            <li>
+                <p>Next, set the affinity settings.</p>
+                <ul>
+                    <li>Use Simple Pod Affinity - Use simplified affinity options to decide how to balance the Swimlane and MongoDB pods across your cluster nodes.</li>
+                </ul>
+            </li>
+            <p>
+                <img src="../Resources/Images/simple_affinity.png" alt="" />
+            </p>
+            <p class="important"><b>Important!</b> Changing affinity settings can change the nodes that pods are running on. If the StorageClass chosen for the MongoDB pods does not support PVCs being accessed by multiple cluster nodes then changing the MongoDB affinity settings may result in the config change failing to deploy.</p>
+        </ol>
+        <ol start="12">
+            <li>
+                <p>Next, set the service account settings.</p>
+                <ul>
+                    <li>
+                        <p>Automatically Create and Set the Service Account Used by the Swimlane Tools Deployment - When enabled, a service account, role, and role binding named swimlane-backup will be created in the namespace Swimlane is installed in that will be used by the Swimlane Tools deployment. This service account requires special permissions in order for the Swimlane Tools deployment to process snapshots and support bundles. Uncheck this if you want to create the service account manually and then enable the Set the service account option and define the name of it below.</p>
+                        <ul>
+                            <li>Kubernetes Service Account Name for the Swimlane Tools Deployment - The service account name to use for the Swimlane Tools Deployment.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Set Service Accounts - Enable this if you need to set the Kubernetes serviceAccountName for each pod type. Pod types that don't require special settings can be left blank. See <a href="service-account-permissions.htm">Service Account Permissions</a> for more information on the required permissions for the pod types that require it.</p>
+                    </li>
+                </ul>
+            </li>
+            <p class="important"><b>Important!</b> The Swimlane Tools deployment requires a service account. You must either enable the Automatically Create and Set the Service Account Used by the Swimlane Tools Deployment option or create the service account and set it for the Swimlane Tools deployment under the Kubernetes Service Account Name for the Swimlane Tools Deployment option.</p>
+            <p>
+                <img src="../Resources/Images/service_account_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="13">
+            <li>
+                <p>Next, set the pod annotations settings.</p>
+                <ul>
+                    <li>Set Pod Annotations - Enable this if you need to to set pod annotations for the Swimlane deployments. Pod types that don't require special settings can be left blank. See the <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set" target="_blank">Kubernetes Annotations</a> documentation for valid annotations YAML.</li>
+                </ul>
+            </li>
+            <p>Sample annotations:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">      annotation1: "value1"
+      annotation2: "value2"</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>
+                <img src="../Resources/Images/pod_annotations_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="14">
+            <li>
+                <p>Next, set the pod labels settings.</p>
+                <ul>
+                    <li>Set Pod Labels - Enable this if you need to set pod labels for the Swimlane deployments. Pod types that don't require special settings can be left blank. See the <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set" target="_blank">Kubernetes Labels</a> documentation for valid label YAML.</li>
+                </ul>
+                <p>Sample labels:</p>
+                <MadCap:codeSnippet>
+                    <codeSnippetCopyButton />
+                    <codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">        label1: "value1"
+        label2: "value2"</codeSnippetBody>
+                </MadCap:codeSnippet>
+            </li>
+            <p>
+                <img src="../Resources/Images/pod_labels_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="15">
+            <li>
+                <p>Next, set the pod resources settings.</p>
+                <ul>
+                    <li>Set Pod Resources - Enable this if you need to set pod resources for the Swimlane deployments. Pod types that don't require special settings can be left blank. See the <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/" target="_blank">Kubernetes Resources</a> documentation for valid resources YAML. See <a href="pod-requests-and-limits.htm">Pod Requests and Limits</a> for a breakdown of requests and limits for each pod type.</li>
+                </ul>
+            </li>
+            <p>Sample pod resources:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">      requests:
+        memory: "500m"
+        cpu: "500m"
+      limits:
+        memory: "1G"
+        cpu: "1000m"</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>
+                <img src="../Resources/Images/pod_resources_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="16">
+            <li>
+                <p>Next, set the pod node selectors settings.</p>
+                <ul>
+                    <li>Set Pod Node Selectors - Enable this if you need to set pod node selectors for the Swimlane deployments. Pod types that don't require special settings can be left blank. See the <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector" target="_blank">Kubernetes Node Selectors</a> documentation for valid node selectors YAML.</li>
+                </ul>
+            </li>
+            <p>Sample node selector:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">      nodelabel: value</codeSnippetBody>
+            </MadCap:codeSnippet>
+            <p>
+                <img src="../Resources/Images/pod_node_selectors_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="17">
+            <li>
+                <p>Next, set the pod tolerations settings.</p>
+                <ul>
+                    <li>Set Pod Tolerations - Enable this if you need to set pod tolerations for the Swimlane deployments. Pod types that don't require special settings can be left blank. See the <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/" target="_blank">Kubernetes Tolerations</a> documentation for valid tolerations YAML.</li>
+                </ul>
+            </li>
+            <p>Sample toleration:</p>
+            <MadCap:codeSnippet>
+                <codeSnippetCopyButton />
+                <p>
+                    <img src="../Resources/Images/pod_tolerations_settings.png" />
+                </p>
+            </MadCap:codeSnippet>
+            <p>
+                <img src="../Resources/Images/pod_tolerations_settings.png" alt="" />
+            </p>
+        </ol>
+        <ol start="18">
+            <li>When you save the configuration, preflight checks for your installation begin.</li>
+            <p>If any preflight checks are not passing, you must address them before continuing.</p>
+            <p>
+                <img src="../Resources/Images/preflight_checks.png" alt="" />
+            </p>
+        </ol>
+        <ol start="19">
+            <li>If all preflight checks pass, the Swimlane platform will deploy. Click Continue to access the Swimlane Platform Installer Admin Console.</li>
+            <p>
+                <img src="../Resources/Images/admin_console_dashboard.png" alt="" />
+            </p>
+            <p>Once the status of your application says Ready you have a successful installation of Swimlane.</p>
+        </ol>
+        <ol start="20">
+            <li>Next, see <a href="backup-and-restore-on-an-existing-cluster-with-snapshots.htm">Backup and Restore on an Existing Cluster with Snapshots</a> to set up snapshots.</li>
+        </ol>
+    </body>
+</html>

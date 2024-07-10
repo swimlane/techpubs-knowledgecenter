@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-template-page: url('../Resources/MasterPages/OtherTopics.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Alternate-Row-Color.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+        <link href="../Resources/Stylesheets/MainStyles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1 id="swimlane-platform-installer">Swimlane Platform Installer Guide</h1>
+        <p>The Swimlane Platform Installer (SPI) is an administrative console where you can access and manage your Swimlane instance. It is also where you will go to access upgrades to new Swimlane releases, as well as any updates to the installer itself. The installer consists of an Application tab where you manage your application, version history, configuration settings, as well as a Cluster Management tab and a Snapshots tab.</p>
+        <p>
+            <img src="../Resources/Images/Installer_Header.png" alt="" />
+        </p>
+        <p>Cluster Management is where you view, drain, and add nodes to your instance. Follow the installation steps based on how you are managing your clusters.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Alternate-Row-Color.css');" class="TableStyle-Alternate-Row-Color" cellspacing="21">
+            <thead>
+                <tr class="TableStyle-Alternate-Row-Color-Head-Header1">
+                    <th class="TableStyle-Alternate-Row-Color-HeadE-Column1-Header1">Cluster Type</th>
+                    <th class="TableStyle-Alternate-Row-Color-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body1">
+                    <td class="TableStyle-Alternate-Row-Color-BodyE-Column1-Body1"><a href="../embedded-cluster-install/embedded-cluster-installation.htm">Embedded</a>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyD-Column1-Body1">Install Docker, Kubernetes, and the components required for a working cluster onto your servers. Swimlane is then installed into that Kubernetes cluster, referred to here as an embedded cluster.</td>
+                </tr>
+                <tr class="TableStyle-Alternate-Row-Color-Body-Body2">
+                    <td class="TableStyle-Alternate-Row-Color-BodyB-Column1-Body2"><a href="../existing-cluster-install/existing-cluster-installation.htm">Existing</a>
+                    </td>
+                    <td class="TableStyle-Alternate-Row-Color-BodyA-Column1-Body2">Install Swimlane into an existing Kubernetes cluster.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>You then use Snapshots to backup and restore your instance of Swimlane.</p>
+        <h2 id="important-information">Important Information!</h2>
+        <p>As of the 10.6.0 release of the Swimlane platform, Swimlane no longer supports the Swimlane Linux Toolkit Installer. Contact your Swimlane support representative to discuss your migration path to Swimlane with the Swimlane Platform Installer (SPI).</p>
+        <p>As of the 10.8.0 release, Swimlane no longer supports Helm.</p>
+    </body>
+</html>
