@@ -1,4 +1,4 @@
-name: Build Sphinx Docs for Turbine UG
+name: Build Sphinx Docs for 10x UG
 
 on:
   push:
