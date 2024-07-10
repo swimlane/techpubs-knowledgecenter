@@ -16,7 +16,7 @@ release = '24.2'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosectionlabel', 
-    'sphinx_sitemap',
+    #'sphinx_sitemap',
     #'sphinx_search.extension',
 ]
 
