@@ -1,4 +1,4 @@
-name: Build Sphinx Docs for Turbine IG
+name: Build Sphinx Docs for 10x IG
 
 on:
   push:
