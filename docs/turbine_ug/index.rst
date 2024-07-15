@@ -25,3 +25,4 @@ Welcome to the Turbine user guide. This guide will help you navigate through the
    /Content/workspaces-and-dashboards/workspace-management_new
    /Content/use-cases/use-cases
    /Content/accessibility/accessibility-conformance-report
+   /Content/connectors/connectors
