@@ -26,3 +26,4 @@ Welcome to the Turbine user guide. This guide will help you navigate through the
    /Content/use-cases/use-cases
    /Content/accessibility/accessibility-conformance-report
    /Content/connectors/connectors
+   /Content/connectors/list_triage_item_events
