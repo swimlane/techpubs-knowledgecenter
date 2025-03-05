@@ -8,4 +8,4 @@ Connectors are distributable packages that provide simplistic integration functi
 .. toctree::
    :titlesonly:
 
-   /Content/connectors/virustotal/virustotal_overview
+   /Content/rst_doc/overview

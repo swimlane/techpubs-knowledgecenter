@@ -1,84 +1,105 @@
-# conf.py
+# Configuration file for the Sphinx documentation builder.
+#
+# This file only contains a selection of the most common options. For a full
+# list see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+# -- Path setup --------------------------------------------------------------
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 
-# Project information
+# -- Project information -----------------------------------------------------
+
 project = 'Swimlane'
 copyright = '2024, Swimlane'
 author = 'Swimlane'
+
+# The full version, including alpha/beta/rc tags
 release = '24.2'
 
+
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration test
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosectionlabel', 
-    #'sphinx_sitemap',
-    #'sphinx_search.extension',
+    'sphinx.ext.autosectionlabel',
+    'sphinx_togglebutton',
 ]
 
-# Specify the URL of your documentation root
-html_baseurl = 'https://docs.swimlane.com/turbine'
+templates_path = ['_templates']
+exclude_patterns = []
 
-# Optional: If you're using versioning, specify the current version
-# sitemap_version = 'v1.0'
-
-templates_path = ['../../_templates']
-
-# Specify root document
 root_doc = 'index'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-#read the docs theme
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['../../_static']
-html_last_updated_fmt= ''
-html_use_opensearch=''
-# Disable copying of source files to the output directory
+
+html_css_files = ['custom.css']
+
+
+
+html_last_updated_fmt = ''
+html_use_opensearch = ''
 html_copy_source = False
-# Suffix for the source links
 html_sourcelink_suffix = '.rst'
 
-# Include the custom JavaScript file
 html_js_files = [
-    '../../_staticfeedback.js',
+    'feedback.js',
 ]
 
-# Add the name of your CSS file to the html_css_files list
-html_css_files = ['custom.css']  # Replace 'custom.css' with the name of your CSS file
+def setup(app):
+    app.add_css_file('custom.css')
 
-# Add custom CSS files
-#html_css_files = [
- #   'dark.css',   # Dark theme styles
-#]
+# Configuration for sphinx-togglebutton
+togglebutton_hint = ""  # Removes the hint text
+togglebutton_hint_hide = ""  # Removes the hide hint text
+togglebutton_hint_show = ""  # Removes the show hint text
+togglebutton_open_on_print = True  # Expands the sections by default when printing
+togglebutton_open_by_default = True  # Expands the sections by default when viewing
 
-# Add custom JavaScript files
-#html_js_files = [
- #   'theme-toggle.js',
-#]
+# Add custom JavaScript
+def setup(app):
+    app.add_js_file('custom.js')
 
-# -- Options for LaTeX output -------------------------------------------------
+html_static_path = ['_static']
+
+
+# Custom roles for desc and example
+from docutils import nodes
+from docutils.parsers.rst import roles
+
+def desc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    return [nodes.inline(rawtext, text, classes=['desc'])], []
+
+def example_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    return [nodes.inline(rawtext, text, classes=['example'])], []
+
+roles.register_local_role('desc', desc_role)
+roles.register_local_role('example', example_role)
+
+# -- Options for LaTeX output ------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-latex-output
 
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (root_doc, 'TurbineUG.tex', 'Turbine UG Documentation', 'Swimlane', 'manual'),
 ]
 
-# Optionally, you can configure additional LaTeX settings
 latex_elements = {
     'papersize': 'a4paper',
     'fontpkg': '\\usepackage{times}',
     'figure_align': 'htbp',
 }
 
-# You can also customize the LaTeX preamble if needed
 latex_elements['preamble'] = r'''
 \usepackage{fancyhdr}
 \pagestyle{fancy}
