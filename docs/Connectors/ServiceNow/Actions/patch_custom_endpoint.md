@@ -16,6 +16,18 @@
 | data_body | object | Data Body | No |
 ## Output
 
+### Example
+
+```json
+[
+  {
+    "status_code": 200,
+    "response_headers": {},
+    "reason": "OK",
+    "json_body": {}
+  }
+]
+```
 ### Output Parameters
 
 | Name | Type |

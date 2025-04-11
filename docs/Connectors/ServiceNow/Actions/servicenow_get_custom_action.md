@@ -13,6 +13,22 @@
 | path_parameters | object | Yes |
 ## Output
 
+### Example
+
+```json
+[
+  {
+    "status_code": 200,
+    "response_headers": {
+      "content-length": "140",
+      "content-type": "application/json",
+      "Date": "Mon, 2 Sep 2024 20:37:23 GMT"
+    },
+    "reason": "OK",
+    "json_body": {}
+  }
+]
+```
 ### Output Parameters
 
 | Name | Type |
@@ -22,8 +38,8 @@
 | json_body | object |
 ## Response Headers
 
-| Header | Type | Description |
-|--------|------|-------------|
-| content-length | string |  |
-| content-type | string |  |
-| Date | string |  |
+| Header | Type |
+|--------|------|
+| content-length | string |
+| content-type | string |
+| Date | string |

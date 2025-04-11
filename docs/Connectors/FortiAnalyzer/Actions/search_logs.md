@@ -13,6 +13,24 @@
 | json_body | object | Yes |
 ## Output
 
+### Example
+
+```json
+[
+  {
+    "status_code": 200,
+    "response_headers": {},
+    "reason": "OK",
+    "json_body": {
+      "id": "string",
+      "jsonrpc": "2.0",
+      "result": {
+        "tid": 0
+      }
+    }
+  }
+]
+```
 ### Output Parameters
 
 | Name | Type |
