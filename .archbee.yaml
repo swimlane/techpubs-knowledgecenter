@@ -1,0 +1,27 @@
+# Root folder where documentation is located
+docsPath: docs
+
+# Defines documentation structure
+structure:
+  summary: summary.md
+  assets: assets
+
+# Optional UI customization
+footerTemplate: ""
+headerIncludes: ""
+customCSS: ""
+customJS: ""
+
+# Used by Archbee AI for indexing
+shadowDocs:
+  - "docs/Connectors/**"
+
+# Set to true to publish the space if a hostname is configured
+publishSpace: false
+
+# Uncomment and configure if you manage multiple documentation sites in one repo
+# sites:
+#   - docsPath: docs
+#     structure:
+#       summary: summary.md
+#       assets: assets
