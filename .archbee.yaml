@@ -20,8 +20,8 @@ shadowDocs:
 publishSpace: false
 
 # Uncomment and configure if you manage multiple documentation sites in one repo
-sites:
-   - docsPath: docs
-     structure:
-       summary: summary.md
-       assets: assets
+#sites:
+#   - docsPath: docs
+#     structure:
+#       summary: summary.md
+#       assets: assets
