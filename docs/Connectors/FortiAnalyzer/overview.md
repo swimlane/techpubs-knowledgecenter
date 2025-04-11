@@ -1,3 +1,5 @@
+# Forti Analyzer Overview
+
 ## Overview
 
 Forti Analyzer is a network security analytics and reporting tool that provides deep insights into log data, helping organizations manage security events efficiently.
@@ -6,22 +8,22 @@ Forti Analyzer is a comprehensive network security analysis tool that aggregates
 
 ## Prerequisites
 
-
 To effectively utilize the Forti Analyzer connector within Swimlane Turbine, ensure you have the following prerequisites:
-- Custom authentication with the following parameters:
-  * URL: The endpoint URL for the Forti Analyzer API.
-  * JSON RPC: The version of the JSON-RPC protocol used by Forti Analyzer.
-  * Username: The username for authenticating with Forti Analyzer.
-  * Password: The password associated with the provided username.
 
+- Custom authentication with the following parameters:
+  - URL: The endpoint URL for the Forti Analyzer API.
+  - JSON RPC: The version of the JSON-RPC protocol used by Forti Analyzer.
+  - Username: The username for authenticating with Forti Analyzer.
+  - Password: The password associated with the provided username.
 
 ## Capabilities
 
 This Connector provides the following capabilities:
 
-* Get Alerts
-* Search Logs
+- Get Alerts
+- Search Logs
 
 ## Notes
 
-* To access FortiAnalyzer API Documentation for the Connector -  [Check Here](https://fndn.fortinet.net/index.php?/fortiapi/175-fortianalyzer/4091/175/logview/)
+- To access FortiAnalyzer API Documentation for the Connector -  [Check Here](https://fndn.fortinet.net/index.php?/fortiapi/175-fortianalyzer/4091/175/logview/)
+
