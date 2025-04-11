@@ -2,6 +2,10 @@
 
 **Description**: Adds an attachment to a ServiceNow table using the provided file name, table name, and system ID.
 
+## Endpoint
+
+- **URL:** `api/now/attachment/file`
+- **Method:** `POST`
 ## Inputs
 
 | Name | Type | Description | Required |
@@ -9,15 +13,15 @@
 | attachments | array | File to be uploaded | Yes |
 | parameters | object |  | No |
 | headers | object |  | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

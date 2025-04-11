@@ -2,6 +2,10 @@
 
 **Description**: Creates a new entry in the specified ServiceNow table using provided path parameters and display values.
 
+## Endpoint
+
+- **URL:** `api/now/v2/table/{{tableName}}`
+- **Method:** `POST`
 ## Inputs
 
 | Name | Type | Description | Required |
@@ -9,15 +13,15 @@
 | path_parameters | object |  | Yes |
 | parameters | object |  | Yes |
 | json_body | object |  | Yes |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

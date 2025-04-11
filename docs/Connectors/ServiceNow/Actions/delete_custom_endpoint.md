@@ -2,6 +2,10 @@
 
 **Description**: Removes a specified custom endpoint from ServiceNow using the provided 'custom_endpoint' path parameter.
 
+## Endpoint
+
+- **URL:** `api/now/v2/{{custom_endpoint}}`
+- **Method:** `DELETE`
 ## Inputs
 
 | Name | Type | Description | Required |
@@ -10,8 +14,9 @@
 | parameters | object | URL Query Parameters | No |
 | json_body | object | JSON Body | No |
 | data_body | object | Data Body | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|

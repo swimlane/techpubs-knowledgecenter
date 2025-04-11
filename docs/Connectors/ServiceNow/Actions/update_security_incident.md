@@ -2,21 +2,25 @@
 
 **Description**: Updates a specified security incident in ServiceNow using the unique sys_id as an identifier.
 
+## Endpoint
+
+- **URL:** `api/now/table/{{security_incident}}/{{sys_id}}`
+- **Method:** `PATCH`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | path_parameters | object |  | Yes |
 | json_body | object |  | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | response_text | string |  |
-
 ## Response Headers
 
 | Header | Type | Description |

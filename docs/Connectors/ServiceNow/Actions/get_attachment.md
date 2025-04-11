@@ -2,20 +2,24 @@
 
 **Description**: Retrieves a specific attachment from a ServiceNow table using the provided unique sys_id.
 
+## Endpoint
+
+- **URL:** `api/now/attachment/{{sys_id}}/file`
+- **Method:** `GET`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | path_parameters | object |  | Yes |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | file | array |  |
-
 ## Response Headers
 
 | Header | Type | Description |

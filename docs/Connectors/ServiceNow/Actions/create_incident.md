@@ -2,21 +2,25 @@
 
 **Description**: Initiate incident response workflows by creating a new incident record in ServiceNow using the provided JSON body.
 
+## Endpoint
+
+- **URL:** `/api/now/table/incident`
+- **Method:** `POST`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | parameters | object |  | No |
 | json_body | object |  | Yes |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

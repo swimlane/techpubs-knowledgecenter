@@ -2,21 +2,25 @@
 
 **Description**: Creates a new security incident in ServiceNow based on the provided path parameters.
 
+## Endpoint
+
+- **URL:** `/api/now/table/{{security_incident}}`
+- **Method:** `POST`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | path_parameters | object |  | Yes |
 | json_body | object |  | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

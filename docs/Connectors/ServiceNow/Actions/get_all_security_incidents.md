@@ -2,21 +2,25 @@
 
 **Description**: Retrieves all security incident records from ServiceNow, offering display customization and pagination options.
 
+## Endpoint
+
+- **URL:** `/api/now/table/{{security_incident}}`
+- **Method:** `GET`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | path_parameters | object |  | Yes |
 | parameters | object |  | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

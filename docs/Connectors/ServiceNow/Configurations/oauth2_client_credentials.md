@@ -13,3 +13,4 @@
 | scope | array | Permission scopes for this action. | No |
 | verify_ssl | boolean | Verify SSL certificate | No |
 | http_proxy | string | A proxy to route requests through. | No |
+## Output

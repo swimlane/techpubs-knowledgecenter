@@ -2,20 +2,24 @@
 
 **Description**: Retrieve metadata for attachments in ServiceNow, with the ability to filter results using 'sysparm_query'.
 
+## Endpoint
+
+- **URL:** `api/now/attachment`
+- **Method:** `GET`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | parameters | object |  | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

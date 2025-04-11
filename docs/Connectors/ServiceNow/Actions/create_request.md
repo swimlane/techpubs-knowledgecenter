@@ -2,21 +2,25 @@
 
 **Description**: Generates a new service request in ServiceNow, allowing for display value identification and input tracking.
 
+## Endpoint
+
+- **URL:** `/api/now/v2/table/sc_request`
+- **Method:** `POST`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | json_body | object |  | No |
 | parameters | object |  | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

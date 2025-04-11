@@ -2,6 +2,10 @@
 
 **Description**: Updates a specific row in a ServiceNow table using sys_id, with options for display value settings.
 
+## Endpoint
+
+- **URL:** `api/now/v2/table/{{tableName}}/{{sys_id}}`
+- **Method:** `PATCH`
 ## Inputs
 
 | Name | Type | Description | Required |
@@ -9,15 +13,15 @@
 | path_parameters | object |  | Yes |
 | parameters | object |  | No |
 | json_body | object |  | Yes |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |

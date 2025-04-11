@@ -2,20 +2,24 @@
 
 **Description**: Retrieves all incident records from ServiceNow, with customization options for display values and result count limitation.
 
+## Endpoint
+
+- **URL:** `/api/now/v2/table/incident`
+- **Method:** `GET`
 ## Inputs
 
 | Name | Type | Description | Required |
 |------|------|-------------|----------|
 | parameters | object |  | No |
+## Output
 
-## Output Parameters
+### Output Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
 | status_code | number |  |
 | reason | string |  |
 | json_body | object |  |
-
 ## Response Headers
 
 | Header | Type | Description |
