@@ -3,7 +3,7 @@ docsPath: docs
 
 # Defines documentation structure
 structure:
-  summary: summary.md
+#  summary: summary.md
   assets: assets
 
 # Optional UI customization
