@@ -1,0 +1,40 @@
+# Create Security Incident
+
+**Description**: Creates a new security incident in ServiceNow based on the provided path parameters.
+
+## Inputs
+
+| Name | Type | Description | Required |
+|------|------|-------------|----------|
+| path_parameters | object |  | Yes |
+| json_body | object |  | No |
+
+## Output Parameters
+
+| Name | Type | Description |
+|------|------|-------------|
+| status_code | number |  |
+| reason | string |  |
+| json_body | object |  |
+
+## Response Headers
+
+| Header | Type | Description |
+|--------|------|-------------|
+| Set-Cookie | string |  |
+| Server-Timing | string |  |
+| Content-Encoding | string |  |
+| X-Is-Logged-In | string |  |
+| X-Transaction-ID | string |  |
+| Location | string |  |
+| X-Content-Type-Options | string |  |
+| Pragma | string |  |
+| Cache-Control | string |  |
+| Expires | string |  |
+| Content-Type | string |  |
+| Transfer-Encoding | string |  |
+| Date | string |  |
+| Keep-Alive | string |  |
+| Connection | string |  |
+| Server | string |  |
+| Strict-Transport-Security | string |  |
