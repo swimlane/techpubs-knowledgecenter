@@ -16,18 +16,22 @@
 ### Example
 
 ```json
-- reason: OK
-  response_headers:
-    Connection: keep-alive
-    Content-Encoding: gzip
-    Content-Type: application/json
-    Date: Mon, 16 Oct 2023 09:34:21 GMT
-    Strict-Transport-Security: max-age=15724800; includeSubDomains
-    Transfer-Encoding: chunked
-    Vary: Accept-Encoding, User-Agent
-  response_text: ''
-  status_code: 200
-
+[
+    {
+        "status_code": 200,
+        "response_headers": {
+            "Date": "Mon, 16 Oct 2023 09:34:21 GMT",
+            "Content-Type": "application/json",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Vary": "Accept-Encoding, User-Agent",
+            "Content-Encoding": "gzip",
+            "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+        },
+        "reason": "OK",
+        "response_text": ""
+    }
+]
 ```
 ### Output Parameters
 

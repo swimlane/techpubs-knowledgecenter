@@ -19,8 +19,9 @@
 ### Example
 
 ```json
-- {}
-
+[
+    {}
+]
 ```
 ## Error Handling
 

@@ -16,14 +16,18 @@
 ### Example
 
 ```json
-- reason: No Content
-  response_headers:
-    Connection: keep-alive
-    Date: Mon, 16 Oct 2023 09:02:15 GMT
-    Strict-Transport-Security: max-age=15724800; includeSubDomains
-  response_text: ''
-  status_code: 204
-
+[
+    {
+        "status_code": 204,
+        "response_headers": {
+            "Date": "Mon, 16 Oct 2023 09:02:15 GMT",
+            "Connection": "keep-alive",
+            "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+        },
+        "reason": "No Content",
+        "response_text": ""
+    }
+]
 ```
 ### Output Parameters
 

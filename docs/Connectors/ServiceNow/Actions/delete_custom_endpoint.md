@@ -19,11 +19,14 @@
 ### Example
 
 ```json
-- json_body: {}
-  reason: OK
-  response_headers: {}
-  status_code: 200
-
+[
+    {
+        "status_code": 200,
+        "response_headers": {},
+        "reason": "OK",
+        "json_body": {}
+    }
+]
 ```
 ### Output Parameters
 
