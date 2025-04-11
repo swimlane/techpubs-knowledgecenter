@@ -18,22 +18,22 @@
 
 ```json
 [
-    {
-        "status_code": 200,
-        "response_headers": {
-            "Set-Cookie": "JSESSIONID=CEA60557841F8F77A8AB86E60B05F18D; Path=/; HttpOnly;Secure, BIGipServerpool_dev60827=999184138.46398.0000; path=/; Httponly; Secure",
-            "Server-Timing": "wall;dur=0, sem_wait;dur=0, sesh_wait;dur=0, app_cpu;dur=0, db;dur=1, acl;dur=0, br;dur=null, ui_action;dur=0, cache_build;dur=0, scripting;dur=0",
-            "Content-Security-Policy": "frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com",
-            "Content-Length": "0",
-            "Date": "Mon, 07 Aug 2023 11:12:15 GMT",
-            "Keep-Alive": "timeout=70",
-            "Connection": "keep-alive",
-            "Server": "ServiceNow",
-            "Strict-Transport-Security": "max-age=63072000; includeSubDomains"
-        },
-        "reason": "OK",
-        "response_text": ""
-    }
+  {
+    "status_code": 200,
+    "response_headers": {
+      "Set-Cookie": "JSESSIONID=CEA60557841F8F77A8AB86E60B05F18D; Path=/; HttpOnly;Secure, BIGipServerpool_dev60827=999184138.46398.0000; path=/; Httponly; Secure",
+      "Server-Timing": "wall;dur=0, sem_wait;dur=0, sesh_wait;dur=0, app_cpu;dur=0, db;dur=1, acl;dur=0, br;dur=null, ui_action;dur=0, cache_build;dur=0, scripting;dur=0",
+      "Content-Security-Policy": "frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com",
+      "Content-Length": "0",
+      "Date": "Mon, 07 Aug 2023 11:12:15 GMT",
+      "Keep-Alive": "timeout=70",
+      "Connection": "keep-alive",
+      "Server": "ServiceNow",
+      "Strict-Transport-Security": "max-age=63072000; includeSubDomains"
+    },
+    "reason": "OK",
+    "response_text": ""
+  }
 ]
 ```
 ### Output Parameters
@@ -56,29 +56,3 @@
 | Connection | string |  |
 | Server | string |  |
 | Strict-Transport-Security | string |  |
-## Error Handling
-
-### Common Error Responses
-
-| Status Code | Message | Description | Example |
-|-------------|---------|-------------|---------|
-| 400 | Bad Request | The request was invalid or cannot be processed. | Invalid search ID or parameters. |
-| 401 | Unauthorized | Missing or incorrect authentication. | Invalid API token. |
-| 403 | Forbidden | Access to the resource is denied. | No permissions for search. |
-| 404 | Not Found | The requested item does not exist. | Search ID not found. |
-| 500 | Internal Server Error | A server error occurred. | Unexpected failure in Splunk. |
-
-### Error Example
-
-```json
-{
-  "messages": [
-    {
-      "type": "ERROR",
-      "text": "Search ID not found."
-    }
-  ],
-  "status_code": 404,
-  "reason": "Not Found"
-}
-```
