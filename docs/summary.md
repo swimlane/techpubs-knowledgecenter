@@ -1,8 +1,8 @@
 # Connectors
-- [Forti Analyzer](Connectors/Forti Analyzer/overview.md)
-  - [Actions: get_alerts](Connectors/Forti Analyzer/Actions/get_alerts.md)
-  - [Actions: search_logs](Connectors/Forti Analyzer/Actions/search_logs.md)
-  - [Configurations: custom](Connectors/Forti Analyzer/Configurations/custom.md)
+- [FortiAnalyzer](Connectors/FortiAnalyzer/overview.md)
+  - [Actions: get_alerts](Connectors/FortiAnalyzer/Actions/get_alerts.md)
+  - [Actions: search_logs](Connectors/FortiAnalyzer/Actions/search_logs.md)
+  - [Configurations: custom](Connectors/FortiAnalyzer/Configurations/custom.md)
 - [Proofpoint](Connectors/Proofpoint/overview.md)
   - [Actions: decode_urls](Connectors/Proofpoint/Actions/decode_urls.md)
   - [Actions: decode_urls_offline](Connectors/Proofpoint/Actions/decode_urls_offline.md)
