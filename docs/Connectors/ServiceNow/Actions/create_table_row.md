@@ -8,20 +8,20 @@
 - **Method:** `POST`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| path_parameters | object |  | Yes |
-| parameters | object |  | Yes |
-| json_body | object |  | Yes |
+| Name | Type | Required |
+|------|------|----------|
+| path_parameters | object | Yes |
+| parameters | object | Yes |
+| json_body | object | Yes |
 ## Output
 
 ### Output Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| status_code | number |  |
-| reason | string |  |
-| json_body | object |  |
+| Name | Type |
+|------|------|
+| status_code | number |
+| reason | string |
+| json_body | object |
 ## Response Headers
 
 | Header | Type | Description |

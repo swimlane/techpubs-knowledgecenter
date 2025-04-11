@@ -15,11 +15,3 @@
 | json_body | object | JSON Body | No |
 | data_body | object | Data Body | No |
 ## Output
-
-### Example
-
-```json
-[
-  {}
-]
-```

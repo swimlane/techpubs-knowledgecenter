@@ -8,33 +8,15 @@
 - **Method:** `POST`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| json_body | object |  | Yes |
+| Name | Type | Required |
+|------|------|----------|
+| json_body | object | Yes |
 ## Output
 
-### Example
-
-```json
-[
-  {
-    "status_code": 200,
-    "response_headers": {},
-    "reason": "OK",
-    "json_body": {
-      "id": "string",
-      "jsonrpc": "2.0",
-      "result": {
-        "tid": 0
-      }
-    }
-  }
-]
-```
 ### Output Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| status_code | number |  |
-| reason | string |  |
-| json_body | object |  |
+| Name | Type |
+|------|------|
+| status_code | number |
+| reason | string |
+| json_body | object |
