@@ -4,10 +4,12 @@
 - 📁 **ServiceNow**
   - [Overview](Connectors/ServiceNow/overview.md)
   - **Configurations**
+    - [_index](Connectors/ServiceNow/Configurations/_index.md)
     - [http_basic](Connectors/ServiceNow/Configurations/http_basic.md)
     - [oauth2_client_credentials](Connectors/ServiceNow/Configurations/oauth2_client_credentials.md)
     - [oauth2_password](Connectors/ServiceNow/Configurations/oauth2_password.md)
   - **Actions**
+    - [_index](Connectors/ServiceNow/Actions/_index.md)
     - [add_attachment_to_table](Connectors/ServiceNow/Actions/add_attachment_to_table.md)
     - [create_incident](Connectors/ServiceNow/Actions/create_incident.md)
     - [create_request](Connectors/ServiceNow/Actions/create_request.md)
@@ -34,15 +36,19 @@
 - 📁 **FortiAnalyzer**
   - [Overview](Connectors/FortiAnalyzer/overview.md)
   - **Configurations**
+    - [_index](Connectors/FortiAnalyzer/Configurations/_index.md)
     - [custom](Connectors/FortiAnalyzer/Configurations/custom.md)
   - **Actions**
+    - [_index](Connectors/FortiAnalyzer/Actions/_index.md)
     - [get_alerts](Connectors/FortiAnalyzer/Actions/get_alerts.md)
     - [search_logs](Connectors/FortiAnalyzer/Actions/search_logs.md)
 - 📁 **Proofpoint**
   - [Overview](Connectors/Proofpoint/overview.md)
   - **Configurations**
+    - [_index](Connectors/Proofpoint/Configurations/_index.md)
     - [http_basic](Connectors/Proofpoint/Configurations/http_basic.md)
   - **Actions**
+    - [_index](Connectors/Proofpoint/Actions/_index.md)
     - [decode_urls](Connectors/Proofpoint/Actions/decode_urls.md)
     - [decode_urls_offline](Connectors/Proofpoint/Actions/decode_urls_offline.md)
     - [forensics_campaign](Connectors/Proofpoint/Actions/forensics_campaign.md)
