@@ -12,4 +12,3 @@
 | password | string | Password | Yes |
 | verify_ssl | boolean | Verify SSL certificate | No |
 | http_proxy | string | A proxy to route requests through. | No |
-## Output
