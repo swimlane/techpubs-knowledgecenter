@@ -1,5 +1,5 @@
 # ServiceNow Connector
-## Overview
+## ServiceNow Connector Overview
 The ServiceNow connector facilitates the automation of IT service management tasks by enabling interaction with ServiceNow's digital workflow system through Swimlane.
 
 ServiceNow is a cloud-based platform that provides solutions for IT service management (ITSM), IT operations management (ITOM), and IT business management (ITBM). This connector enables Swimlane Turbine users to automate incident response, service requests, and security incident management by integrating with ServiceNow's comprehensive suite of services. By leveraging this connector, users can streamline their workflows, enhance collaboration, and accelerate resolution times for IT and security-related incidents within their organization.
