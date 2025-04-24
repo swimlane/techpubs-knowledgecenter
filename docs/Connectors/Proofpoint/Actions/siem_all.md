@@ -1,0 +1,57 @@
+# SIEM All
+
+**Description**: Retrieve all click and message events related to identified threats within a defined time frame from ProofPoint.
+
+## Endpoint
+
+- **URL:** `/v2/siem/all`
+- **Method:** `GET`
+## Inputs
+
+| Name | Type | Description | Required |
+|------|------|-------------|----------|
+| parameters | object | Each request must include one of the three following Query Parameters — Since Seconds, Since Time, or Interval - to define the desired time range for the data. | Yes |
+## Output
+
+### Example
+
+```json
+[
+  {
+    "status_code": 200,
+    "response_headers": {
+      "Date": "Fri, 26 Apr 2024 04:59:00 GMT",
+      "Content-Type": "text/plain",
+      "Content-Length": "1286",
+      "Connection": "keep-alive",
+      "Server-Timing": "traceparent;desc=\"00-f0905c6c701404804fdd783e49829bd3-504a48747fd43b4f-01\"",
+      "Access-Control-Expose-Headers": "Server-Timing",
+      "Vary": "Accept-Encoding, User-Agent",
+      "Content-Encoding": "gzip",
+      "Strict-Transport-Security": "max-age=15724800; includeSubDomains"
+    },
+    "reason": "OK",
+    "response_text": "<38>1 2024-04-26T04:32:51Z - ProofpointTAP - MSGBLK [tapmsg@21139 messageTime=\"2024-04-26T04:32:51Z\" messageID=\"<8432089.84320@35510.com>\" recipient=\"bcard@vogon.science\" sender=\"jenny@gsd.com\" senderIP=\"208.86.203.10\" phishScore=\"0\" spamScore=\"100\" QID=\"3xqy7dgckq-1\" GUID=\"ifEhDXZDsi_ji0f5Vksic8uA2vVGCYcU\" threatsInfoMap=\"[{\\\"threatID\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"threatStatus\\\":\\\"active\\\",\\\"classification\\\":\\\"malware\\\",\\\"threatUrl\\\":\\\"https://threatinsight.proofpoint.com/e65934ff-e650-9cbe-56b5-e9cf2cc5ac2e/threat/email/41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"threatTime\\\":\\\"2024-04-26T04:25:31.000Z\\\",\\\"threat\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"campaignID\\\":null,\\\"threatType\\\":\\\"attachment\\\"},{\\\"threatID\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"threatStatus\\\":\\\"active\\\",\\\"classification\\\":\\\"malware\\\",\\\"threatUrl\\\":\\\"https://threatinsight.proofpoint.com/e65934ff-e650-9cbe-56b5-e9cf2cc5ac2e/threat/email/d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"threatTime\\\":\\\"2024-04-26T04:16:32.000Z\\\",\\\"threat\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"campaignID\\\":null,\\\"threatType\\\":\\\"attachment\\\"}\\]\" malwareScore=\"100\" impostorScore=\"0.0\" cluster=\"proofpointdemo_cloudadminuidemo_hosted\" subject=\"Your Document\" quarantineFolder=\"Attachment Defense\" quarantineRule=\"threat\" policyRoutes=\"default_inbound\" modulesRun=\"av,spf,sandbox,spam,dmarc,urldefense,pdr\" messageSize=\"142082\" headerFrom=\"Jenny Green <Jenny@gsd.com>\" headerReplyTo=\"null\" fromAddress=\"jenny@gsd.com\" toAddresses=\"bcard@vogon.science\" ccAddresses=\"null\" replyToAddress=\"null\" xmailer=\"null\" completelyRewritten=\"false\" messageParts=\"[{\\\"disposition\\\":\\\"attached\\\",\\\"sha256\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"md5\\\":\\\"6fd558cf3add096970e15d1e62ca1957\\\",\\\"filename\\\":\\\"document.doc.scr\\\",\\\"sandboxStatus\\\":\\\"THREAT\\\",\\\"oContentType\\\":\\\"application/octet-stream\\\",\\\"contentType\\\":\\\"application/octet-stream\\\"},{\\\"disposition\\\":\\\"inline\\\",\\\"sha256\\\":\\\"23929d744e8c9c9612eafe332be4abd38a5946a8f7d372545685a9e30070dff4\\\",\\\"md5\\\":\\\"5f08cb91482af70246874e8e43e66821\\\",\\\"filename\\\":\\\"text.txt\\\",\\\"sandboxStatus\\\":\\\"NOT_SUPPORTED\\\",\\\"oContentType\\\":\\\"text/plain\\\",\\\"contentType\\\":\\\"text/plain\\\"},{\\\"disposition\\\":\\\"attached\\\",\\\"sha256\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"md5\\\":\\\"6dfd06fe70cb840c97edb292ac4272ca\\\",\\\"filename\\\":\\\"document.zip\\\",\\\"sandboxStatus\\\":\\\"THREAT\\\",\\\"oContentType\\\":\\\"application/zip\\\",\\\"contentType\\\":\\\"application/zip\\\"}\\]\"]\n<38>1 2024-04-26T04:33:27Z - ProofpointTAP - MSGBLK [tapmsg@21139 messageTime=\"2024-04-26T04:33:27Z\" messageID=\"<6126050.61260@60895.com>\" recipient=\"ahaynie@vogon.science\" sender=\"jenny@gsd.com\" senderIP=\"208.86.203.10\" phishScore=\"0\" spamScore=\"100\" QID=\"3xqy7dgckv-1\" GUID=\"xiKKTh8uZYXY0rQwOb5EbO5a7zws2skf\" threatsInfoMap=\"[{\\\"threatID\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"threatStatus\\\":\\\"active\\\",\\\"classification\\\":\\\"malware\\\",\\\"threatUrl\\\":\\\"https://threatinsight.proofpoint.com/e65934ff-e650-9cbe-56b5-e9cf2cc5ac2e/threat/email/41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"threatTime\\\":\\\"2024-04-26T04:25:31.000Z\\\",\\\"threat\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"campaignID\\\":null,\\\"threatType\\\":\\\"attachment\\\"},{\\\"threatID\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"threatStatus\\\":\\\"active\\\",\\\"classification\\\":\\\"malware\\\",\\\"threatUrl\\\":\\\"https://threatinsight.proofpoint.com/e65934ff-e650-9cbe-56b5-e9cf2cc5ac2e/threat/email/d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"threatTime\\\":\\\"2024-04-26T04:16:32.000Z\\\",\\\"threat\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"campaignID\\\":null,\\\"threatType\\\":\\\"attachment\\\"}\\]\" malwareScore=\"100\" impostorScore=\"0.0\" cluster=\"proofpointdemo_cloudadminuidemo_hosted\" subject=\"Your Document\" quarantineFolder=\"Attachment Defense\" quarantineRule=\"threat\" policyRoutes=\"default_inbound\" modulesRun=\"av,spf,sandbox,spam,dmarc,urldefense,pdr\" messageSize=\"142084\" headerFrom=\"Jenny Green <Jenny@gsd.com>\" headerReplyTo=\"null\" fromAddress=\"jenny@gsd.com\" toAddresses=\"ahaynie@vogon.science\" ccAddresses=\"null\" replyToAddress=\"null\" xmailer=\"null\" completelyRewritten=\"false\" messageParts=\"[{\\\"disposition\\\":\\\"attached\\\",\\\"sha256\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"md5\\\":\\\"6fd558cf3add096970e15d1e62ca1957\\\",\\\"filename\\\":\\\"document.doc.scr\\\",\\\"sandboxStatus\\\":\\\"THREAT\\\",\\\"oContentType\\\":\\\"application/octet-stream\\\",\\\"contentType\\\":\\\"application/octet-stream\\\"},{\\\"disposition\\\":\\\"inline\\\",\\\"sha256\\\":\\\"23929d744e8c9c9612eafe332be4abd38a5946a8f7d372545685a9e30070dff4\\\",\\\"md5\\\":\\\"5f08cb91482af70246874e8e43e66821\\\",\\\"filename\\\":\\\"text.txt\\\",\\\"sandboxStatus\\\":\\\"NOT_SUPPORTED\\\",\\\"oContentType\\\":\\\"text/plain\\\",\\\"contentType\\\":\\\"text/plain\\\"},{\\\"disposition\\\":\\\"attached\\\",\\\"sha256\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"md5\\\":\\\"6dfd06fe70cb840c97edb292ac4272ca\\\",\\\"filename\\\":\\\"document.zip\\\",\\\"sandboxStatus\\\":\\\"THREAT\\\",\\\"oContentType\\\":\\\"application/zip\\\",\\\"contentType\\\":\\\"application/zip\\\"}\\]\"]\n<38>1 2024-04-26T04:34:24Z - ProofpointTAP - MSGBLK [tapmsg@21139 messageTime=\"2024-04-26T04:34:24Z\" messageID=\"<2547182.25471@11741.com>\" recipient=\"lrogers@vogon.science\" sender=\"jenny@gsd.com\" senderIP=\"208.86.203.10\" phishScore=\"0\" spamScore=\"100\" QID=\"3xqy7dgcmu-1\" GUID=\"nLbF1JJDaMkAfo9oQXEnDKMBL-F6HI4o\" threatsInfoMap=\"[{\\\"threatID\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"threatStatus\\\":\\\"active\\\",\\\"classification\\\":\\\"malware\\\",\\\"threatUrl\\\":\\\"https://threatinsight.proofpoint.com/e65934ff-e650-9cbe-56b5-e9cf2cc5ac2e/threat/email/41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"threatTime\\\":\\\"2024-04-26T04:25:31.000Z\\\",\\\"threat\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"campaignID\\\":null,\\\"threatType\\\":\\\"attachment\\\"},{\\\"threatID\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"threatStatus\\\":\\\"active\\\",\\\"classification\\\":\\\"malware\\\",\\\"threatUrl\\\":\\\"https://threatinsight.proofpoint.com/e65934ff-e650-9cbe-56b5-e9cf2cc5ac2e/threat/email/d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"threatTime\\\":\\\"2024-04-26T04:16:32.000Z\\\",\\\"threat\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"campaignID\\\":null,\\\"threatType\\\":\\\"attachment\\\"}\\]\" malwareScore=\"100\" impostorScore=\"0.0\" cluster=\"proofpointdemo_cloudadminuidemo_hosted\" subject=\"Your Document\" quarantineFolder=\"Attachment Defense\" quarantineRule=\"threat\" policyRoutes=\"default_inbound\" modulesRun=\"av,spf,sandbox,spam,dmarc,urldefense,pdr\" messageSize=\"142097\" headerFrom=\"Jenny Green <Jenny@gsd.com>\" headerReplyTo=\"null\" fromAddress=\"jenny@gsd.com\" toAddresses=\"lrogers@vogon.science\" ccAddresses=\"null\" replyToAddress=\"null\" xmailer=\"null\" completelyRewritten=\"false\" messageParts=\"[{\\\"disposition\\\":\\\"attached\\\",\\\"sha256\\\":\\\"41e187191625d749b89a11bc04fc0b2a3b9bd638035d05b39365c47ab36d1898\\\",\\\"md5\\\":\\\"6fd558cf3add096970e15d1e62ca1957\\\",\\\"filename\\\":\\\"document.doc.scr\\\",\\\"sandboxStatus\\\":\\\"THREAT\\\",\\\"oContentType\\\":\\\"application/octet-stream\\\",\\\"contentType\\\":\\\"application/octet-stream\\\"},{\\\"disposition\\\":\\\"inline\\\",\\\"sha256\\\":\\\"23929d744e8c9c9612eafe332be4abd38a5946a8f7d372545685a9e30070dff4\\\",\\\"md5\\\":\\\"5f08cb91482af70246874e8e43e66821\\\",\\\"filename\\\":\\\"text.txt\\\",\\\"sandboxStatus\\\":\\\"NOT_SUPPORTED\\\",\\\"oContentType\\\":\\\"text/plain\\\",\\\"contentType\\\":\\\"text/plain\\\"},{\\\"disposition\\\":\\\"attached\\\",\\\"sha256\\\":\\\"d212718eb644c7803f73dc13b55536e84263a3f959219bd067dc4092a2095b15\\\",\\\"md5\\\":\\\"6dfd06fe70cb840c97edb292ac4272ca\\\",\\\"filename\\\":\\\"document.zip\\\",\\\"sandboxStatus\\\":\\\"THREAT\\\",\\\"oContentType\\\":\\\"application/zip\\\",\\\"contentType\\\":\\\"application/zip\\\"}\\]\"]\n"
+  }
+]
+```
+### Output Parameters
+
+| Name | Type |
+|------|------|
+| status_code | number |
+| reason | string |
+| response_text | string |
+## Response Headers
+
+| Header | Type |
+|--------|------|
+| Date | string |
+| Content-Type | string |
+| Content-Length | string |
+| Connection | string |
+| Server-Timing | string |
+| Access-Control-Expose-Headers | string |
+| Vary | string |
+| Content-Encoding | string |
+| Strict-Transport-Security | string |
