@@ -1,5 +1,5 @@
-## Forti Analyzer Connector Overview
-
+# Forti Analyzer  Connector
+## Overview
 Forti Analyzer is a network security analytics and reporting tool that provides deep insights into log data, helping organizations manage security events efficiently.
 
 Forti Analyzer is a comprehensive network security analysis tool that aggregates log data from Fortinet devices and other syslog-compatible devices. The Forti Analyzer Connector for Swimlane Turbine enables automated fetching of alert events and log search capabilities, enhancing monitoring and analysis of security alerts. By integrating with Forti Analyzer, Swimlane Turbine users can streamline their security operations, leverage detailed insights for threat detection, and conduct efficient incident investigations without manual intervention.
