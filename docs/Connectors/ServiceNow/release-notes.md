@@ -1,4 +1,4 @@
-# Change Log
+# Release Notes
 
 Test
 
