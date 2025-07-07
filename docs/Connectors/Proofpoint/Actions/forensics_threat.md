@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object) – Required: Auto-generated description for `parameters`. Please update manually if needed.
-  - **threatId** (string) – Required: Auto-generated description for `threatId`. Please update manually if needed.
-  - **includeCampaignForensics** (boolean): Auto-generated description for `includeCampaignForensics`. Please update manually if needed.
+- **parameters** (object) – Required: Structured object with nested properties.
+  - **threatId** (string) – Required: Unique identifier.
+  - **includeCampaignForensics** (boolean): True or False value.
 ## Output
 
 ### Example
@@ -1792,37 +1792,37 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
-  - **generated** (string): Auto-generated description for `generated`. Please update manually if needed.
-  - **reports** (array): Auto-generated description for `reports`. Please update manually if needed.
-    - **scope** (string): Auto-generated description for `scope`. Please update manually if needed.
-    - **id** (string): Auto-generated description for `id`. Please update manually if needed.
-    - **name** (string): Auto-generated description for `name`. Please update manually if needed.
-    - **threatStatus** (string): Auto-generated description for `threatStatus`. Please update manually if needed.
-    - **forensics** (array): Auto-generated description for `forensics`. Please update manually if needed.
-      - **type** (string): Auto-generated description for `type`. Please update manually if needed.
-      - **display** (string): Auto-generated description for `display`. Please update manually if needed.
-      - **engine** (string): Auto-generated description for `engine`. Please update manually if needed.
-      - **malicious** (boolean): Auto-generated description for `malicious`. Please update manually if needed.
-      - **time** (number): Auto-generated description for `time`. Please update manually if needed.
-      - **what** (object): Auto-generated description for `what`. Please update manually if needed.
-        - **url** (string): Auto-generated description for `url`. Please update manually if needed.
-      - **platforms** (array): Auto-generated description for `platforms`. Please update manually if needed.
-        - **name** (string): Auto-generated description for `name`. Please update manually if needed.
-        - **os** (string): Auto-generated description for `os`. Please update manually if needed.
-        - **version** (string): Auto-generated description for `version`. Please update manually if needed.
-      - **note** (string): Auto-generated description for `note`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **json_body** (object): Structured object with nested properties.
+  - **generated** (string): Text string.
+  - **reports** (array): List of items.
+    - **scope** (string): Text string.
+    - **id** (string): Unique identifier.
+    - **name** (string): Name or label.
+    - **threatStatus** (string): Status value or code.
+    - **forensics** (array): List of items.
+      - **type** (string): Type of the resource or value.
+      - **display** (string): Text string.
+      - **engine** (string): Text string.
+      - **malicious** (boolean): True or False value.
+      - **time** (number): Timestamp in ISO 8601 format.
+      - **what** (object): Structured object with nested properties.
+        - **url** (string): Web address or resource URL.
+      - **platforms** (array): List of items.
+        - **name** (string): Name or label.
+        - **os** (string): Text string.
+        - **version** (string): Text string.
+      - **note** (string): Text string.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
-| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
-| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
-| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
-| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
-| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
-| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
-| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
+| Date | string | Timestamp in ISO 8601 format. |
+| Content-Type | string | Type of the resource or value. |
+| Transfer-Encoding | string | Text string. |
+| Connection | string | Text string. |
+| X-Content-Type-Options | string | Type of the resource or value. |
+| Vary | string | Text string. |
+| Content-Encoding | string | Text string. |
+| Strict-Transport-Security | string | Text string. |

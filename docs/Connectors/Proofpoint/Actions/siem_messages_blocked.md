@@ -9,12 +9,12 @@
 ## Inputs
 
 - **parameters** (object) – Required: One of the following three query parameters describing the desired time range for the data must be supplied with each request interval, sinceSeconds, sinceTime.
-  - **interval** (string): Auto-generated description for `interval`. Please update manually if needed.
-  - **sinceSeconds** (number): Auto-generated description for `sinceSeconds`. Please update manually if needed.
-  - **sinceTime** (string): Auto-generated description for `sinceTime`. Please update manually if needed.
-  - **format** (string): Auto-generated description for `format`. Please update manually if needed.
-  - **threatType** (string): Auto-generated description for `threatType`. Please update manually if needed.
-  - **threatStatus** (string): Auto-generated description for `threatStatus`. Please update manually if needed.
+  - **interval** (string): Text string.
+  - **sinceSeconds** (number): Numerical value.
+  - **sinceTime** (string): Timestamp in ISO 8601 format.
+  - **format** (string): Text string.
+  - **threatType** (string): Type of the resource or value.
+  - **threatStatus** (string): Status value or code.
 ## Output
 
 ### Example
@@ -39,17 +39,17 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **response_text** (string): Auto-generated description for `response_text`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **response_text** (string): Text string.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
-| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
-| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
-| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
-| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
-| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
-| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
+| Date | string | Timestamp in ISO 8601 format. |
+| Content-Type | string | Type of the resource or value. |
+| Transfer-Encoding | string | Text string. |
+| Connection | string | Text string. |
+| Vary | string | Text string. |
+| Content-Encoding | string | Text string. |
+| Strict-Transport-Security | string | Text string. |

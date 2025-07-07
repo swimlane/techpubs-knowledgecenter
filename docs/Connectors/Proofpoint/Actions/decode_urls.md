@@ -8,8 +8,8 @@
 - **Method:** `POST`
 ## Inputs
 
-- **json_body** (object) – Required: Auto-generated description for `json_body`. Please update manually if needed.
-  - **urls** (array) – Required: Auto-generated description for `urls`. Please update manually if needed.
+- **json_body** (object) – Required: Structured object with nested properties.
+  - **urls** (array) – Required: Web address or resource URL.
 ## Output
 
 ### Example
@@ -46,21 +46,21 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
-  - **urls** (array): Auto-generated description for `urls`. Please update manually if needed.
-    - **encodedUrl** (string): Auto-generated description for `encodedUrl`. Please update manually if needed.
-    - **success** (boolean): Auto-generated description for `success`. Please update manually if needed.
-    - **decodedUrl** (string): Auto-generated description for `decodedUrl`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **json_body** (object): Structured object with nested properties.
+  - **urls** (array): Web address or resource URL.
+    - **encodedUrl** (string): Web address or resource URL.
+    - **success** (boolean): True or False value.
+    - **decodedUrl** (string): Web address or resource URL.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
-| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
-| Content-Length | string | Auto-generated description for `Content-Length`. Please update manually if needed. |
-| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
-| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
-| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
-| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
+| Date | string | Timestamp in ISO 8601 format. |
+| Content-Type | string | Type of the resource or value. |
+| Content-Length | string | Text string. |
+| Connection | string | Text string. |
+| Vary | string | Text string. |
+| X-Content-Type-Options | string | Type of the resource or value. |
+| Strict-Transport-Security | string | Text string. |

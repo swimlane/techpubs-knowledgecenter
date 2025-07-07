@@ -8,8 +8,8 @@
 - **Method:** `PUT`
 ## Inputs
 
-- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
-  - **custom_endpoint** (string) – Required: Auto-generated description for `custom_endpoint`. Please update manually if needed.
+- **path_parameters** (object) – Required: Structured object with nested properties.
+  - **custom_endpoint** (string) – Required: Text string.
 - **parameters** (object): URL Query Parameters
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body

@@ -8,8 +8,8 @@
 - **Method:** `DELETE`
 ## Inputs
 
-- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
-  - **custom_endpoint** (string) – Required: Auto-generated description for `custom_endpoint`. Please update manually if needed.
+- **path_parameters** (object) – Required: Structured object with nested properties.
+  - **custom_endpoint** (string) – Required: Text string.
 - **parameters** (object): URL Query Parameters
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body
@@ -29,6 +29,6 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **json_body** (object): Structured object with nested properties.

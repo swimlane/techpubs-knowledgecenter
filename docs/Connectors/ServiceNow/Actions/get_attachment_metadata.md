@@ -8,7 +8,7 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object): Auto-generated description for `parameters`. Please update manually if needed.
+- **parameters** (object): Structured object with nested properties.
   - **sysparm_query** (string) – Required: Encoded query. Queries for the Attachment API are relative to the Attachments [sys_attachment] table.
 ## Output
 
@@ -93,28 +93,28 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
-  - **result** (array): Auto-generated description for `result`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **json_body** (object): Structured object with nested properties.
+  - **result** (array): List of items.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
-| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
-| X-Is-Logged-In | string | Auto-generated description for `X-Is-Logged-In`. Please update manually if needed. |
-| X-Transaction-ID | string | Auto-generated description for `X-Transaction-ID`. Please update manually if needed. |
-| X-Total-Count | string | Auto-generated description for `X-Total-Count`. Please update manually if needed. |
-| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
-| Pragma | string | Auto-generated description for `Pragma`. Please update manually if needed. |
-| Cache-Control | string | Auto-generated description for `Cache-Control`. Please update manually if needed. |
-| Expires | string | Auto-generated description for `Expires`. Please update manually if needed. |
-| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
-| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
-| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
-| Keep-Alive | string | Auto-generated description for `Keep-Alive`. Please update manually if needed. |
-| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
-| Server | string | Auto-generated description for `Server`. Please update manually if needed. |
-| Set-Cookie | string | Auto-generated description for `Set-Cookie`. Please update manually if needed. |
-| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
+| Server-Timing | string | Text string. |
+| Content-Encoding | string | Text string. |
+| X-Is-Logged-In | string | Text string. |
+| X-Transaction-ID | string | Unique identifier. |
+| X-Total-Count | string | Number of occurrences or items. |
+| X-Content-Type-Options | string | Type of the resource or value. |
+| Pragma | string | Text string. |
+| Cache-Control | string | Text string. |
+| Expires | string | Text string. |
+| Content-Type | string | Type of the resource or value. |
+| Transfer-Encoding | string | Text string. |
+| Date | string | Timestamp in ISO 8601 format. |
+| Keep-Alive | string | Text string. |
+| Connection | string | Text string. |
+| Server | string | Text string. |
+| Set-Cookie | string | Text string. |
+| Strict-Transport-Security | string | Text string. |

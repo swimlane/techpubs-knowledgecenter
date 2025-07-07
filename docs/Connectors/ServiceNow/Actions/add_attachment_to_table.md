@@ -9,15 +9,15 @@
 ## Inputs
 
 - **attachments** (array) – Required: File to be uploaded
-  - **file_name** (string) – Required: Auto-generated description for `file_name`. Please update manually if needed.
-  - **file** (string) – Required: Auto-generated description for `file`. Please update manually if needed.
-- **parameters** (object): Auto-generated description for `parameters`. Please update manually if needed.
+  - **file_name** (string) – Required: Name or label.
+  - **file** (string) – Required: Text string.
+- **parameters** (object): Structured object with nested properties.
   - **encryption_context** (string): Sys_id of an encryption context record. Specify this parameter to allow only users with the specified encryption context to access the attachment.
-  - **file_name** (string) – Required: Auto-generated description for `file_name`. Please update manually if needed.
-  - **table_name** (string) – Required: Auto-generated description for `table_name`. Please update manually if needed.
+  - **file_name** (string) – Required: Name or label.
+  - **table_name** (string) – Required: Name or label.
   - **table_sys_id** (string) – Required: Sys_id of the record in the table specified in table_name that you want to attach the file to.
-- **headers** (object): Auto-generated description for `headers`. Please update manually if needed.
-  - **Content-Type** (string) – Required: Auto-generated description for `Content-Type`. Please update manually if needed.
+- **headers** (object): Structured object with nested properties.
+  - **Content-Type** (string) – Required: Type of the resource or value.
 ## Output
 
 ### Example
@@ -76,49 +76,49 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
-  - **result** (object): Auto-generated description for `result`. Please update manually if needed.
-    - **size_bytes** (string): Auto-generated description for `size_bytes`. Please update manually if needed.
-    - **file_name** (string): Auto-generated description for `file_name`. Please update manually if needed.
-    - **sys_mod_count** (string): Auto-generated description for `sys_mod_count`. Please update manually if needed.
-    - **average_image_color** (string): Auto-generated description for `average_image_color`. Please update manually if needed.
-    - **image_width** (string): Auto-generated description for `image_width`. Please update manually if needed.
-    - **sys_updated_on** (string): Auto-generated description for `sys_updated_on`. Please update manually if needed.
-    - **sys_tags** (string): Auto-generated description for `sys_tags`. Please update manually if needed.
-    - **table_name** (string): Auto-generated description for `table_name`. Please update manually if needed.
-    - **sys_id** (string): Auto-generated description for `sys_id`. Please update manually if needed.
-    - **image_height** (string): Auto-generated description for `image_height`. Please update manually if needed.
-    - **sys_updated_by** (string): Auto-generated description for `sys_updated_by`. Please update manually if needed.
-    - **download_link** (string): Auto-generated description for `download_link`. Please update manually if needed.
-    - **content_type** (string): Auto-generated description for `content_type`. Please update manually if needed.
-    - **sys_created_on** (string): Auto-generated description for `sys_created_on`. Please update manually if needed.
-    - **size_compressed** (string): Auto-generated description for `size_compressed`. Please update manually if needed.
-    - **compressed** (string): Auto-generated description for `compressed`. Please update manually if needed.
-    - **state** (string): Auto-generated description for `state`. Please update manually if needed.
-    - **table_sys_id** (string): Auto-generated description for `table_sys_id`. Please update manually if needed.
-    - **chunk_size_bytes** (string): Auto-generated description for `chunk_size_bytes`. Please update manually if needed.
-    - **hash** (string): Auto-generated description for `hash`. Please update manually if needed.
-    - **sys_created_by** (string): Auto-generated description for `sys_created_by`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **json_body** (object): Structured object with nested properties.
+  - **result** (object): Structured object with nested properties.
+    - **size_bytes** (string): Size in bytes or appropriate unit.
+    - **file_name** (string): Name or label.
+    - **sys_mod_count** (string): Number of occurrences or items.
+    - **average_image_color** (string): Text string.
+    - **image_width** (string): Unique identifier.
+    - **sys_updated_on** (string): Timestamp in ISO 8601 format.
+    - **sys_tags** (string): Text string.
+    - **table_name** (string): Name or label.
+    - **sys_id** (string): Unique identifier.
+    - **image_height** (string): Text string.
+    - **sys_updated_by** (string): Timestamp in ISO 8601 format.
+    - **download_link** (string): Text string.
+    - **content_type** (string): Type of the resource or value.
+    - **sys_created_on** (string): Text string.
+    - **size_compressed** (string): Size in bytes or appropriate unit.
+    - **compressed** (string): Text string.
+    - **state** (string): Text string.
+    - **table_sys_id** (string): Unique identifier.
+    - **chunk_size_bytes** (string): Size in bytes or appropriate unit.
+    - **hash** (string): Hash value for data integrity.
+    - **sys_created_by** (string): Text string.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
-| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
-| X-Is-Logged-In | string | Auto-generated description for `X-Is-Logged-In`. Please update manually if needed. |
-| X-Transaction-ID | string | Auto-generated description for `X-Transaction-ID`. Please update manually if needed. |
-| Location | string | Auto-generated description for `Location`. Please update manually if needed. |
-| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
-| Pragma | string | Auto-generated description for `Pragma`. Please update manually if needed. |
-| Cache-Control | string | Auto-generated description for `Cache-Control`. Please update manually if needed. |
-| Expires | string | Auto-generated description for `Expires`. Please update manually if needed. |
-| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
-| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
-| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
-| Keep-Alive | string | Auto-generated description for `Keep-Alive`. Please update manually if needed. |
-| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
-| Server | string | Auto-generated description for `Server`. Please update manually if needed. |
-| Set-Cookie | string | Auto-generated description for `Set-Cookie`. Please update manually if needed. |
-| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
+| Server-Timing | string | Text string. |
+| Content-Encoding | string | Text string. |
+| X-Is-Logged-In | string | Text string. |
+| X-Transaction-ID | string | Unique identifier. |
+| Location | string | Text string. |
+| X-Content-Type-Options | string | Type of the resource or value. |
+| Pragma | string | Text string. |
+| Cache-Control | string | Text string. |
+| Expires | string | Text string. |
+| Content-Type | string | Type of the resource or value. |
+| Transfer-Encoding | string | Text string. |
+| Date | string | Timestamp in ISO 8601 format. |
+| Keep-Alive | string | Text string. |
+| Connection | string | Text string. |
+| Server | string | Text string. |
+| Set-Cookie | string | Text string. |
+| Strict-Transport-Security | string | Text string. |

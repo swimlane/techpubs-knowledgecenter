@@ -8,11 +8,11 @@
 - **Method:** `POST`
 ## Inputs
 
-- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
-  - **custom_endpoint** (string) – Required: Auto-generated description for `custom_endpoint`. Please update manually if needed.
-- **parameters** (object): Auto-generated description for `parameters`. Please update manually if needed.
-  - **sysparm_display_value** (boolean): Auto-generated description for `sysparm_display_value`. Please update manually if needed.
-  - **sysparm_input_display_value** (boolean): Auto-generated description for `sysparm_input_display_value`. Please update manually if needed.
+- **path_parameters** (object) – Required: Structured object with nested properties.
+  - **custom_endpoint** (string) – Required: Text string.
+- **parameters** (object): Structured object with nested properties.
+  - **sysparm_display_value** (boolean): True or False value.
+  - **sysparm_input_display_value** (boolean): True or False value.
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body
 ## Output

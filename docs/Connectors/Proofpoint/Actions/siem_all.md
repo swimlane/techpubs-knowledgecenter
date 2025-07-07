@@ -41,19 +41,19 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **response_text** (string): Auto-generated description for `response_text`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **response_text** (string): Text string.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
-| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
-| Content-Length | string | Auto-generated description for `Content-Length`. Please update manually if needed. |
-| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
-| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
-| Access-Control-Expose-Headers | string | Auto-generated description for `Access-Control-Expose-Headers`. Please update manually if needed. |
-| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
-| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
-| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
+| Date | string | Timestamp in ISO 8601 format. |
+| Content-Type | string | Type of the resource or value. |
+| Content-Length | string | Text string. |
+| Connection | string | Text string. |
+| Server-Timing | string | Text string. |
+| Access-Control-Expose-Headers | string | Text string. |
+| Vary | string | Text string. |
+| Content-Encoding | string | Text string. |
+| Strict-Transport-Security | string | Text string. |

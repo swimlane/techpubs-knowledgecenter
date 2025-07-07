@@ -4,8 +4,8 @@
 
 ## Inputs
 
-- **json_body** (object) – Required: Auto-generated description for `json_body`. Please update manually if needed.
-  - **url** (string): Auto-generated description for `url`. Please update manually if needed.
+- **json_body** (object) – Required: Structured object with nested properties.
+  - **url** (string): Web address or resource URL.
 ## Output
 
 ### Example
@@ -28,8 +28,8 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **headers** (object): Auto-generated description for `headers`. Please update manually if needed.
-- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
-  - **decoded_urls** (array): Auto-generated description for `decoded_urls`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **headers** (object): Structured object with nested properties.
+- **json_body** (object): Structured object with nested properties.
+  - **decoded_urls** (array): Web address or resource URL.

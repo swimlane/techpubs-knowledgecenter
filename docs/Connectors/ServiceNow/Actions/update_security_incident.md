@@ -8,10 +8,10 @@
 - **Method:** `PATCH`
 ## Inputs
 
-- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
+- **path_parameters** (object) – Required: Structured object with nested properties.
   - **security_incident** (string) – Required: Name of the Security Incident Table
   - **sys_id** (string) – Required: ID of the security incident to update.
-- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+- **json_body** (object): Structured object with nested properties.
   - **sysparm_display_value** (string): Determines the type of data returned, either the actual values from the database or the display values of the fields.
   - **sysparm_fields** (string): Comma-separated list of fields to return in the response.
   - **sysparm_input_display_value** (boolean): Flag that indicates whether to set field values using the display value or the actual value.
@@ -43,19 +43,19 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
-- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
-- **response_text** (string): Auto-generated description for `response_text`. Please update manually if needed.
+- **status_code** (number): Status value or code.
+- **reason** (string): Text string.
+- **response_text** (string): Text string.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Set-Cookie | string | Auto-generated description for `Set-Cookie`. Please update manually if needed. |
-| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
-| Content-Security-Policy | string | Auto-generated description for `Content-Security-Policy`. Please update manually if needed. |
-| Content-Length | string | Auto-generated description for `Content-Length`. Please update manually if needed. |
-| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
-| Keep-Alive | string | Auto-generated description for `Keep-Alive`. Please update manually if needed. |
-| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
-| Server | string | Auto-generated description for `Server`. Please update manually if needed. |
-| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
+| Set-Cookie | string | Text string. |
+| Server-Timing | string | Text string. |
+| Content-Security-Policy | string | Text string. |
+| Content-Length | string | Text string. |
+| Date | string | Timestamp in ISO 8601 format. |
+| Keep-Alive | string | Text string. |
+| Connection | string | Text string. |
+| Server | string | Text string. |
+| Strict-Transport-Security | string | Text string. |
