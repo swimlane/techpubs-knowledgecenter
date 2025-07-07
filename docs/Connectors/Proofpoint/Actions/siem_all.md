@@ -46,12 +46,14 @@
 - **response_text** (string)
 ## Response Headers
 
-- **Date** (string)
-- **Content-Type** (string)
-- **Content-Length** (string)
-- **Connection** (string)
-- **Server-Timing** (string)
-- **Access-Control-Expose-Headers** (string)
-- **Vary** (string)
-- **Content-Encoding** (string)
-- **Strict-Transport-Security** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| Date | string | - |
+| Content-Type | string | - |
+| Content-Length | string | - |
+| Connection | string | - |
+| Server-Timing | string | - |
+| Access-Control-Expose-Headers | string | - |
+| Vary | string | - |
+| Content-Encoding | string | - |
+| Strict-Transport-Security | string | - |

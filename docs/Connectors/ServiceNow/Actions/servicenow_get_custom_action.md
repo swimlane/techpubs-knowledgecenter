@@ -36,6 +36,8 @@
 - **json_body** (object)
 ## Response Headers
 
-- **content-length** (string)
-- **content-type** (string)
-- **Date** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| content-length | string | - |
+| content-type | string | - |
+| Date | string | - |

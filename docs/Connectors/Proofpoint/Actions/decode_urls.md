@@ -55,10 +55,12 @@
     - **decodedUrl** (string)
 ## Response Headers
 
-- **Date** (string)
-- **Content-Type** (string)
-- **Content-Length** (string)
-- **Connection** (string)
-- **Vary** (string)
-- **X-Content-Type-Options** (string)
-- **Strict-Transport-Security** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| Date | string | - |
+| Content-Type | string | - |
+| Content-Length | string | - |
+| Connection | string | - |
+| Vary | string | - |
+| X-Content-Type-Options | string | - |
+| Strict-Transport-Security | string | - |

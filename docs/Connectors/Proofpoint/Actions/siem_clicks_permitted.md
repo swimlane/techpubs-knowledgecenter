@@ -40,6 +40,8 @@
 - **response_text** (string)
 ## Response Headers
 
-- **Date** (string)
-- **Connection** (string)
-- **Strict-Transport-Security** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| Date | string | - |
+| Connection | string | - |
+| Strict-Transport-Security | string | - |

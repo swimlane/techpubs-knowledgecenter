@@ -1816,11 +1816,13 @@
       - **note** (string)
 ## Response Headers
 
-- **Date** (string)
-- **Content-Type** (string)
-- **Transfer-Encoding** (string)
-- **Connection** (string)
-- **X-Content-Type-Options** (string)
-- **Vary** (string)
-- **Content-Encoding** (string)
-- **Strict-Transport-Security** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| Date | string | - |
+| Content-Type | string | - |
+| Transfer-Encoding | string | - |
+| Connection | string | - |
+| X-Content-Type-Options | string | - |
+| Vary | string | - |
+| Content-Encoding | string | - |
+| Strict-Transport-Security | string | - |

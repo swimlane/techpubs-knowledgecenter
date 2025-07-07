@@ -48,19 +48,21 @@
 - **file** (array)
 ## Response Headers
 
-- **Server-Timing** (string)
-- **Content-Encoding** (string)
-- **X-Is-Logged-In** (string)
-- **X-Transaction-ID** (string)
-- **Content-Disposition** (string)
-- **X-Content-Type-Options** (string)
-- **x-attachment-metadata** (string)
-- **x-edge-enc-proxy-static** (string)
-- **Content-Type** (string)
-- **Transfer-Encoding** (string)
-- **Date** (string)
-- **Keep-Alive** (string)
-- **Connection** (string)
-- **Server** (string)
-- **Set-Cookie** (string)
-- **Strict-Transport-Security** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| Server-Timing | string | - |
+| Content-Encoding | string | - |
+| X-Is-Logged-In | string | - |
+| X-Transaction-ID | string | - |
+| Content-Disposition | string | - |
+| X-Content-Type-Options | string | - |
+| x-attachment-metadata | string | - |
+| x-edge-enc-proxy-static | string | - |
+| Content-Type | string | - |
+| Transfer-Encoding | string | - |
+| Date | string | - |
+| Keep-Alive | string | - |
+| Connection | string | - |
+| Server | string | - |
+| Set-Cookie | string | - |
+| Strict-Transport-Security | string | - |

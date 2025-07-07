@@ -44,10 +44,12 @@
 - **response_text** (string)
 ## Response Headers
 
-- **Date** (string)
-- **Content-Type** (string)
-- **Transfer-Encoding** (string)
-- **Connection** (string)
-- **Vary** (string)
-- **Content-Encoding** (string)
-- **Strict-Transport-Security** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| Date | string | - |
+| Content-Type | string | - |
+| Transfer-Encoding | string | - |
+| Connection | string | - |
+| Vary | string | - |
+| Content-Encoding | string | - |
+| Strict-Transport-Security | string | - |

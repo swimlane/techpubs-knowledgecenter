@@ -137,19 +137,21 @@
     - **category** (string)
 ## Response Headers
 
-- **Server-Timing** (string)
-- **Content-Encoding** (string)
-- **X-Is-Logged-In** (string)
-- **X-Transaction-ID** (string)
-- **X-Content-Type-Options** (string)
-- **Pragma** (string)
-- **Cache-Control** (string)
-- **Expires** (string)
-- **Content-Type** (string)
-- **Transfer-Encoding** (string)
-- **Date** (string)
-- **Keep-Alive** (string)
-- **Connection** (string)
-- **Server** (string)
-- **Set-Cookie** (string)
-- **Strict-Transport-Security** (string)
+| Header | Type | Description |
+|--------|------|-------------|
+| Server-Timing | string | - |
+| Content-Encoding | string | - |
+| X-Is-Logged-In | string | - |
+| X-Transaction-ID | string | - |
+| X-Content-Type-Options | string | - |
+| Pragma | string | - |
+| Cache-Control | string | - |
+| Expires | string | - |
+| Content-Type | string | - |
+| Transfer-Encoding | string | - |
+| Date | string | - |
+| Keep-Alive | string | - |
+| Connection | string | - |
+| Server | string | - |
+| Set-Cookie | string | - |
+| Strict-Transport-Security | string | - |
