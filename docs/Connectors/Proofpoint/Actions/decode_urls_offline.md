@@ -4,8 +4,8 @@
 
 ## Inputs
 
-- **json_body** (object) – Required
-  - **url** (string)
+- **json_body** (object) – Required: TODO: Add description
+  - **url** (string): TODO: Add description
 ## Output
 
 ### Example
@@ -28,8 +28,8 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **headers** (object)
-- **json_body** (object)
-  - **decoded_urls** (array)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **headers** (object): TODO: Add description
+- **json_body** (object): TODO: Add description
+  - **decoded_urls** (array): TODO: Add description

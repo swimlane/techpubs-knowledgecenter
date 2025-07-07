@@ -8,7 +8,7 @@
 - **Method:** `POST`
 ## Inputs
 
-- **json_body** (object) – Required
+- **json_body** (object) – Required: TODO: Add description
   - **id** (string): An identifier established by the client.
   - **jsonrpc** (string): A string specifying the JSON-RPC protocol version.
   - **method** (string): A string containing the method name to be invoked.
@@ -50,10 +50,10 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
-  - **id** (string)
-  - **jsonrpc** (string)
-  - **result** (object)
-    - **tid** (number)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
+  - **id** (string): TODO: Add description
+  - **jsonrpc** (string): TODO: Add description
+  - **result** (object): TODO: Add description
+    - **tid** (number): TODO: Add description

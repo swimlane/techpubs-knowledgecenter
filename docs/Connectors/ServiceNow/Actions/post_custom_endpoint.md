@@ -8,11 +8,11 @@
 - **Method:** `POST`
 ## Inputs
 
-- **path_parameters** (object) – Required
-  - **custom_endpoint** (string) – Required
-- **parameters** (object)
-  - **sysparm_display_value** (boolean)
-  - **sysparm_input_display_value** (boolean)
+- **path_parameters** (object) – Required: TODO: Add description
+  - **custom_endpoint** (string) – Required: TODO: Add description
+- **parameters** (object): TODO: Add description
+  - **sysparm_display_value** (boolean): TODO: Add description
+  - **sysparm_input_display_value** (boolean): TODO: Add description
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body
 ## Output

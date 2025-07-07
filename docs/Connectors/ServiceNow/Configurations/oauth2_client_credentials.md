@@ -5,7 +5,7 @@
 ## Inputs
 
 - **url** (string) – Required: A URL to the target host.
-- **token_url** (string) – Required
+- **token_url** (string) – Required: TODO: Add description
 - **client_id** (string) – Required: The client ID
 - **client_secret** (string) – Required: The client secret.
 - **scope** (array): Permission scopes for this action.

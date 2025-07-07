@@ -8,11 +8,11 @@
 - **Method:** `PATCH`
 ## Inputs
 
-- **path_parameters** (object) – Required
-  - **mid_extension** (string) – Required
-  - **end_extension** (string) – Required
-- **json_body** (object) – Required
-  - **comments** (string)
+- **path_parameters** (object) – Required: TODO: Add description
+  - **mid_extension** (string) – Required: TODO: Add description
+  - **end_extension** (string) – Required: TODO: Add description
+- **json_body** (object) – Required: TODO: Add description
+  - **comments** (string): TODO: Add description
 - **parameters** (object): URL Query Parameters
 ## Output
 
@@ -34,13 +34,13 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| content-length | string | - |
-| content-type | string | - |
-| Date | string | - |
+| content-length | string | TODO: Add description |
+| content-type | string | TODO: Add description |
+| Date | string | TODO: Add description |

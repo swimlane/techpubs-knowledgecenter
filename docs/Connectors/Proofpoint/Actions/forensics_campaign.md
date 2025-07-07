@@ -8,8 +8,8 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object) – Required
-  - **campaignId** (string) – Required
+- **parameters** (object) – Required: TODO: Add description
+  - **campaignId** (string) – Required: TODO: Add description
 ## Output
 
 ### Example
@@ -45,26 +45,26 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
-  - **generated** (string)
-  - **reports** (array)
-    - **scope** (string)
-    - **id** (string)
-    - **name** (string)
-    - **forensics** (array)
-      - **file_name** (string) – Required
-      - **file** (string) – Required
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
+  - **generated** (string): TODO: Add description
+  - **reports** (array): TODO: Add description
+    - **scope** (string): TODO: Add description
+    - **id** (string): TODO: Add description
+    - **name** (string): TODO: Add description
+    - **forensics** (array): TODO: Add description
+      - **file_name** (string) – Required: TODO: Add description
+      - **file** (string) – Required: TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | - |
-| Content-Type | string | - |
-| Content-Length | string | - |
-| Connection | string | - |
-| X-Content-Type-Options | string | - |
-| Vary | string | - |
-| Content-Encoding | string | - |
-| Strict-Transport-Security | string | - |
+| Date | string | TODO: Add description |
+| Content-Type | string | TODO: Add description |
+| Content-Length | string | TODO: Add description |
+| Connection | string | TODO: Add description |
+| X-Content-Type-Options | string | TODO: Add description |
+| Vary | string | TODO: Add description |
+| Content-Encoding | string | TODO: Add description |
+| Strict-Transport-Security | string | TODO: Add description |

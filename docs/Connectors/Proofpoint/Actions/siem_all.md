@@ -41,19 +41,19 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **response_text** (string)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **response_text** (string): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | - |
-| Content-Type | string | - |
-| Content-Length | string | - |
-| Connection | string | - |
-| Server-Timing | string | - |
-| Access-Control-Expose-Headers | string | - |
-| Vary | string | - |
-| Content-Encoding | string | - |
-| Strict-Transport-Security | string | - |
+| Date | string | TODO: Add description |
+| Content-Type | string | TODO: Add description |
+| Content-Length | string | TODO: Add description |
+| Connection | string | TODO: Add description |
+| Server-Timing | string | TODO: Add description |
+| Access-Control-Expose-Headers | string | TODO: Add description |
+| Vary | string | TODO: Add description |
+| Content-Encoding | string | TODO: Add description |
+| Strict-Transport-Security | string | TODO: Add description |

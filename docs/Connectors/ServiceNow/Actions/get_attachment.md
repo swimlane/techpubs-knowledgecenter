@@ -8,7 +8,7 @@
 - **Method:** `GET`
 ## Inputs
 
-- **path_parameters** (object) – Required
+- **path_parameters** (object) – Required: TODO: Add description
   - **sys_id** (string) – Required: Sys_id of the attachment record from which to return binary data.
 ## Output
 
@@ -43,26 +43,26 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **file** (array)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **file** (array): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | - |
-| Content-Encoding | string | - |
-| X-Is-Logged-In | string | - |
-| X-Transaction-ID | string | - |
-| Content-Disposition | string | - |
-| X-Content-Type-Options | string | - |
-| x-attachment-metadata | string | - |
-| x-edge-enc-proxy-static | string | - |
-| Content-Type | string | - |
-| Transfer-Encoding | string | - |
-| Date | string | - |
-| Keep-Alive | string | - |
-| Connection | string | - |
-| Server | string | - |
-| Set-Cookie | string | - |
-| Strict-Transport-Security | string | - |
+| Server-Timing | string | TODO: Add description |
+| Content-Encoding | string | TODO: Add description |
+| X-Is-Logged-In | string | TODO: Add description |
+| X-Transaction-ID | string | TODO: Add description |
+| Content-Disposition | string | TODO: Add description |
+| X-Content-Type-Options | string | TODO: Add description |
+| x-attachment-metadata | string | TODO: Add description |
+| x-edge-enc-proxy-static | string | TODO: Add description |
+| Content-Type | string | TODO: Add description |
+| Transfer-Encoding | string | TODO: Add description |
+| Date | string | TODO: Add description |
+| Keep-Alive | string | TODO: Add description |
+| Connection | string | TODO: Add description |
+| Server | string | TODO: Add description |
+| Set-Cookie | string | TODO: Add description |
+| Strict-Transport-Security | string | TODO: Add description |

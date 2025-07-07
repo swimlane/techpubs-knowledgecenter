@@ -8,11 +8,11 @@
 - **Method:** `GET`
 ## Inputs
 
-- **json_body** (object) – Required
+- **json_body** (object) – Required: TODO: Add description
   - **id** (string): An identifier established by the client.
   - **jsonrpc** (string): A string specifying the JSON-RPC protocol version.
   - **method** (string): A string containing the method name to be invoked.
-  - **params** (array)
+  - **params** (array): TODO: Add description
     - **apiver** (number) – Required: Current API version.
     - **filter** (string): Filter expression. 'event_value', 'severity', 'trigger_name', 'count', 'comment' and 'flags' are supported. i.e. trigger_name='Local Device Event' and severity >= 3.
     - **limit** (number): The max number of records to get (min - 1, max - 2000).
@@ -43,13 +43,13 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| content-length | string | - |
-| content-type | string | - |
-| Date | string | - |
+| content-length | string | TODO: Add description |
+| content-type | string | TODO: Add description |
+| Date | string | TODO: Add description |

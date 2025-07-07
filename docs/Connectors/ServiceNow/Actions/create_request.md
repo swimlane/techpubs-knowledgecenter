@@ -8,75 +8,75 @@
 - **Method:** `POST`
 ## Inputs
 
-- **json_body** (object)
-  - **active** (boolean)
-  - **activity_due** (string)
-  - **additional_assignee_list** (string)
-  - **approval** (string)
-  - **approval_set** (string)
-  - **assigned_to** (string)
-  - **assignment_group** (string)
-  - **business_duration** (string)
-  - **business_service** (string)
-  - **calendar_duration** (string)
-  - **calendar_stc** (string)
-  - **close_notes** (string)
-  - **closed_at** (string)
-  - **closed_by** (string)
-  - **cmdb_ci** (object)
-    - **link** (string)
-    - **value** (string)
-  - **company** (string)
-  - **contact_type** (string)
-  - **contract** (string)
-  - **correlation** (string)
-  - **correlation_id** (string)
-  - **delivery_address** (string)
-  - **delivery_plan** (string)
-  - **delivery_task** (string)
-  - **description** (string)
-  - **due_date** (string)
-  - **escalation** (string)
-  - **expected_start** (string)
-  - **follow_up** (string)
-  - **group_list** (string)
-  - **impact** (string)
-  - **knowledge** (boolean)
-  - **location** (string)
-  - **made_sla** (boolean)
-  - **opened_at** (string)
-  - **opened_by** (object)
-    - **link** (string)
-    - **value** (string)
-  - **order** (string)
-  - **parent** (string)
-  - **parent_interaction** (string)
-  - **price** (string)
-  - **priority** (string)
-  - **reassignment_count** (string)
-  - **request_state** (string)
-  - **requested_date** (string)
-  - **requested_for** (string)
-  - **route_reason** (string)
-  - **service_offering** (string)
-  - **short_description** (string)
-  - **skills** (string)
-  - **sla_due** (string)
-  - **special_instructions** (string)
-  - **stage** (string)
-  - **state** (string)
-  - **time_worked** (string)
-  - **universal_request** (string)
-  - **upon_approval** (string)
-  - **upon_reject** (string)
-  - **urgency** (string)
-  - **user_input** (string)
-  - **watch_list** (string)
-  - **work_end** (string)
-  - **work_notes** (string)
-  - **work_notes_list** (string)
-  - **work_start** (string)
-- **parameters** (object)
+- **json_body** (object): TODO: Add description
+  - **active** (boolean): TODO: Add description
+  - **activity_due** (string): TODO: Add description
+  - **additional_assignee_list** (string): TODO: Add description
+  - **approval** (string): TODO: Add description
+  - **approval_set** (string): TODO: Add description
+  - **assigned_to** (string): TODO: Add description
+  - **assignment_group** (string): TODO: Add description
+  - **business_duration** (string): TODO: Add description
+  - **business_service** (string): TODO: Add description
+  - **calendar_duration** (string): TODO: Add description
+  - **calendar_stc** (string): TODO: Add description
+  - **close_notes** (string): TODO: Add description
+  - **closed_at** (string): TODO: Add description
+  - **closed_by** (string): TODO: Add description
+  - **cmdb_ci** (object): TODO: Add description
+    - **link** (string): TODO: Add description
+    - **value** (string): TODO: Add description
+  - **company** (string): TODO: Add description
+  - **contact_type** (string): TODO: Add description
+  - **contract** (string): TODO: Add description
+  - **correlation** (string): TODO: Add description
+  - **correlation_id** (string): TODO: Add description
+  - **delivery_address** (string): TODO: Add description
+  - **delivery_plan** (string): TODO: Add description
+  - **delivery_task** (string): TODO: Add description
+  - **description** (string): TODO: Add description
+  - **due_date** (string): TODO: Add description
+  - **escalation** (string): TODO: Add description
+  - **expected_start** (string): TODO: Add description
+  - **follow_up** (string): TODO: Add description
+  - **group_list** (string): TODO: Add description
+  - **impact** (string): TODO: Add description
+  - **knowledge** (boolean): TODO: Add description
+  - **location** (string): TODO: Add description
+  - **made_sla** (boolean): TODO: Add description
+  - **opened_at** (string): TODO: Add description
+  - **opened_by** (object): TODO: Add description
+    - **link** (string): TODO: Add description
+    - **value** (string): TODO: Add description
+  - **order** (string): TODO: Add description
+  - **parent** (string): TODO: Add description
+  - **parent_interaction** (string): TODO: Add description
+  - **price** (string): TODO: Add description
+  - **priority** (string): TODO: Add description
+  - **reassignment_count** (string): TODO: Add description
+  - **request_state** (string): TODO: Add description
+  - **requested_date** (string): TODO: Add description
+  - **requested_for** (string): TODO: Add description
+  - **route_reason** (string): TODO: Add description
+  - **service_offering** (string): TODO: Add description
+  - **short_description** (string): TODO: Add description
+  - **skills** (string): TODO: Add description
+  - **sla_due** (string): TODO: Add description
+  - **special_instructions** (string): TODO: Add description
+  - **stage** (string): TODO: Add description
+  - **state** (string): TODO: Add description
+  - **time_worked** (string): TODO: Add description
+  - **universal_request** (string): TODO: Add description
+  - **upon_approval** (string): TODO: Add description
+  - **upon_reject** (string): TODO: Add description
+  - **urgency** (string): TODO: Add description
+  - **user_input** (string): TODO: Add description
+  - **watch_list** (string): TODO: Add description
+  - **work_end** (string): TODO: Add description
+  - **work_notes** (string): TODO: Add description
+  - **work_notes_list** (string): TODO: Add description
+  - **work_start** (string): TODO: Add description
+- **parameters** (object): TODO: Add description
   - **sysparm_display_value** (boolean): Determines the type of data returned, either the actual values from the database or the display values of the fields.
   - **sysparm_input_display_value** (boolean) – Required: Flag that indicates whether to set field values using the display value or the actual value.
 ## Output
@@ -214,119 +214,119 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
-  - **result** (object)
-    - **parent** (string)
-    - **delivery_address** (string)
-    - **made_sla** (string)
-    - **watch_list** (string)
-    - **upon_reject** (string)
-    - **requested_for** (object)
-      - **link** (string)
-      - **value** (string)
-    - **sys_updated_on** (string)
-    - **task_effective_number** (string)
-    - **approval_history** (string)
-    - **number** (string)
-    - **sys_updated_by** (string)
-    - **opened_by** (object)
-      - **link** (string)
-      - **value** (string)
-    - **user_input** (string)
-    - **price** (string)
-    - **sys_created_on** (string)
-    - **sys_domain** (object)
-      - **link** (string)
-      - **value** (string)
-    - **state** (string)
-    - **route_reason** (string)
-    - **sys_created_by** (string)
-    - **knowledge** (string)
-    - **order** (string)
-    - **calendar_stc** (string)
-    - **special_instructions** (string)
-    - **closed_at** (string)
-    - **cmdb_ci** (object)
-      - **link** (string)
-      - **value** (string)
-    - **delivery_plan** (string)
-    - **contract** (string)
-    - **impact** (string)
-    - **active** (string)
-    - **work_notes_list** (string)
-    - **business_service** (string)
-    - **priority** (string)
-    - **sys_domain_path** (string)
-    - **time_worked** (string)
-    - **expected_start** (string)
-    - **opened_at** (string)
-    - **business_duration** (string)
-    - **group_list** (string)
-    - **work_end** (string)
-    - **approval_set** (string)
-    - **work_notes** (string)
-    - **universal_request** (string)
-    - **short_description** (string)
-    - **correlation_display** (string)
-    - **delivery_task** (string)
-    - **work_start** (string)
-    - **assignment_group** (string)
-    - **parent_interaction** (object)
-      - **link** (string)
-      - **value** (string)
-    - **additional_assignee_list** (string)
-    - **description** (string)
-    - **calendar_duration** (string)
-    - **close_notes** (string)
-    - **service_offering** (object)
-      - **link** (string)
-      - **value** (string)
-    - **sys_class_name** (string)
-    - **closed_by** (object)
-      - **link** (string)
-      - **value** (string)
-    - **follow_up** (string)
-    - **sys_id** (string)
-    - **contact_type** (string)
-    - **urgency** (string)
-    - **requested_date** (string)
-    - **company** (string)
-    - **reassignment_count** (string)
-    - **activity_due** (string)
-    - **assigned_to** (string)
-    - **comments** (string)
-    - **approval** (string)
-    - **sla_due** (string)
-    - **comments_and_work_notes** (string)
-    - **due_date** (string)
-    - **sys_mod_count** (string)
-    - **sys_tags** (string)
-    - **request_state** (string)
-    - **stage** (string)
-    - **escalation** (string)
-    - **upon_approval** (string)
-    - **correlation_id** (string)
-    - **location** (string)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
+  - **result** (object): TODO: Add description
+    - **parent** (string): TODO: Add description
+    - **delivery_address** (string): TODO: Add description
+    - **made_sla** (string): TODO: Add description
+    - **watch_list** (string): TODO: Add description
+    - **upon_reject** (string): TODO: Add description
+    - **requested_for** (object): TODO: Add description
+      - **link** (string): TODO: Add description
+      - **value** (string): TODO: Add description
+    - **sys_updated_on** (string): TODO: Add description
+    - **task_effective_number** (string): TODO: Add description
+    - **approval_history** (string): TODO: Add description
+    - **number** (string): TODO: Add description
+    - **sys_updated_by** (string): TODO: Add description
+    - **opened_by** (object): TODO: Add description
+      - **link** (string): TODO: Add description
+      - **value** (string): TODO: Add description
+    - **user_input** (string): TODO: Add description
+    - **price** (string): TODO: Add description
+    - **sys_created_on** (string): TODO: Add description
+    - **sys_domain** (object): TODO: Add description
+      - **link** (string): TODO: Add description
+      - **value** (string): TODO: Add description
+    - **state** (string): TODO: Add description
+    - **route_reason** (string): TODO: Add description
+    - **sys_created_by** (string): TODO: Add description
+    - **knowledge** (string): TODO: Add description
+    - **order** (string): TODO: Add description
+    - **calendar_stc** (string): TODO: Add description
+    - **special_instructions** (string): TODO: Add description
+    - **closed_at** (string): TODO: Add description
+    - **cmdb_ci** (object): TODO: Add description
+      - **link** (string): TODO: Add description
+      - **value** (string): TODO: Add description
+    - **delivery_plan** (string): TODO: Add description
+    - **contract** (string): TODO: Add description
+    - **impact** (string): TODO: Add description
+    - **active** (string): TODO: Add description
+    - **work_notes_list** (string): TODO: Add description
+    - **business_service** (string): TODO: Add description
+    - **priority** (string): TODO: Add description
+    - **sys_domain_path** (string): TODO: Add description
+    - **time_worked** (string): TODO: Add description
+    - **expected_start** (string): TODO: Add description
+    - **opened_at** (string): TODO: Add description
+    - **business_duration** (string): TODO: Add description
+    - **group_list** (string): TODO: Add description
+    - **work_end** (string): TODO: Add description
+    - **approval_set** (string): TODO: Add description
+    - **work_notes** (string): TODO: Add description
+    - **universal_request** (string): TODO: Add description
+    - **short_description** (string): TODO: Add description
+    - **correlation_display** (string): TODO: Add description
+    - **delivery_task** (string): TODO: Add description
+    - **work_start** (string): TODO: Add description
+    - **assignment_group** (string): TODO: Add description
+    - **parent_interaction** (object): TODO: Add description
+      - **link** (string): TODO: Add description
+      - **value** (string): TODO: Add description
+    - **additional_assignee_list** (string): TODO: Add description
+    - **description** (string): TODO: Add description
+    - **calendar_duration** (string): TODO: Add description
+    - **close_notes** (string): TODO: Add description
+    - **service_offering** (object): TODO: Add description
+      - **link** (string): TODO: Add description
+      - **value** (string): TODO: Add description
+    - **sys_class_name** (string): TODO: Add description
+    - **closed_by** (object): TODO: Add description
+      - **link** (string): TODO: Add description
+      - **value** (string): TODO: Add description
+    - **follow_up** (string): TODO: Add description
+    - **sys_id** (string): TODO: Add description
+    - **contact_type** (string): TODO: Add description
+    - **urgency** (string): TODO: Add description
+    - **requested_date** (string): TODO: Add description
+    - **company** (string): TODO: Add description
+    - **reassignment_count** (string): TODO: Add description
+    - **activity_due** (string): TODO: Add description
+    - **assigned_to** (string): TODO: Add description
+    - **comments** (string): TODO: Add description
+    - **approval** (string): TODO: Add description
+    - **sla_due** (string): TODO: Add description
+    - **comments_and_work_notes** (string): TODO: Add description
+    - **due_date** (string): TODO: Add description
+    - **sys_mod_count** (string): TODO: Add description
+    - **sys_tags** (string): TODO: Add description
+    - **request_state** (string): TODO: Add description
+    - **stage** (string): TODO: Add description
+    - **escalation** (string): TODO: Add description
+    - **upon_approval** (string): TODO: Add description
+    - **correlation_id** (string): TODO: Add description
+    - **location** (string): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | - |
-| Content-Encoding | string | - |
-| X-Is-Logged-In | string | - |
-| X-Transaction-ID | string | - |
-| Location | string | - |
-| X-Content-Type-Options | string | - |
-| Pragma | string | - |
-| Cache-Control | string | - |
-| Expires | string | - |
-| Content-Type | string | - |
-| Transfer-Encoding | string | - |
-| Date | string | - |
-| Keep-Alive | string | - |
-| Connection | string | - |
-| Server | string | - |
-| Set-Cookie | string | - |
-| Strict-Transport-Security | string | - |
+| Server-Timing | string | TODO: Add description |
+| Content-Encoding | string | TODO: Add description |
+| X-Is-Logged-In | string | TODO: Add description |
+| X-Transaction-ID | string | TODO: Add description |
+| Location | string | TODO: Add description |
+| X-Content-Type-Options | string | TODO: Add description |
+| Pragma | string | TODO: Add description |
+| Cache-Control | string | TODO: Add description |
+| Expires | string | TODO: Add description |
+| Content-Type | string | TODO: Add description |
+| Transfer-Encoding | string | TODO: Add description |
+| Date | string | TODO: Add description |
+| Keep-Alive | string | TODO: Add description |
+| Connection | string | TODO: Add description |
+| Server | string | TODO: Add description |
+| Set-Cookie | string | TODO: Add description |
+| Strict-Transport-Security | string | TODO: Add description |

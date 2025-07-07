@@ -8,8 +8,8 @@
 - **Method:** `PUT`
 ## Inputs
 
-- **path_parameters** (object) – Required
-  - **custom_endpoint** (string) – Required
+- **path_parameters** (object) – Required: TODO: Add description
+  - **custom_endpoint** (string) – Required: TODO: Add description
 - **parameters** (object): URL Query Parameters
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body

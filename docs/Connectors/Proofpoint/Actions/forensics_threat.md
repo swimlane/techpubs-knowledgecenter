@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object) – Required
-  - **threatId** (string) – Required
-  - **includeCampaignForensics** (boolean)
+- **parameters** (object) – Required: TODO: Add description
+  - **threatId** (string) – Required: TODO: Add description
+  - **includeCampaignForensics** (boolean): TODO: Add description
 ## Output
 
 ### Example
@@ -1792,37 +1792,37 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
-  - **generated** (string)
-  - **reports** (array)
-    - **scope** (string)
-    - **id** (string)
-    - **name** (string)
-    - **threatStatus** (string)
-    - **forensics** (array)
-      - **type** (string)
-      - **display** (string)
-      - **engine** (string)
-      - **malicious** (boolean)
-      - **time** (number)
-      - **what** (object)
-        - **url** (string)
-      - **platforms** (array)
-        - **name** (string)
-        - **os** (string)
-        - **version** (string)
-      - **note** (string)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
+  - **generated** (string): TODO: Add description
+  - **reports** (array): TODO: Add description
+    - **scope** (string): TODO: Add description
+    - **id** (string): TODO: Add description
+    - **name** (string): TODO: Add description
+    - **threatStatus** (string): TODO: Add description
+    - **forensics** (array): TODO: Add description
+      - **type** (string): TODO: Add description
+      - **display** (string): TODO: Add description
+      - **engine** (string): TODO: Add description
+      - **malicious** (boolean): TODO: Add description
+      - **time** (number): TODO: Add description
+      - **what** (object): TODO: Add description
+        - **url** (string): TODO: Add description
+      - **platforms** (array): TODO: Add description
+        - **name** (string): TODO: Add description
+        - **os** (string): TODO: Add description
+        - **version** (string): TODO: Add description
+      - **note** (string): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | - |
-| Content-Type | string | - |
-| Transfer-Encoding | string | - |
-| Connection | string | - |
-| X-Content-Type-Options | string | - |
-| Vary | string | - |
-| Content-Encoding | string | - |
-| Strict-Transport-Security | string | - |
+| Date | string | TODO: Add description |
+| Content-Type | string | TODO: Add description |
+| Transfer-Encoding | string | TODO: Add description |
+| Connection | string | TODO: Add description |
+| X-Content-Type-Options | string | TODO: Add description |
+| Vary | string | TODO: Add description |
+| Content-Encoding | string | TODO: Add description |
+| Strict-Transport-Security | string | TODO: Add description |

@@ -8,7 +8,7 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object)
+- **parameters** (object): TODO: Add description
   - **sysparm_query** (string) – Required: Encoded query. Queries for the Attachment API are relative to the Attachments [sys_attachment] table.
 ## Output
 
@@ -93,28 +93,28 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
-  - **result** (array)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
+  - **result** (array): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | - |
-| Content-Encoding | string | - |
-| X-Is-Logged-In | string | - |
-| X-Transaction-ID | string | - |
-| X-Total-Count | string | - |
-| X-Content-Type-Options | string | - |
-| Pragma | string | - |
-| Cache-Control | string | - |
-| Expires | string | - |
-| Content-Type | string | - |
-| Transfer-Encoding | string | - |
-| Date | string | - |
-| Keep-Alive | string | - |
-| Connection | string | - |
-| Server | string | - |
-| Set-Cookie | string | - |
-| Strict-Transport-Security | string | - |
+| Server-Timing | string | TODO: Add description |
+| Content-Encoding | string | TODO: Add description |
+| X-Is-Logged-In | string | TODO: Add description |
+| X-Transaction-ID | string | TODO: Add description |
+| X-Total-Count | string | TODO: Add description |
+| X-Content-Type-Options | string | TODO: Add description |
+| Pragma | string | TODO: Add description |
+| Cache-Control | string | TODO: Add description |
+| Expires | string | TODO: Add description |
+| Content-Type | string | TODO: Add description |
+| Transfer-Encoding | string | TODO: Add description |
+| Date | string | TODO: Add description |
+| Keep-Alive | string | TODO: Add description |
+| Connection | string | TODO: Add description |
+| Server | string | TODO: Add description |
+| Set-Cookie | string | TODO: Add description |
+| Strict-Transport-Security | string | TODO: Add description |

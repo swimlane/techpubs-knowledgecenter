@@ -8,8 +8,8 @@
 - **Method:** `POST`
 ## Inputs
 
-- **json_body** (object) – Required
-  - **urls** (array) – Required
+- **json_body** (object) – Required: TODO: Add description
+  - **urls** (array) – Required: TODO: Add description
 ## Output
 
 ### Example
@@ -46,21 +46,21 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
-  - **urls** (array)
-    - **encodedUrl** (string)
-    - **success** (boolean)
-    - **decodedUrl** (string)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description
+  - **urls** (array): TODO: Add description
+    - **encodedUrl** (string): TODO: Add description
+    - **success** (boolean): TODO: Add description
+    - **decodedUrl** (string): TODO: Add description
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | - |
-| Content-Type | string | - |
-| Content-Length | string | - |
-| Connection | string | - |
-| Vary | string | - |
-| X-Content-Type-Options | string | - |
-| Strict-Transport-Security | string | - |
+| Date | string | TODO: Add description |
+| Content-Type | string | TODO: Add description |
+| Content-Length | string | TODO: Add description |
+| Connection | string | TODO: Add description |
+| Vary | string | TODO: Add description |
+| X-Content-Type-Options | string | TODO: Add description |
+| Strict-Transport-Security | string | TODO: Add description |

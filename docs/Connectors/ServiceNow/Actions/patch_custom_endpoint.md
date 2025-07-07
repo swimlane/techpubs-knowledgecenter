@@ -8,8 +8,8 @@
 - **Method:** `PATCH`
 ## Inputs
 
-- **path_parameters** (object) – Required
-  - **custom_endpoint** (string) – Required
+- **path_parameters** (object) – Required: TODO: Add description
+  - **custom_endpoint** (string) – Required: TODO: Add description
 - **parameters** (object): URL Query Parameters
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body
@@ -29,6 +29,6 @@
 ```
 ### Output Parameters
 
-- **status_code** (number)
-- **reason** (string)
-- **json_body** (object)
+- **status_code** (number): TODO: Add description
+- **reason** (string): TODO: Add description
+- **json_body** (object): TODO: Add description

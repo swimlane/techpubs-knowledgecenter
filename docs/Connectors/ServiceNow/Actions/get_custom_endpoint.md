@@ -8,11 +8,11 @@
 - **Method:** `GET`
 ## Inputs
 
-- **path_parameters** (object) – Required
-  - **custom_endpoint** (string) – Required
-- **parameters** (object)
-  - **display_value** (boolean)
-  - **sysparm_limit** (number)
+- **path_parameters** (object) – Required: TODO: Add description
+  - **custom_endpoint** (string) – Required: TODO: Add description
+- **parameters** (object): TODO: Add description
+  - **display_value** (boolean): TODO: Add description
+  - **sysparm_limit** (number): TODO: Add description
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body
 ## Output
