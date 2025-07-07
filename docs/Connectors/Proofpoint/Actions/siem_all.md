@@ -8,9 +8,13 @@
 - **Method:** `GET`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| parameters | object | Each request must include one of the three following Query Parameters — Since Seconds, Since Time, or Interval - to define the desired time range for the data. | Yes |
+- **parameters** (object) – Required: Each request must include one of the three following Query Parameters — Since Seconds, Since Time, or Interval - to define the desired time range for the data.
+  - **sinceSeconds** (string): An integer representing a time window in seconds from the current API server time. The start of the window is the current API server time, rounded to the nearest minute, less the number of seconds provided. The end of the window is the current API server time rounded to the nearest minute. If JSON output is selected, the end time is included in the returned result.
+  - **sinceTime** (string): A string containing an ISO8601 date. It represents the start of the data retrieval period. The end of the period is determined by current API server time rounded to the nearest minute. If JSON output is selected, the end time is included in the returned result.
+  - **interval** (string): A string containing an ISO8601-formatted interval. If this interval overlaps with previous requests for data, records from the previous request may be duplicated. The minimum interval is thirty seconds. The maximum interval is one hour.
+  - **format** (string): A string specifying the format in which data is returned. If no format is specified, syslog will be used as the default.
+  - **threatType** (string): A string specifying which threat type will be returned in the data. If no value is specified, all threat types are returned.
+  - **threatStatus** (string): A string specifying which threat statuses will be returned in the data. If no value is specified, active and cleared threats are returned.
 ## Output
 
 ### Example
@@ -37,21 +41,17 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| response_text | string |
+- **status_code** (number)
+- **reason** (string)
+- **response_text** (string)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Date | string |
-| Content-Type | string |
-| Content-Length | string |
-| Connection | string |
-| Server-Timing | string |
-| Access-Control-Expose-Headers | string |
-| Vary | string |
-| Content-Encoding | string |
-| Strict-Transport-Security | string |
+- **Date** (string)
+- **Content-Type** (string)
+- **Content-Length** (string)
+- **Connection** (string)
+- **Server-Timing** (string)
+- **Access-Control-Expose-Headers** (string)
+- **Vary** (string)
+- **Content-Encoding** (string)
+- **Strict-Transport-Security** (string)

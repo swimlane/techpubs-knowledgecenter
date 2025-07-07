@@ -8,9 +8,13 @@
 - **Method:** `GET`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| parameters | object | One of the following three query parameters describing the desired time range for the data must be supplied with each request interval, sinceSeconds, sinceTime. | Yes |
+- **parameters** (object) – Required: One of the following three query parameters describing the desired time range for the data must be supplied with each request interval, sinceSeconds, sinceTime.
+  - **interval** (string)
+  - **sinceSeconds** (number)
+  - **sinceTime** (string)
+  - **format** (string)
+  - **threatType** (string)
+  - **threatStatus** (string)
 ## Output
 
 ### Example
@@ -35,19 +39,15 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| response_text | string |
+- **status_code** (number)
+- **reason** (string)
+- **response_text** (string)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Date | string |
-| Content-Type | string |
-| Transfer-Encoding | string |
-| Connection | string |
-| Vary | string |
-| Content-Encoding | string |
-| Strict-Transport-Security | string |
+- **Date** (string)
+- **Content-Type** (string)
+- **Transfer-Encoding** (string)
+- **Connection** (string)
+- **Vary** (string)
+- **Content-Encoding** (string)
+- **Strict-Transport-Security** (string)

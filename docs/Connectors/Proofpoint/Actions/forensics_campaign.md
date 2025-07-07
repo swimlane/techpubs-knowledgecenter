@@ -8,9 +8,8 @@
 - **Method:** `GET`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| parameters | object | Yes |
+- **parameters** (object) – Required
+  - **campaignId** (string) – Required
 ## Output
 
 ### Example
@@ -46,20 +45,24 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **generated** (string)
+  - **reports** (array)
+    - **scope** (string)
+    - **id** (string)
+    - **name** (string)
+    - **forensics** (array)
+      - **file_name** (string) – Required
+      - **file** (string) – Required
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Date | string |
-| Content-Type | string |
-| Content-Length | string |
-| Connection | string |
-| X-Content-Type-Options | string |
-| Vary | string |
-| Content-Encoding | string |
-| Strict-Transport-Security | string |
+- **Date** (string)
+- **Content-Type** (string)
+- **Content-Length** (string)
+- **Connection** (string)
+- **X-Content-Type-Options** (string)
+- **Vary** (string)
+- **Content-Encoding** (string)
+- **Strict-Transport-Security** (string)

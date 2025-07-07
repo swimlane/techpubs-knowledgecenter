@@ -8,9 +8,8 @@
 - **Method:** `GET`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| path_parameters | object | Yes |
+- **path_parameters** (object) – Required
+  - **sys_id** (string) – Required: Sys_id of the attachment record from which to return binary data.
 ## Output
 
 ### Example
@@ -44,28 +43,24 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| file | array |
+- **status_code** (number)
+- **reason** (string)
+- **file** (array)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Server-Timing | string |
-| Content-Encoding | string |
-| X-Is-Logged-In | string |
-| X-Transaction-ID | string |
-| Content-Disposition | string |
-| X-Content-Type-Options | string |
-| x-attachment-metadata | string |
-| x-edge-enc-proxy-static | string |
-| Content-Type | string |
-| Transfer-Encoding | string |
-| Date | string |
-| Keep-Alive | string |
-| Connection | string |
-| Server | string |
-| Set-Cookie | string |
-| Strict-Transport-Security | string |
+- **Server-Timing** (string)
+- **Content-Encoding** (string)
+- **X-Is-Logged-In** (string)
+- **X-Transaction-ID** (string)
+- **Content-Disposition** (string)
+- **X-Content-Type-Options** (string)
+- **x-attachment-metadata** (string)
+- **x-edge-enc-proxy-static** (string)
+- **Content-Type** (string)
+- **Transfer-Encoding** (string)
+- **Date** (string)
+- **Keep-Alive** (string)
+- **Connection** (string)
+- **Server** (string)
+- **Set-Cookie** (string)
+- **Strict-Transport-Security** (string)

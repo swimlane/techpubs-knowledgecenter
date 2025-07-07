@@ -8,12 +8,11 @@
 - **Method:** `PUT`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| path_parameters | object |  | Yes |
-| parameters | object | URL Query Parameters | No |
-| json_body | object | JSON Body | No |
-| data_body | object | Data Body | No |
+- **path_parameters** (object) – Required
+  - **custom_endpoint** (string) – Required
+- **parameters** (object): URL Query Parameters
+- **json_body** (object): JSON Body
+- **data_body** (object): Data Body
 ## Output
 
 ### Example

@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| path_parameters | object | Yes |
+- **path_parameters** (object) – Required
+  - **mid_extension** (string) – Required
+  - **end_extension** (string) – Required
 ## Output
 
 ### Example
@@ -31,15 +31,11 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| content-length | string |
-| content-type | string |
-| Date | string |
+- **content-length** (string)
+- **content-type** (string)
+- **Date** (string)

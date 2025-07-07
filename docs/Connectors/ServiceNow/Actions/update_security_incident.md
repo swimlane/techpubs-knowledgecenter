@@ -8,10 +8,15 @@
 - **Method:** `PATCH`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| path_parameters | object | Yes |
-| json_body | object | No |
+- **path_parameters** (object) – Required
+  - **security_incident** (string) – Required: Name of the Security Incident Table
+  - **sys_id** (string) – Required: ID of the security incident to update.
+- **json_body** (object)
+  - **sysparm_display_value** (string): Determines the type of data returned, either the actual values from the database or the display values of the fields.
+  - **sysparm_fields** (string): Comma-separated list of fields to return in the response.
+  - **sysparm_input_display_value** (boolean): Flag that indicates whether to set field values using the display value or the actual value.
+  - **sysparm_query_no_domain** (boolean): Flag that indicates whether to restrict the record search to only the domains for which the logged in user is configured.
+  - **sysparm_view** (string): If you also specify the sysparm_fields parameter, it takes precedent.
 ## Output
 
 ### Example
@@ -38,21 +43,17 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| response_text | string |
+- **status_code** (number)
+- **reason** (string)
+- **response_text** (string)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Set-Cookie | string |
-| Server-Timing | string |
-| Content-Security-Policy | string |
-| Content-Length | string |
-| Date | string |
-| Keep-Alive | string |
-| Connection | string |
-| Server | string |
-| Strict-Transport-Security | string |
+- **Set-Cookie** (string)
+- **Server-Timing** (string)
+- **Content-Security-Policy** (string)
+- **Content-Length** (string)
+- **Date** (string)
+- **Keep-Alive** (string)
+- **Connection** (string)
+- **Server** (string)
+- **Strict-Transport-Security** (string)

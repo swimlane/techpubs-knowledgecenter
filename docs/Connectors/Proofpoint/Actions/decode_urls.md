@@ -8,9 +8,8 @@
 - **Method:** `POST`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| json_body | object | Yes |
+- **json_body** (object) – Required
+  - **urls** (array) – Required
 ## Output
 
 ### Example
@@ -47,19 +46,19 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **urls** (array)
+    - **encodedUrl** (string)
+    - **success** (boolean)
+    - **decodedUrl** (string)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Date | string |
-| Content-Type | string |
-| Content-Length | string |
-| Connection | string |
-| Vary | string |
-| X-Content-Type-Options | string |
-| Strict-Transport-Security | string |
+- **Date** (string)
+- **Content-Type** (string)
+- **Content-Length** (string)
+- **Connection** (string)
+- **Vary** (string)
+- **X-Content-Type-Options** (string)
+- **Strict-Transport-Security** (string)

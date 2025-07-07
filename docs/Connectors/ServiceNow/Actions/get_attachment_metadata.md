@@ -8,9 +8,8 @@
 - **Method:** `GET`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| parameters | object | No |
+- **parameters** (object)
+  - **sysparm_query** (string) – Required: Encoded query. Queries for the Attachment API are relative to the Attachments [sys_attachment] table.
 ## Output
 
 ### Example
@@ -94,29 +93,26 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **result** (array)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Server-Timing | string |
-| Content-Encoding | string |
-| X-Is-Logged-In | string |
-| X-Transaction-ID | string |
-| X-Total-Count | string |
-| X-Content-Type-Options | string |
-| Pragma | string |
-| Cache-Control | string |
-| Expires | string |
-| Content-Type | string |
-| Transfer-Encoding | string |
-| Date | string |
-| Keep-Alive | string |
-| Connection | string |
-| Server | string |
-| Set-Cookie | string |
-| Strict-Transport-Security | string |
+- **Server-Timing** (string)
+- **Content-Encoding** (string)
+- **X-Is-Logged-In** (string)
+- **X-Transaction-ID** (string)
+- **X-Total-Count** (string)
+- **X-Content-Type-Options** (string)
+- **Pragma** (string)
+- **Cache-Control** (string)
+- **Expires** (string)
+- **Content-Type** (string)
+- **Transfer-Encoding** (string)
+- **Date** (string)
+- **Keep-Alive** (string)
+- **Connection** (string)
+- **Server** (string)
+- **Set-Cookie** (string)
+- **Strict-Transport-Security** (string)

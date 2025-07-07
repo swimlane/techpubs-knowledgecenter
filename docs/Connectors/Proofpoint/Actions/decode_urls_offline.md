@@ -4,9 +4,8 @@
 
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| json_body | object | Yes |
+- **json_body** (object) – Required
+  - **url** (string)
 ## Output
 
 ### Example
@@ -29,9 +28,8 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| headers | object |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **headers** (object)
+- **json_body** (object)
+  - **decoded_urls** (array)

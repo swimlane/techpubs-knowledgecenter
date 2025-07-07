@@ -8,11 +8,12 @@
 - **Method:** `POST`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| path_parameters | object |  | Yes |
-| json_body | object |  | Yes |
-| parameters | object | URL Query Parameters | No |
+- **path_parameters** (object) – Required
+  - **mid_extension** (string) – Required
+  - **end_extension** (string) – Required
+- **json_body** (object) – Required
+  - **comments** (string)
+- **parameters** (object): URL Query Parameters
 ## Output
 
 ### Example
@@ -33,15 +34,11 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| content-length | string |
-| content-type | string |
-| Date | string |
+- **content-length** (string)
+- **content-type** (string)
+- **Date** (string)

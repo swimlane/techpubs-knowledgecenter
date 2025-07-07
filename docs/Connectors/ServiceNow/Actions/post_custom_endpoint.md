@@ -8,12 +8,13 @@
 - **Method:** `POST`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| path_parameters | object |  | Yes |
-| parameters | object |  | No |
-| json_body | object | JSON Body | No |
-| data_body | object | Data Body | No |
+- **path_parameters** (object) – Required
+  - **custom_endpoint** (string) – Required
+- **parameters** (object)
+  - **sysparm_display_value** (boolean)
+  - **sysparm_input_display_value** (boolean)
+- **json_body** (object): JSON Body
+- **data_body** (object): Data Body
 ## Output
 
 ### Example

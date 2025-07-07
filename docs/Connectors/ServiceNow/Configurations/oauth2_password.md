@@ -4,13 +4,11 @@
 
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| url | string | A URL to the target host. | Yes |
-| client_id | string | The client ID | Yes |
-| client_secret | string | The client secret. | Yes |
-| scope | array | Permission scopes for this action. | No |
-| verify_ssl | boolean | Verify SSL certificate | No |
-| http_proxy | string | A proxy to route requests through. | No |
-| oauth2_username | string | The username for authentication | Yes |
-| oauth2_password | string | The password for authentication | Yes |
+- **url** (string) – Required: A URL to the target host.
+- **client_id** (string) – Required: The client ID
+- **client_secret** (string) – Required: The client secret.
+- **scope** (array): Permission scopes for this action.
+- **verify_ssl** (boolean): Verify SSL certificate
+- **http_proxy** (string): A proxy to route requests through.
+- **oauth2_username** (string) – Required: The username for authentication
+- **oauth2_password** (string) – Required: The password for authentication

@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| parameters | object | Yes |
+- **parameters** (object) – Required
+  - **threatId** (string) – Required
+  - **includeCampaignForensics** (boolean)
 ## Output
 
 ### Example
@@ -1792,20 +1792,35 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **generated** (string)
+  - **reports** (array)
+    - **scope** (string)
+    - **id** (string)
+    - **name** (string)
+    - **threatStatus** (string)
+    - **forensics** (array)
+      - **type** (string)
+      - **display** (string)
+      - **engine** (string)
+      - **malicious** (boolean)
+      - **time** (number)
+      - **what** (object)
+        - **url** (string)
+      - **platforms** (array)
+        - **name** (string)
+        - **os** (string)
+        - **version** (string)
+      - **note** (string)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Date | string |
-| Content-Type | string |
-| Transfer-Encoding | string |
-| Connection | string |
-| X-Content-Type-Options | string |
-| Vary | string |
-| Content-Encoding | string |
-| Strict-Transport-Security | string |
+- **Date** (string)
+- **Content-Type** (string)
+- **Transfer-Encoding** (string)
+- **Connection** (string)
+- **X-Content-Type-Options** (string)
+- **Vary** (string)
+- **Content-Encoding** (string)
+- **Strict-Transport-Security** (string)

@@ -8,11 +8,16 @@
 - **Method:** `POST`
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| attachments | array | File to be uploaded | Yes |
-| parameters | object |  | No |
-| headers | object |  | No |
+- **attachments** (array) – Required: File to be uploaded
+  - **file_name** (string) – Required
+  - **file** (string) – Required
+- **parameters** (object)
+  - **encryption_context** (string): Sys_id of an encryption context record. Specify this parameter to allow only users with the specified encryption context to access the attachment.
+  - **file_name** (string) – Required
+  - **table_name** (string) – Required
+  - **table_sys_id** (string) – Required: Sys_id of the record in the table specified in table_name that you want to attach the file to.
+- **headers** (object)
+  - **Content-Type** (string) – Required
 ## Output
 
 ### Example
@@ -71,29 +76,47 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **result** (object)
+    - **size_bytes** (string)
+    - **file_name** (string)
+    - **sys_mod_count** (string)
+    - **average_image_color** (string)
+    - **image_width** (string)
+    - **sys_updated_on** (string)
+    - **sys_tags** (string)
+    - **table_name** (string)
+    - **sys_id** (string)
+    - **image_height** (string)
+    - **sys_updated_by** (string)
+    - **download_link** (string)
+    - **content_type** (string)
+    - **sys_created_on** (string)
+    - **size_compressed** (string)
+    - **compressed** (string)
+    - **state** (string)
+    - **table_sys_id** (string)
+    - **chunk_size_bytes** (string)
+    - **hash** (string)
+    - **sys_created_by** (string)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Server-Timing | string |
-| Content-Encoding | string |
-| X-Is-Logged-In | string |
-| X-Transaction-ID | string |
-| Location | string |
-| X-Content-Type-Options | string |
-| Pragma | string |
-| Cache-Control | string |
-| Expires | string |
-| Content-Type | string |
-| Transfer-Encoding | string |
-| Date | string |
-| Keep-Alive | string |
-| Connection | string |
-| Server | string |
-| Set-Cookie | string |
-| Strict-Transport-Security | string |
+- **Server-Timing** (string)
+- **Content-Encoding** (string)
+- **X-Is-Logged-In** (string)
+- **X-Transaction-ID** (string)
+- **Location** (string)
+- **X-Content-Type-Options** (string)
+- **Pragma** (string)
+- **Cache-Control** (string)
+- **Expires** (string)
+- **Content-Type** (string)
+- **Transfer-Encoding** (string)
+- **Date** (string)
+- **Keep-Alive** (string)
+- **Connection** (string)
+- **Server** (string)
+- **Set-Cookie** (string)
+- **Strict-Transport-Security** (string)

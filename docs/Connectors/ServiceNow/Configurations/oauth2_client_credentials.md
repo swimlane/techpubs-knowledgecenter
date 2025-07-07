@@ -4,12 +4,10 @@
 
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| url | string | A URL to the target host. | Yes |
-| token_url | string |  | Yes |
-| client_id | string | The client ID | Yes |
-| client_secret | string | The client secret. | Yes |
-| scope | array | Permission scopes for this action. | No |
-| verify_ssl | boolean | Verify SSL certificate | No |
-| http_proxy | string | A proxy to route requests through. | No |
+- **url** (string) – Required: A URL to the target host.
+- **token_url** (string) – Required
+- **client_id** (string) – Required: The client ID
+- **client_secret** (string) – Required: The client secret.
+- **scope** (array): Permission scopes for this action.
+- **verify_ssl** (boolean): Verify SSL certificate
+- **http_proxy** (string): A proxy to route requests through.

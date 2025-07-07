@@ -8,10 +8,18 @@
 - **Method:** `POST`
 ## Inputs
 
-| Name | Type | Required |
-|------|------|----------|
-| parameters | object | No |
-| json_body | object | Yes |
+- **parameters** (object)
+  - **sysparm_display_value** (string): Determines the type of data returned, either the actual values from the database or the display values of the fields.
+  - **sysparm_exclude_reference_link** (boolean): Flag that indicates whether to exclude Table API links for reference fields.
+  - **sysparm_fields** (string): Comma-separated list of fields to return in the response.
+  - **sysparm_input_display_value** (boolean): Flag that indicates whether to set field values using the display value or the actual value.
+  - **sysparm_view** (string): UI view for which to render the data. Determines the fields returned in the response.
+- **json_body** (object) – Required
+  - **short_description** (string)
+  - **assignment_group** (string)
+  - **urgency** (string): Possible values are 1-High, 2-Medium, 3-Low.
+  - **impact** (string): Possible values are 1-High, 2-Medium, 3-Low.
+  - **description** (string)
 ## Output
 
 ### Example
@@ -147,29 +155,122 @@
 ```
 ### Output Parameters
 
-| Name | Type |
-|------|------|
-| status_code | number |
-| reason | string |
-| json_body | object |
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **result** (object)
+    - **parent** (string)
+    - **made_sla** (string)
+    - **caused_by** (string)
+    - **watch_list** (string)
+    - **upon_reject** (string)
+    - **sys_updated_on** (string)
+    - **child_incidents** (string)
+    - **hold_reason** (string)
+    - **origin_table** (string)
+    - **task_effective_number** (string)
+    - **approval_history** (string)
+    - **number** (string)
+    - **resolved_by** (string)
+    - **sys_updated_by** (string)
+    - **opened_by** (object)
+      - **link** (string)
+      - **value** (string)
+    - **user_input** (string)
+    - **sys_created_on** (string)
+    - **sys_domain** (object)
+      - **link** (string)
+      - **value** (string)
+    - **state** (string)
+    - **route_reason** (string)
+    - **sys_created_by** (string)
+    - **knowledge** (string)
+    - **order** (string)
+    - **calendar_stc** (string)
+    - **closed_at** (string)
+    - **cmdb_ci** (string)
+    - **delivery_plan** (string)
+    - **contract** (string)
+    - **impact** (string)
+    - **active** (string)
+    - **work_notes_list** (string)
+    - **business_service** (string)
+    - **business_impact** (string)
+    - **priority** (string)
+    - **sys_domain_path** (string)
+    - **rfc** (string)
+    - **time_worked** (string)
+    - **expected_start** (string)
+    - **opened_at** (string)
+    - **business_duration** (string)
+    - **group_list** (string)
+    - **work_end** (string)
+    - **caller_id** (string)
+    - **reopened_time** (string)
+    - **resolved_at** (string)
+    - **approval_set** (string)
+    - **subcategory** (string)
+    - **work_notes** (string)
+    - **universal_request** (string)
+    - **short_description** (string)
+    - **close_code** (string)
+    - **correlation_display** (string)
+    - **delivery_task** (string)
+    - **work_start** (string)
+    - **assignment_group** (string)
+    - **additional_assignee_list** (string)
+    - **business_stc** (string)
+    - **cause** (string)
+    - **description** (string)
+    - **origin_id** (string)
+    - **calendar_duration** (string)
+    - **close_notes** (string)
+    - **notify** (string)
+    - **service_offering** (string)
+    - **sys_class_name** (string)
+    - **closed_by** (string)
+    - **follow_up** (string)
+    - **parent_incident** (string)
+    - **sys_id** (string)
+    - **contact_type** (string)
+    - **reopened_by** (string)
+    - **incident_state** (string)
+    - **urgency** (string)
+    - **problem_id** (string)
+    - **company** (string)
+    - **reassignment_count** (string)
+    - **activity_due** (string)
+    - **assigned_to** (string)
+    - **severity** (string)
+    - **comments** (string)
+    - **approval** (string)
+    - **sla_due** (string)
+    - **comments_and_work_notes** (string)
+    - **due_date** (string)
+    - **sys_mod_count** (string)
+    - **reopen_count** (string)
+    - **sys_tags** (string)
+    - **escalation** (string)
+    - **upon_approval** (string)
+    - **correlation_id** (string)
+    - **location** (string)
+    - **category** (string)
 ## Response Headers
 
-| Header | Type |
-|--------|------|
-| Set-Cookie | string |
-| Server-Timing | string |
-| Content-Encoding | string |
-| X-Is-Logged-In | string |
-| X-Transaction-ID | string |
-| Location | string |
-| X-Content-Type-Options | string |
-| Pragma | string |
-| Cache-Control | string |
-| Expires | string |
-| Content-Type | string |
-| Transfer-Encoding | string |
-| Date | string |
-| Keep-Alive | string |
-| Connection | string |
-| Server | string |
-| Strict-Transport-Security | string |
+- **Set-Cookie** (string)
+- **Server-Timing** (string)
+- **Content-Encoding** (string)
+- **X-Is-Logged-In** (string)
+- **X-Transaction-ID** (string)
+- **Location** (string)
+- **X-Content-Type-Options** (string)
+- **Pragma** (string)
+- **Cache-Control** (string)
+- **Expires** (string)
+- **Content-Type** (string)
+- **Transfer-Encoding** (string)
+- **Date** (string)
+- **Keep-Alive** (string)
+- **Connection** (string)
+- **Server** (string)
+- **Strict-Transport-Security** (string)

@@ -4,11 +4,9 @@
 
 ## Inputs
 
-| Name | Type | Description | Required |
-|------|------|-------------|----------|
-| url | string | A URL to the target host. | Yes |
-| jsonrpc | string | Json Remote Procedure Call. | Yes |
-| username | string | Username | Yes |
-| password | string | Password | Yes |
-| verify_ssl | boolean | Verify SSL certificate | No |
-| http_proxy | string | A proxy to route requests through. | No |
+- **url** (string) – Required: A URL to the target host.
+- **jsonrpc** (string) – Required: Json Remote Procedure Call.
+- **username** (string) – Required: Username
+- **password** (string) – Required: Password
+- **verify_ssl** (boolean): Verify SSL certificate
+- **http_proxy** (string): A proxy to route requests through.
