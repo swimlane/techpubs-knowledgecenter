@@ -1,0 +1,141 @@
+# Get a Filtered and Paginated List of Objects
+
+**Description**: Retrieve a filtered and paginated list of objects from MISP based on specified criteria in headers and JSON body.
+
+## Endpoint
+
+- **URL:** `/objects/restsearch`
+- **Method:** `POST`
+## Inputs
+
+- **headers** (object) – Required
+  - **Accept** (string) – Required
+  - **Content-Type** (string) – Required
+- **json_body** (object) – Required
+  - **page** (number): Integer or null. (PageSearchFilter) >= 1.
+  - **limit** (number): Integer or null. (LimitSearchFilter) >= 0.
+  - **quickFilter** (string): Search events by matching any tag names, event descriptions, attribute values or attribute comments (SearchAllRestSearchFilter).
+  - **searchall** (string): Search events by matching any tag names, event descriptions, attribute values or attribute comments (SearchAllRestSearchFilter).
+  - **timestamp** (string): Timestamp format is in  ^\d+$.
+  - **object_name** (string): Object name to search for. Less than or equal to 131071 characters.
+  - **object_template_uuid** (string): Object template UUID to search for.
+  - **object_template_version** (string): Object template version to search for. Format is in  ^\d+$.
+  - **eventid** (string): Event ID to search for. Format is in  ^\d+$. Less than or equal to 10 characters.
+  - **eventinfo** (string): Less than or equal to 65535 characters.
+  - **ignore** (boolean): Default is false. If true matches both true and false values for to_ids and published.
+  - **from** (string): Value is string or null. (DateRestSearchFilter) You can use any of the valid time related filters (examples are 7d, timestamps, [14d, 7d] for ranges, etc.).
+  - **to** (string): Value is string or null. (DateRestSearchFilter) You can use any of the valid time related filters (examples are 7d, timestamps, [14d, 7d] for ranges, etc.).
+  - **date** (string): Value is string or null. (DateRestSearchFilter) You can use any of the valid time related filters (examples are 7d, timestamps, [14d, 7d] for ranges, etc.).
+  - **tags** (array): Array of strings (TagRestSearchFilter).
+  - **last** (number): Events published within the last x amount of time, where x can be defined in days, hours, minutes (for example 5d or 12h or 30m), ISO 8601 datetime format or timestamp (LastRestSearchFilter).
+  - **event_timestamp** (string): Event timestamp format is in  ^\d+$. Default is '0'.
+  - **publish_timestamp** (string): Event timestamp format is in  ^\d+$. Default is '0'.
+  - **org** (string): Either Organisation ID or Organisation Name. If Organisation ID is used, Less than or equal to 10 characters. If Organisation Name is used, Less than or equal to 255 characters.
+  - **uuid** (string): UUID to search for.
+  - **value** (string): Value to search for. Less than or equal to 131071 characters (AttributeValue).
+  - **type** (string): Type to search for. Less than or equal to 100 characters (AttributeType).
+  - **category** (string): Category to search for. Less than or equal to 255 characters (AttributeCategory).
+  - **object_relation** (string): Filter by the attribute object relation value (ObjectRelationRestSearchFilter).
+  - **attribute_timestamp** (string): Attribute timestamp format is in  ^\d+$. Default is '0'.
+  - **first_seen** (string): First seen timestamp format is in  ^\d+$|^$. Default is null (NullableMicroTimestamp).
+  - **last_seen** (string): Last seen timestamp format is in  ^\d+$|^$. Default is null (NullableMicroTimestamp).
+  - **comment** (string): Comment to search for. Less than or equal to 65535 characters (CommentRestSearchFilter).
+  - **to_ids** (boolean): To IDs to search for (ToIDSRestSearchFlag).
+  - **published** (boolean): Default is false (PublishedFlag).
+  - **deleted** (boolean): Default is false (SoftDeletedFlag).
+  - **withAttachments** (boolean): Default is false. Extends the response with the base64 representation of the attachment, if there is one (WithAttachmentsRestSearchFilter).
+  - **enforceWarninglist** (boolean): Should the warning list be enforced. Adds blocked field for matching attributes (EnforceWarninglistRestSearchFilter).
+  - **includeAllTags** (boolean): Default is false. Include also exportable tags (IncludeAllTagsRestSearchFilter).
+  - **includeEventUuid** (boolean): Default is false. Include matching eventUuids in the response (IncludeEventUUIDRestSearchFlag).
+  - **include_event_uuid** (boolean): Default is false. Include matching eventUuids in the response (IncludeEventUUIDRestSearchFlag).
+  - **includeEventTags** (boolean): Default is false. Include tags of matching events in the response (IncludeEventTagsRestSearchFlag).
+  - **includeProposals** (boolean): Default is false. Include proposals of matching events in the response (IncludeProposalsRestSearchFlag).
+  - **includeWarninglistHits** (boolean): Value is boolean or null (IncludeWarninglistHitsRestSearchFlag).
+  - **includeContext** (boolean): Value is boolean or null. Adds events context fields in the CSV export (IncludeContextRestSearchFlag).
+  - **includeSightings** (boolean): Value is boolean or null. Adds events context fields in the CSV export (IncludeContextRestSearchFlag).
+  - **includeSightingdb** (boolean): Value is boolean or null. Extend response with Sightings DB results if the module is enabled (IncludeSightingDbRestSearchFlag).
+  - **includeCorrelations** (boolean): Value is boolean or null (IncludeCorrelationsRestSearchFlag).
+  - **includeDecayScore** (boolean): Default is false. Include all enabled decaying score (IncludeDecayScoreRestSearchFlag).
+  - **includeFullModel** (boolean): Default is false. Include all model information of matching events in the response (IncludeFullModelRestSearchFlag).
+  - **allow_proposal_blocking** (boolean): Default is false. Allow blocking attributes from to_ids sensitive exports if a proposal has been made to it to remove the IDS flag (AllowProposalBlockingRestSearchFlag).
+  - **metadata** (boolean): Value is boolean or null. Will only return the metadata of the given query scope, contained data is omitted (MetadataRestSearchFilter).
+  - **attackGalaxy** (string): Value is string or null (AttackGalaxyRestSearchFilter).
+  - **excludeDecayed** (boolean): Default is false. Should the decayed elements by excluded (ExcludeDecayedRestSearchFlag).
+  - **decayingModel** (string): Specify the decaying model from which the decaying score should be calculated (DecayingModelRestSearchFilter).
+  - **modelOverrides** (object)
+    - **lifetime** (number)
+    - **decay_speed** (number)
+    - **threshold** (number)
+    - **default_base_score** (number)
+    - **base_score_config** (object)
+      - **estimative-language:confidence-in-analytic-judgment** (number)
+      - **estimative-language:likelihood-probability** (number)
+      - **phishing:psychological-acceptability** (number)
+      - **phishing:state** (number)
+  - **score** (string): An alias to override on-the-fly the threshold of the decaying model (DecayingModelScoreRestSearchFilter).
+  - **returnFormat** (string): Format of the response payload (ObjectsRestSearchReturnFormat). Value is 'json'.
+## Output
+
+### Output Parameters
+
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **response** (array)
+    - **Object** (object)
+      - **id** (string)
+      - **name** (string)
+      - **meta-category** (string)
+      - **description** (string)
+      - **template_uuid** (string)
+      - **template_version** (string)
+      - **event_id** (string)
+      - **uuid** (string)
+      - **timestamp** (string)
+      - **distribution** (string)
+      - **sharing_group_id** (string)
+      - **comment** (string)
+      - **deleted** (boolean)
+      - **first_seen** (string)
+      - **last_seen** (string)
+      - **Attribute** (array)
+        - **id** (string)
+        - **event_id** (string)
+        - **object_id** (string)
+        - **object_relation** (string)
+        - **category** (string)
+        - **type** (string)
+        - **value** (string)
+        - **to_ids** (boolean)
+        - **uuid** (string)
+        - **timestamp** (string)
+        - **distribution** (string)
+        - **sharing_group_id** (string)
+        - **comment** (string)
+        - **deleted** (boolean)
+        - **disable_correlation** (boolean)
+        - **first_seen** (string)
+        - **last_seen** (string)
+        - **Tag** (array)
+          - **id** (string)
+          - **name** (string)
+          - **colour** (string)
+          - **exportable** (boolean)
+          - **org_id** (string)
+          - **user_id** (string)
+          - **hide_tag** (boolean)
+          - **numerical_value** (string)
+          - **is_galaxy** (boolean)
+          - **is_custom_galaxy** (boolean)
+          - **inherited** (number)
+        - **Galaxy** (array)
+          - **id** (string)
+          - **uuid** (string)
+          - **name** (string)
+          - **type** (string)
+          - **description** (string)
+          - **version** (string)
+          - **icon** (string)
+          - **namespace** (string)
+          - **kill_chain_order** (object)
+            - **fraud-tactics** (array)
