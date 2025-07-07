@@ -58,13 +58,13 @@
       - **file** (string) – Required
 ## Response Headers
 
-| Header | Type | Description |
-|--------|------|-------------|
-| Date | string |  |
-| Content-Type | string |  |
-| Content-Length | string |  |
-| Connection | string |  |
-| X-Content-Type-Options | string |  |
-| Vary | string |  |
-| Content-Encoding | string |  |
-| Strict-Transport-Security | string |  |
+| Header | Type |
+|--------|------|
+| Date | string |
+| Content-Type | string |
+| Content-Length | string |
+| Connection | string |
+| X-Content-Type-Options | string |
+| Vary | string |
+| Content-Encoding | string |
+| Strict-Transport-Security | string |

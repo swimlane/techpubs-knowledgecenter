@@ -48,8 +48,8 @@
 - **json_body** (object)
 ## Response Headers
 
-| Header | Type | Description |
-|--------|------|-------------|
-| content-length | string |  |
-| content-type | string |  |
-| Date | string |  |
+| Header | Type |
+|--------|------|
+| content-length | string |
+| content-type | string |
+| Date | string |
