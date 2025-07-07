@@ -8,10 +8,10 @@
 - **Method:** `PATCH`
 ## Inputs
 
-- **path_parameters** (object) – Required: Structured object with nested properties.
+- **path_parameters** (object) – Required
   - **security_incident** (string) – Required: Name of the Security Incident Table
   - **sys_id** (string) – Required: ID of the security incident to update.
-- **json_body** (object): Structured object with nested properties.
+- **json_body** (object)
   - **sysparm_display_value** (string): Determines the type of data returned, either the actual values from the database or the display values of the fields.
   - **sysparm_fields** (string): Comma-separated list of fields to return in the response.
   - **sysparm_input_display_value** (boolean): Flag that indicates whether to set field values using the display value or the actual value.
@@ -43,19 +43,19 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **response_text** (string): Text string.
+- **status_code** (number)
+- **reason** (string)
+- **response_text** (string)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Set-Cookie | string | Text string. |
-| Server-Timing | string | Text string. |
-| Content-Security-Policy | string | Text string. |
-| Content-Length | string | Text string. |
-| Date | string | Timestamp in ISO 8601 format. |
-| Keep-Alive | string | Text string. |
-| Connection | string | Text string. |
-| Server | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Set-Cookie | string |  |
+| Server-Timing | string |  |
+| Content-Security-Policy | string |  |
+| Content-Length | string |  |
+| Date | string |  |
+| Keep-Alive | string |  |
+| Connection | string |  |
+| Server | string |  |
+| Strict-Transport-Security | string |  |

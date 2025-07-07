@@ -8,11 +8,11 @@
 - **Method:** `POST`
 ## Inputs
 
-- **path_parameters** (object) – Required: Structured object with nested properties.
-  - **mid_extension** (string) – Required: Unique identifier.
-  - **end_extension** (string) – Required: Text string.
-- **json_body** (object) – Required: Structured object with nested properties.
-  - **comments** (string): Text string.
+- **path_parameters** (object) – Required
+  - **mid_extension** (string) – Required
+  - **end_extension** (string) – Required
+- **json_body** (object) – Required
+  - **comments** (string)
 - **parameters** (object): URL Query Parameters
 ## Output
 
@@ -34,13 +34,13 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| content-length | string | Text string. |
-| content-type | string | Type of the resource or value. |
-| Date | string | Timestamp in ISO 8601 format. |
+| content-length | string |  |
+| content-type | string |  |
+| Date | string |  |

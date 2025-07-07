@@ -8,8 +8,8 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object) – Required: Structured object with nested properties.
-  - **campaignId** (string) – Required: Unique identifier.
+- **parameters** (object) – Required
+  - **campaignId** (string) – Required
 ## Output
 
 ### Example
@@ -45,26 +45,26 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
-  - **generated** (string): Text string.
-  - **reports** (array): List of items.
-    - **scope** (string): Text string.
-    - **id** (string): Unique identifier.
-    - **name** (string): Name or label.
-    - **forensics** (array): List of items.
-      - **file_name** (string) – Required: Name or label.
-      - **file** (string) – Required: Text string.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **generated** (string)
+  - **reports** (array)
+    - **scope** (string)
+    - **id** (string)
+    - **name** (string)
+    - **forensics** (array)
+      - **file_name** (string) – Required
+      - **file** (string) – Required
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Timestamp in ISO 8601 format. |
-| Content-Type | string | Type of the resource or value. |
-| Content-Length | string | Text string. |
-| Connection | string | Text string. |
-| X-Content-Type-Options | string | Type of the resource or value. |
-| Vary | string | Text string. |
-| Content-Encoding | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Date | string |  |
+| Content-Type | string |  |
+| Content-Length | string |  |
+| Connection | string |  |
+| X-Content-Type-Options | string |  |
+| Vary | string |  |
+| Content-Encoding | string |  |
+| Strict-Transport-Security | string |  |

@@ -8,11 +8,11 @@
 - **Method:** `GET`
 ## Inputs
 
-- **json_body** (object) – Required: Structured object with nested properties.
+- **json_body** (object) – Required
   - **id** (string): An identifier established by the client.
   - **jsonrpc** (string): A string specifying the JSON-RPC protocol version.
   - **method** (string): A string containing the method name to be invoked.
-  - **params** (array): List of items.
+  - **params** (array)
     - **apiver** (number) – Required: Current API version.
     - **filter** (string): Filter expression. 'event_value', 'severity', 'trigger_name', 'count', 'comment' and 'flags' are supported. i.e. trigger_name='Local Device Event' and severity >= 3.
     - **limit** (number): The max number of records to get (min - 1, max - 2000).
@@ -43,13 +43,13 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| content-length | string | Text string. |
-| content-type | string | Type of the resource or value. |
-| Date | string | Timestamp in ISO 8601 format. |
+| content-length | string |  |
+| content-type | string |  |
+| Date | string |  |

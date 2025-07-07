@@ -8,7 +8,7 @@
 - **Method:** `GET`
 ## Inputs
 
-- **path_parameters** (object) – Required: Structured object with nested properties.
+- **path_parameters** (object) – Required
   - **sys_id** (string) – Required: Sys_id of the attachment record from which to return binary data.
 ## Output
 
@@ -43,26 +43,26 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **file** (array): List of items.
+- **status_code** (number)
+- **reason** (string)
+- **file** (array)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | Text string. |
-| Content-Encoding | string | Text string. |
-| X-Is-Logged-In | string | Text string. |
-| X-Transaction-ID | string | Unique identifier. |
-| Content-Disposition | string | Text string. |
-| X-Content-Type-Options | string | Type of the resource or value. |
-| x-attachment-metadata | string | Text string. |
-| x-edge-enc-proxy-static | string | Text string. |
-| Content-Type | string | Type of the resource or value. |
-| Transfer-Encoding | string | Text string. |
-| Date | string | Timestamp in ISO 8601 format. |
-| Keep-Alive | string | Text string. |
-| Connection | string | Text string. |
-| Server | string | Text string. |
-| Set-Cookie | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Server-Timing | string |  |
+| Content-Encoding | string |  |
+| X-Is-Logged-In | string |  |
+| X-Transaction-ID | string |  |
+| Content-Disposition | string |  |
+| X-Content-Type-Options | string |  |
+| x-attachment-metadata | string |  |
+| x-edge-enc-proxy-static | string |  |
+| Content-Type | string |  |
+| Transfer-Encoding | string |  |
+| Date | string |  |
+| Keep-Alive | string |  |
+| Connection | string |  |
+| Server | string |  |
+| Set-Cookie | string |  |
+| Strict-Transport-Security | string |  |

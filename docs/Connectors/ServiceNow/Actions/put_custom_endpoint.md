@@ -8,8 +8,8 @@
 - **Method:** `PUT`
 ## Inputs
 
-- **path_parameters** (object) – Required: Structured object with nested properties.
-  - **custom_endpoint** (string) – Required: Text string.
+- **path_parameters** (object) – Required
+  - **custom_endpoint** (string) – Required
 - **parameters** (object): URL Query Parameters
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body

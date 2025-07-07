@@ -8,11 +8,11 @@
 - **Method:** `POST`
 ## Inputs
 
-- **path_parameters** (object) – Required: Structured object with nested properties.
-  - **custom_endpoint** (string) – Required: Text string.
-- **parameters** (object): Structured object with nested properties.
-  - **sysparm_display_value** (boolean): True or False value.
-  - **sysparm_input_display_value** (boolean): True or False value.
+- **path_parameters** (object) – Required
+  - **custom_endpoint** (string) – Required
+- **parameters** (object)
+  - **sysparm_display_value** (boolean)
+  - **sysparm_input_display_value** (boolean)
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body
 ## Output

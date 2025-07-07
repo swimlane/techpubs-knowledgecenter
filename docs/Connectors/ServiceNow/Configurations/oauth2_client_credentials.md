@@ -5,7 +5,7 @@
 ## Inputs
 
 - **url** (string) – Required: A URL to the target host.
-- **token_url** (string) – Required: Web address or resource URL.
+- **token_url** (string) – Required
 - **client_id** (string) – Required: The client ID
 - **client_secret** (string) – Required: The client secret.
 - **scope** (array): Permission scopes for this action.

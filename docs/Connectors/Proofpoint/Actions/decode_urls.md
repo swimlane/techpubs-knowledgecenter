@@ -8,8 +8,8 @@
 - **Method:** `POST`
 ## Inputs
 
-- **json_body** (object) – Required: Structured object with nested properties.
-  - **urls** (array) – Required: Web address or resource URL.
+- **json_body** (object) – Required
+  - **urls** (array) – Required
 ## Output
 
 ### Example
@@ -46,21 +46,21 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
-  - **urls** (array): Web address or resource URL.
-    - **encodedUrl** (string): Web address or resource URL.
-    - **success** (boolean): True or False value.
-    - **decodedUrl** (string): Web address or resource URL.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **urls** (array)
+    - **encodedUrl** (string)
+    - **success** (boolean)
+    - **decodedUrl** (string)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Timestamp in ISO 8601 format. |
-| Content-Type | string | Type of the resource or value. |
-| Content-Length | string | Text string. |
-| Connection | string | Text string. |
-| Vary | string | Text string. |
-| X-Content-Type-Options | string | Type of the resource or value. |
-| Strict-Transport-Security | string | Text string. |
+| Date | string |  |
+| Content-Type | string |  |
+| Content-Length | string |  |
+| Connection | string |  |
+| Vary | string |  |
+| X-Content-Type-Options | string |  |
+| Strict-Transport-Security | string |  |

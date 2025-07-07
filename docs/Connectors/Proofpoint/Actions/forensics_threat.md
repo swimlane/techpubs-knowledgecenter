@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object) – Required: Structured object with nested properties.
-  - **threatId** (string) – Required: Unique identifier.
-  - **includeCampaignForensics** (boolean): True or False value.
+- **parameters** (object) – Required
+  - **threatId** (string) – Required
+  - **includeCampaignForensics** (boolean)
 ## Output
 
 ### Example
@@ -1792,37 +1792,37 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
-  - **generated** (string): Text string.
-  - **reports** (array): List of items.
-    - **scope** (string): Text string.
-    - **id** (string): Unique identifier.
-    - **name** (string): Name or label.
-    - **threatStatus** (string): Status value or code.
-    - **forensics** (array): List of items.
-      - **type** (string): Type of the resource or value.
-      - **display** (string): Text string.
-      - **engine** (string): Text string.
-      - **malicious** (boolean): True or False value.
-      - **time** (number): Timestamp in ISO 8601 format.
-      - **what** (object): Structured object with nested properties.
-        - **url** (string): Web address or resource URL.
-      - **platforms** (array): List of items.
-        - **name** (string): Name or label.
-        - **os** (string): Text string.
-        - **version** (string): Text string.
-      - **note** (string): Text string.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **generated** (string)
+  - **reports** (array)
+    - **scope** (string)
+    - **id** (string)
+    - **name** (string)
+    - **threatStatus** (string)
+    - **forensics** (array)
+      - **type** (string)
+      - **display** (string)
+      - **engine** (string)
+      - **malicious** (boolean)
+      - **time** (number)
+      - **what** (object)
+        - **url** (string)
+      - **platforms** (array)
+        - **name** (string)
+        - **os** (string)
+        - **version** (string)
+      - **note** (string)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Timestamp in ISO 8601 format. |
-| Content-Type | string | Type of the resource or value. |
-| Transfer-Encoding | string | Text string. |
-| Connection | string | Text string. |
-| X-Content-Type-Options | string | Type of the resource or value. |
-| Vary | string | Text string. |
-| Content-Encoding | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Date | string |  |
+| Content-Type | string |  |
+| Transfer-Encoding | string |  |
+| Connection | string |  |
+| X-Content-Type-Options | string |  |
+| Vary | string |  |
+| Content-Encoding | string |  |
+| Strict-Transport-Security | string |  |

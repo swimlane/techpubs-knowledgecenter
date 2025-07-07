@@ -41,19 +41,19 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **response_text** (string): Text string.
+- **status_code** (number)
+- **reason** (string)
+- **response_text** (string)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | Timestamp in ISO 8601 format. |
-| Content-Type | string | Type of the resource or value. |
-| Content-Length | string | Text string. |
-| Connection | string | Text string. |
-| Server-Timing | string | Text string. |
-| Access-Control-Expose-Headers | string | Text string. |
-| Vary | string | Text string. |
-| Content-Encoding | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Date | string |  |
+| Content-Type | string |  |
+| Content-Length | string |  |
+| Connection | string |  |
+| Server-Timing | string |  |
+| Access-Control-Expose-Headers | string |  |
+| Vary | string |  |
+| Content-Encoding | string |  |
+| Strict-Transport-Security | string |  |

@@ -4,8 +4,8 @@
 
 ## Inputs
 
-- **json_body** (object) – Required: Structured object with nested properties.
-  - **url** (string): Web address or resource URL.
+- **json_body** (object) – Required
+  - **url** (string)
 ## Output
 
 ### Example
@@ -28,8 +28,8 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **headers** (object): Structured object with nested properties.
-- **json_body** (object): Structured object with nested properties.
-  - **decoded_urls** (array): Web address or resource URL.
+- **status_code** (number)
+- **reason** (string)
+- **headers** (object)
+- **json_body** (object)
+  - **decoded_urls** (array)

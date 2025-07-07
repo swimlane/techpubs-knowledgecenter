@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-- **path_parameters** (object) – Required: Structured object with nested properties.
+- **path_parameters** (object) – Required
   - **security_incident** (string) – Required: Name of the Security Incident Table.
-- **parameters** (object): Structured object with nested properties.
+- **parameters** (object)
   - **sysparm_query** (string): Encoded query used to filter the result set. You can use a UI filter to obtain a properly encoded query. Syntax - sysparm_query=<col_name><operator><value>. Example sysparm_query - number=INC0000040.
   - **sysparm_display_value** (string): Determines the type of data returned, either the actual values from the database or the display values of the fields. Display values are manipulated based on the actual value in the database and user or system settings and preferences. Valid values are true - Returns the display values for all fields. false - Returns the actual values from the database. all - Returns both actual and display values.
   - **sysparm_exclude_reference_link** (boolean): Flag that indicates whether to exclude Table API links for reference fields. Valid values are true - Exclude Table API links for reference fields. false - Include Table API links for reference fields.
@@ -135,99 +135,99 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
-  - **result** (array): List of items.
-    - **parent** (string): Text string.
-    - **made_sla** (string): Text string.
-    - **watch_list** (string): Text string.
-    - **upon_reject** (string): Text string.
-    - **sys_updated_on** (string): Timestamp in ISO 8601 format.
-    - **approval_history** (string): Text string.
-    - **number** (string): Text string.
-    - **sys_updated_by** (string): Timestamp in ISO 8601 format.
-    - **opened_by** (object): Structured object with nested properties.
-      - **link** (string): Text string.
-      - **value** (string): Text string.
-    - **user_input** (string): Text string.
-    - **sys_created_on** (string): Text string.
-    - **sys_domain** (object): Structured object with nested properties.
-      - **link** (string): Text string.
-      - **value** (string): Text string.
-    - **state** (string): Text string.
-    - **sys_created_by** (string): Text string.
-    - **knowledge** (string): Text string.
-    - **order** (string): Text string.
-    - **closed_at** (string): Text string.
-    - **cmdb_ci** (object): Structured object with nested properties.
-      - **link** (string): Text string.
-      - **value** (string): Text string.
-    - **delivery_plan** (string): Text string.
-    - **impact** (string): Text string.
-    - **active** (string): Text string.
-    - **work_notes_list** (string): Text string.
-    - **business_service** (string): Text string.
-    - **priority** (string): Text string.
-    - **sys_domain_path** (string): Text string.
-    - **time_worked** (string): Timestamp in ISO 8601 format.
-    - **expected_start** (string): Text string.
-    - **rejection_goto** (string): Text string.
-    - **opened_at** (string): Text string.
-    - **business_duration** (string): Text string.
-    - **group_list** (string): Text string.
-    - **work_end** (string): Text string.
-    - **approval_set** (string): Text string.
-    - **wf_activity** (string): Text string.
-    - **work_notes** (string): Text string.
-    - **short_description** (string): Text string.
-    - **correlation_display** (string): Text string.
-    - **delivery_task** (string): Text string.
-    - **work_start** (string): Text string.
-    - **assignment_group** (string): Text string.
-    - **additional_assignee_list** (string): Text string.
-    - **description** (string): Text string.
-    - **calendar_duration** (string): Text string.
-    - **close_notes** (string): Text string.
-    - **sys_class_name** (string): Name or label.
-    - **closed_by** (string): Text string.
-    - **follow_up** (string): Text string.
-    - **sys_id** (string): Unique identifier.
-    - **contact_type** (string): Type of the resource or value.
-    - **urgency** (string): Text string.
-    - **company** (string): Text string.
-    - **reassignment_count** (string): Number of occurrences or items.
-    - **activity_due** (string): Text string.
-    - **assigned_to** (string): Text string.
-    - **comments** (string): Text string.
-    - **approval** (string): Text string.
-    - **sla_due** (string): Text string.
-    - **comments_and_work_notes** (string): Text string.
-    - **due_date** (string): Timestamp in ISO 8601 format.
-    - **sys_mod_count** (string): Number of occurrences or items.
-    - **sys_tags** (string): Text string.
-    - **escalation** (string): Text string.
-    - **upon_approval** (string): Text string.
-    - **correlation_id** (string): Unique identifier.
-    - **location** (string): Text string.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **result** (array)
+    - **parent** (string)
+    - **made_sla** (string)
+    - **watch_list** (string)
+    - **upon_reject** (string)
+    - **sys_updated_on** (string)
+    - **approval_history** (string)
+    - **number** (string)
+    - **sys_updated_by** (string)
+    - **opened_by** (object)
+      - **link** (string)
+      - **value** (string)
+    - **user_input** (string)
+    - **sys_created_on** (string)
+    - **sys_domain** (object)
+      - **link** (string)
+      - **value** (string)
+    - **state** (string)
+    - **sys_created_by** (string)
+    - **knowledge** (string)
+    - **order** (string)
+    - **closed_at** (string)
+    - **cmdb_ci** (object)
+      - **link** (string)
+      - **value** (string)
+    - **delivery_plan** (string)
+    - **impact** (string)
+    - **active** (string)
+    - **work_notes_list** (string)
+    - **business_service** (string)
+    - **priority** (string)
+    - **sys_domain_path** (string)
+    - **time_worked** (string)
+    - **expected_start** (string)
+    - **rejection_goto** (string)
+    - **opened_at** (string)
+    - **business_duration** (string)
+    - **group_list** (string)
+    - **work_end** (string)
+    - **approval_set** (string)
+    - **wf_activity** (string)
+    - **work_notes** (string)
+    - **short_description** (string)
+    - **correlation_display** (string)
+    - **delivery_task** (string)
+    - **work_start** (string)
+    - **assignment_group** (string)
+    - **additional_assignee_list** (string)
+    - **description** (string)
+    - **calendar_duration** (string)
+    - **close_notes** (string)
+    - **sys_class_name** (string)
+    - **closed_by** (string)
+    - **follow_up** (string)
+    - **sys_id** (string)
+    - **contact_type** (string)
+    - **urgency** (string)
+    - **company** (string)
+    - **reassignment_count** (string)
+    - **activity_due** (string)
+    - **assigned_to** (string)
+    - **comments** (string)
+    - **approval** (string)
+    - **sla_due** (string)
+    - **comments_and_work_notes** (string)
+    - **due_date** (string)
+    - **sys_mod_count** (string)
+    - **sys_tags** (string)
+    - **escalation** (string)
+    - **upon_approval** (string)
+    - **correlation_id** (string)
+    - **location** (string)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | Text string. |
-| Content-Encoding | string | Text string. |
-| X-Is-Logged-In | string | Text string. |
-| X-Transaction-ID | string | Unique identifier. |
-| X-Total-Count | string | Number of occurrences or items. |
-| X-Content-Type-Options | string | Type of the resource or value. |
-| Pragma | string | Text string. |
-| Cache-Control | string | Text string. |
-| Expires | string | Text string. |
-| Content-Type | string | Type of the resource or value. |
-| Transfer-Encoding | string | Text string. |
-| Date | string | Timestamp in ISO 8601 format. |
-| Keep-Alive | string | Text string. |
-| Connection | string | Text string. |
-| Server | string | Text string. |
-| Set-Cookie | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Server-Timing | string |  |
+| Content-Encoding | string |  |
+| X-Is-Logged-In | string |  |
+| X-Transaction-ID | string |  |
+| X-Total-Count | string |  |
+| X-Content-Type-Options | string |  |
+| Pragma | string |  |
+| Cache-Control | string |  |
+| Expires | string |  |
+| Content-Type | string |  |
+| Transfer-Encoding | string |  |
+| Date | string |  |
+| Keep-Alive | string |  |
+| Connection | string |  |
+| Server | string |  |
+| Set-Cookie | string |  |
+| Strict-Transport-Security | string |  |

@@ -9,15 +9,15 @@
 ## Inputs
 
 - **attachments** (array) – Required: File to be uploaded
-  - **file_name** (string) – Required: Name or label.
-  - **file** (string) – Required: Text string.
-- **parameters** (object): Structured object with nested properties.
+  - **file_name** (string) – Required
+  - **file** (string) – Required
+- **parameters** (object)
   - **encryption_context** (string): Sys_id of an encryption context record. Specify this parameter to allow only users with the specified encryption context to access the attachment.
-  - **file_name** (string) – Required: Name or label.
-  - **table_name** (string) – Required: Name or label.
+  - **file_name** (string) – Required
+  - **table_name** (string) – Required
   - **table_sys_id** (string) – Required: Sys_id of the record in the table specified in table_name that you want to attach the file to.
-- **headers** (object): Structured object with nested properties.
-  - **Content-Type** (string) – Required: Type of the resource or value.
+- **headers** (object)
+  - **Content-Type** (string) – Required
 ## Output
 
 ### Example
@@ -76,49 +76,49 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
-  - **result** (object): Structured object with nested properties.
-    - **size_bytes** (string): Size in bytes or appropriate unit.
-    - **file_name** (string): Name or label.
-    - **sys_mod_count** (string): Number of occurrences or items.
-    - **average_image_color** (string): Text string.
-    - **image_width** (string): Unique identifier.
-    - **sys_updated_on** (string): Timestamp in ISO 8601 format.
-    - **sys_tags** (string): Text string.
-    - **table_name** (string): Name or label.
-    - **sys_id** (string): Unique identifier.
-    - **image_height** (string): Text string.
-    - **sys_updated_by** (string): Timestamp in ISO 8601 format.
-    - **download_link** (string): Text string.
-    - **content_type** (string): Type of the resource or value.
-    - **sys_created_on** (string): Text string.
-    - **size_compressed** (string): Size in bytes or appropriate unit.
-    - **compressed** (string): Text string.
-    - **state** (string): Text string.
-    - **table_sys_id** (string): Unique identifier.
-    - **chunk_size_bytes** (string): Size in bytes or appropriate unit.
-    - **hash** (string): Hash value for data integrity.
-    - **sys_created_by** (string): Text string.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **result** (object)
+    - **size_bytes** (string)
+    - **file_name** (string)
+    - **sys_mod_count** (string)
+    - **average_image_color** (string)
+    - **image_width** (string)
+    - **sys_updated_on** (string)
+    - **sys_tags** (string)
+    - **table_name** (string)
+    - **sys_id** (string)
+    - **image_height** (string)
+    - **sys_updated_by** (string)
+    - **download_link** (string)
+    - **content_type** (string)
+    - **sys_created_on** (string)
+    - **size_compressed** (string)
+    - **compressed** (string)
+    - **state** (string)
+    - **table_sys_id** (string)
+    - **chunk_size_bytes** (string)
+    - **hash** (string)
+    - **sys_created_by** (string)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | Text string. |
-| Content-Encoding | string | Text string. |
-| X-Is-Logged-In | string | Text string. |
-| X-Transaction-ID | string | Unique identifier. |
-| Location | string | Text string. |
-| X-Content-Type-Options | string | Type of the resource or value. |
-| Pragma | string | Text string. |
-| Cache-Control | string | Text string. |
-| Expires | string | Text string. |
-| Content-Type | string | Type of the resource or value. |
-| Transfer-Encoding | string | Text string. |
-| Date | string | Timestamp in ISO 8601 format. |
-| Keep-Alive | string | Text string. |
-| Connection | string | Text string. |
-| Server | string | Text string. |
-| Set-Cookie | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Server-Timing | string |  |
+| Content-Encoding | string |  |
+| X-Is-Logged-In | string |  |
+| X-Transaction-ID | string |  |
+| Location | string |  |
+| X-Content-Type-Options | string |  |
+| Pragma | string |  |
+| Cache-Control | string |  |
+| Expires | string |  |
+| Content-Type | string |  |
+| Transfer-Encoding | string |  |
+| Date | string |  |
+| Keep-Alive | string |  |
+| Connection | string |  |
+| Server | string |  |
+| Set-Cookie | string |  |
+| Strict-Transport-Security | string |  |

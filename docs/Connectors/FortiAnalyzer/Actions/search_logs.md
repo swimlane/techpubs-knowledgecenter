@@ -8,7 +8,7 @@
 - **Method:** `POST`
 ## Inputs
 
-- **json_body** (object) – Required: Structured object with nested properties.
+- **json_body** (object) – Required
   - **id** (string): An identifier established by the client.
   - **jsonrpc** (string): A string specifying the JSON-RPC protocol version.
   - **method** (string): A string containing the method name to be invoked.
@@ -50,10 +50,10 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
-  - **id** (string): Unique identifier.
-  - **jsonrpc** (string): Text string.
-  - **result** (object): Structured object with nested properties.
-    - **tid** (number): Unique identifier.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **id** (string)
+  - **jsonrpc** (string)
+  - **result** (object)
+    - **tid** (number)

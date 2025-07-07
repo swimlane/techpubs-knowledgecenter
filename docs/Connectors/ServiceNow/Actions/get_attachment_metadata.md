@@ -8,7 +8,7 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object): Structured object with nested properties.
+- **parameters** (object)
   - **sysparm_query** (string) – Required: Encoded query. Queries for the Attachment API are relative to the Attachments [sys_attachment] table.
 ## Output
 
@@ -93,28 +93,28 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): Status value or code.
-- **reason** (string): Text string.
-- **json_body** (object): Structured object with nested properties.
-  - **result** (array): List of items.
+- **status_code** (number)
+- **reason** (string)
+- **json_body** (object)
+  - **result** (array)
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | Text string. |
-| Content-Encoding | string | Text string. |
-| X-Is-Logged-In | string | Text string. |
-| X-Transaction-ID | string | Unique identifier. |
-| X-Total-Count | string | Number of occurrences or items. |
-| X-Content-Type-Options | string | Type of the resource or value. |
-| Pragma | string | Text string. |
-| Cache-Control | string | Text string. |
-| Expires | string | Text string. |
-| Content-Type | string | Type of the resource or value. |
-| Transfer-Encoding | string | Text string. |
-| Date | string | Timestamp in ISO 8601 format. |
-| Keep-Alive | string | Text string. |
-| Connection | string | Text string. |
-| Server | string | Text string. |
-| Set-Cookie | string | Text string. |
-| Strict-Transport-Security | string | Text string. |
+| Server-Timing | string |  |
+| Content-Encoding | string |  |
+| X-Is-Logged-In | string |  |
+| X-Transaction-ID | string |  |
+| X-Total-Count | string |  |
+| X-Content-Type-Options | string |  |
+| Pragma | string |  |
+| Cache-Control | string |  |
+| Expires | string |  |
+| Content-Type | string |  |
+| Transfer-Encoding | string |  |
+| Date | string |  |
+| Keep-Alive | string |  |
+| Connection | string |  |
+| Server | string |  |
+| Set-Cookie | string |  |
+| Strict-Transport-Security | string |  |
