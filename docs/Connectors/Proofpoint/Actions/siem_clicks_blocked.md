@@ -9,12 +9,12 @@
 ## Inputs
 
 - **parameters** (object) – Required: One of the following three query parameters describing the desired time range for the data must be supplied with each request interval, sinceSeconds, sinceTime.
-  - **interval** (string): TODO: Add description
-  - **sinceSeconds** (number): TODO: Add description
-  - **sinceTime** (string): TODO: Add description
-  - **format** (string): TODO: Add description
-  - **threatType** (string): TODO: Add description
-  - **threatStatus** (string): TODO: Add description
+  - **interval** (string): Auto-generated description for `interval`. Please update manually if needed.
+  - **sinceSeconds** (number): Auto-generated description for `sinceSeconds`. Please update manually if needed.
+  - **sinceTime** (string): Auto-generated description for `sinceTime`. Please update manually if needed.
+  - **format** (string): Auto-generated description for `format`. Please update manually if needed.
+  - **threatType** (string): Auto-generated description for `threatType`. Please update manually if needed.
+  - **threatStatus** (string): Auto-generated description for `threatStatus`. Please update manually if needed.
 ## Output
 
 ### Example
@@ -35,13 +35,13 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **response_text** (string): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **response_text** (string): Auto-generated description for `response_text`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object) – Required: TODO: Add description
-  - **threatId** (string) – Required: TODO: Add description
-  - **includeCampaignForensics** (boolean): TODO: Add description
+- **parameters** (object) – Required: Auto-generated description for `parameters`. Please update manually if needed.
+  - **threatId** (string) – Required: Auto-generated description for `threatId`. Please update manually if needed.
+  - **includeCampaignForensics** (boolean): Auto-generated description for `includeCampaignForensics`. Please update manually if needed.
 ## Output
 
 ### Example
@@ -1792,37 +1792,37 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **json_body** (object): TODO: Add description
-  - **generated** (string): TODO: Add description
-  - **reports** (array): TODO: Add description
-    - **scope** (string): TODO: Add description
-    - **id** (string): TODO: Add description
-    - **name** (string): TODO: Add description
-    - **threatStatus** (string): TODO: Add description
-    - **forensics** (array): TODO: Add description
-      - **type** (string): TODO: Add description
-      - **display** (string): TODO: Add description
-      - **engine** (string): TODO: Add description
-      - **malicious** (boolean): TODO: Add description
-      - **time** (number): TODO: Add description
-      - **what** (object): TODO: Add description
-        - **url** (string): TODO: Add description
-      - **platforms** (array): TODO: Add description
-        - **name** (string): TODO: Add description
-        - **os** (string): TODO: Add description
-        - **version** (string): TODO: Add description
-      - **note** (string): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+  - **generated** (string): Auto-generated description for `generated`. Please update manually if needed.
+  - **reports** (array): Auto-generated description for `reports`. Please update manually if needed.
+    - **scope** (string): Auto-generated description for `scope`. Please update manually if needed.
+    - **id** (string): Auto-generated description for `id`. Please update manually if needed.
+    - **name** (string): Auto-generated description for `name`. Please update manually if needed.
+    - **threatStatus** (string): Auto-generated description for `threatStatus`. Please update manually if needed.
+    - **forensics** (array): Auto-generated description for `forensics`. Please update manually if needed.
+      - **type** (string): Auto-generated description for `type`. Please update manually if needed.
+      - **display** (string): Auto-generated description for `display`. Please update manually if needed.
+      - **engine** (string): Auto-generated description for `engine`. Please update manually if needed.
+      - **malicious** (boolean): Auto-generated description for `malicious`. Please update manually if needed.
+      - **time** (number): Auto-generated description for `time`. Please update manually if needed.
+      - **what** (object): Auto-generated description for `what`. Please update manually if needed.
+        - **url** (string): Auto-generated description for `url`. Please update manually if needed.
+      - **platforms** (array): Auto-generated description for `platforms`. Please update manually if needed.
+        - **name** (string): Auto-generated description for `name`. Please update manually if needed.
+        - **os** (string): Auto-generated description for `os`. Please update manually if needed.
+        - **version** (string): Auto-generated description for `version`. Please update manually if needed.
+      - **note** (string): Auto-generated description for `note`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | TODO: Add description |
-| Content-Type | string | TODO: Add description |
-| Transfer-Encoding | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| X-Content-Type-Options | string | TODO: Add description |
-| Vary | string | TODO: Add description |
-| Content-Encoding | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
+| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
+| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
+| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

@@ -8,9 +8,9 @@
 - **Method:** `GET`
 ## Inputs
 
-- **path_parameters** (object) – Required: TODO: Add description
+- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
   - **security_incident** (string) – Required: Name of the Security Incident Table.
-- **parameters** (object): TODO: Add description
+- **parameters** (object): Auto-generated description for `parameters`. Please update manually if needed.
   - **sysparm_query** (string): Encoded query used to filter the result set. You can use a UI filter to obtain a properly encoded query. Syntax - sysparm_query=<col_name><operator><value>. Example sysparm_query - number=INC0000040.
   - **sysparm_display_value** (string): Determines the type of data returned, either the actual values from the database or the display values of the fields. Display values are manipulated based on the actual value in the database and user or system settings and preferences. Valid values are true - Returns the display values for all fields. false - Returns the actual values from the database. all - Returns both actual and display values.
   - **sysparm_exclude_reference_link** (boolean): Flag that indicates whether to exclude Table API links for reference fields. Valid values are true - Exclude Table API links for reference fields. false - Include Table API links for reference fields.
@@ -135,99 +135,99 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **json_body** (object): TODO: Add description
-  - **result** (array): TODO: Add description
-    - **parent** (string): TODO: Add description
-    - **made_sla** (string): TODO: Add description
-    - **watch_list** (string): TODO: Add description
-    - **upon_reject** (string): TODO: Add description
-    - **sys_updated_on** (string): TODO: Add description
-    - **approval_history** (string): TODO: Add description
-    - **number** (string): TODO: Add description
-    - **sys_updated_by** (string): TODO: Add description
-    - **opened_by** (object): TODO: Add description
-      - **link** (string): TODO: Add description
-      - **value** (string): TODO: Add description
-    - **user_input** (string): TODO: Add description
-    - **sys_created_on** (string): TODO: Add description
-    - **sys_domain** (object): TODO: Add description
-      - **link** (string): TODO: Add description
-      - **value** (string): TODO: Add description
-    - **state** (string): TODO: Add description
-    - **sys_created_by** (string): TODO: Add description
-    - **knowledge** (string): TODO: Add description
-    - **order** (string): TODO: Add description
-    - **closed_at** (string): TODO: Add description
-    - **cmdb_ci** (object): TODO: Add description
-      - **link** (string): TODO: Add description
-      - **value** (string): TODO: Add description
-    - **delivery_plan** (string): TODO: Add description
-    - **impact** (string): TODO: Add description
-    - **active** (string): TODO: Add description
-    - **work_notes_list** (string): TODO: Add description
-    - **business_service** (string): TODO: Add description
-    - **priority** (string): TODO: Add description
-    - **sys_domain_path** (string): TODO: Add description
-    - **time_worked** (string): TODO: Add description
-    - **expected_start** (string): TODO: Add description
-    - **rejection_goto** (string): TODO: Add description
-    - **opened_at** (string): TODO: Add description
-    - **business_duration** (string): TODO: Add description
-    - **group_list** (string): TODO: Add description
-    - **work_end** (string): TODO: Add description
-    - **approval_set** (string): TODO: Add description
-    - **wf_activity** (string): TODO: Add description
-    - **work_notes** (string): TODO: Add description
-    - **short_description** (string): TODO: Add description
-    - **correlation_display** (string): TODO: Add description
-    - **delivery_task** (string): TODO: Add description
-    - **work_start** (string): TODO: Add description
-    - **assignment_group** (string): TODO: Add description
-    - **additional_assignee_list** (string): TODO: Add description
-    - **description** (string): TODO: Add description
-    - **calendar_duration** (string): TODO: Add description
-    - **close_notes** (string): TODO: Add description
-    - **sys_class_name** (string): TODO: Add description
-    - **closed_by** (string): TODO: Add description
-    - **follow_up** (string): TODO: Add description
-    - **sys_id** (string): TODO: Add description
-    - **contact_type** (string): TODO: Add description
-    - **urgency** (string): TODO: Add description
-    - **company** (string): TODO: Add description
-    - **reassignment_count** (string): TODO: Add description
-    - **activity_due** (string): TODO: Add description
-    - **assigned_to** (string): TODO: Add description
-    - **comments** (string): TODO: Add description
-    - **approval** (string): TODO: Add description
-    - **sla_due** (string): TODO: Add description
-    - **comments_and_work_notes** (string): TODO: Add description
-    - **due_date** (string): TODO: Add description
-    - **sys_mod_count** (string): TODO: Add description
-    - **sys_tags** (string): TODO: Add description
-    - **escalation** (string): TODO: Add description
-    - **upon_approval** (string): TODO: Add description
-    - **correlation_id** (string): TODO: Add description
-    - **location** (string): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+  - **result** (array): Auto-generated description for `result`. Please update manually if needed.
+    - **parent** (string): Auto-generated description for `parent`. Please update manually if needed.
+    - **made_sla** (string): Auto-generated description for `made_sla`. Please update manually if needed.
+    - **watch_list** (string): Auto-generated description for `watch_list`. Please update manually if needed.
+    - **upon_reject** (string): Auto-generated description for `upon_reject`. Please update manually if needed.
+    - **sys_updated_on** (string): Auto-generated description for `sys_updated_on`. Please update manually if needed.
+    - **approval_history** (string): Auto-generated description for `approval_history`. Please update manually if needed.
+    - **number** (string): Auto-generated description for `number`. Please update manually if needed.
+    - **sys_updated_by** (string): Auto-generated description for `sys_updated_by`. Please update manually if needed.
+    - **opened_by** (object): Auto-generated description for `opened_by`. Please update manually if needed.
+      - **link** (string): Auto-generated description for `link`. Please update manually if needed.
+      - **value** (string): Auto-generated description for `value`. Please update manually if needed.
+    - **user_input** (string): Auto-generated description for `user_input`. Please update manually if needed.
+    - **sys_created_on** (string): Auto-generated description for `sys_created_on`. Please update manually if needed.
+    - **sys_domain** (object): Auto-generated description for `sys_domain`. Please update manually if needed.
+      - **link** (string): Auto-generated description for `link`. Please update manually if needed.
+      - **value** (string): Auto-generated description for `value`. Please update manually if needed.
+    - **state** (string): Auto-generated description for `state`. Please update manually if needed.
+    - **sys_created_by** (string): Auto-generated description for `sys_created_by`. Please update manually if needed.
+    - **knowledge** (string): Auto-generated description for `knowledge`. Please update manually if needed.
+    - **order** (string): Auto-generated description for `order`. Please update manually if needed.
+    - **closed_at** (string): Auto-generated description for `closed_at`. Please update manually if needed.
+    - **cmdb_ci** (object): Auto-generated description for `cmdb_ci`. Please update manually if needed.
+      - **link** (string): Auto-generated description for `link`. Please update manually if needed.
+      - **value** (string): Auto-generated description for `value`. Please update manually if needed.
+    - **delivery_plan** (string): Auto-generated description for `delivery_plan`. Please update manually if needed.
+    - **impact** (string): Auto-generated description for `impact`. Please update manually if needed.
+    - **active** (string): Auto-generated description for `active`. Please update manually if needed.
+    - **work_notes_list** (string): Auto-generated description for `work_notes_list`. Please update manually if needed.
+    - **business_service** (string): Auto-generated description for `business_service`. Please update manually if needed.
+    - **priority** (string): Auto-generated description for `priority`. Please update manually if needed.
+    - **sys_domain_path** (string): Auto-generated description for `sys_domain_path`. Please update manually if needed.
+    - **time_worked** (string): Auto-generated description for `time_worked`. Please update manually if needed.
+    - **expected_start** (string): Auto-generated description for `expected_start`. Please update manually if needed.
+    - **rejection_goto** (string): Auto-generated description for `rejection_goto`. Please update manually if needed.
+    - **opened_at** (string): Auto-generated description for `opened_at`. Please update manually if needed.
+    - **business_duration** (string): Auto-generated description for `business_duration`. Please update manually if needed.
+    - **group_list** (string): Auto-generated description for `group_list`. Please update manually if needed.
+    - **work_end** (string): Auto-generated description for `work_end`. Please update manually if needed.
+    - **approval_set** (string): Auto-generated description for `approval_set`. Please update manually if needed.
+    - **wf_activity** (string): Auto-generated description for `wf_activity`. Please update manually if needed.
+    - **work_notes** (string): Auto-generated description for `work_notes`. Please update manually if needed.
+    - **short_description** (string): Auto-generated description for `short_description`. Please update manually if needed.
+    - **correlation_display** (string): Auto-generated description for `correlation_display`. Please update manually if needed.
+    - **delivery_task** (string): Auto-generated description for `delivery_task`. Please update manually if needed.
+    - **work_start** (string): Auto-generated description for `work_start`. Please update manually if needed.
+    - **assignment_group** (string): Auto-generated description for `assignment_group`. Please update manually if needed.
+    - **additional_assignee_list** (string): Auto-generated description for `additional_assignee_list`. Please update manually if needed.
+    - **description** (string): Auto-generated description for `description`. Please update manually if needed.
+    - **calendar_duration** (string): Auto-generated description for `calendar_duration`. Please update manually if needed.
+    - **close_notes** (string): Auto-generated description for `close_notes`. Please update manually if needed.
+    - **sys_class_name** (string): Auto-generated description for `sys_class_name`. Please update manually if needed.
+    - **closed_by** (string): Auto-generated description for `closed_by`. Please update manually if needed.
+    - **follow_up** (string): Auto-generated description for `follow_up`. Please update manually if needed.
+    - **sys_id** (string): Auto-generated description for `sys_id`. Please update manually if needed.
+    - **contact_type** (string): Auto-generated description for `contact_type`. Please update manually if needed.
+    - **urgency** (string): Auto-generated description for `urgency`. Please update manually if needed.
+    - **company** (string): Auto-generated description for `company`. Please update manually if needed.
+    - **reassignment_count** (string): Auto-generated description for `reassignment_count`. Please update manually if needed.
+    - **activity_due** (string): Auto-generated description for `activity_due`. Please update manually if needed.
+    - **assigned_to** (string): Auto-generated description for `assigned_to`. Please update manually if needed.
+    - **comments** (string): Auto-generated description for `comments`. Please update manually if needed.
+    - **approval** (string): Auto-generated description for `approval`. Please update manually if needed.
+    - **sla_due** (string): Auto-generated description for `sla_due`. Please update manually if needed.
+    - **comments_and_work_notes** (string): Auto-generated description for `comments_and_work_notes`. Please update manually if needed.
+    - **due_date** (string): Auto-generated description for `due_date`. Please update manually if needed.
+    - **sys_mod_count** (string): Auto-generated description for `sys_mod_count`. Please update manually if needed.
+    - **sys_tags** (string): Auto-generated description for `sys_tags`. Please update manually if needed.
+    - **escalation** (string): Auto-generated description for `escalation`. Please update manually if needed.
+    - **upon_approval** (string): Auto-generated description for `upon_approval`. Please update manually if needed.
+    - **correlation_id** (string): Auto-generated description for `correlation_id`. Please update manually if needed.
+    - **location** (string): Auto-generated description for `location`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | TODO: Add description |
-| Content-Encoding | string | TODO: Add description |
-| X-Is-Logged-In | string | TODO: Add description |
-| X-Transaction-ID | string | TODO: Add description |
-| X-Total-Count | string | TODO: Add description |
-| X-Content-Type-Options | string | TODO: Add description |
-| Pragma | string | TODO: Add description |
-| Cache-Control | string | TODO: Add description |
-| Expires | string | TODO: Add description |
-| Content-Type | string | TODO: Add description |
-| Transfer-Encoding | string | TODO: Add description |
-| Date | string | TODO: Add description |
-| Keep-Alive | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| Server | string | TODO: Add description |
-| Set-Cookie | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
+| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
+| X-Is-Logged-In | string | Auto-generated description for `X-Is-Logged-In`. Please update manually if needed. |
+| X-Transaction-ID | string | Auto-generated description for `X-Transaction-ID`. Please update manually if needed. |
+| X-Total-Count | string | Auto-generated description for `X-Total-Count`. Please update manually if needed. |
+| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
+| Pragma | string | Auto-generated description for `Pragma`. Please update manually if needed. |
+| Cache-Control | string | Auto-generated description for `Cache-Control`. Please update manually if needed. |
+| Expires | string | Auto-generated description for `Expires`. Please update manually if needed. |
+| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
+| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Keep-Alive | string | Auto-generated description for `Keep-Alive`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| Server | string | Auto-generated description for `Server`. Please update manually if needed. |
+| Set-Cookie | string | Auto-generated description for `Set-Cookie`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

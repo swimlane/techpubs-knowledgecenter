@@ -8,8 +8,8 @@
 - **Method:** `POST`
 ## Inputs
 
-- **json_body** (object) – Required: TODO: Add description
-  - **urls** (array) – Required: TODO: Add description
+- **json_body** (object) – Required: Auto-generated description for `json_body`. Please update manually if needed.
+  - **urls** (array) – Required: Auto-generated description for `urls`. Please update manually if needed.
 ## Output
 
 ### Example
@@ -46,21 +46,21 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **json_body** (object): TODO: Add description
-  - **urls** (array): TODO: Add description
-    - **encodedUrl** (string): TODO: Add description
-    - **success** (boolean): TODO: Add description
-    - **decodedUrl** (string): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+  - **urls** (array): Auto-generated description for `urls`. Please update manually if needed.
+    - **encodedUrl** (string): Auto-generated description for `encodedUrl`. Please update manually if needed.
+    - **success** (boolean): Auto-generated description for `success`. Please update manually if needed.
+    - **decodedUrl** (string): Auto-generated description for `decodedUrl`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | TODO: Add description |
-| Content-Type | string | TODO: Add description |
-| Content-Length | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| Vary | string | TODO: Add description |
-| X-Content-Type-Options | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
+| Content-Length | string | Auto-generated description for `Content-Length`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
+| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

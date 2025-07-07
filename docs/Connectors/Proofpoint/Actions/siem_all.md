@@ -41,19 +41,19 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **response_text** (string): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **response_text** (string): Auto-generated description for `response_text`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | TODO: Add description |
-| Content-Type | string | TODO: Add description |
-| Content-Length | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| Server-Timing | string | TODO: Add description |
-| Access-Control-Expose-Headers | string | TODO: Add description |
-| Vary | string | TODO: Add description |
-| Content-Encoding | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
+| Content-Length | string | Auto-generated description for `Content-Length`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
+| Access-Control-Expose-Headers | string | Auto-generated description for `Access-Control-Expose-Headers`. Please update manually if needed. |
+| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
+| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

@@ -8,7 +8,7 @@
 - **Method:** `GET`
 ## Inputs
 
-- **path_parameters** (object) – Required: TODO: Add description
+- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
   - **sys_id** (string) – Required: Sys_id of the attachment record from which to return binary data.
 ## Output
 
@@ -43,26 +43,26 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **file** (array): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **file** (array): Auto-generated description for `file`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | TODO: Add description |
-| Content-Encoding | string | TODO: Add description |
-| X-Is-Logged-In | string | TODO: Add description |
-| X-Transaction-ID | string | TODO: Add description |
-| Content-Disposition | string | TODO: Add description |
-| X-Content-Type-Options | string | TODO: Add description |
-| x-attachment-metadata | string | TODO: Add description |
-| x-edge-enc-proxy-static | string | TODO: Add description |
-| Content-Type | string | TODO: Add description |
-| Transfer-Encoding | string | TODO: Add description |
-| Date | string | TODO: Add description |
-| Keep-Alive | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| Server | string | TODO: Add description |
-| Set-Cookie | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
+| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
+| X-Is-Logged-In | string | Auto-generated description for `X-Is-Logged-In`. Please update manually if needed. |
+| X-Transaction-ID | string | Auto-generated description for `X-Transaction-ID`. Please update manually if needed. |
+| Content-Disposition | string | Auto-generated description for `Content-Disposition`. Please update manually if needed. |
+| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
+| x-attachment-metadata | string | Auto-generated description for `x-attachment-metadata`. Please update manually if needed. |
+| x-edge-enc-proxy-static | string | Auto-generated description for `x-edge-enc-proxy-static`. Please update manually if needed. |
+| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
+| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Keep-Alive | string | Auto-generated description for `Keep-Alive`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| Server | string | Auto-generated description for `Server`. Please update manually if needed. |
+| Set-Cookie | string | Auto-generated description for `Set-Cookie`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

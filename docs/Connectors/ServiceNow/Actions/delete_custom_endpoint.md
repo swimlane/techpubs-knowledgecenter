@@ -8,8 +8,8 @@
 - **Method:** `DELETE`
 ## Inputs
 
-- **path_parameters** (object) – Required: TODO: Add description
-  - **custom_endpoint** (string) – Required: TODO: Add description
+- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
+  - **custom_endpoint** (string) – Required: Auto-generated description for `custom_endpoint`. Please update manually if needed.
 - **parameters** (object): URL Query Parameters
 - **json_body** (object): JSON Body
 - **data_body** (object): Data Body
@@ -29,6 +29,6 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **json_body** (object): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.

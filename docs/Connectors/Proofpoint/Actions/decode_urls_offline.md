@@ -4,8 +4,8 @@
 
 ## Inputs
 
-- **json_body** (object) – Required: TODO: Add description
-  - **url** (string): TODO: Add description
+- **json_body** (object) – Required: Auto-generated description for `json_body`. Please update manually if needed.
+  - **url** (string): Auto-generated description for `url`. Please update manually if needed.
 ## Output
 
 ### Example
@@ -28,8 +28,8 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **headers** (object): TODO: Add description
-- **json_body** (object): TODO: Add description
-  - **decoded_urls** (array): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **headers** (object): Auto-generated description for `headers`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+  - **decoded_urls** (array): Auto-generated description for `decoded_urls`. Please update manually if needed.

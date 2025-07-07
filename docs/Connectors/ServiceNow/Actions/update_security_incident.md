@@ -8,10 +8,10 @@
 - **Method:** `PATCH`
 ## Inputs
 
-- **path_parameters** (object) – Required: TODO: Add description
+- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
   - **security_incident** (string) – Required: Name of the Security Incident Table
   - **sys_id** (string) – Required: ID of the security incident to update.
-- **json_body** (object): TODO: Add description
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
   - **sysparm_display_value** (string): Determines the type of data returned, either the actual values from the database or the display values of the fields.
   - **sysparm_fields** (string): Comma-separated list of fields to return in the response.
   - **sysparm_input_display_value** (boolean): Flag that indicates whether to set field values using the display value or the actual value.
@@ -43,19 +43,19 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **response_text** (string): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **response_text** (string): Auto-generated description for `response_text`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Set-Cookie | string | TODO: Add description |
-| Server-Timing | string | TODO: Add description |
-| Content-Security-Policy | string | TODO: Add description |
-| Content-Length | string | TODO: Add description |
-| Date | string | TODO: Add description |
-| Keep-Alive | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| Server | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Set-Cookie | string | Auto-generated description for `Set-Cookie`. Please update manually if needed. |
+| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
+| Content-Security-Policy | string | Auto-generated description for `Content-Security-Policy`. Please update manually if needed. |
+| Content-Length | string | Auto-generated description for `Content-Length`. Please update manually if needed. |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Keep-Alive | string | Auto-generated description for `Keep-Alive`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| Server | string | Auto-generated description for `Server`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

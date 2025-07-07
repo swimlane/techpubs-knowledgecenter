@@ -8,11 +8,11 @@
 - **Method:** `PATCH`
 ## Inputs
 
-- **path_parameters** (object) – Required: TODO: Add description
-  - **mid_extension** (string) – Required: TODO: Add description
-  - **end_extension** (string) – Required: TODO: Add description
-- **json_body** (object) – Required: TODO: Add description
-  - **comments** (string): TODO: Add description
+- **path_parameters** (object) – Required: Auto-generated description for `path_parameters`. Please update manually if needed.
+  - **mid_extension** (string) – Required: Auto-generated description for `mid_extension`. Please update manually if needed.
+  - **end_extension** (string) – Required: Auto-generated description for `end_extension`. Please update manually if needed.
+- **json_body** (object) – Required: Auto-generated description for `json_body`. Please update manually if needed.
+  - **comments** (string): Auto-generated description for `comments`. Please update manually if needed.
 - **parameters** (object): URL Query Parameters
 ## Output
 
@@ -34,13 +34,13 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **json_body** (object): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| content-length | string | TODO: Add description |
-| content-type | string | TODO: Add description |
-| Date | string | TODO: Add description |
+| content-length | string | Auto-generated description for `content-length`. Please update manually if needed. |
+| content-type | string | Auto-generated description for `content-type`. Please update manually if needed. |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |

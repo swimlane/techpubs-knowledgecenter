@@ -9,15 +9,15 @@
 ## Inputs
 
 - **attachments** (array) – Required: File to be uploaded
-  - **file_name** (string) – Required: TODO: Add description
-  - **file** (string) – Required: TODO: Add description
-- **parameters** (object): TODO: Add description
+  - **file_name** (string) – Required: Auto-generated description for `file_name`. Please update manually if needed.
+  - **file** (string) – Required: Auto-generated description for `file`. Please update manually if needed.
+- **parameters** (object): Auto-generated description for `parameters`. Please update manually if needed.
   - **encryption_context** (string): Sys_id of an encryption context record. Specify this parameter to allow only users with the specified encryption context to access the attachment.
-  - **file_name** (string) – Required: TODO: Add description
-  - **table_name** (string) – Required: TODO: Add description
+  - **file_name** (string) – Required: Auto-generated description for `file_name`. Please update manually if needed.
+  - **table_name** (string) – Required: Auto-generated description for `table_name`. Please update manually if needed.
   - **table_sys_id** (string) – Required: Sys_id of the record in the table specified in table_name that you want to attach the file to.
-- **headers** (object): TODO: Add description
-  - **Content-Type** (string) – Required: TODO: Add description
+- **headers** (object): Auto-generated description for `headers`. Please update manually if needed.
+  - **Content-Type** (string) – Required: Auto-generated description for `Content-Type`. Please update manually if needed.
 ## Output
 
 ### Example
@@ -76,49 +76,49 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **json_body** (object): TODO: Add description
-  - **result** (object): TODO: Add description
-    - **size_bytes** (string): TODO: Add description
-    - **file_name** (string): TODO: Add description
-    - **sys_mod_count** (string): TODO: Add description
-    - **average_image_color** (string): TODO: Add description
-    - **image_width** (string): TODO: Add description
-    - **sys_updated_on** (string): TODO: Add description
-    - **sys_tags** (string): TODO: Add description
-    - **table_name** (string): TODO: Add description
-    - **sys_id** (string): TODO: Add description
-    - **image_height** (string): TODO: Add description
-    - **sys_updated_by** (string): TODO: Add description
-    - **download_link** (string): TODO: Add description
-    - **content_type** (string): TODO: Add description
-    - **sys_created_on** (string): TODO: Add description
-    - **size_compressed** (string): TODO: Add description
-    - **compressed** (string): TODO: Add description
-    - **state** (string): TODO: Add description
-    - **table_sys_id** (string): TODO: Add description
-    - **chunk_size_bytes** (string): TODO: Add description
-    - **hash** (string): TODO: Add description
-    - **sys_created_by** (string): TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+  - **result** (object): Auto-generated description for `result`. Please update manually if needed.
+    - **size_bytes** (string): Auto-generated description for `size_bytes`. Please update manually if needed.
+    - **file_name** (string): Auto-generated description for `file_name`. Please update manually if needed.
+    - **sys_mod_count** (string): Auto-generated description for `sys_mod_count`. Please update manually if needed.
+    - **average_image_color** (string): Auto-generated description for `average_image_color`. Please update manually if needed.
+    - **image_width** (string): Auto-generated description for `image_width`. Please update manually if needed.
+    - **sys_updated_on** (string): Auto-generated description for `sys_updated_on`. Please update manually if needed.
+    - **sys_tags** (string): Auto-generated description for `sys_tags`. Please update manually if needed.
+    - **table_name** (string): Auto-generated description for `table_name`. Please update manually if needed.
+    - **sys_id** (string): Auto-generated description for `sys_id`. Please update manually if needed.
+    - **image_height** (string): Auto-generated description for `image_height`. Please update manually if needed.
+    - **sys_updated_by** (string): Auto-generated description for `sys_updated_by`. Please update manually if needed.
+    - **download_link** (string): Auto-generated description for `download_link`. Please update manually if needed.
+    - **content_type** (string): Auto-generated description for `content_type`. Please update manually if needed.
+    - **sys_created_on** (string): Auto-generated description for `sys_created_on`. Please update manually if needed.
+    - **size_compressed** (string): Auto-generated description for `size_compressed`. Please update manually if needed.
+    - **compressed** (string): Auto-generated description for `compressed`. Please update manually if needed.
+    - **state** (string): Auto-generated description for `state`. Please update manually if needed.
+    - **table_sys_id** (string): Auto-generated description for `table_sys_id`. Please update manually if needed.
+    - **chunk_size_bytes** (string): Auto-generated description for `chunk_size_bytes`. Please update manually if needed.
+    - **hash** (string): Auto-generated description for `hash`. Please update manually if needed.
+    - **sys_created_by** (string): Auto-generated description for `sys_created_by`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Server-Timing | string | TODO: Add description |
-| Content-Encoding | string | TODO: Add description |
-| X-Is-Logged-In | string | TODO: Add description |
-| X-Transaction-ID | string | TODO: Add description |
-| Location | string | TODO: Add description |
-| X-Content-Type-Options | string | TODO: Add description |
-| Pragma | string | TODO: Add description |
-| Cache-Control | string | TODO: Add description |
-| Expires | string | TODO: Add description |
-| Content-Type | string | TODO: Add description |
-| Transfer-Encoding | string | TODO: Add description |
-| Date | string | TODO: Add description |
-| Keep-Alive | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| Server | string | TODO: Add description |
-| Set-Cookie | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Server-Timing | string | Auto-generated description for `Server-Timing`. Please update manually if needed. |
+| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
+| X-Is-Logged-In | string | Auto-generated description for `X-Is-Logged-In`. Please update manually if needed. |
+| X-Transaction-ID | string | Auto-generated description for `X-Transaction-ID`. Please update manually if needed. |
+| Location | string | Auto-generated description for `Location`. Please update manually if needed. |
+| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
+| Pragma | string | Auto-generated description for `Pragma`. Please update manually if needed. |
+| Cache-Control | string | Auto-generated description for `Cache-Control`. Please update manually if needed. |
+| Expires | string | Auto-generated description for `Expires`. Please update manually if needed. |
+| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
+| Transfer-Encoding | string | Auto-generated description for `Transfer-Encoding`. Please update manually if needed. |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Keep-Alive | string | Auto-generated description for `Keep-Alive`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| Server | string | Auto-generated description for `Server`. Please update manually if needed. |
+| Set-Cookie | string | Auto-generated description for `Set-Cookie`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |

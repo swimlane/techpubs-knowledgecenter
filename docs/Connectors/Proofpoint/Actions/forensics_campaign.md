@@ -8,8 +8,8 @@
 - **Method:** `GET`
 ## Inputs
 
-- **parameters** (object) – Required: TODO: Add description
-  - **campaignId** (string) – Required: TODO: Add description
+- **parameters** (object) – Required: Auto-generated description for `parameters`. Please update manually if needed.
+  - **campaignId** (string) – Required: Auto-generated description for `campaignId`. Please update manually if needed.
 ## Output
 
 ### Example
@@ -45,26 +45,26 @@
 ```
 ### Output Parameters
 
-- **status_code** (number): TODO: Add description
-- **reason** (string): TODO: Add description
-- **json_body** (object): TODO: Add description
-  - **generated** (string): TODO: Add description
-  - **reports** (array): TODO: Add description
-    - **scope** (string): TODO: Add description
-    - **id** (string): TODO: Add description
-    - **name** (string): TODO: Add description
-    - **forensics** (array): TODO: Add description
-      - **file_name** (string) – Required: TODO: Add description
-      - **file** (string) – Required: TODO: Add description
+- **status_code** (number): Auto-generated description for `status_code`. Please update manually if needed.
+- **reason** (string): Auto-generated description for `reason`. Please update manually if needed.
+- **json_body** (object): Auto-generated description for `json_body`. Please update manually if needed.
+  - **generated** (string): Auto-generated description for `generated`. Please update manually if needed.
+  - **reports** (array): Auto-generated description for `reports`. Please update manually if needed.
+    - **scope** (string): Auto-generated description for `scope`. Please update manually if needed.
+    - **id** (string): Auto-generated description for `id`. Please update manually if needed.
+    - **name** (string): Auto-generated description for `name`. Please update manually if needed.
+    - **forensics** (array): Auto-generated description for `forensics`. Please update manually if needed.
+      - **file_name** (string) – Required: Auto-generated description for `file_name`. Please update manually if needed.
+      - **file** (string) – Required: Auto-generated description for `file`. Please update manually if needed.
 ## Response Headers
 
 | Header | Type | Description |
 |--------|------|-------------|
-| Date | string | TODO: Add description |
-| Content-Type | string | TODO: Add description |
-| Content-Length | string | TODO: Add description |
-| Connection | string | TODO: Add description |
-| X-Content-Type-Options | string | TODO: Add description |
-| Vary | string | TODO: Add description |
-| Content-Encoding | string | TODO: Add description |
-| Strict-Transport-Security | string | TODO: Add description |
+| Date | string | Auto-generated description for `Date`. Please update manually if needed. |
+| Content-Type | string | Auto-generated description for `Content-Type`. Please update manually if needed. |
+| Content-Length | string | Auto-generated description for `Content-Length`. Please update manually if needed. |
+| Connection | string | Auto-generated description for `Connection`. Please update manually if needed. |
+| X-Content-Type-Options | string | Auto-generated description for `X-Content-Type-Options`. Please update manually if needed. |
+| Vary | string | Auto-generated description for `Vary`. Please update manually if needed. |
+| Content-Encoding | string | Auto-generated description for `Content-Encoding`. Please update manually if needed. |
+| Strict-Transport-Security | string | Auto-generated description for `Strict-Transport-Security`. Please update manually if needed. |
